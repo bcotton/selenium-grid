@@ -1,0 +1,26 @@
+hub:
+   port: 4444
+   environments:
+       - name:    "Firefox on Windows"
+         browser: "*chrome"
+       - name:    "Firefox on OS X"
+         browser: "*chrome"
+       - name:    "Firefox on Linux"
+         browser: "*chrome"
+       - name:    "IE on Windows"
+         browser: "*iehta"
+       - name:    "Safari on OS X"
+         browser: "*safari"
+
+       - name:    "*firefox"
+         browser: "*firefox"
+       - name:    "*chrome"
+         browser: "*chrome"
+       - name:    "*iexplore"
+         browser: "*iexplore"
+       - name:    "*iehta"
+         browser: "*iehta"
+       - name:    "*safari"
+         browser: "*safari"
+       - name:    "*konqueror"
+         browser: "*konqueror"

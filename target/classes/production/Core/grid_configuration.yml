@@ -1,0 +1,15 @@
+hub:
+   port: 4444
+   environments:
+       - name:    "*firefox"
+         browser: "*firefox"
+       - name:    "*chrome"
+         browser: "*chrome"
+       - name:    "*iexplore"
+         browser: "*iexplore"
+       - name:    "*iehta"
+         browser: "*iehta"
+       - name:    "*safari"
+         browser: "*safari"
+       - name:    "*konqueror"
+         browser: "*konqueror"
