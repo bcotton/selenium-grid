@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Contributing to Selenium Grid</title>
+  <link href="resources/Selenium Grid.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+  <h1>Contributing to Selenium Grid</h1>
+
+ <h2>Requirements</h2>
+
+    <p>To run Selenium Grid you will need</p>
+    <ul>
+      <li>Java 5+ JDK</li>
+      <li>Ant 1.7.x</li>
+    </ul>
+    <p>
+      Install these in your machine if you do not have them
+      already. Do not forget to add them to you <code>PATH</code>.
+    </p> 
+
+  <h2>Building all artifacts</h2>
+    <ol>
+      <li><code>cd &lt;project root&gt;</code></li>
+      <li><code>ant dist</code></li>
+    </ol>
+
+  <h2>Building a sub-project</h2>
+    <ol>
+      <li><code>cd &lt;project root&gt;/hub</code></li>
+      <li><code>ant package-standalone</code></li>
+    </ol>
+
+  <h2>Stuff to fix or improve</h2>
+
+    <ul>
+      <li>Write little doc on how to run the demo (diagrams?)</li>
+      <li>Handle unknown environments better (registering time)</li>
+      <li>Hard-coded environments -> make them configurable</li>
+      <li>Hard-coded port for the Hub server -> make it configurable</li>
+      <li>Not really robust on lock/concurency</li>
+      <li>No tests for advanced pool!</li>
+      <li>Administration/management console is very crude.
+         <ol>
+           <li>Improve it and make it interactive.</li>
+           <li>Track registered remote contorls independently of available remote controls</li>
+           <li>Show which sessionId and URL a remote control is currently reserved for</li>
+         </ol>
+     </li>
+      <li>No tests for management package and remote control</li>
+      <li>Fix bug in official remote control to fail fast when newBrowserSession command does not return OK or
+   no sessionId is returned.</li>
+      <li>
+        Better packaging scripts / infrastructure for distribution.
+        No Maven please.
+      </li>
+      <li>Alternatively package as WAR</li>
+      <li>Need to invalidate RCs on connection problem</li>
+      <li>Wrappers for remote controls hard to launch restart => expose them as restartable services
+   Use http://wrapper.tanukisoftware.org/ ?</li>
+      <li>Automatically restart RCs after a fixed amount of test runs or on connection problems?</li>
+      <li>TestNG to run tests in Parallel?</li>
+    </ul>
+
+</body>
+</html>

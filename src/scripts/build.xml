@@ -1,0 +1,84 @@
+<project name="Selenium Grid Distribution" basedir=".">
+
+  <description>Selenium Grid Distribution</description>
+  <property name="version" value="0.9"/>
+
+  <path id="remote-control.classpath">
+    <fileset dir="${basedir}/lib">
+      <include name="selenium-server-*.jar"/>
+    </fileset>
+    <!-- Selenium Server must be first in classpath -->
+    <fileset dir="${basedir}/lib">
+      <include name="selenium-grid-remote-control-standalone-${version}*.jar"/>
+    </fileset>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="hub.classpath">
+    <pathelement path="${basedir}/"/>
+    <fileset dir="${basedir}/lib">
+      <include name="selenium-grid-hub-standalone-${version}*.jar"/>
+    </fileset>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="demo.classpath">
+    <fileset dir="${basedir}/lib">
+      <include name="selenium-grid-demo-standalone-${version}*.jar"/>
+    </fileset>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <target name="launch-hub" description="Launch Selenium Hub">
+    <java classname="com.thoughtworks.selenium.grid.hub.HubServer"
+          classpathref="hub.classpath"
+          fork="true"
+          failonerror="true" />
+  </target>
+
+  <property name="host" value="localhost"/>
+  <property name="port" value="5555"/>
+  <property name="hubURL" value="http://localhost:4444"/>
+  <property name="environment" value="*chrome"/>  
+  <target name="launch-remote-control" description="Launch A Remote Control">
+    <java classpathref="remote-control.classpath"
+          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer"
+          fork="true"
+          failonerror="true">
+      <arg value="-port"/>
+      <arg value="${port}"/>
+      <arg value="-host"/>
+      <arg value="${host}"/>
+      <arg value="-hubURL"/>
+      <arg value="${hubURL}"/>
+      <arg value="-env"/>
+      <arg value="${environment}"/>
+    </java>
+  </target>
+  
+  <target name="run-demo-in-sequence" description="Run Selenium tests one by one">
+    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
+          classpathref="demo.classpath"
+          failonerror="true"/>
+  </target>
+
+  <target name="run-demo-in-parallel" description="Run Selenium tests in parallel">
+    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
+          classpathref="demo.classpath"
+          failonerror="true">
+      <arg value="--parallel"/>
+    </java>
+  </target>
+
+  <target name="run-demo-for-multiple-environments"
+          description="Run Selenium tests in parallel for multiple environments">
+    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
+          classpathref="demo.classpath"
+          failonerror="true">
+      <arg value="--parallel"/>
+      <arg value="--multiple-environments"/>
+
+    </java>
+  </target>
+
+</project>

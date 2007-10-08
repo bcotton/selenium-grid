@@ -1,0 +1,124 @@
+#
+# Rakefile managing Selenium Grid components
+#
+
+desc("Launch Hub")
+task :'hub:start' do
+  classpath = Java::Classpath.new(File.dirname(__FILE__))
+  classpath = classpath << "." << "lib/selenium-grid-hub-standalone-*.jar"
+  puts classpath.inspect
+  Java::VM.new.run "com.thoughtworks.selenium.grid.hub.HubServer",
+                    :classpath => classpath.definition,
+                    :background => ("true" == ENV['BACKGROUND']),
+                    :log_file => File.native_path(File.dirname(__FILE__) + "/log/hub.log")
+end
+
+desc("Launch Remote Control")
+task :'rc:start' do
+  host = ENV['HOST'] || "localhost"
+  port = ENV['PORT'] || 5555
+  hub_url = ENV['HUB_URL'] || 'http://localhost:4444'
+  environment = ENV['ENVIRONMENT'] || "*chrome"
+
+  launch_rc(port)
+end
+
+desc("Launch Remote Control")
+task :'rc:start_all' do
+  ports = ENV['PORTS'] || "5000-5020"
+  port_range = Range.new(*ports.split("-"))
+  port_range.each do |port|
+    ENV['BACKGROUND'] = "true"
+    launch_rc(port)
+  end
+end
+
+desc("Stop Remote Controls. Usage rake rc:stop PORTS=5555-5560")
+task :'rc:stop_all' do
+  port_range = ENV['PORTS'] || "5000-5020"
+  sh "kill `lsof -t -i :#{port_range}`"
+end
+
+desc("Launch a Xvnc server")
+task :'xvnc:start' do
+  sh "Xvnc :1 -alwaysshared -geometry 1280x1024 -depth 24 -desktop 'Selenium Grid' 2>&1 >#{File.join(File.dirname(__FILE__), "log", "X.log")} &"
+end
+
+def launch_rc(port)
+    # Selenium Server must be first in classpath
+    classpath = Java::Classpath.new(File.dirname(__FILE__))
+    classpath =  classpath << "." << "lib/selenium-server-*.jar" << "lib/selenium-grid-remote-control-standalone-*.jar"
+    Java::VM.new.run "com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer",
+                     :classpath => classpath.definition,
+                     :args => [ "-port", port ],
+                     :background => ENV['BACKGROUND'],
+                     :log_file => File.join(File.dirname(__FILE__), "log", "rc-#{port}.log")
+end
+
+### To be extracted (eventually) ###
+
+class File
+
+    def self.native_path(path)
+    expanded_path = File.expand_path(path)
+    expanded_path.gsub!('/', '\\') if PLATFORM['win32']
+    expanded_path
+  end
+end
+
+module Java
+
+  class Classpath
+    require 'pathname'
+
+    def initialize(root_dir)
+      @root = root_dir
+      @locations = []
+      self
+    end
+
+    def <<(paths)
+      @locations = (@locations << Dir[@root + '/' + paths]).flatten
+      self
+    end
+
+    def definition
+      @locations.map {|path| File.native_path(path)}.join(self.separator)
+
+    end
+
+    def separator
+     PLATFORM['win32'] ? ";" : ":"
+    end
+
+  end
+
+  class VM
+
+    def run(classname, options)
+      command = [ "java" ]
+      command << "-cp \"#{options[:classpath]}\""
+      command << classname
+      command << jvm_properties(options[:properties])
+      command << options[:args].join(' ') if options[:args]
+      command << ">#{options[:log_file]} 2>&1" if options[:log_file]
+
+      if options[:background ]
+        if PLATFORM['win32']
+          command.unshift("start")
+        else
+          command << "&"
+        end
+      end
+
+      sh command.join(' ')
+    end
+
+    def jvm_properties(property_hash)
+      return "" unless property_hash
+      property_hash.inject([]) {|memo, (name, value)| memo << "-D#{name}=#{value}" }.join(' ')
+    end
+
+  end
+
+end

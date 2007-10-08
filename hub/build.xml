@@ -1,0 +1,148 @@
+<project name="Selenium Grid Hub" default="package-standalone" basedir=".">
+
+  <description>Selenium Grid Hub</description>
+
+  <property file="${basedir}/../project.properties"/>
+  <property name="name" value="Selenium Grid Hub"/>
+  <property name="artifact" value="selenium-grid-hub"/>
+  <property name="version" value="SNAPSHOT"/>
+  <tstamp/>
+
+  <property name="build.src" location="src/main/java"/>
+  <property name="build.output" location="target/classes"/>
+  <property name="dist" location="${basedir}/target/dist"/>
+  <property name="test.src" location="src/test/unit/java"/>
+  <property name="test.output" location="target/test-classes"/>
+  <property name="test.reports" location="target/test-reports"/>
+
+  <path id="compile.classpath">
+    <fileset dir="${basedir}/../lib">
+      <include name="jetty-6.0.2.jar"/>
+      <include name="jetty-util-6.0.2.jar"/>
+      <include name="jyaml-1.3.jar"/>
+      <include name="servlet-api-2.5-6.1.5.jar"/>
+      <include name="commons-httpclient-3.0.1.jar"/>
+      <include name="commons-codec-1.3.jar"/>
+      <include name="commons-logging-1.0.4.jar"/>
+    </fileset>
+    <fileset dir="${basedir}/lib">
+      <include name="freemarker-2.3.10.jar"/>
+    </fileset>
+    <pathelement location="${basedir}/../core/target/classes"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="testing.classpath">
+    <fileset dir="${basedir}/../lib">
+      <include name="junit-4.4.jar"/>
+    </fileset>
+    <pathelement location="${build.output}"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="mocking.classpath">
+    <fileset dir="${basedir}/../lib">
+      <include name="jbehave-1.0.1.jar"/>
+      <include name="jmock-junit4-2.2.0.jar"/>
+      <include name="jmock-legacy-2.2.0.jar"/>
+      <include name="proxytoys-0.2.1.jar"/>
+      <include name="objenesis-1.0.jar"/>
+      <include name="jmock-2.2.0.jar"/>
+      <include name="cglib-nodep-2.1_3.jar"/>
+    </fileset>
+  </path>
+
+  <target name="compile" description="compile the source ">
+    <mkdir dir="${build.output}"/>
+    <javac srcdir="${build.src}"
+           destdir="${build.output}"
+           source="1.5"
+           target="1.5">
+      <classpath refid="compile.classpath"/>
+    </javac>
+    <copy todir="${build.output}" verbose="true">
+      <fileset dir="${build.src}" includes="**/*.html"/>
+    </copy>
+  </target>
+
+  <target name="test" depends="compile" description="run tests">
+    <mkdir dir="${test.output}"/>
+    <mkdir dir="${test.reports}"/>
+
+    <javac srcdir="${test.src}"
+           destdir="${test.output}"
+           excludes="**/package.html"
+           source="1.5"
+           target="1.5"
+           debug="true"
+           deprecation="true">
+      <classpath refid="compile.classpath"/>
+      <classpath refid="testing.classpath"/>
+      <classpath refid="mocking.classpath"/>
+    </javac>
+    <copy todir="${test.output}" verbose="true">
+      <fileset dir="${test.src}" includes="**/*.html"/>
+    </copy>
+    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
+      <classpath refid="compile.classpath"/>
+      <classpath refid="testing.classpath"/>
+      <classpath refid="mocking.classpath"/>
+      <classpath location="${build.output}"/>
+      <classpath location="${test.output}"/>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/>
+      <formatter type="plain"/>
+      <batchtest todir="${test.reports}">
+        <fileset dir="${test.src}">
+          <include name="**/*Test.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+  <target name="package" depends="test" description="Package as a jar">
+    <mkdir dir="${dist}/lib"/>
+    <jar jarfile="${dist}/lib/${artifact}-${version}.jar" basedir="${build.output}">
+      <manifest>
+        <attribute name="Main-Class" value="com.thoughtworks.selenium.grid.hub.HubServer"/>
+        <attribute name="Built-By" value="ThoughtWorks and friends"/>
+        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
+        <section name="common">
+          <attribute name="Specification-Title" value="${name}"/>
+          <attribute name="Specification-Version" value="${version}"/>
+          <attribute name="Specification-Vendor" value="ThoughtWorks"/>
+        </section>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
+    <mkdir dir="${dist}/lib"/>
+    <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
+      <manifest>
+        <attribute name="Main-Class" value="com.thoughtworks.selenium.grid.hub.HubServer"/>
+        <attribute name="Built-By" value="ThoughtWorks and friends"/>
+        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
+        <section name="common">
+          <attribute name="Specification-Title" value="${name}"/>
+          <attribute name="Specification-Version" value="${version}"/>
+          <attribute name="Specification-Vendor" value="ThoughtWorks"/>
+        </section>
+      </manifest>
+      <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
+      <zipfileset src="${basedir}/../core/target/dist/lib/selenium-grid-core-${version}.jar"/>
+      <zipfileset src="${basedir}/lib/freemarker-2.3.10.jar"/>
+      <zipfileset src="${basedir}/../lib/jetty-6.0.2.jar"/>
+      <zipfileset src="${basedir}/../lib/jetty-util-6.0.2.jar"/>
+      <zipfileset src="${basedir}/../lib/servlet-api-2.5-6.1.5.jar"/>
+      <zipfileset src="${basedir}/../lib/jyaml-1.3.jar"/>
+      <zipfileset src="${basedir}/../lib/commons-httpclient-3.0.1.jar"/>
+      <zipfileset src="${basedir}/../lib/commons-codec-1.3.jar"/>
+      <zipfileset src="${basedir}/../lib/commons-logging-1.0.4.jar"/>
+    </jar>
+  </target>
+
+  <target name="clean" description="Remove generated artifacts">
+    <delete dir="target"/>
+  </target>
+</project>

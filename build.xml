@@ -1,0 +1,102 @@
+<project name="Selenium Grid Distribution" basedir=".">
+
+  <description>Selenium Grid Distribution</description>
+  <property file="${basedir}/project.properties"/>
+  <property name="artifact" value="selenium-grid"/>
+  <property name="version" value="SNAPSHOT"/>
+  <tstamp/>
+  <property name="dist" location="${basedir}/dist"/>
+
+
+  <target name="clean" description="clean all generated artifacts">
+    <delete dir="${dist}"/>
+    <ant target="clean" antfile="build.xml" dir="core"/>
+    <ant target="clean" antfile="build.xml" dir="hub"/>
+    <ant target="clean" antfile="build.xml" dir="remote-control"/>
+    <ant target="clean" antfile="build.xml" dir="demo"/>
+  </target>
+
+  <target name="build" description="Package subprojects">
+    <ant target="test" antfile="build.xml" dir="core"/>
+    <ant target="test" antfile="build.xml" dir="hub"/>
+    <ant target="test" antfile="build.xml" dir="remote-control"/>
+    <ant target="test" antfile="build.xml" dir="demo"/>
+  </target>
+
+  <target name="dist" depends="dist-bin, dist-src" description="Build binary and source distributions"/>
+
+  <target name="build-bin-dist" description="Package subprojects">
+    <ant target="package" antfile="build.xml" dir="core" inheritall="false"/>
+    <ant target="package-standalone" antfile="build.xml" dir="hub" inheritall="false"/>
+    <ant target="package-standalone" antfile="build.xml" dir="remote-control" inheritall="false"/>
+    <ant target="package-standalone" antfile="build.xml" dir="demo" inheritall="false"/>
+
+    <mkdir dir="${dist}/${artifact}-${version}"/>
+    <copy todir="${dist}/${artifact}-${version}/lib" overwrite="true">
+      <fileset dir="${basedir}/hub/target/dist/lib"/>
+      <fileset dir="${basedir}/remote-control/target/dist/lib"/>
+      <fileset dir="${basedir}/remote-control/lib"/>
+      <fileset dir="${basedir}/demo/target/dist/lib"/>
+    </copy>
+    <mkdir dir="${dist}/${artifact}-${version}/sample-scripts"/>
+    <copy todir="${dist}/${artifact}-${version}/sample-scripts" overwrite="true">
+      <fileset dir="${basedir}/src/scripts">
+        <include name="*.sh"/>
+        <include name="*.rb"/>
+        <include name="*.osascript"/>
+      </fileset>
+    </copy>
+    <copy todir="${dist}/${artifact}-${version}" overwrite="true">
+      <fileset dir="${basedir}/src/scripts" includes="build.xml"/>
+      <fileset dir="${basedir}/src/scripts" includes="Rakefile"/>
+      <fileset dir="${basedir}/src/scripts" includes="selenium_grid_deploy.rb"/>
+      <fileset dir="${basedir}/src/configuration" includes="*.yml"/>
+      <fileset dir="${basedir}">
+        <include name="doc/**/*"/>
+        <exclude name="doc/**/iMac.jpeg"/>
+        <exclude name="doc/**/macbookpro.jpg"/>
+        <exclude name="doc/**/DELL Server.jpg"/>
+        <exclude name="doc/**/applelogo.png"/>
+        <include name="README"/>
+      </fileset>
+    </copy>
+    <mkdir dir="${dist}/${artifact}-${version}/log"/>
+  </target>
+
+  <target name="dist-bin" depends="build-bin-dist" description="Package binary distribution">
+    <zip destfile="${dist}/selenium-grid-${version}-bin.zip">
+      <fileset dir="${dist}" includes="${artifact}-${version}/**/*"/>
+    </zip>
+
+    <tar destfile="${dist}/selenium-grid-${version}-bin.tar.bz2" compression="bzip2">
+      <fileset dir="${dist}" includes="${artifact}-${version}/**/*"/>
+    </tar>
+  </target>
+
+  <target name="dist-src" description="Package source distribution">
+    <mkdir dir="${dist}"/>
+    <delete file="${dist}/selenium-grid-${version}-src*.zip" failonerror="false"/>
+    <zip destfile="${dist}/selenium-grid-${version}-src.zip">
+      <fileset dir="${basedir}">
+        <exclude name="**/corp_website/**"/>
+        <exclude name="**/dist/**"/>
+        <exclude name="**/target/**"/>
+        <exclude name=".git/**"/>
+        <exclude name="**/.git/**/*"/>
+      </fileset>
+    </zip>
+
+    <delete file="${dist}/selenium-grid-${version}-src*.tar.bz2" failonerror="false"/>
+    <tar destfile="${dist}/selenium-grid-${version}-src.tar.bz2" compression="bzip2">
+      <fileset dir="${basedir}">
+        <exclude name="**/corp_website/**"/>
+        <exclude name="**/dist/**"/>
+        <exclude name="**/target/**"/>
+        <exclude name=".git/**"/>
+        <exclude name="**/.git/**/*"/>
+      </fileset>
+    </tar>
+
+  </target>
+
+</project>
