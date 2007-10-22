@@ -15,12 +15,7 @@ end
 
 desc("Launch Remote Control")
 task :'rc:start' do
-  host = ENV['HOST'] || "localhost"
-  port = ENV['PORT'] || 5555
-  hub_url = ENV['HUB_URL'] || 'http://localhost:4444'
-  environment = ENV['ENVIRONMENT'] || "*chrome"
-
-  launch_rc(port)
+  launch_rc(:port => (ENV['PORT'] || 5555)) 
 end
 
 desc("Launch Remote Control")
@@ -29,7 +24,7 @@ task :'rc:start_all' do
   port_range = Range.new(*ports.split("-"))
   port_range.each do |port|
     ENV['BACKGROUND'] = "true"
-    launch_rc(port)
+    launch_rc(:port => port)
   end
 end
 
@@ -44,15 +39,26 @@ task :'xvnc:start' do
   sh "Xvnc :1 -alwaysshared -geometry 1280x1024 -depth 24 -desktop 'Selenium Grid' 2>&1 >#{File.join(File.dirname(__FILE__), "log", "X.log")} &"
 end
 
-def launch_rc(port)
+def launch_rc(options)
     # Selenium Server must be first in classpath
     classpath = Java::Classpath.new(File.dirname(__FILE__))
     classpath =  classpath << "." << "lib/selenium-server-*.jar" << "lib/selenium-grid-remote-control-standalone-*.jar"
+
     Java::VM.new.run "com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer",
                      :classpath => classpath.definition,
-                     :args => [ "-port", port ],
+                     :args => rc_args(options),
                      :background => ENV['BACKGROUND'],
-                     :log_file => File.join(File.dirname(__FILE__), "log", "rc-#{port}.log")
+                     :log_file => File.join(File.dirname(__FILE__), "log", "rc-#{options[:port]}.log")
+                     
+end
+
+def rc_args(options)
+  args = []
+  args << "-host" << (options[:host] || ENV['HOST'] || "localhost")
+  args << "-port" << options[:port]
+  args << "-hubUrl" << (options[:hub_url] || ENV['HUB_URL'] || 'http://localhost:4444')
+  args << "-env" << (options[:environment] || ENV['ENVIRONMENT'] || "*chrome")
+  args
 end
 
 ### To be extracted (eventually) ###
@@ -101,7 +107,7 @@ module Java
       command << classname
       command << jvm_properties(options[:properties])
       command << options[:args].join(' ') if options[:args]
-      command << ">#{options[:log_file]} 2>&1" if options[:log_file]
+      command << ">\"#{options[:log_file]}\" 2>&1" if options[:log_file]
 
       if options[:background ]
         if PLATFORM['win32']
