@@ -3,7 +3,7 @@
     <jiraId>10100</jiraId>
     <jiraName>GRID</jiraName>
     <confluenceName>GRID</confluenceName>
-
+<!--
     <forums>
         <usersId>13</usersId>
         <devId>14</devId>
@@ -63,5 +63,6 @@
         </release>
         
     </releases>
+-->
 
 </project>
