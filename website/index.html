@@ -10,6 +10,11 @@
    body {
      font-family: "Garamond", sans-serif;
    }
+
+  div#content h1.first {
+    display: none;
+  }
+
    
    div.marketing-banner {
      margin: 1em 25%; 
@@ -26,6 +31,14 @@
      font: bold 2em "Chalkboard", "Georgia", serif;
    }
    
+   table#start-tracks tr td {
+     padding: 2em 2em;
+   }
+
+   table#start-tracks tr td a {
+     color: #0E3062;
+     font-size: 2em;
+   }
  </style> 
   
   <div class="body">
@@ -38,9 +51,10 @@
       </p>
     </div>
     
-    <table align="center">
+    <table id="start-tracks" align="center">
       <tr>
         <td><a href="http://seleniumgrid.thoughtworks.com">Official Website</a></td>
+        <td><a href="http://wiki.openqa.org/display/GRID/Participate">Give Feedback</a></td>
         <td><a href="http://wiki.openqa.org/display/GRID/Participate">Participate!</a></td>
       </tr>
     </table>
