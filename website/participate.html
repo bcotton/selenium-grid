@@ -17,6 +17,15 @@
      display: none;
    }
    
+   #footer {
+     background-color:#a20017;
+     color: #eeeeee;
+   }
+
+   #footer li a {
+     color: #eeeeee;
+   }
+   
    div#actual-content {
      border-top: solid thin black;
      padding: 5em 3em 2em 3em;
@@ -26,11 +35,24 @@
     * Document
     */
 
+   div#actual-content div.header {
+     text-align: center;
+     font: bold 2em "Chalkboard", "Georgia", serif;
+     padding: 0;
+     margin: 0 0 2.5em 0;
+   }
+
+   div#actual-content div.header img {
+     padding: 0;
+     margin: 0 1em 0 0;
+     vertical-align: middle;
+   }
+
    div#actual-content div.section {
      clear: both;
      margin: 1em;
    }
-         
+            
    div#actual-content div.section h2 {
      float: left;
      width: 15%;
@@ -39,6 +61,7 @@
      margin: 0 2em 2.5em 0;
      color: black;
      font: bold 1.6em "Lucida Grande", Verdana, sans-serif;
+     background: none;
    }
 
    div#actual-content div.section div.content {
@@ -55,7 +78,9 @@
  </style> 
 
 <div id="actual-content">
- 
+
+  <div class="header"><img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/>Participate!</div>
+   
   <div class="section"> 
     <h2>Report Bugs</h2>
     <div class="content">
