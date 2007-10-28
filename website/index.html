@@ -7,13 +7,16 @@
   <style type="text/css">
    body {
      font-family: "Garamond", sans-serif;
-     margin: 5em 1em 2em 1em;
    }
 
-  div#content h1.first {
-    display: none;
-  }
+   div#content h1.first {
+     display: none;
+   }
 
+   div#actual-content {
+     border-top: solid thin black;
+     padding: 5em 1em 2em 1em;
+   }
    
    div.marketing-banner {
      margin: 1em 25%; 
@@ -40,6 +43,7 @@
    }
  </style> 
   
+  <div id="actual-content">
     <div class="marketing-banner">
       <img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/>
       <p class="tagline">Web Testing That Doesn't Take Hours!</p>
@@ -56,7 +60,7 @@
         <td><a href="participate.html">Participate!</a></td>
       </tr>
     </table>
-    
+  </div>    
 
   <script src="http://www.google-analytics.com/urchin.js" 
           type="text/javascript">
