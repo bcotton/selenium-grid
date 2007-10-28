@@ -17,35 +17,74 @@
      border-top: solid thin black;
      padding: 5em 3em 2em 3em;
    }
+   
+   div#actual-content div.section {
+     clear: both;
+     margin: 0;
+   }
+         
+   div#actual-content div.section h2 {
+     float: left;
+     width: 15%;
+     border: 0;
+     padding: 0;
+     margin: 0 2em 2.5em 0;
+     color: black;
+     font: bold 1.6em "Lucida Grande", Verdana, sans-serif;
+   }
+
+   div#actual-content div.section div.content {
+     float: left;
+     width: 70%;
+     border: 0;
+     padding: 0;
+     margin: 0 0 2em 0;     
+   }
+
+   div#actual-content div.section div.content p {
+     margin-top: .3em;
+   }
+
  </style> 
   
 <div id="actual-content">
-  <h2>Share Your Experience - Provide feedback</h2>
 
-   <p>
-     Selenium Grid is at a very early stage, and we are eager to get your feedback. 
-     <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">Send us</a>
-     your input on the project vision, your user experience, what is missing or 
-     what you consider plain wrong. You will help us make Selenium Grid a better tool.
-   </p>
+  <div class="section">
+    <h2>Share Your Experience</h2>
 
-  <h2><a name="Participate-ShareYourSuccessStory"></a>Share Your Success Story</h2>
-
-    <p>
-      Please 
-      <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">Contact Us</a>
-      to share your success story. We would love to learn how Selenium Grid 
-      made your project more successful.
-    </p>
-
-  <h2>Report Bugs</h2>
-
-    <p>
-      We are committed to Selenium Grid quality and absolutely love receiving 
-      bug reports. Please send your bug reports using
-      <a href="http://jira.openqa.org/browse/GRID">our bug tracking tool</a>.
-    </p>
-
+    <div class="content">
+     <p>
+       Selenium Grid is at a very early stage, and we are eager to get your feedback. 
+       <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">Send us</a>
+       your input on the project vision, your user experience, what is missing or 
+       what you consider plain wrong. You will help us make Selenium Grid a better tool.
+     </p>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Share Your Success Story</h2>
+    <div class="content">
+      <p>
+        Please 
+        <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">Contact Us</a>
+        to share your success story. We would love to learn how Selenium Grid 
+        made your project more successful.
+      </p>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Report Bugs</h2>
+    <div class="content">
+      <p>
+        We are committed to Selenium Grid quality and absolutely love receiving 
+        bug reports. Please send your bug reports using
+        <a href="http://jira.openqa.org/browse/GRID">our bug tracking tool</a>.
+      </p>
+    </div>
+  </div>
+  
 </div>
    
 </body>
