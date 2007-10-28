@@ -9,6 +9,10 @@
      font-family: "Lucida Grande", "Verdana", sans-serif;
    }
 
+   /* 
+    * Cosmetic Workarounds
+    */
+   
    div#content h1.first {
      display: none;
    }
@@ -17,39 +21,76 @@
      border-top: solid thin black;
      padding: 5em 3em 2em 3em;
    }
+
+   /* 
+    * Document
+    */
+
+   div#actual-content div.section {
+     clear: both;
+     margin: 1em;
+   }
+         
+   div#actual-content div.section h2 {
+     float: left;
+     width: 15%;
+     border: 0;
+     padding: 0;
+     margin: 0 2em 2.5em 0;
+     color: black;
+     font: bold 1.6em "Lucida Grande", Verdana, sans-serif;
+   }
+
+   div#actual-content div.section div.content {
+     float: left;
+     width: 70%;
+     border: 0;
+     padding: 0;
+     margin: 0 0 2em 0;     
+   }
+
+   div#actual-content div.section div.content p {
+     margin-top: .3em;
+   }
  </style> 
 
 <div id="actual-content">
  
-  <h2>Report Bugs</h2>
+  <div class="section"> 
+    <h2>Report Bugs</h2>
+    <div class="content">
+      <p>
+        We are committed to Selenium Grid quality and absolutely love receiving 
+        bug reports. Please send your bug reports using
+        <a href="http://jira.openqa.org/browse/GRID">our bug tracking tool</a>.
+      </p>
+    </div>
+  </div>
 
-    <p>
-      We are committed to Selenium Grid quality and absolutely love receiving 
-      bug reports. Please send your bug reports using
-      <a href="http://jira.openqa.org/browse/GRID">our bug tracking tool</a>.
-    </p>
+  <div class="section">
+    <h2>Hack Some Code</h2>
+    <div class="content">
+      <p>
+        We welcome new contributors. The project is still at an very early 
+        stage and you can have significant impact. Here is the best way to 
+        start contributing:
+      </p>
 
-  <h2>Hack Some Code</h2>
-
-    <p>
-      We welcome new contributors. The project is still at an very early 
-      stage and you can have significant impact. Here is the best way to 
-      start contributing:
-    </p>
-
-    <ol>
-      <li>Install Java 5+ and Ant 1.7.x</li>
-      <li>Make sure that they are in your PATH : <tt>java -version</tt> , <tt>ant -version</tt><br>
-      <li><code>svn co <a href="https://svn.openqa.org/svn/selenium-grid/trunk">https://svn.openqa.org/svn/selenium-grid/trunk</a> &lt;project root&gt;</code></li>
-      <li><code>cd &lt;project root&gt;</code></li>
-      <li>Run the build, to make sure that it passes on your box: <code>ant dist</code></li>
-      <li>Hack some cool features and do not forget to write some tests.</li>
-      <li>Run the build again, make sure that it still passes.</li>
-      <li>Create a patch: <code>svn diff &gt; patch_to_fix_this_and_that.diff</code></li>
-      <li>Send us the patch 
-        <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">by email</a>
-      </li>
-
+      <ol>
+        <li>Install Java 5+ and Ant 1.7.x</li>
+        <li>Make sure that they are in your PATH : <tt>java -version</tt> , <tt>ant -version</tt><br>
+        <li><code>svn co <a href="https://svn.openqa.org/svn/selenium-grid/trunk">https://svn.openqa.org/svn/selenium-grid/trunk</a> &lt;project root&gt;</code></li>
+        <li><code>cd &lt;project root&gt;</code></li>
+        <li>Run the build, to make sure that it passes on your box: <code>ant dist</code></li>
+        <li>Hack some cool features and do not forget to write some tests.</li>
+        <li>Run the build again, make sure that it still passes.</li>
+        <li>Create a patch: <code>svn diff &gt; patch_to_fix_this_and_that.diff</code></li>
+        <li>Send us the patch 
+          <a href="http://seleniumgrid.thoughtworks.com/about/contact_us">by email</a>
+        </li>
+      </ol>
+    </div>
+  </div>
 </div>         
 </body>
 </html>
