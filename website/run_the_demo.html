@@ -42,7 +42,7 @@
    }
       
    div#actual-content {
-     padding: 2em 3em 2em 3em;
+     padding: 4em 3em 2em 3em;
    }
 
    /* 
@@ -74,7 +74,7 @@
      padding: 0;
      margin: 0 2em 2.5em 0;
      color: black;
-     font: bold 1.6em "Lucida Grande", Verdana, sans-serif;
+     font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
      background: none;
    }
 
@@ -84,6 +84,7 @@
      border: 0;
      padding: 0;
      margin: 0 0 2em 0;     
+     font-size: .9em;
    }
 
    div#actual-content div.section div.content p {
@@ -91,9 +92,10 @@
    }
    
     div#actual-content h2 {
-     font: bold 1.6em "Lucida Grande", Verdana, sans-serif;
+     font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
      margin-left: -1em;
      padding: .2em .2em;
+     border: 0;
      border-bottom: solid medium #a20017;
      background: none;
     }
@@ -113,6 +115,7 @@ a:hover {
 }
 
 p, ul, ol, dl {
+  font-size: .9em;  
   margin-left: 1em;
 }
 
@@ -121,18 +124,25 @@ ul p, ul pre, ol p, ol pre {
 }
 
 pre.command {
+  font-size: .9em;
   margin-left: 3em;
   border: thin dotted #bbb;
 }
 
 div.screenshot {
+    font-size: .9em;
     margin: .5em 3em;
     padding: .5em 1em;
     border: thin dotted gray;
     background: ghostwhite;
 }
 
+div.screenshot p {
+  font-weight: bold;
+}
+
 code {
+  font-size: .9em;
   font-family: Consolas, monospace;
 }
     
@@ -146,8 +156,8 @@ code {
 
     <p>To run Selenium Grid you will need</p>
     <ul>
-     <li>Java 5+ JDK</li>
-     <li>Ant 1.7.x</li>
+     <li><a href="http://java.sun.com/javase/downloads">Java 5+ JDK</a></li>
+     <li><a href="http://ant.apache.org/bindownload.cgi">Ant 1.7.x</a></li>
     </ul>
 
   <p>Install these on your machine if you do not have them already. Do not forget to add them to your <code>PATH</code>. </p>
@@ -322,7 +332,7 @@ code {
 <p>Once all this is started, take a look at the Selenium Hub console. You should see something like: </p>
 
 <div class="screenshot">
-                <h2>Available Remote Controls</h2>
+                <p>Available Remote Controls</p>
                 <table border='1'>
                     <tr> <th>Host</th> <th>Port</th> <th>Environment</th> </tr>
 
