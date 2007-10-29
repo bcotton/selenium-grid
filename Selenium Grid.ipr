@@ -653,6 +653,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/Core.iml" filepath="$PROJECT_DIR$/core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/Demo.iml" filepath="$PROJECT_DIR$/demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/hub/Hub.iml" filepath="$PROJECT_DIR$/hub/Hub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hub/Hub Tests.iml" filepath="$PROJECT_DIR$/hub/Hub Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-control/Remote Control.iml" filepath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
     </modules>
   </component>

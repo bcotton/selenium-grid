@@ -11,15 +11,15 @@ import java.util.Map;
 /**
  * Remote Control Pool dedicated to a single environment.
  */
-public class MonoEnviromentPool implements DynamicRemoteControlPool {
+public class MonoEnvironmentPool implements DynamicRemoteControlPool {
 
-    private static final Log logger = LogFactory.getLog(MonoEnviromentPool.class);
+    private static final Log logger = LogFactory.getLog(MonoEnvironmentPool.class);
 
     private final RemoteControlProvisioner provisioner;
     private final Map<String, RemoteControlProxy> currentSessionMap;
 
 
-    public MonoEnviromentPool(RemoteControlProvisioner reservationManager) {
+    public MonoEnvironmentPool(RemoteControlProvisioner reservationManager) {
         this.provisioner = reservationManager;
         this.currentSessionMap = new HashMap<String, RemoteControlProxy>();
     }

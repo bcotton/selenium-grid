@@ -1,16 +1,15 @@
 package com.thoughtworks.selenium.grid.hub;
 
+import com.thoughtworks.selenium.grid.hub.remotecontrol.MonoEnvironmentPool;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import org.junit.Test;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.MonoEnviromentPool;
-
 
 public class EnvironmentTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void throwsAnIllegalArgumentExceptionWhenNameIsNull() {
-        new Environment(null, "a browser", new MonoEnviromentPool(null));
+        new Environment(null, "a browser", new MonoEnvironmentPool(null));
     }
 
     @Test
