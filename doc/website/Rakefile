@@ -22,6 +22,7 @@ task :render_pages do
   render_page('how_it_works', "How it Works", document_layout)
   render_page('give_feedback', "We Love Your Feedback!", standard_layout)
   render_page('participate', "Participate!", standard_layout)
+  render_page('hack', "Hack the Grid!", standard_layout)
 end
 
 
