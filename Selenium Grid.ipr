@@ -141,7 +141,7 @@
         <inspection_tool class="StaticMethodOnlyUsedInOneClass" level="WARNING" enabled="true" />
         <inspection_tool class="StaticVariableOfConcreteClass" level="WARNING" enabled="true" />
         <inspection_tool class="TypeMayBeWeakened" level="WARNING" enabled="true">
-          <option name="ignoreLocals" value="false" />
+          <option name="useRighthandTypeAsWeakestTypeInAssignments" value="true" />
         </inspection_tool>
         <inspection_tool class="ReplaceAssignmentWithOperatorAssignment" level="WARNING" enabled="true">
           <option name="ignoreLazyOperators" value="true" />
@@ -234,13 +234,6 @@
           <option name="ignoreLibraryArguments" value="false" />
         </inspection_tool>
         <inspection_tool class="SystemOutErr" level="WARNING" enabled="true" />
-        <inspection_tool class="ChainedEqualityJS" level="WARNING" enabled="true" />
-        <inspection_tool class="ChainedFunctionCallJS" level="WARNING" enabled="true" />
-        <inspection_tool class="ConstantOnLHSOfComparisonJS" level="WARNING" enabled="true" />
-        <inspection_tool class="ConstantOnRHSOfComparisonJS" level="WARNING" enabled="true" />
-        <inspection_tool class="NestedFunctionCallJS" level="WARNING" enabled="true" />
-        <inspection_tool class="NonBlockStatementBodyJS" level="WARNING" enabled="true" />
-        <inspection_tool class="UnterminatedStatementJS" level="WARNING" enabled="true" />
         <inspection_tool class="CStyleArrayDeclaration" level="WARNING" enabled="true" />
         <inspection_tool class="CallToStringConcatCanBeReplacedByOperator" level="WARNING" enabled="true" />
         <inspection_tool class="ChainedEquality" level="WARNING" enabled="true" />
@@ -318,7 +311,6 @@
         </inspection_tool>
         <inspection_tool class="NonFinalStaticVariableUsedInClassInitialization" level="WARNING" enabled="true" />
         <inspection_tool class="OverridableMethodCallDuringObjectConstruction" level="WARNING" enabled="true" />
-        <inspection_tool class="OverriddenMethodCallInConstructor" level="WARNING" enabled="true" />
         <inspection_tool class="StaticVariableInitialization" level="WARNING" enabled="true">
           <option name="m_ignorePrimitives" value="false" />
         </inspection_tool>
@@ -376,21 +368,6 @@
         </inspection_tool>
         <inspection_tool class="ModuleWithTooManyClasses" level="WARNING" enabled="true">
           <option name="limit" value="100" />
-        </inspection_tool>
-        <inspection_tool class="FunctionNamingConventionJS" level="WARNING" enabled="true">
-          <option name="m_regex" value="[a-z][A-Za-z]*" />
-          <option name="m_minLength" value="4" />
-          <option name="m_maxLength" value="32" />
-        </inspection_tool>
-        <inspection_tool class="ParameterNamingConventionJS" level="WARNING" enabled="true">
-          <option name="m_regex" value="[a-z][A-Za-z]*" />
-          <option name="m_minLength" value="1" />
-          <option name="m_maxLength" value="32" />
-        </inspection_tool>
-        <inspection_tool class="LocalVariableNamingConventionJS" level="WARNING" enabled="true">
-          <option name="m_regex" value="[a-z][A-Za-z]*" />
-          <option name="m_minLength" value="1" />
-          <option name="m_maxLength" value="32" />
         </inspection_tool>
         <inspection_tool class="ClassUnconnectedToPackage" level="WARNING" enabled="true" />
         <inspection_tool class="PackageInMultipleModules" level="WARNING" enabled="true" />
@@ -684,6 +661,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
   </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
     <library name="Selenium Java Client Driver">
       <CLASSES>

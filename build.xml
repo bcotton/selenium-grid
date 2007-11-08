@@ -8,6 +8,59 @@
   <property name="dist" location="${basedir}/dist"/>
 
 
+  <target name="sanity-check" description="Check that building tools are been installed and configured properly">
+    <property environment="env"/>
+
+    <echo>${ant.version}</echo>
+    <condition property="ant-7">
+      <antversion atleast="1.7.0"/>
+    </condition>
+    <fail message="You need Ant 1.7 or newer" unless="ant-7"/>
+
+    <echo>Java ${ant.java.version}</echo>
+    <condition property="java-5">
+      <not><matches pattern="^1\.[0-4]" string="${ant.java.version}"/></not>
+    </condition>
+    <fail message="Your must use Java 1.5 or newer. You are currrenltly using '${ant.java.version}'." unless="java-5"/>
+
+    <property name="jruby.dir" value="${env.JRUBY_HOME}"/>
+    <echo>JRUBY_HOME = ${jruby.dir}"</echo>
+    <condition property="jruby.defined">
+      <not><matches pattern="env.JRUBY_HOME" string="${jruby.dir}"/></not>
+    </condition>
+    <fail message="Your must define JRUBY_HOME as an environment variable (pointing to JRUBY installation directory)." unless="jruby.defined"/>
+
+    <property name="jruby.dir" value="${env.JRUBY_HOME}"/>
+    <property name="jruby.launcher" location="${jruby.dir}/bin/jruby" />
+    <available property="jruby.launcher.exists" file="${jruby.launcher}" />
+    <fail message="JRUBY_HOME is not defined properly. I could not find '${jruby.launcher}'." unless="jruby.launcher.exists"/>
+
+    <path id="jruby.classpath">
+      <fileset dir="${jruby.dir}/lib">
+        <include name="*.jar"/>
+      </fileset>
+    </path>
+
+    <java classname="org.jruby.Main" fork="true" failonerror="true">
+      <classpath refid="jruby.classpath"/>
+
+      <sysproperty key="jruby.base" value="${jruby.dir}"/>
+      <sysproperty key="jruby.home" value="${jruby.dir}"/>
+      <sysproperty key="jruby.script" value="jruby"/>
+      <sysproperty key="jruby.shell" value="/bin/sh"/>
+
+      <arg value="${basedir}/src/scripts/jruby_sanity_check.rb"/>
+    </java>
+
+    <echo/>
+    <echo>******************************************************</echo>
+    <echo>Congratulations, your setup looks good. Happy hacking!</echo>
+    <echo>******************************************************</echo>
+    <echo/>
+    <echo>You can build the whole project by running 'ant dist'</echo>
+
+  </target>
+
   <target name="clean" description="clean all generated artifacts">
     <delete dir="${dist}"/>
     <ant target="clean" antfile="build.xml" dir="core"/>
