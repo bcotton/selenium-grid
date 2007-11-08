@@ -14,6 +14,16 @@
   <property name="test.src" location="src/test/unit/java"/>
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
+  <property environment="env"/>
+  <property name="jruby.dir" value="${env.JRUBY_HOME}"/>
+  <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
+
+  <path id="jruby.classpath">
+    <fileset dir="${jruby.dir}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
 
   <path id="compile.classpath">
     <fileset dir="${basedir}/../lib">
@@ -65,7 +75,25 @@
     </copy>
   </target>
 
-  <target name="test" depends="compile" description="run tests">
+
+  <target name="jruby-test" depends="compile" description="Run JRuby Tests">
+    <java classname="org.jruby.Main" fork="true" failonerror="true">
+      <classpath refid="compile.classpath"/>
+      <classpath refid="testing.classpath"/>
+      <classpath refid="jruby.classpath"/>
+
+      <sysproperty key="jruby.base" value="${jruby.dir}"/>
+      <sysproperty key="jruby.home" value="${jruby.dir}"/>
+      <sysproperty key="jruby.script" value="jruby"/>
+      <sysproperty key="jruby.shell" value="/bin/sh"/>
+
+      <arg value="-I"/>
+      <arg value="${jruby.test.dir}"/>
+      <arg value="${jruby.test.dir}/all_tests.rb"/>
+    </java>
+  </target>
+
+  <target name="test" depends="compile, jruby-test" description="run tests">
     <mkdir dir="${test.output}"/>
     <mkdir dir="${test.reports}"/>
 
@@ -99,7 +127,7 @@
       </batchtest>
     </junit>
   </target>
-
+  
   <target name="package" depends="test" description="Package as a jar">
     <mkdir dir="${dist}/lib"/>
     <jar jarfile="${dist}/lib/${artifact}-${version}.jar" basedir="${build.output}">

@@ -6,8 +6,8 @@ task :default => :generate
 task :generate => [:render_pages, :copy_images]
 
 task :copy_images do
-  mkdir_p OUTPUT_DIR
-  cp_r "./images", OUTPUT_DIR
+  mkdir_p File.join(OUTPUT_DIR, "images")
+  cp Dir["images/*.png"], File.join(OUTPUT_DIR, "images")
   cp Dir["diagrams/*.png"], OUTPUT_DIR
 end
 
@@ -15,8 +15,8 @@ task :render_pages do
   mkdir_p OUTPUT_DIR
 
   cp "index.html", OUTPUT_DIR
-  standard_layout = IO.readlines("layout.html").join("\n")
-  document_layout = IO.readlines("document_layout.html").join("\n")
+  standard_layout = IO.readlines("layout.html").join(" ")
+  document_layout = IO.readlines("document_layout.html").join(" ")
   render_page('get_started', "Get Started!", standard_layout)
   render_page('run_the_demo', "Run the Demo", document_layout)
   render_page('how_it_works', "How it Works", document_layout)
@@ -26,7 +26,9 @@ end
 
 
 def render_page(page, title, layout)
-  content = IO.readlines("#{page}.html").join("\n")
+  raw_content = IO.readlines("#{page}.html").join("")
+  version = "0.9.2"
+  content = ERB.new(raw_content).result(binding)
   template = ERB.new(layout)
   html = template.result(binding)
   File.new("#{OUTPUT_DIR}/#{page}.html", "w+").write(html)

@@ -29,6 +29,29 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
+  <target name="sanity-check" description="Check that the tools are been installed and configured properly">
+    <property environment="env"/>
+    <echo>${ant.version}</echo>
+    <condition property="ant-7">
+      <antversion atleast="1.7.0"/>
+    </condition>
+    <fail message="You need Ant 1.7 or newer" unless="ant-7"/>
+
+    <echo>Java ${ant.java.version}</echo>
+    <condition property="java-5">
+      <not><matches pattern="^1\.[0-4]" string="${ant.java.version}"/></not>
+    </condition>
+    <fail message="Your must use Java 1.5 or newer. You are currrenltly using '${ant.java.version}'." unless="java-5"/>
+
+    <echo/>
+    <echo>********************************************************************</echo>
+    <echo>Congratulations, your setup looks good. Have fun with Selenium Grid!</echo>
+    <echo>********************************************************************</echo>
+    <echo/>
+    <echo>You can launch a hub by running 'ant launch-hub'</echo>
+    <echo>You can launch a a remote control with 'ant -Dport=4444 launch-remote-control'</echo>
+  </target>
+
   <target name="launch-hub" description="Launch Selenium Hub">
     <java classname="com.thoughtworks.selenium.grid.hub.HubServer"
           classpathref="hub.classpath"

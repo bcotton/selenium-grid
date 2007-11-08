@@ -31,11 +31,23 @@ Java HotSpot(TM) Server VM (build 1.6.0-b105, mixed mode)</pre>
       <p>
         Install <a href="http://ant.apache.org/bindownload.cgi">Ant 1.7.x</a>
         and make sure it is in your <code>PATH</code>:
-        <pre>$ <strong>ant&nbsp;-version</strong>
-Apache Ant version 1.7.0 compiled on December 13 2006</pre>
-      </p><p>
-        If you need help, check out
-        <a href="http://ant.apache.org/manual/install.html#installing">Ant documentation</a>.
+        <ol>
+          <li>
+            Download the 
+            <a href="http://apache.mirrormax.net/ant/binaries/apache-ant-1.7.0-bin.zip">binary
+            distribution</a>.
+          </li><li>
+            Unpack the binary distribution in the directory of your choice.
+          </li><li>
+            Add <code>&lt;where you unpacked the zip file&gt;/apache-ant-1.7.0/bin</code>
+            to your <code>PATH</code> environment variable.
+          </li><li>
+            Check that your Ant installation is OK:
+            <pre>$ <strong>ant&nbsp;-version</strong>
+Apache Ant version <strong>1.7.0</strong> compiled on December 13 2006</pre>
+          </li>
+        </ol>
+      </p>
       </p><p>
         If you feel adventurous, Selenium Grid also comes with alternative
         launchers, based on <a href="http://docs.rubyrake.org/">Rake</a>. 
@@ -54,6 +66,16 @@ Apache Ant version 1.7.0 compiled on December 13 2006</pre>
     </div>
   </div>
 
+  <div class="section">
+    <h2>Check</h2>
+    <div class="content">
+      Go at the root of selenium grid directory and validate your installation:
+      <pre>$ cd selenium-grid-<%= version %>
+$ <strong>ant sanity-check</strong></pre>
+</pre>      
+    </div>
+  </div>
+  
   <div class="section">
     <h2>Demo</h2>
     <div class="content">
