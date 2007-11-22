@@ -1,0 +1,29 @@
+# Taken from RSpec distribution. Originally written by Brian Takita
+
+class MultiThreadedBehaviourRunner < Spec::Runner::BehaviourRunner
+  def initialize(*options)
+    super
+    # configure these
+    @thread_count = 4
+    @thread_wait = 0
+  end
+
+  def run_behaviours
+    @threads = []
+    q = Queue.new
+    p @behaviours
+    p  number_of_examples
+    p  @behaviours.first.examples
+    @behaviours.each { |b| q << b ; p b.examples}
+    @thread_count.times do
+      @threads << Thread.new(q) do |queue|
+        while not queue.empty?
+          behaviour = queue.pop
+          behaviour.run(@options.reporter, @options.dry_run, @options.reverse)
+        end
+      end
+      sleep @thread_wait
+    end
+    @threads.each {|t| t.join}
+  end
+end

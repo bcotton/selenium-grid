@@ -1,0 +1,58 @@
+require 'rake'
+require 'spec/rake/spectask'
+
+desc "Run all behaviors in sequence"
+Spec::Rake::SpecTask.new('run_in_sequence') do |t|
+  t.spec_files = FileList['*_spec.rb']
+  t.spec_opts = %w[--require 'spec/ui' --format Spec::Ui::ScreenshotFormatter:./reports/Selenium-Build-Report.html]
+  t.fail_on_error = true
+end
+
+desc "Run all behaviors in parallel using Ruby green threads"
+Spec::Rake::SpecTask.new('run_in_parallel_single_process') do |t|
+  t.spec_files = FileList['*_spec.rb']
+  t.spec_opts = %w[--require './lib/multi_threaded_behaviour_runner' --runner MultiThreadedBehaviourRunner ]
+  t.fail_on_error = true
+end
+
+desc("Run all behaviors in parallel spawing multiple processes")
+task :run_in_parallel => [:sanity_check, :report_dir] do
+  require File.expand_path(File.dirname(__FILE__) + '/lib/multi_process_behaviour_runner')
+  runner = MultiProcessSpecRunner.new(10)
+  runner.run(Dir['*_spec.rb'])
+end 
+
+task :run_in_sequence => [:sanity_check, :report_dir]
+task :run_in_parallel_single_process => [:sanity_check, :report_dir]
+
+task :report_dir do
+  mkdir_p File.expand_path(File.dirname(__FILE__) + "/reports")
+  rm_f Dir[File.dirname(__FILE__) + "/reports/*.html"]
+end
+
+task :sanity_check do
+  verify "You must install RubyGems to run this example : http://rubygems.org" do
+    require "rubygems"
+  end
+  verify "You must install rspec to run this example: `sudo gem install rspec`. Tested with RSpec 1.0.8" do
+    require "specx"
+  end
+  verify "You must install Spec UI to run this example: `sudo gem install spec_ui`" do
+    require "spec/ui"
+  end
+end
+
+def verify(error_message)
+  begin
+    yield
+  rescue Exception
+    STDERR.puts <<-EOS
+
+*******************************************************************
+#{error_message}
+*******************************************************************
+
+EOS
+    raise
+  end
+end
