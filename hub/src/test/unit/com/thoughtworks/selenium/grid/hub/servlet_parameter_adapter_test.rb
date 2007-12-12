@@ -12,7 +12,7 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
   test "build query string contructs the query string from request parameters" do
     parameters = ServletParametersAdapter.new
     parameters.put "cmd", "testComplete"
-    assert_equal "cmd=testComplete", parameters.queryString()
+    assert_equal "cmd=testComplete", parameters.queryString
   end
 
   test "build query string is escaped" do
