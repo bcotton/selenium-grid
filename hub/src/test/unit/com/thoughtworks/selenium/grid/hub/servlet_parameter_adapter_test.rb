@@ -28,21 +28,6 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
     assert_equal "cmd=testComplete&sessionId=1234", parameters.queryString
   end
 
-#  test "parameters are copied when a map is provided to constructor" do
-#    servletParameterMap = HashMap.new #<String, String[]>();
-#    servletParameterMap.put "a name", [ "a value" ]
-#    assert_equals "a value", ServletParametersAdapter.new(servletParameterMap).get("a name")
-#  end
-
-  #  @Test
-#  public void getReturnsOnlyTheFirstValueOfAParameter() {
-#      final Map<String, String[]> servletParameterMap;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { "first value", "second value" });
-#      assertEquals("first value", new ServletParametersAdapter(servletParameterMap).get("a name"));
-#  }
-#
   test "get returns null when parameter does not exist" do
       assert_equal nil, ServletParametersAdapter.new.get("unknown parameter")
   end
@@ -52,28 +37,5 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
     parameters.put "a name", nil
     assert_equal nil, parameters.get("a name")
   end
-
-  #
-#  @Test
-#  public void getReturnsNullWhenParameterValueIsAnEmptyArray() {
-#      final Map<String, String[]> servletParameterMap;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { });
-#      assertEquals(null, new ServletParametersAdapter(servletParameterMap).get("a name"));
-#  }
-#
-#  @Test
-#  public void putCanChangeAValueEventIfMapProvidedToConstructorIsFrozen() {
-#      final Map<String, String[]> servletParameterMap;
-#      final ServletParametersAdapter parameters;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { "original value" });
-#      parameters = new ServletParametersAdapter(Collections.unmodifiableMap(servletParameterMap));
-#      parameters.put("a name", "new value");
-#      assertEquals("new value", parameters.get("a name"));
-#  }
-#
 
 end
