@@ -11,9 +11,6 @@ class MultiThreadedBehaviourRunner < Spec::Runner::BehaviourRunner
   def run_behaviours
     @threads = []
     q = Queue.new
-    p @behaviours
-    p  number_of_examples
-    p  @behaviours.first.examples
     @behaviours.each { |b| q << b ; p b.examples}
     @thread_count.times do
       @threads << Thread.new(q) do |queue|

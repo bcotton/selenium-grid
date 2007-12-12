@@ -19,8 +19,6 @@
   <component name="RModuleContentRootManager">
     <TEST_URLS url="file://$MODULE_DIR$" />
     file://$MODULE_DIR$
-    <TEST_URLS url="file://$MODULE_DIR$/src/test/jruby" />
-    file://$MODULE_DIR$/src/test/jruby
   </component>
 </module>
 
