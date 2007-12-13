@@ -15,9 +15,19 @@ import java.io.IOException;
 public class HttpCommandParserTest extends UsingClassMock {
 
     @Test
-    public void parametersReturnsTheRequestParametersProvidedToTheConstructor() {
+    public void parametersReturnsTheRequestParametersProvidedToTheConstructor() throws java.lang.reflect.InvocationTargetException, IllegalAccessException {
         final ServletParametersAdapter parameters = new ServletParametersAdapter();
-        assertEquals(parameters, new HttpCommandParser(parameters).parameters());
+        ServletParametersAdapter actual = null;
+        for (java.lang.reflect.Method m: HttpCommandParser.class.getDeclaredMethods()) {
+            System.out.println("==> " + m.getName());
+            if ("parameters" == m.getName()) {
+                m.setAccessible(true);
+                System.out.println("OK");
+                actual = (ServletParametersAdapter) m.invoke(new HttpCommandParser(parameters), new Object[0]);
+            }
+        }
+
+        assertEquals(parameters, actual);
     }
 
     @Test

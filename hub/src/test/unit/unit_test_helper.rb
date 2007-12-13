@@ -57,3 +57,14 @@ class Test::Unit::TestCase
 
 end
 
+class Object
+
+  # JRuby 1.0.2 cannot send to Java protected method.
+  # This method is a workaround using Java reflection to invoke the method
+  def send_non_public(method_name)
+    method = self.java_class.declared_instance_methods.find {|m| m.name == method_name.to_s} 
+    method.accessible = true unless method.accessible?
+    method.invoke(self.java_object)
+  end
+  
+end
