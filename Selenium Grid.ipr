@@ -786,6 +786,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="TestNG">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/demo/lib/testng-5.7-jdk15.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

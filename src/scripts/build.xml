@@ -3,6 +3,8 @@
   <description>Selenium Grid Distribution</description>
   <property name="version" value="0.9"/>
 
+  <taskdef resource="testngtasks" classpath="${basedir}/lib/testng-5.7-jdk15.jar"/>
+  
   <path id="remote-control.classpath">
     <fileset dir="${basedir}/lib">
       <include name="selenium-server-*.jar"/>
@@ -80,27 +82,68 @@
   </target>
   
   <target name="run-demo-in-sequence" description="Run Selenium tests one by one">
-    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          classpathref="demo.classpath"
-          failonerror="true"/>
+    <java classpathref="demo.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
+
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+       <sysproperty key="seleniumPort" value="4444" />
+       <sysproperty key="browser" value="*chrome" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Sequence" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
+    </java>
   </target>
 
   <target name="run-demo-in-parallel" description="Run Selenium tests in parallel">
-    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          classpathref="demo.classpath"
-          failonerror="true">
-      <arg value="--parallel"/>
+    <java classpathref="demo.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
+
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="browser" value="*chrome" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Parallel" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="10"/>
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
   </target>
 
   <target name="run-demo-for-multiple-environments"
           description="Run Selenium tests in parallel for multiple environments">
-    <java classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          classpathref="demo.classpath"
-          failonerror="true">
-      <arg value="--parallel"/>
-      <arg value="--multiple-environments"/>
+    <java classpathref="demo.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
 
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="firstEnvironment" value="Firefox on Windows" />
+      <sysproperty key="secondEnvironment" value="Firefox on Windows" />
+      <sysproperty key="thirdEnvironment" value="Firefox on OS X" />
+
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Parallel For Multiple Environments" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="10"/>
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
   </target>
 

@@ -2,7 +2,7 @@
 
   <description>Selenium Grid Demo</description>
 
-  <property file="${basedir}/../project.properties" />
+  <property file="${basedir}/../project.properties"/>
   <property name="name" value="Selenium Grid Demo"/>
   <property name="artifact" value="selenium-grid-demo"/>
   <property name="version" value="SNAPSHOT"/>
@@ -12,15 +12,22 @@
   <property name="dist" location="${basedir}/target/dist"/>
 
   <path id="demo.classpath">
-    <pathelement location="${basedir}/../lib/junit-4.4.jar"/>
-    <pathelement location="${basedir}/lib/parallel-junit.jar"/>
-    <pathelement location="${basedir}/lib/selenium-java-client-driver-0.9.2.jar"/>
+    <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+    <pathelement
+        location="${basedir}/lib/selenium-java-client-driver-0.9.2.jar"/>
+    <pathelement location="${basedir}/lib/testng-5.7-jdk15.jar"/>
     <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="demo.runtime.classpath">
+    <path refid="demo.classpath"/>
+    <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+    <pathelement location="${build.output}" />
   </path>
 
   <target name="compile" description="compile the source ">
     <mkdir dir="${build.output}"/>
-    <javac srcdir="${build.src}" 
+    <javac srcdir="${build.src}"
            destdir="${build.output}"
            debug="true"
            source="1.5"
@@ -31,16 +38,20 @@
 
   <target name="test" depends="compile"/>
 
-  <target name="package" depends="compile" description="Generate the distribution">
+  <target name="package" depends="compile"
+          description="Generate the distribution">
     <mkdir dir="${dist}/lib"/>
-    <jar jarfile="${dist}/lib/selenium-grid-demo-${version}.jar" basedir="${build.output}"/>
+    <jar jarfile="${dist}/lib/selenium-grid-demo-${version}.jar"
+         basedir="${build.output}"/>
   </target>
 
-  <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
+  <target name="package-standalone" depends="package"
+          description="Package as a jar including all dependencies">
     <mkdir dir="${dist}/lib"/>
     <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
       <manifest>
-        <attribute name="Main-Class" value="com.thoughtworks.selenium.grid.hub.HubServer"/>
+        <attribute name="Main-Class"
+                   value="com.thoughtworks.selenium.grid.hub.HubServer"/>
         <attribute name="Built-By" value="ThoughtWorks and friends"/>
         <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
         <section name="common">
@@ -51,8 +62,7 @@
       </manifest>
       <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
       <zipfileset src="${basedir}/lib/selenium-java-client-driver-0.9.2.jar"/>
-      <zipfileset src="${basedir}/lib/parallel-junit.jar"/>
-      <zipfileset src="${basedir}/../lib/junit-4.4.jar"/>
+      <zipfileset src="${basedir}/lib/testng-5.7-jdk15.jar"/>
     </jar>
   </target>
 
@@ -60,28 +70,73 @@
     <delete dir="target"/>
   </target>
 
-  <target name="run-demo-in-sequence" description="Run Selenium tests one by one">
-    <java classpath="${dist}/lib/${artifact}-standalone-${version}.jar"
-          classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          failonerror="true"/>
+  <target name="run-demo-in-sequence"
+          description="Run Selenium tests one by one">
+    <java classpathref="demo.runtime.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
+
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+       <sysproperty key="seleniumPort" value="4444" />
+       <sysproperty key="browser" value="*chrome" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Sequence" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
+    </java>
   </target>
 
-  <target name="run-demo-in-parallel" description="Run Selenium tests in parallel">
-    <java classpath="${dist}/lib/${artifact}-standalone-${version}.jar"
-          classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          failonerror="true">
-      <arg value="--parallel"/>
+
+  <target name="run-demo-in-parallel"
+          description="Run Selenium tests in parallel">
+    <java classpathref="demo.runtime.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
+
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="browser" value="*chrome" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Parallel" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="10"/>
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
+
   </target>
 
   <target name="run-demo-for-multiple-environments"
           description="Run Selenium tests in parallel for multiple environments">
-    <java classpath="${dist}/lib/${artifact}-standalone-${version}.jar"
-          classname="com.thoughtworks.selenium.grid.demo.DemoTestRunner"
-          failonerror="true">
-      <arg value="--parallel"/>
-      <arg value="--multiple-environments"/>
+    <java classpathref="demo.runtime.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true"
 
+        >
+      <sysproperty key="seleniumHost" value="localhost" />
+      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="firstEnvironment" value="Firefox on Windows" />
+      <sysproperty key="secondEnvironment" value="Firefox on Windows" />
+      <sysproperty key="thirdEnvironment" value="Firefox on OS X" />
+
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Demo In Parallel For Multiple Environments" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="10"/>
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
   </target>
 
