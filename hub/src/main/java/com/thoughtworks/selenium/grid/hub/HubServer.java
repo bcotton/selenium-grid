@@ -30,6 +30,7 @@ public class HubServer {
 //        root.addHandler(new ResourceHandler());
         root.addServlet(new ServletHolder(new HubServlet()), "/selenium-server/driver/*");
         root.addServlet(new ServletHolder(new ConsoleServlet()), "/console");
+        root.addServlet(new ServletHolder(new JRubyServlet()), "/jruby_console/*");
         root.addServlet(new ServletHolder(new RegistrationServlet()), "/registration-manager/register");
         root.addServlet(new ServletHolder(new UnregistrationServlet()), "/registration-manager/unregister");
 

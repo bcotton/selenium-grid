@@ -34,7 +34,7 @@ end
 ### Test::Unit Goodness ###
 
 require 'test/unit'
-$: << File.expand_path(File.dirname(__FILE__) + "/../../../../lib/jruby/gems/mocha-0.5.5/lib")
+$: << File.expand_path(File.dirname(__FILE__) + "/../../../../lib/gems/mocha-0.5.5/lib")
 require "mocha"
 
 class Test::Unit::TestCase

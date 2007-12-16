@@ -2,7 +2,7 @@
 # Validates JRuby Installation
 #
 
-EXPECTED_JRUBY_VERSION = "1.0.1"
+EXPECTED_JRUBY_VERSION = "1.0.2"
 FORUM_URL = "http://forums.openqa.org/forum.jspa?forumID=42"
 
 unless defined? JRUBY_VERSION
@@ -18,8 +18,8 @@ unless JRUBY_VERSION == EXPECTED_JRUBY_VERSION
 end
 
 begin
-  $: << File.expand_path(File.dirname(__FILE__) + '/../../lib/mocha-0.5.5/lib')
-  require File.expand_path(File.dirname(__FILE__) + '/../../lib/mocha-0.5.5/lib/mocha')
+  $: << File.expand_path(File.dirname(__FILE__) + '/../../lib/gems/mocha-0.5.5/lib')
+  require File.expand_path(File.dirname(__FILE__) + '/../../lib/gems/mocha-0.5.5/lib/mocha')
   puts "Successfully loaded Mocha library."
 rescue
   puts <<-EOS

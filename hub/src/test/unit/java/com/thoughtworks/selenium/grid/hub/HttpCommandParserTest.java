@@ -14,38 +14,6 @@ import java.io.IOException;
 
 public class HttpCommandParserTest extends UsingClassMock {
 
-    @Test
-    public void parametersReturnsTheRequestParametersProvidedToTheConstructor() throws java.lang.reflect.InvocationTargetException, IllegalAccessException {
-        final ServletParametersAdapter parameters = new ServletParametersAdapter();
-        ServletParametersAdapter actual = null;
-        for (java.lang.reflect.Method m: HttpCommandParser.class.getDeclaredMethods()) {
-            System.out.println("==> " + m.getName());
-            if ("parameters" == m.getName()) {
-                m.setAccessible(true);
-                System.out.println("OK");
-                actual = (ServletParametersAdapter) m.invoke(new HttpCommandParser(parameters), new Object[0]);
-            }
-        }
-
-        assertEquals(parameters, actual);
-    }
-
-    @Test
-    public void returnsARemoteControlCommandWithHttpRequestQueryStringForAGenericRequest() {
-        final ServletParametersAdapter parameters;
-        final SeleneseCommand command;
-
-        parameters = new ServletParametersAdapter();
-        parameters.put("cmd", "generic");
-        parameters.put("sessionId", "1234");
-
-        command = new HttpCommandParser(parameters).parse(null);
-        assertEquals("cmd=generic&sessionId=1234", command.queryString());
-        assertEquals("1234", command.sessionId());
-
-        verifyMocks();
-    }
-
     @SuppressWarnings({"ConstantConditions"})
     @Test
     public void returnsNewBrowserSessionCommandForNewSessionRequests() {

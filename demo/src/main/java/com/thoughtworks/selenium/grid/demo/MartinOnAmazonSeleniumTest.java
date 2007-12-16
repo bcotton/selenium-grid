@@ -59,7 +59,7 @@ public class MartinOnAmazonSeleniumTest extends TestCase {
         selenium.type("twotabsearchtextbox", "refactoring");
         selenium.click("navGoButtonPanel");
         selenium.waitForPageToLoad("60000");
-        assertTrue(selenium.getLocation().startsWith("http://amazon.com/s/ref="));
+        assertTrue(selenium.getLocation().startsWith("http://www.amazon.com/s/ref="));
         selenium.click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
         selenium.waitForPageToLoad("60000");
         assertEquals("1", selenium.getValue("name=quantity"));
