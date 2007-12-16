@@ -15,13 +15,13 @@
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
   <property environment="env"/>
-  <property name="jruby.dir" value="${env.JRUBY_HOME}"/>
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
 
   <path id="jruby.classpath">
-    <fileset dir="${jruby.dir}/lib">
-      <include name="*.jar"/>
+    <fileset dir="${basedir}/../lib/jruby-1.0.2">
+      <include name="jruby.jar"/>
     </fileset>
+    <pathelement path="${basedir}/../lib/jruby-1.0.2/ruby/1.8"/>
   </path>
 
 
@@ -69,6 +69,7 @@
            source="1.5"
            target="1.5">
       <classpath refid="compile.classpath"/>
+      <classpath refid="jruby.classpath"/>
     </javac>
     <copy todir="${build.output}" verbose="true">
       <fileset dir="${build.src}" includes="**/*.html"/>
@@ -81,11 +82,6 @@
       <classpath refid="compile.classpath"/>
       <classpath refid="testing.classpath"/>
       <classpath refid="jruby.classpath"/>
-
-      <sysproperty key="jruby.base" value="${jruby.dir}"/>
-      <sysproperty key="jruby.home" value="${jruby.dir}"/>
-      <sysproperty key="jruby.script" value="jruby"/>
-      <sysproperty key="jruby.shell" value="/bin/sh"/>
 
       <arg value="-I"/>
       <arg value="${jruby.test.dir}"/>
@@ -141,6 +137,7 @@
           <attribute name="Specification-Vendor" value="ThoughtWorks"/>
         </section>
       </manifest>
+      <fileset dir="${basedir}/src/main/ruby"/>
     </jar>
   </target>
 
@@ -167,6 +164,11 @@
       <zipfileset src="${basedir}/../lib/commons-httpclient-3.0.1.jar"/>
       <zipfileset src="${basedir}/../lib/commons-codec-1.3.jar"/>
       <zipfileset src="${basedir}/../lib/commons-logging-1.0.4.jar"/>
+      <zipfileset src="${basedir}/../lib/jruby-1.0.2/jruby.jar"/>
+      <zipfileset src="${basedir}/../lib/jruby-1.0.2/backport-util-concurrent.jar"/>
+      <zipfileset src="${basedir}/../lib/jruby-1.0.2/asm-commons-2.2.3.jar"/>
+      <zipfileset src="${basedir}/../lib/jruby-1.0.2/asm-2.2.3.jar"/>
+      <fileset dir="${basedir}/../lib/jruby-1.0.2/ruby/1.8"/>
     </jar>
   </target>
 
