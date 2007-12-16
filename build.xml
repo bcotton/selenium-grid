@@ -74,6 +74,7 @@
       <fileset dir="${basedir}/remote-control/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
+      <fileset file="${basedir}/demo/lib/testng-5.7-jdk15.jar"/>
     </copy>
     <mkdir dir="${dist}/${artifact}-${version}/sample-scripts"/>
     <copy todir="${dist}/${artifact}-${version}/sample-scripts" overwrite="true">

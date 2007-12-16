@@ -1,0 +1,7 @@
+<suite name="Selenium Grid Demo" verbose="1" >
+ 
+ <test name="GT15 CRUDs- Firefox" />
+
+ <test name="GT15 CRUDs- IE" />
+
+</suite>

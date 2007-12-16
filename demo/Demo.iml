@@ -8,8 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Selenium Java Client Driver" level="project" />
-    <orderEntry type="library" name="Unit Testing" level="project" />
-    <orderEntry type="library" name="Parallel JUnit" level="project" />
+    <orderEntry type="library" name="TestNG" level="project" />
     <orderEntryProperties />
   </component>
 </module>
