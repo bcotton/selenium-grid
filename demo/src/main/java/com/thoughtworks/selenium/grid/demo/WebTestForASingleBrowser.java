@@ -20,28 +20,36 @@ import org.testng.annotations.Test;
 public class WebTestForASingleBrowser extends AmazonCommentTestBase {
 
 
-    @Parameters({"seleniumHost", "seleniumPort", "browser"})
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser.")
-    public void firstTest(String seleniumHost, int seleniumPort, String browser) throws Throwable {
-        runAmazonScenario(seleniumHost, seleniumPort, browser);
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void firstTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        runAmazonScenario();
+        closeSeleniumSession();
     }
 
-    @Parameters({"seleniumHost", "seleniumPort", "browser"})
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser.")
-    public void secondTest(String seleniumHost, int seleniumPort, String browser) throws Throwable {
-        runAmazonScenario(seleniumHost, seleniumPort, browser);
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (2).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void secondTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        runAmazonScenario();
+        closeSeleniumSession();
     }
 
-    @Parameters({"seleniumHost", "seleniumPort", "browser"})
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser.")
-    public void thirdTest(String seleniumHost, int seleniumPort, String browser) throws Throwable {
-        runAmazonScenario(seleniumHost, seleniumPort, browser);
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (3).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void thirdTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        runAmazonScenario();
+        closeSeleniumSession();
     }
 
-    @Parameters({"seleniumHost", "seleniumPort", "browser"})
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser.")
-    public void fourthTest(String seleniumHost, int seleniumPort, String browser) throws Throwable {
-        runAmazonScenario(seleniumHost, seleniumPort, browser);
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (4).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void fourthTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        runAmazonScenario();
+        closeSeleniumSession();
     }
 
 
