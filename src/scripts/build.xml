@@ -87,9 +87,11 @@
         failonerror="true"
 
         >
+      <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
-       <sysproperty key="seleniumPort" value="4444" />
-       <sysproperty key="browser" value="*chrome" />
+      <sysproperty key="seleniumPort" value="4444"/>
+      <sysproperty key="browser" value="*chrome"/>
+
       <arg value="-suitename" />
       <arg value="Selenium Grid Demo In Sequence" />
       <arg value="-d" />
@@ -105,9 +107,11 @@
         failonerror="true"
 
         >
+      <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />
       <sysproperty key="browser" value="*chrome" />
+
       <arg value="-d" />
       <arg value="${basedir}/target/reports" />
       <arg value="-suitename" />
@@ -128,6 +132,7 @@
         failonerror="true"
 
         >
+      <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />
       <sysproperty key="firstEnvironment" value="Firefox on Windows" />
@@ -143,7 +148,7 @@
       <arg value="-threadcount"/>
       <arg value="10"/>
       <arg value="-testclass"/>
-      <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
+      <arg value="com.thoughtworks.selenium.grid.demo.WebTestInvolvingMultiEnvironments"/>
     </java>
   </target>
 
