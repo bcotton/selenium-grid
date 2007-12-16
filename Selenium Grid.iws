@@ -19,11 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/build.xml" afterPath="$PROJECT_DIR$/src/scripts/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/build.xml" afterPath="$PROJECT_DIR$/demo/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/website/diagrams/Multiple Environment Demo Setup.png" afterPath="$PROJECT_DIR$/doc/website/diagrams/Multiple Environment Demo Setup.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/doc/resources/Requesting a Specific Environments.svg" afterPath="$PROJECT_DIR$/doc/resources/Requesting a Specific Environment.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/resources/Multiple Environments Demo Setup.svg" afterPath="$PROJECT_DIR$/doc/resources/Multiple Environments Demo Setup.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -296,7 +294,7 @@
       <file leaf-file-name="Selenium Grid.iws" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Selenium Grid.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="226" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.3271605">
+            <state line="21" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.3271605">
               <folding />
             </state>
           </provider>
@@ -1367,7 +1365,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Selenium Grid.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="226" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.3271605">
+        <state line="21" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.3271605">
           <folding />
         </state>
       </provider>

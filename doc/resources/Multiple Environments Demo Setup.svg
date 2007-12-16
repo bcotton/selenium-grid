@@ -13,15 +13,14 @@
    height="765"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45"
+   inkscape:version="0.45.1"
    version="1.0"
-   sodipodi:docbase="/media/Window/selenium_grid/doc/resources"
+   sodipodi:docbase="/Local/Users/Philippe/Projects/Selenium Grid/doc/resources"
    sodipodi:docname="Multiple Environments Demo Setup.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="/media/Window/selenium_grid/doc/resources/Multiple Environment Demo Setup - Small.png"
-   inkscape:export-xdpi="64.615471"
-   inkscape:export-ydpi="64.615471"
-   sodipodi:modified="TRUE">
+   inkscape:export-filename="/Local/Users/Philippe/Projects/Selenium Grid/doc/website/diagrams/Multiple Environment Demo Setup - Small.png"
+   inkscape:export-xdpi="64.63134"
+   inkscape:export-ydpi="64.63134">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -39,10 +38,10 @@
      inkscape:current-layer="layer1"
      width="990px"
      height="765px"
-     inkscape:window-width="1440"
+     inkscape:window-width="1438"
      inkscape:window-height="837"
      inkscape:window-x="0"
-     inkscape:window-y="36" />
+     inkscape:window-y="27" />
   <defs
      id="defs4">
     <marker
@@ -447,7 +446,7 @@
            style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#5a330c;fill-opacity:1;font-family:monospace"
            id="tspan6451"
            y="506.46219"
-           x="4.6329851">  -Denviroment=&quot;Firefox on Mac&quot; \</tspan><tspan
+           x="4.6329851">  -Denviroment=&quot;Firefox on OS X&quot; \</tspan><tspan
            sodipodi:role="line"
            style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#5a330c;fill-opacity:1;font-family:monospace"
            id="tspan6453"
@@ -508,7 +507,7 @@
            style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#5a330c;fill-opacity:1;font-family:monospace"
            id="tspan6475"
            y="506.46219"
-           x="4.6329851">  -Denviroment=&quot;Firefox on Mac&quot; \</tspan><tspan
+           x="4.6329851">  -Denviroment=&quot;Firefox on OS X&quot; \</tspan><tspan
            sodipodi:role="line"
            style="font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#5a330c;fill-opacity:1;font-family:monospace"
            id="tspan6477"
