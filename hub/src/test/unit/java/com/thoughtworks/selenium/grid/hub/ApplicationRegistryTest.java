@@ -7,11 +7,6 @@ import org.junit.Test;
 
 public class ApplicationRegistryTest {
 
-    @Test
-    public void registryReturnsASingletonInstance() {
-        assertSame(ApplicationRegistry.registry(), ApplicationRegistry.registry());
-    }
-
 //    @Test
 //    public void registryReturnsAValidInstance() {
 //        assertFalse(null == ApplicationRegistry.registry());
