@@ -55,19 +55,35 @@ class HttpCommandParserTest < Test::Unit::TestCase
     assert_equal "1234", command.sessionId
   end
 
-#  public void returnsTestCompleteCommandForTestCompleteRequests() {
-#      final ServletParametersAdapter parameters;
-#      final SeleneseCommand command;
-#
-#      parameters = new ServletParametersAdapter();
-#      parameters.put("cmd", "testComplete");
-#      parameters.put("sessionId", "1234");
-#
-#      command = new HttpCommandParser(parameters).parse(null);
-#      assertEquals(true, command instanceof TestCompleteCommand);
-#      assertEquals("cmd=testComplete&sessionId=1234", command.queryString());
-#      assertEquals("1234", command.sessionId());
-#  }
+  xtest "jruby broken - Clint", "execute throws command parsing exception for new browser session when environment is not known" do
+    parameters = ServletParametersAdapter.new
+    parameters.put "cmd", "getNewBrowserSession"
+    parameters.put "1", "an unknown environment name"
+    parameters.put "2", "http://openqa.org"
+    EnvironmentManager.expects(:environment).with("an unknown environment name").returns(nil)
 
+    assert_throws IOException, "should throw a CommandParsingException if session id is nil" do
+      HttpCommandParser.new(parameters).parse(environment_manager)
+    end
+  end
+
+  xtest "jruby broken - Clint", "execute throws command parsing exception for a generic selenese command when session id is nil" do
+    parameters = ServletParametersAdapter.new
+    parameters.put "cmd", "genericCommand"
+
+    assert_throws IOException, "should throw a CommandParsingException if session id is nil" do
+      HttpCommandParser.new(parameters).parse(EnvironmentManager.new)
+    end
+  end
+
+  xtest "jruby broken - Clint", "execute throws command parsing exception for test complete command when session id is nil" do
+    parameters = ServletParametersAdapter.new
+    parameters.put "cmd", "testComplete"
+
+    assert_throws IOException, "should throw a CommandParsingException if session id is nil" do
+      HttpCommandParser.new(parameters).parse(EnvironmentManager.new)
+    end
+
+  end
 
 end

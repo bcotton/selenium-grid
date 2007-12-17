@@ -44,6 +44,7 @@ public class HttpCommandParserTest extends UsingClassMock {
 
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForNewBrowserSessionWhenEnvironmentIsNotKnown() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
         final ServletParametersAdapter parameters;
 
@@ -60,6 +61,7 @@ public class HttpCommandParserTest extends UsingClassMock {
 
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForAGenericSeleneseCommandWhenSessionIdIsNull() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
         final ServletParametersAdapter parameters;
 
@@ -73,6 +75,7 @@ public class HttpCommandParserTest extends UsingClassMock {
 
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForTestCompleteCommandWhenSessionIdIsNull() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
         final ServletParametersAdapter parameters;
 
