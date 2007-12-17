@@ -55,6 +55,10 @@ class Test::Unit::TestCase
     end
   end
 
+  def assert_nil(actual, message=nil)
+    assert_equal nil, actual, message
+  end
+
   def assert_true(actual, message=nil)
     assert_equal true, actual, message
   end

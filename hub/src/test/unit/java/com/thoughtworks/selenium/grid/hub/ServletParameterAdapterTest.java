@@ -12,6 +12,7 @@ public class ServletParameterAdapterTest {
 
     @Test
     public void parametersAreCopiedWhenAMapIsProvidedToConstructor() {
+        // Moved to JRuby but not working yet -- Clint
         final Map<String, String[]> servletParameterMap;
 
         servletParameterMap = new HashMap<String, String[]>();
@@ -21,6 +22,7 @@ public class ServletParameterAdapterTest {
 
     @Test
     public void getReturnsOnlyTheFirstValueOfAParameter() {
+        // Moved to JRuby but not working yet -- Clint
         final Map<String, String[]> servletParameterMap;
 
         servletParameterMap = new HashMap<String, String[]>();
@@ -30,6 +32,7 @@ public class ServletParameterAdapterTest {
 
     @Test
     public void getReturnsNullWhenParameterValueIsAnEmptyArray() {
+        // Moved to JRuby but not working yet -- Clint
         final Map<String, String[]> servletParameterMap;
 
         servletParameterMap = new HashMap<String, String[]>();
@@ -39,6 +42,7 @@ public class ServletParameterAdapterTest {
 
     @Test
     public void putCanChangeAValueEventIfMapProvidedToConstructorIsFrozen() {
+        // Moved to JRuby but not working yet -- Clint
         final Map<String, String[]> servletParameterMap;
         final ServletParametersAdapter parameters;
 

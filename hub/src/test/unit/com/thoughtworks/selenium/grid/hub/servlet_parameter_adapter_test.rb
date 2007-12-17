@@ -28,21 +28,20 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
     assert_equal "cmd=testComplete&sessionId=1234", parameters.queryString
   end
 
-#  test "parameters are copied when a map is provided to constructor" do
-#    servletParameterMap = HashMap.new #<String, String[]>();
-#    servletParameterMap.put "a name", [ "a value" ]
-#    assert_equals "a value", ServletParametersAdapter.new(servletParameterMap).get("a name")
-#  end
+  xtest "jruby broken - Clint", "parameters are copied when a map is provided to constructor" do
+    servletParameterMap = HashMap.new #<String, String[]>
+    servletParameterMap.put "a name", [ "a value" ]
+    assert_equals "a value", ServletParametersAdapter.new(servletParameterMap).get("a name")
+  end
 
-  #  @Test
-#  public void getReturnsOnlyTheFirstValueOfAParameter() {
-#      final Map<String, String[]> servletParameterMap;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { "first value", "second value" });
-#      assertEquals("first value", new ServletParametersAdapter(servletParameterMap).get("a name"));
-#  }
-#
+  xtest "jruby broken - Clint", "get returns only the first value of a parameter" do
+    servlet_parameter_map = Map #<String, String[]>
+    # TODO - Clint - ph7: two servlet_param_map locals, wtf? Weird java syntax?
+    servlet_parameter_map = HashMap.new #<String, String[]>
+    servlet_parameter_map.put "a name", ["first value", "second value"]
+    assert_equal "first value", ServletParametersAdapter.new(servlet_parameter_map).get("a name")
+  end
+
   test "get returns null when parameter does not exist" do
       assert_equal nil, ServletParametersAdapter.new.get("unknown parameter")
   end
@@ -53,27 +52,22 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
     assert_equal nil, parameters.get("a name")
   end
 
-  #
-#  @Test
-#  public void getReturnsNullWhenParameterValueIsAnEmptyArray() {
-#      final Map<String, String[]> servletParameterMap;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { });
-#      assertEquals(null, new ServletParametersAdapter(servletParameterMap).get("a name"));
-#  }
-#
-#  @Test
-#  public void putCanChangeAValueEventIfMapProvidedToConstructorIsFrozen() {
-#      final Map<String, String[]> servletParameterMap;
-#      final ServletParametersAdapter parameters;
-#
-#      servletParameterMap = new HashMap<String, String[]>();
-#      servletParameterMap.put("a name", new String[] { "original value" });
-#      parameters = new ServletParametersAdapter(Collections.unmodifiableMap(servletParameterMap));
-#      parameters.put("a name", "new value");
-#      assertEquals("new value", parameters.get("a name"));
-#  }
-#
+  xtest "jruby broken - Clint", "get returns nil when parameter value is an empty array" do
+    servlet_parameter_map = Map.new #<String, String[]>
+    servlet_parameter_map = HashMap.new #<String, String[]>
+    servlet_parameter_map.put "a name", []
+    assert_nil ServletParametersAdapter.new(servlet_parameter_map).get("a name")
+  end
+
+  xtest "jruby broken - Clint", "put can change a value event if map provided to constructor is frozen" do
+    servlet_parameter_map = Map.new #<String, String[]>
+    parameters = ServletParametersAdapter.new
+
+    servlet_parameter_map = HashMap.new #<String, String[]>
+    servlet_parameter_map.put "a name", ["original value"]
+    parameters = ServletParametersAdapter.new(Collections.unmodifiable_map(servlet_parameter_map))
+    parameters.put "a name", "new value"
+    assert_equal "new value", parameters.get("a name")
+  end
 
 end
