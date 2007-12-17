@@ -1,11 +1,16 @@
 package com.thoughtworks.selenium.grid.hub;
 
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertSame;
+import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
 
 public class ApplicationRegistryTest {
+
+    @Test
+    public void somethingHappens() {
+        assertEquals(true, true);
+    }
+
 
 //    @Test
 //    public void registryReturnsAValidInstance() {

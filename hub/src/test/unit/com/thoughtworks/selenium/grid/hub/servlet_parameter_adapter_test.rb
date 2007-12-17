@@ -35,8 +35,6 @@ class ServletParameterAdapterTest < Test::Unit::TestCase
   end
 
   xtest "jruby broken - Clint", "get returns only the first value of a parameter" do
-    servlet_parameter_map = Map #<String, String[]>
-    # TODO - Clint - ph7: two servlet_param_map locals, wtf? Weird java syntax?
     servlet_parameter_map = HashMap.new #<String, String[]>
     servlet_parameter_map.put "a name", ["first value", "second value"]
     assert_equal "first value", ServletParametersAdapter.new(servlet_parameter_map).get("a name")
