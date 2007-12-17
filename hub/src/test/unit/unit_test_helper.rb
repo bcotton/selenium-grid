@@ -55,6 +55,17 @@ class Test::Unit::TestCase
     end
   end
 
+  def assert_true(actual, message=nil)
+    assert_equal true, actual, message
+  end
+
+  def self.xtest(skip_reason, test_name)
+    test_name = :"test_#{test_name.gsub(/[^\w\d]/,'_')}"
+    define_method test_name do
+      print "(#{skip_reason})"
+    end
+  end
+
 end
 
 class Object
