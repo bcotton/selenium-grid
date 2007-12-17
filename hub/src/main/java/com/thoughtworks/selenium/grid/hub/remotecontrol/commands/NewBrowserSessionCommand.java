@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class NewBrowserSessionCommand extends SeleneseCommand {
 
-    private static final Pattern SESSION_ID_PATTERN = Pattern.compile("OK,(\\d*)");
+    private static final Pattern SESSION_ID_PATTERN = Pattern.compile("OK,([^,]*)");
     private static final Log logger = LogFactory.getLog(NewBrowserSessionCommand.class);
     private final Environment environment;
 

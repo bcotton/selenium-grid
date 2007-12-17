@@ -13,8 +13,7 @@
 
   <path id="demo.classpath">
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
-    <pathelement
-        location="${basedir}/lib/selenium-java-client-driver-0.9.2.jar"/>
+    <pathelement location="${basedir}/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
     <pathelement location="${basedir}/lib/testng-5.7-jdk15.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
@@ -61,7 +60,7 @@
         </section>
       </manifest>
       <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
-      <zipfileset src="${basedir}/lib/selenium-java-client-driver-0.9.2.jar"/>
+      <zipfileset src="${basedir}/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
       <zipfileset src="${basedir}/lib/testng-5.7-jdk15.jar"/>
     </jar>
   </target>

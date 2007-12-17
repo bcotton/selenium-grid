@@ -26,6 +26,11 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
     }
 
     @Test
+    public void parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID() {
+        assertEquals("36d3cc124c8b4b4f8c53c5b600052da3", new NewBrowserSessionCommand(null, "").parseSessionId("OK,36d3cc124c8b4b4f8c53c5b600052da3"));
+    }
+
+    @Test
     public void parseSessionIdReturnsNullWhenResponseIsNotSuccessful() {
         assertEquals(null, new NewBrowserSessionCommand(null, "").parseSessionId(""));
     }
