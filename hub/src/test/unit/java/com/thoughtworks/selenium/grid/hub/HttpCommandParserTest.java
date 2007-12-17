@@ -2,7 +2,6 @@ package com.thoughtworks.selenium.grid.hub;
 
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.NewBrowserSessionCommand;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommand;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.TestCompleteCommand;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import org.jbehave.classmock.UsingClassMock;
@@ -17,6 +16,7 @@ public class HttpCommandParserTest extends UsingClassMock {
     @SuppressWarnings({"ConstantConditions"})
     @Test
     public void returnsNewBrowserSessionCommandForNewSessionRequests() {
+        // Moved to JRuby but not working yet -- Clint
         final NewBrowserSessionCommand browserSessionCommand;
         final Mock environmentManager;
         final Environment expectedEnvironment;
@@ -40,21 +40,6 @@ public class HttpCommandParserTest extends UsingClassMock {
         assertEquals(expectedEnvironment, browserSessionCommand.environment());
 
         verifyMocks();
-    }
-
-    @Test
-    public void returnsTestCompleteCommandForTestCompleteRequests() {
-        final ServletParametersAdapter parameters;
-        final SeleneseCommand command;
-
-        parameters = new ServletParametersAdapter();
-        parameters.put("cmd", "testComplete");
-        parameters.put("sessionId", "1234");
-
-        command = new HttpCommandParser(parameters).parse(null);
-        assertEquals(true, command instanceof TestCompleteCommand);
-        assertEquals("cmd=testComplete&sessionId=1234", command.queryString());
-        assertEquals("1234", command.sessionId());
     }
 
     @Test(expected = CommandParsingException.class)
