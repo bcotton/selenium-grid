@@ -21,6 +21,7 @@ public class HubServletTest extends UsingClassMock {
     
     @Test
     public void replySetContentTypeAsPlainText() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -35,6 +36,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replySetCharacterEncodingToUTF8() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -49,6 +51,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replySetStatusFromRemoteControlOnTheServletResponse() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -63,6 +66,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replyWriteRemoteControlResponseOnServletResponseAsPlainText() throws IOException {
+        // Moved to JRuby but not working yet -- Clint
         final StringWriter writer = new StringWriter(100);
         final Response remoteControlResponse;
         final Mock servletResponse;
@@ -79,6 +83,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void forwardExecuteTheSeleneseCommandOnTheAppropriateRemoteControl() throws IOException, NoSuchMethodException {
+        // Moved to JRuby but not working yet -- Clint
         final ServletParametersAdapter requestParameters;
         final Mock environmentManager;
         final Mock remoteControl;
@@ -105,6 +110,7 @@ public class HubServletTest extends UsingClassMock {
     @SuppressWarnings({"ThrowableInstanceNeverThrown"})
     @Test
     public void forwardReturnAnErrorMessageWhenACommandParsingExceptionIsThrown() throws IOException, NoSuchMethodException {
+        // Moved to JRuby but not working yet -- Clint
         final ServletParametersAdapter requestParameters;
         final Mock environmentManager;
         final Response response;
@@ -128,6 +134,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void requestParametersReturnsAdaptedRequestParameters() {
+        // Moved to JRuby but not working yet -- Clint
         final ServletParametersAdapter parameters;
         final Map<String, String[]> parameterMap;
         final HubServlet servlet;
