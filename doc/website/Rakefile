@@ -1,9 +1,17 @@
 require 'erb'
 
-OUTPUT_DIR = "../../website"
-
-task :default => :generate
+task :default => [:legacy, :generate]
 task :generate => [:render_pages, :copy_images]
+
+task :legacy do
+  OUTPUT_DIR = "../../website"
+  POSTFIX = ""
+end
+
+task :ng do
+  OUTPUT_DIR = "../../../website"
+  POSTFIX = "_ng"
+end
 
 task :copy_images do
   mkdir_p File.join(OUTPUT_DIR, "images")
@@ -11,12 +19,19 @@ task :copy_images do
   cp Dir["diagrams/*.png"], OUTPUT_DIR
 end
 
+task :copy_stylesheets do
+  mkdir_p File.join(OUTPUT_DIR, "stylesheets")
+  cp Dir["stylesheets/*"], File.join(OUTPUT_DIR, "stylesheets")
+end
+
 task :render_pages do
   mkdir_p OUTPUT_DIR
 
   cp "index.html", OUTPUT_DIR
-  standard_layout = IO.readlines("layout.html").join(" ")
-  document_layout = IO.readlines("document_layout.html").join(" ")
+  home_layout = IO.readlines("home_layout#{POSTFIX}.html").join(" ")
+  standard_layout = IO.readlines("layout#{POSTFIX}.html").join(" ")
+  document_layout = IO.readlines("document_layout#{POSTFIX}.html").join(" ")
+  render_page('index', "Welcome", home_layout)
   render_page('get_started', "Get Started!", standard_layout)
   render_page('run_the_demo', "Run the Demo", document_layout)
   render_page('how_it_works', "How it Works", document_layout)
@@ -24,7 +39,6 @@ task :render_pages do
   render_page('participate', "Participate!", standard_layout)
   render_page('hack', "Hack the Grid!", standard_layout)
 end
-
 
 def render_page(page, title, layout)
   raw_content = IO.readlines("#{page}.html").join("")
