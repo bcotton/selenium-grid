@@ -449,7 +449,7 @@
            id="tspan5691"
            x="5.2934942"
            y="172.70174"
-           sodipodi:role="line">* No change required. </tspan><tspan
+           sodipodi:role="line">* No change required </tspan><tspan
            id="tspan5697"
            x="5.2934942"
            y="187.70174"
@@ -465,7 +465,7 @@
            id="tspan3741"
            x="5.2934942"
            y="232.70174"
-           sodipodi:role="line">   to take advantage of the grid.</tspan></text>
+           sodipodi:role="line">   to take advantage of the grid</tspan></text>
     </g>
     <g
        id="g2541"
@@ -489,7 +489,7 @@
            x="648.70544"
            y="62.795685"
            id="tspan2533"
-           sodipodi:role="line">* Unique entry point for selenium tests.</tspan><tspan
+           sodipodi:role="line">* Unique entry point for Selenium tests</tspan><tspan
            x="648.70544"
            y="77.795685"
            sodipodi:role="line"
@@ -501,7 +501,7 @@
            x="648.70544"
            y="107.79568"
            sodipodi:role="line"
-           id="tspan2551">* You typically run multiple remote controls on per machine</tspan></text>
+           id="tspan2551">* Run multiple remote controls per machine (typically)</tspan></text>
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
