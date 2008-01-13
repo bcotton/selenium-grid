@@ -45,6 +45,7 @@
 
   </target>
 
+  <target name="ci" depends="dist" description="Continuous Integration Loop"/>
   <target name="clean" description="clean all generated artifacts">
     <delete dir="${dist}"/>
     <ant target="clean" antfile="build.xml" dir="core"/>
