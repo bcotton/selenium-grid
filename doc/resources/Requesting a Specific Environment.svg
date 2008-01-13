@@ -554,11 +554,11 @@
            sodipodi:role="line"
            id="tspan3490"
            y="57.294182"
-           x="662.46948">* Keep track on which environment is provided by each</tspan><tspan
+           x="662.46948">* Keep track of which environment is provided by each</tspan><tspan
            sodipodi:role="line"
            id="tspan3492"
            y="72.294182"
-           x="662.46948">   remote control.</tspan><tspan
+           x="662.46948">   remote control</tspan><tspan
            sodipodi:role="line"
            id="tspan3494"
            y="87.294182"
@@ -570,7 +570,7 @@
            sodipodi:role="line"
            id="tspan3498"
            y="117.29418"
-           x="662.46948">   the one requested by the selenium test.</tspan></text>
+           x="662.46948">   the one requested by the Selenium test</tspan></text>
     </g>
   </g>
 </svg>
