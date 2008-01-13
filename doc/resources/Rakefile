@@ -1,0 +1,8 @@
+def export_png(file, width, postfix)
+ sh "inkscape --export-png=\"../website/diagrams/#{file}#{postfix}.png\" --export-width=#{width} --export-background-opacity=0 \"#{file}.svg\""
+end
+
+task :export do
+  export_png "Requesting a Specific Environment", 650, " - Small"
+  export_png "Requesting a Specific Environment", 988, ""
+end
