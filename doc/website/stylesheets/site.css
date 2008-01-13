@@ -1,53 +1,12 @@
-  <style type="text/css">
    body {
-     font: 11pt "Lucida Grande", sans-serif;
+     font: 11pt "Lucida Grande", "Verdana", sans-serif;
    }
-
-   /* 
-    * Cosmetic Workarounds
-    */
-   
-   div#header {
-     background: none;
-   }
-
-   div#content {
-     padding: 0;
-     margin: 0;
-     border: 0;
-     background: none;
-   }
-
-   div#content h1.first {
-     display: none;
-   }
-   
-   #footer {
-     background-color:#a20017;
-     color: #eeeeee;
-   }
-
-   #footer li a {
-     color: #eeeeee;
-   }
-   
-   div#menu {
-     display: none;
-   }
-      
-   div#actual-content {
-     padding: 4em 3em 2em 3em;
-   }
-
-   /* 
-    * Document
-    */
 
    div#actual-content div.header {
      text-align: center;
      font: bold 2em "Chalkboard", "Georgia", serif;
      padding: 0;
-     margin: 0 0 2.5em 0;
+     margin: 1em 0 2.5em 0;
    }
 
    div#actual-content div.header a {
@@ -95,5 +54,3 @@
     border: thin solid #9c9c4e;
   }
     
-
- </style> 
