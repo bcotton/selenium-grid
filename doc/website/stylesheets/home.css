@@ -1,52 +1,7 @@
-  <style type="text/css">
-   /* 
-    * Cosmetic Workarounds
-    */
-
    body {
-     font: 11pt "Lucida Grande", sans-serif;
+     font: 12pt "Lucida Grande", "Verdana", sans-serif;
    }
 
-   div#header {
-     background: none;
-   }
-
-   div#content {
-     padding: 0;
-     margin: 0 0;
-     border: 0;
-     background: none;
-   }
-   
-   div#content h1.first {
-     display: none;
-   }
-
-   #footer {
-     background-color:#a20017;
-     color: #eeeeee;
-   }
-
-   #footer li a {
-     color: #eeeeee;
-   }
-
-   div#menu {
-     display: none;
-   }
-      
-   div#actual-content {
-     padding: 4em 3em 2em 3em;
-   }
-
-   div#actual-content {
-     padding-top: 2em;
-   }
-
-   /*
-    * Document
-    */
-       
    div#actual-content h2 {
      background: none;
      border: 0;
@@ -83,7 +38,7 @@
 
    table#start-tracks tr td a {
      color: #0E3062;
-     font-size: 2em;
+     font-size: 1.6em;
    }
 
    div#actual-content div.section {
@@ -114,4 +69,3 @@
    div#actual-content div.section div.content p {
      margin-top: .3em;
    }
- </style> 

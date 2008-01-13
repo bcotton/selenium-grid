@@ -1,6 +1,7 @@
 require 'erb'
 
 task :default => [:legacy, :generate]
+task :ng => [:new, :copy_stylesheets, :generate]
 task :generate => [:render_pages, :copy_images]
 
 task :legacy do
@@ -8,7 +9,7 @@ task :legacy do
   POSTFIX = ""
 end
 
-task :ng do
+task :new do
   OUTPUT_DIR = "../../../website"
   POSTFIX = "_ng"
 end
