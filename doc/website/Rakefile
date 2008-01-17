@@ -2,7 +2,7 @@ require 'erb'
 
 task :default => [:legacy, :generate]
 task :ng => [:new, :copy_stylesheets, :generate]
-task :generate => [:render_pages, :copy_images]
+task :generate => [:render_pages, :copy_images, :copy_javascripts ]
 
 task :legacy do
   OUTPUT_DIR = "../../website"
@@ -23,6 +23,11 @@ end
 task :copy_stylesheets do
   mkdir_p File.join(OUTPUT_DIR, "stylesheets")
   cp Dir["stylesheets/*"], File.join(OUTPUT_DIR, "stylesheets")
+end
+
+task :copy_javascripts do
+  mkdir_p File.join(OUTPUT_DIR, "javascripts")
+  cp Dir["javascripts/*"], File.join(OUTPUT_DIR, "javascripts")
 end
 
 task :render_pages do
