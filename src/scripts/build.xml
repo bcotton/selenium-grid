@@ -64,7 +64,8 @@
   <property name="host" value="localhost"/>
   <property name="port" value="5555"/>
   <property name="hubURL" value="http://localhost:4444"/>
-  <property name="environment" value="*chrome"/>  
+  <property name="environment" value="*chrome"/>
+  <property name="seleniumArgs" value=""/>  
   <target name="launch-remote-control" description="Launch A Remote Control">
     <java classpathref="remote-control.classpath"
           classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer"
@@ -78,6 +79,7 @@
       <arg value="${hubURL}"/>
       <arg value="-env"/>
       <arg value="${environment}"/>
+      <arg line="${seleniumArgs}"/>      
     </java>
   </target>
   
