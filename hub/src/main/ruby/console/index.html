@@ -70,12 +70,13 @@
   <div class="section">
     <h2>Available Remote Controls</h2>
       <table>
-        <tr><th>Host</th> <th>Port</th> <th>Environment</th></tr>
+        <tr><th>Host</th> <th>Port</th> <th>Environment</th><th></th></tr>
       <% registry.remote_control_pool.available_remote_controls.each do |remote_control| %>
         <tr>
           <td><%= remote_control.host %></td>
           <td><%= remote_control.port %></td>
           <td><%= remote_control.environment %></td>
+          <td></td>
         </tr>
       <% end %>
     </table>

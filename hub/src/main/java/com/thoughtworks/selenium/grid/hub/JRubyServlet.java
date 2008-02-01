@@ -17,16 +17,16 @@ import java.io.InputStream;
 
 public class JRubyServlet extends javax.servlet.http.HttpServlet {
     public static Ruby jrubyRuntime = Ruby.getDefaultInstance();
-    private RubyProc rubyProc;
 
 
     public void init() throws ServletException {
-        // Should cache proc for production
     }
 
 
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        final RubyProc rubyProc;
+
         rubyProc = parseRubyScript();  // Cool for development
         rubyProc.call(new IRubyObject[]{wrap(request), wrap(response)});
     }
@@ -43,7 +43,7 @@ public class JRubyServlet extends javax.servlet.http.HttpServlet {
             rubyCode = readFromClasspath("dispatcher.rb");
             scope = jrubyRuntime.getCurrentContext().getCurrentScope();
             Node script = jrubyRuntime.parse(rubyCode, rubyFile.toExternalForm(), scope, 0);
-            return rubyProc = (org.jruby.RubyProc) jrubyRuntime.eval(script);
+            return (org.jruby.RubyProc) jrubyRuntime.eval(script);
         } finally {
             close(stream);
         }

@@ -12,7 +12,6 @@
   <property name="dist" location="${basedir}/target/dist"/>
 
   <path id="demo.classpath">
-    <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${basedir}/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
     <pathelement location="${basedir}/lib/testng-5.7-jdk15.jar"/>
     <pathelement path="${java.class.path}/"/>
@@ -20,7 +19,7 @@
 
   <path id="demo.runtime.classpath">
     <path refid="demo.classpath"/>
-    <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+    <pathelement location="${basedir}/lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${build.output}" />
   </path>
 
@@ -76,6 +75,7 @@
         failonerror="true"
 
         >
+      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
        <sysproperty key="seleniumPort" value="4444" />
@@ -94,9 +94,9 @@
           description="Run Selenium tests in parallel">
     <java classpathref="demo.runtime.classpath"
         classname="org.testng.TestNG"
-        failonerror="true"
+        failonerror="true">
 
-        >
+      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />
@@ -122,6 +122,7 @@
         failonerror="true"
 
         >
+      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />

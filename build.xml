@@ -52,6 +52,7 @@
     <ant target="clean" antfile="build.xml" dir="hub"/>
     <ant target="clean" antfile="build.xml" dir="remote-control"/>
     <ant target="clean" antfile="build.xml" dir="demo"/>
+    <delete dir="target"/>
   </target>
 
   <target name="build" description="Package subprojects">
@@ -76,6 +77,7 @@
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
       <fileset file="${basedir}/demo/lib/testng-5.7-jdk15.jar"/>
+      <fileset file="${basedir}/demo/lib/demo.policy"/>
     </copy>
     <mkdir dir="${dist}/${artifact}-${version}/sample-scripts"/>
     <copy todir="${dist}/${artifact}-${version}/sample-scripts" overwrite="true">
