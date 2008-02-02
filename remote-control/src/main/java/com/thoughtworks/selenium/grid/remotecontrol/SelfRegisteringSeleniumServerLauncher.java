@@ -8,7 +8,7 @@ import java.net.ConnectException;
 /**
  * Launch a Self-registering Selenium Remote Control.
  *
- * @author: Philippe Hanrigou
+ * @author Philippe Hanrigou
  */
 public class SelfRegisteringSeleniumServerLauncher {
 

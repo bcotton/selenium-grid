@@ -9,7 +9,7 @@ import java.io.IOException;
 /*
  * Selenium Remote Control that registers/unregisters itself to a central Hub when it starts/stops.
  *
- * @author: Philippe Hanrigou
+ * @author Philippe Hanrigou
  */
 public class SelfRegisteringSeleniumServer {
 
