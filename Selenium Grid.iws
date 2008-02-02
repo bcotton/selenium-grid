@@ -19,25 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/remote-control/src/test/unit/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringSeleniumServerTest.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/HubRequest.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/HubRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid/remotecontrol/hub_request_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringSeleniumServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/remote-control/src/test/unit/java/com/thoughtworks/selenium/grid/remotecontrol/HubRequestTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/build.xml" afterPath="$PROJECT_DIR$/remote-control/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/all_tests.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/unit_test_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/Remote Control.iml" afterPath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/remote-control/src/test/unit/java/com/thoughtworks/selenium/grid/remotecontrol/RegistrationRequestTest.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid/remotecontrol/unregistration_request_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid/remotecontrol/registration_request_test.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/remote-control/src/test/unit/java/com/thoughtworks/selenium/grid/remotecontrol/UnregistrationRequestTest.java" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid/remotecontrol" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/unit/com/thoughtworks/selenium/grid/remotecontrol/self_registrering_selenium_server_test.rb" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -214,10 +197,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SelfRegisteringSeleniumServer.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SelfRegisteringSeleniumServer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringSeleniumServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="23" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.6009693">
+            <state line="18" column="28" selection-start="578" selection-end="578" vertical-scroll-proportion="0.2714055">
               <folding />
             </state>
           </provider>
@@ -261,7 +244,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="90" column="2" selection-start="3108" selection-end="3108" vertical-scroll-proportion="0.5136054">
@@ -1456,16 +1439,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringSeleniumServer.java">
+    <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="23" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.6009693">
+        <state line="90" column="2" selection-start="3108" selection-end="3108" vertical-scroll-proportion="0.5136054">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
+    <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringSeleniumServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="2" selection-start="3108" selection-end="3108" vertical-scroll-proportion="0.5136054">
+        <state line="18" column="28" selection-start="578" selection-end="578" vertical-scroll-proportion="0.2714055">
           <folding />
         </state>
       </provider>
