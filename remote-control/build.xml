@@ -106,7 +106,7 @@
     <jar jarfile="${dist}/lib/${artifact}-${version}.jar" basedir="${build.output}">
       <manifest>
         <attribute name="Main-Class"
-                   value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer"/>
+                   value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServerLauncher"/>
         <attribute name="Built-By" value="ThoughtWorks and friends"/>
         <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
         <section name="common">
@@ -124,7 +124,7 @@
     <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
       <manifest>
         <attribute name="Main-Class"
-                   value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer"/>
+                   value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServerLauncher"/>
         <attribute name="Built-By" value="ThoughtWorks and friends"/>
         <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
         <section name="common">
@@ -154,7 +154,7 @@
   <property name="seleniumArgs" value=""/>
   <target name="run" description="Launch a remote control">
     <java classpathref="runtime.classpath"
-          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer"
+          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServerLauncher"
           fork="true"
           failonerror="true">
       <arg value="-port"/>

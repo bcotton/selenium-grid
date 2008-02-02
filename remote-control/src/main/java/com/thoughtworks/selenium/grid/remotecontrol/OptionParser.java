@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
+ * Basic option parser for Self-Registering Selenium Remote Control.
  *
  * @author: Philippe Hanrigou
  */
