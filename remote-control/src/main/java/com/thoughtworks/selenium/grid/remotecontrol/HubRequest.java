@@ -16,7 +16,7 @@ public class HubRequest {
     private final String environment;
     private final String targetURL;
 
-    protected HubRequest(String targetURL, String host, String port, String environment) {
+    public HubRequest(String targetURL, String host, String port, String environment) {
         this.environment =  environment;
         this.targetURL = targetURL;
 
@@ -30,16 +30,16 @@ public class HubRequest {
         return new HttpClient().executeMethod(postMethod);
     }
 
-    protected PostMethod postmethod() {
+    public PostMethod postMethod() {
         return postMethod;
     }
 
 
-    protected String targetURL() {
+    public String targetURL() {
         return targetURL;
     }
 
-    protected String environment() {
+    public String environment() {
         return environment;
     }
 

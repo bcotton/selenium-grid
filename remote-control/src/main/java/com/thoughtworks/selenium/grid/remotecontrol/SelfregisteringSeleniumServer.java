@@ -35,19 +35,19 @@ public class SelfRegisteringSeleniumServer {
         new UnregistrationRequest(seleniumHubURL, host, port, environment).execute();
     }
 
-    protected String hubURL() {
+    public String hubURL() {
         return seleniumHubURL;
     }
 
-    protected String environment() {
+    public String environment() {
         return environment;
     }
 
-    protected String host() {
+    public String host() {
         return host;
     }
 
-    protected String port() {
+    public String port() {
         return port;
     }
 
