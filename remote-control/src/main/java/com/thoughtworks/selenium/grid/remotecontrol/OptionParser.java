@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Basic option parser for Self-Registering Selenium Remote Control.
  *
- * @author: Philippe Hanrigou
+ * @author Philippe Hanrigou
  */
 public class OptionParser {
 
