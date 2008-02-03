@@ -18,9 +18,11 @@ import com.thoughtworks.selenium.grid.IOHelper;
 public class SimplisticHttpServer {
 
     private static final Log logger = LogFactory.getLog(SimplisticHttpServer.class);
+    private final HttpRequestProcessor requestProcessor;
     private final int port;
 
-    public SimplisticHttpServer(int port) {
+    public SimplisticHttpServer(int port, HttpRequestProcessor requestProcessor) {
+        this.requestProcessor = requestProcessor;
         this.port = port;
     }
 
@@ -32,7 +34,7 @@ public class SimplisticHttpServer {
         }
     }
 
-    public void processHttpRequest(Socket socket) throws Exception {
+    protected void processHttpRequest(Socket socket) throws Exception {
         BufferedReader reader = null;
         BufferedWriter writer = null;
 
@@ -40,7 +42,7 @@ public class SimplisticHttpServer {
         try {
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            process(Request.parse(reader)).write(writer);
+            requestProcessor.process(Request.parse(reader)).write(writer);
         } finally {
             IOHelper.close(writer);
             IOHelper.close(reader);
@@ -48,9 +50,6 @@ public class SimplisticHttpServer {
         }
     }
 
-    public Response process(Request request) {
-        return new Response("Echo");
-    }
 
 }
 

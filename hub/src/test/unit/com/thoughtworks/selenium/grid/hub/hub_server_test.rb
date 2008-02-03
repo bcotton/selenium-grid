@@ -4,7 +4,7 @@ include_class 'com.thoughtworks.selenium.grid.hub.HubServer'
 
 class HubServerTest < Test::Unit::TestCase
 
-  xtest "tests not implemented", "must do something" do
+  test "tests not implemented" do
     assert_true true
   end
 

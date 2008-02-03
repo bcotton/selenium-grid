@@ -25,19 +25,10 @@ public class IOHelper {
      */
     public static void copyStream(InputStream in, Writer out, int copyBufferSize) throws IOException {
         InputStreamReader reader = null;
-        final char[] buffer;
-        int bytesRead;
 
-        buffer = new char[copyBufferSize];
         try {
             reader = new InputStreamReader(in);
-            while (true) {
-                bytesRead = reader.read(buffer);
-                if (bytesRead < 0) {    /* End of stream */
-                    break;
-                }
-                out.write(buffer, 0, bytesRead);
-            }
+            copyStream(reader, out, copyBufferSize);
         } finally {
             close(reader);
         }
@@ -45,9 +36,34 @@ public class IOHelper {
     }
 
     /**
+     * Copy remaining stream content to another stream.
+     *
+     * @param in             Reader to copy (remaining) content from. Cannot be null.
+     * @param out            Output stream to copy content to. Cannot be null.
+     * @param copyBufferSize Size of the maximum chunk of data that will be copied in one step. A buffer a this
+     *                       size will be allocated internally so beware of the usual speed vs. memory tradeoff.
+     *                       Must be strictly positive.
+     * @throws java.io.IOException on IO error.
+     */
+    public static void copyStream(Reader in, Writer out, int copyBufferSize) throws IOException {
+        final char[] buffer;
+        int bytesRead;
+
+        buffer = new char[copyBufferSize];
+        while (in.ready()) {
+            bytesRead = in.read(buffer);
+            if (bytesRead < 0) {    /* End of stream */
+                break;
+            }
+            out.write(buffer, 0, bytesRead);
+        }
+        out.flush();
+    }
+
+    /**
      * Safely close an input stream  without bothering about null or IOExceptions.
      *
-     * @param is  InputStream to close. Can be null.
+     * @param is InputStream to close. Can be null.
      */
     public static void close(InputStream is) {
         if (null != is) {

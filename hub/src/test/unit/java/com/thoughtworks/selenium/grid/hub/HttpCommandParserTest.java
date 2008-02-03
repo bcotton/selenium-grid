@@ -16,14 +16,13 @@ public class HttpCommandParserTest extends UsingClassMock {
     @SuppressWarnings({"ConstantConditions"})
     @Test
     public void returnsNewBrowserSessionCommandForNewSessionRequests() {
-        // Moved to JRuby but not working yet -- Clint
         final NewBrowserSessionCommand browserSessionCommand;
         final Mock environmentManager;
         final Environment expectedEnvironment;
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
         final SeleneseCommand command;
 
-        parameters = new ServletParametersAdapter();
+        parameters = new HttpParameters();
         parameters.put("cmd", "getNewBrowserSession");
         parameters.put("1", "an environment name");
         parameters.put("2", "http://openqa.org");
@@ -37,18 +36,23 @@ public class HttpCommandParserTest extends UsingClassMock {
         assertTrue(browserSessionCommand.queryString().contains("cmd=getNewBrowserSession"));
         assertTrue(browserSessionCommand.queryString().contains("1=aBrowser"));
         assertTrue(browserSessionCommand.queryString().contains("2=http%3A%2F%2Fopenqa.org"));
+
+        assertEquals("getNewBrowserSession", browserSessionCommand.parameters().get("cmd"));
+        assertEquals("aBrowser", browserSessionCommand.parameters().get("1"));
+        assertEquals("http://openqa.org", browserSessionCommand.parameters().get("2"));
+
         assertEquals(expectedEnvironment, browserSessionCommand.environment());
 
         verifyMocks();
     }
 
+    
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForNewBrowserSessionWhenEnvironmentIsNotKnown() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
 
-        parameters = new ServletParametersAdapter();
+        parameters = new HttpParameters();
         parameters.put("cmd", "getNewBrowserSession");
         parameters.put("1", "an unknown environment name");
         parameters.put("2", "http://openqa.org");
@@ -61,11 +65,10 @@ public class HttpCommandParserTest extends UsingClassMock {
 
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForAGenericSeleneseCommandWhenSessionIdIsNull() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
 
-        parameters = new ServletParametersAdapter();
+        parameters = new HttpParameters();
         parameters.put("cmd", "genericCommand");
         environmentManager = mock(EnvironmentManager.class);
 
@@ -75,11 +78,10 @@ public class HttpCommandParserTest extends UsingClassMock {
 
     @Test(expected = CommandParsingException.class)
     public void executeThrowsCommandParsingExceptionForTestCompleteCommandWhenSessionIdIsNull() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Mock environmentManager;
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
 
-        parameters = new ServletParametersAdapter();
+        parameters = new HttpParameters();
         parameters.put("cmd", "testComplete");
         environmentManager = mock(EnvironmentManager.class);
 

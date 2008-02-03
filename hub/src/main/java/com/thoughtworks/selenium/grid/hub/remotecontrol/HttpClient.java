@@ -1,10 +1,14 @@
 package com.thoughtworks.selenium.grid.hub.remotecontrol;
 
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
+
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
 
 /**
  * Invoke HTTP GET requests and gather status code and text body for the response.
@@ -25,10 +29,25 @@ public class HttpClient {
     }
 
     public Response get(String url) throws IOException {
-        return get(new GetMethod(url));
+        return request(new GetMethod(url));
     }
 
-    public Response get(GetMethod method) throws IOException {
+    public Response post(String url, HttpParameters parameters) throws IOException {
+        return request(buildPostMethod(url, parameters));
+    }
+
+    protected PostMethod buildPostMethod(String url, HttpParameters parameters) {
+        final PostMethod postMethod;
+
+        postMethod = new PostMethod(url);
+        for (String name : parameters.names()) {
+            System.out.println(">>>>> " + name + " -> " + parameters.get(name));
+            postMethod.setParameter(name, parameters.get(name));
+        }
+        return postMethod;
+    }
+
+    protected Response request(HttpMethod method) throws IOException {
         final int statusCode;
         final String body;
 
