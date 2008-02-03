@@ -18,12 +18,12 @@ public class SeleneseCommandTest extends UsingClassMock {
     @Test
     public void parametersReturnsTheParametersProvidedToConstructor() {
         HttpParameters theParameters = new HttpParameters();
-        assertEquals(theParameters, new SeleneseCommand("", null, theParameters).parameters());
+        assertEquals(theParameters, new SeleneseCommand("", theParameters).parameters());
     }
 
     @Test
     public void sessionIdReturnsTheSessionIdProvidedToConstructor() {
-        assertEquals("a session id", new SeleneseCommand("a session id", "", null).sessionId());
+        assertEquals("a session id", new SeleneseCommand("a session id", null).sessionId());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class SeleneseCommandTest extends UsingClassMock {
         final Response expectedResponse;
         final Mock pool;
 
-        command = new SeleneseCommand("a session id", "a query", new HttpParameters());
+        command = new SeleneseCommand("a session id", new HttpParameters());
         expectedResponse = new Response(0, "");
         remoteControl = mock(RemoteControlProxy.class);
         pool = mock(RemoteControlPool.class);
@@ -51,7 +51,7 @@ public class SeleneseCommandTest extends UsingClassMock {
 
         parameters = new HttpParameters();
         parameters.put("foo", "bar");
-        response = new SeleneseCommand(null, null, parameters).execute(null);
+        response = new SeleneseCommand(null, parameters).execute(null);
         assertEquals("ERROR: Selenium Driver error: No sessionId provided for command 'foo=bar'", response.body());
     }
 

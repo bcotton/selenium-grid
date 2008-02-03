@@ -31,11 +31,11 @@ public class HttpCommandParser {
                 throw new CommandParsingException("ERROR: Unknown environment '" + environmentName + "'");
             }
             parameters.put("1", environment.browser());
-            return new NewBrowserSessionCommand(environment, parameters.queryString(), parameters);
+            return new NewBrowserSessionCommand(environment, parameters);
         } else if (command.equals(TEST_COMPLETE)) {
-            return new TestCompleteCommand(retrieveSessionId(parameters), parameters.queryString(), parameters);
+            return new TestCompleteCommand(retrieveSessionId(parameters), parameters);
         } else {
-            return new SeleneseCommand(retrieveSessionId(parameters), parameters.queryString(), parameters);
+            return new SeleneseCommand(retrieveSessionId(parameters), parameters);
         }
     }
 

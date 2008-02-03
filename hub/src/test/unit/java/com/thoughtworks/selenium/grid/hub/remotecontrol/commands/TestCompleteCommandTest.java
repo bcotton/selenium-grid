@@ -21,7 +21,7 @@ public class TestCompleteCommandTest extends UsingClassMock {
         final Mock remoteControl;
         final Mock pool;
 
-        command = new TestCompleteCommand("a session id", null, new HttpParameters());
+        command = new TestCompleteCommand("a session id", new HttpParameters());
         expectedResponse = new Response(0, "");
         pool = mock(RemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
@@ -40,7 +40,7 @@ public class TestCompleteCommandTest extends UsingClassMock {
         final Mock remoteControl;
         final Mock pool;
         
-        command = new TestCompleteCommand("a session id", null, new HttpParameters());
+        command = new TestCompleteCommand("a session id", new HttpParameters());
         pool = mock(RemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
         pool.expects("retrieve").with("a session id").will(returnValue(remoteControl));

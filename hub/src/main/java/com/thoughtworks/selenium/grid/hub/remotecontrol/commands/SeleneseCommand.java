@@ -15,7 +15,7 @@ public class SeleneseCommand {
     private final String sessionId;
     private final HttpParameters parameters;
 
-    public SeleneseCommand(String sessionId, String queryString, HttpParameters parameters) {
+    public SeleneseCommand(String sessionId, HttpParameters parameters) {
         this.sessionId = sessionId;
         this.parameters = parameters;
     }
