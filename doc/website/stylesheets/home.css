@@ -2,7 +2,7 @@
      font: 12pt "Lucida Grande", "Verdana", sans-serif;
    }
 
-   div#actual-content h2 {
+   h2 {
      background: none;
      border: 0;
      color:black;
@@ -28,12 +28,34 @@
 
    table#start-tracks {
      margin-bottom: 3em;
+     border-spacing: .6em 1em;
    }
       
    table#start-tracks tr td {
      padding: 2em 2em;
      width: 12em;
      text-align: center;
+
+	 -moz-border-radius: .5em;
+	 -webkit-border-radius: .5em;
+	 border-radius: .5em;
+	 -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+   }
+
+   table#start-tracks tr td#get-started {
+	background: #78BA91;
+   }
+
+   table#start-tracks tr td#get-better {
+	background: #7389AE;
+   }
+
+   table#start-tracks tr td#give-feedback {
+	background: #C17878;
+   }
+
+   table#start-tracks tr td#participate {
+	background: #A87AAD;
    }
 
    table#start-tracks tr td a {
@@ -41,12 +63,12 @@
      font-size: 1.6em;
    }
 
-   div#actual-content div.section {
+   div.section {
      clear: both;
      margin: 0;
    }
          
-   div#actual-content div.section h2 {
+   div.section h2 {
      float: left;
      width: 15%;
      border: 0;
@@ -57,7 +79,7 @@
      background: none;
    }
 
-   div#actual-content div.section div.content {
+   div.section div.content {
      float: left;
      width: 70%;
      border: 0;
@@ -66,6 +88,6 @@
      font-size: .9em;
    }
 
-   div#actual-content div.section div.content p {
+   div.section div.content p {
      margin-top: .3em;
    }
