@@ -1,3 +1,16 @@
+<html>
+  <head>
+    <title>Selenium Grid - How it Works</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/site.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/document.css" />
+  </head>
+<body>
+ 
+  <div class="header">
+    <a href="index.html"><img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/></a>
+    How it Works
+  </div>
+        
    
     <p>
       To understand Selenium Grid you first need to understand how the 
@@ -21,15 +34,18 @@
 
 <p>You drive the key piece in charge of controlling the browser, the Selenium Remote Control, by sending HTTP requests following a specific protocol (called Selenese). Therefore, basically all that a Selenium test does, is to target a specific Selenium Remote Control and to send it HTTP requests (through a higher level client API). </p>
 
-<p><a href="Traditional%20Selenium%20Setup.png" title="Click for larger image"><img src="Traditional%20Selenium%20Setup%20-%20Small.png" alt=""/></a></p>
+<p>
+  <a href="diagrams/Traditional%20Selenium%20Setup.png" title="Click for larger image">
+  <img src="diagrams/Traditional%20Selenium%20Setup%20-%20Small.png" alt=""/></a>
+</p>
 
 <p>This setup works great for a few tests, but as your test suite starts getting bigger, its limitations become clearer: </p>
 
-<ul>
-<li>The Selenium remote control is quite slow at driving the browser. Therefore, unless your application or your network is especially slow, the remote control/browser pair will end up being the bottleneck of your test suite. </li>
-<li>You can only run a limited number of concurrent tests on the same remote control before seriously impacting its stability. Pratically speaking, launching more than 6 browsers on the same Selenium Remote Control is not advisable. The limitations are even more drastic for Internet Explorer. </li>
-<li>Your tests can target multiple Selenium Remote Controls to work around the limitation on the number of parallel tests that you can run on a single remote control. Nevertheless that does not scale very well. It can easily be done at the continuous integration build level (one for Internet Explorer, one for Firefox, one for Safari). However, allocating a Selenium Remote Control to a specific test quickly becomes a nightmare if you want to run your selenium tests in a highly parallelized fashion. Your tests also become way too aware of the Selenium Remote Control infrastructure, which makes it difficult to evolve your infrastructure transparently. </li>
-</ul>
+  <ul>
+    <li>The Selenium remote control is quite slow at driving the browser. Therefore, unless your application or your network is especially slow, the remote control/browser pair will end up being the bottleneck of your test suite. </li>
+    <li>You can only run a limited number of concurrent tests on the same remote control before seriously impacting its stability. Pratically speaking, launching more than 6 browsers on the same Selenium Remote Control is not advisable. The limitations are even more drastic for Internet Explorer. </li>
+    <li>Your tests can target multiple Selenium Remote Controls to work around the limitation on the number of parallel tests that you can run on a single remote control. Nevertheless that does not scale very well. It can easily be done at the continuous integration build level (one for Internet Explorer, one for Firefox, one for Safari). However, allocating a Selenium Remote Control to a specific test quickly becomes a nightmare if you want to run your selenium tests in a highly parallelized fashion. Your tests also become way too aware of the Selenium Remote Control infrastructure, which makes it difficult to evolve your infrastructure transparently. </li>
+  </ul>
 
 <p>Due to all these limitations, Selenium tests typically run in sequence or are only mildly parallelized. That makes for test suites that take from half an hour to multiple hours to run. Not ideal, especially if you strive for Agile processes emphasizing a quick feedback loop. </p>
 
@@ -58,7 +74,10 @@
 <li>When a new test starts, the Hub puts its first request on hold if there is no available Remote Control in the grid providing the appropriate capabilities. As soon as a suitable Remote Control becomes available, the Hub will serve the request. For the whole time, the tests do not have to be aware of what is happening within the grid; it is just waiting for an HTTP response to come back. </li>
 </ul>
 
-<p><a href="Selenium%20Grid%20Setup.png" title="Click for larger image"><img src="Selenium%20Grid%20Setup%20-%20Small.png" alt=""/></a></p>
+  <p>
+    <a href="diagrams/Selenium%20Grid%20Setup.png" title="Click for larger image">
+	<img src="diagrams/Selenium%20Grid%20Setup%20-%20Small.png" alt=""/></a>
+  </p>
 
 <p>Of course to really take advantage of the Selenium Grid, you need to run your tests in parallel. If you are writing your Selenium tests in Java, you can leverage <a href="http://testng.org/doc/documentation-main.html#parallel-running">TestNG parallel runs</a> or <a href="https://parallel-junit.dev.java.net/">Parallel JUnit</a>. If you prefer to write your Selenium tests in Ruby, you might want to look into <a href="http://deep-test.rubyforge.org/">DeepTest</a> or spawn multiple processes. Chances are that your favorite programming language and development platform already have a solution. </p>
 
@@ -70,7 +89,10 @@
 
 <p>Either way, you can make a Selenium Grid aware of the environments you care about. The Selenium Hub will then ensure that a test runs only on the Selenium Remote Controls providing the requested environment. </p>
 
-<p><a href="Requesting%20a%20Specific%20Environment.png" title="Click for larger image"><img src="Requesting%20a%20Specific%20Environment%20-%20Small.png" alt=""/></a></p>
+<p>
+  <a href="diagrams/Requesting%20a%20Specific%20Environment.png" title="Click for larger image">
+  <img src="diagrams/Requesting%20a%20Specific%20Environment%20-%20Small.png" alt=""/></a>
+</p>
 
 <p>The way it works is that Selenium Grid instruments the traditional Selenium Remote Controls so that they register themselves to the Hub when they start. When they do so they can also describe which environment they are providing, suppose Firefox on Windows. </p>
 
@@ -88,3 +110,5 @@
 
 <p>To define you own environments, edit the <code>grid_configuration.yml</code> file at the root of the Selenium Grid binary distribution. </p></div>
 
+</body>
+</html>
