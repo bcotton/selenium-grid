@@ -31,7 +31,7 @@ public class HubServlet extends HttpServlet {
     }
 
     protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
         final Response remoteControlResponse;
 
         ApplicationRegistry registry = ApplicationRegistry.registry();
@@ -40,7 +40,7 @@ public class HubServlet extends HttpServlet {
         reply(response, remoteControlResponse);
     }
 
-    protected Response forward(ServletParametersAdapter parameters, DynamicRemoteControlPool pool, EnvironmentManager environmentManager) throws IOException {
+    protected Response forward(HttpParameters parameters, DynamicRemoteControlPool pool, EnvironmentManager environmentManager) throws IOException {
         final SeleneseCommand command;
         final Response response;
 
@@ -65,9 +65,9 @@ public class HubServlet extends HttpServlet {
     }
 
     @SuppressWarnings({"unchecked"})
-    protected ServletParametersAdapter requestParameters(HttpServletRequest request) {
-        final ServletParametersAdapter parameters;
-        parameters = new ServletParametersAdapter(request.getParameterMap());
+    protected HttpParameters requestParameters(HttpServletRequest request) {
+        final HttpParameters parameters;
+        parameters = new HttpParameters(request.getParameterMap());
         return parameters;
     }
 

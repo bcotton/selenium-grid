@@ -3,6 +3,7 @@ package com.thoughtworks.selenium.grid.hub.remotecontrol.commands;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.thoughtworks.selenium.grid.hub.Environment;
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.Response;
@@ -21,8 +22,8 @@ public class NewBrowserSessionCommand extends SeleneseCommand {
     private static final Log logger = LogFactory.getLog(NewBrowserSessionCommand.class);
     private final Environment environment;
 
-    public NewBrowserSessionCommand(Environment environment, String queryString) {
-        super(null, queryString);
+    public NewBrowserSessionCommand(Environment environment, String queryString, HttpParameters parameters) {
+        super(null, queryString, parameters);
         this.environment = environment;
     }
 
@@ -38,7 +39,7 @@ public class NewBrowserSessionCommand extends SeleneseCommand {
             return new Response(message);
         }
         try {
-            response = remoteControl.forward(queryString());
+            response = remoteControl.forward(parameters());
             sessionId = parseSessionId(response.body());
             if (null == sessionId) {
                 return new Response("Could not retrieve a new session");

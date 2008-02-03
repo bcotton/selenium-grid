@@ -21,7 +21,6 @@ public class HubServletTest extends UsingClassMock {
     
     @Test
     public void replySetContentTypeAsPlainText() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -36,7 +35,6 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replySetCharacterEncodingToUTF8() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -51,7 +49,6 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replySetStatusFromRemoteControlOnTheServletResponse() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final Response remoteControlResponse;
         final Mock servletResponse;
 
@@ -66,7 +63,6 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void replyWriteRemoteControlResponseOnServletResponseAsPlainText() throws IOException {
-        // Moved to JRuby but not working yet -- Clint
         final StringWriter writer = new StringWriter(100);
         final Response remoteControlResponse;
         final Mock servletResponse;
@@ -83,8 +79,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void forwardExecuteTheSeleneseCommandOnTheAppropriateRemoteControl() throws IOException, NoSuchMethodException {
-        // Moved to JRuby but not working yet -- Clint
-        final ServletParametersAdapter requestParameters;
+        final HttpParameters requestParameters;
         final Mock environmentManager;
         final Mock remoteControl;
         final Response response;
@@ -92,7 +87,7 @@ public class HubServletTest extends UsingClassMock {
         final Mock pool;
 
         servlet = new HubServlet();
-        requestParameters = new ServletParametersAdapter();
+        requestParameters = new HttpParameters();
         requestParameters.put("cmd", "aSeleneseCommand");
         requestParameters.put("sessionId", "a session id");
         pool = mock(DynamicRemoteControlPool.class);
@@ -101,7 +96,7 @@ public class HubServletTest extends UsingClassMock {
         response = new Response(0, "");
 
         pool.expects("retrieve").with("a session id").will(returnValue(remoteControl));
-        remoteControl.expects("forward").with(eq("cmd=aSeleneseCommand&sessionId=a+session+id")).will(returnValue(response));
+        remoteControl.expects("forward").with(eq(requestParameters)).will(returnValue(response));
 
         assertEquals(response, servlet.forward(requestParameters, (DynamicRemoteControlPool) pool, (EnvironmentManager) environmentManager));
         verifyMocks();
@@ -110,15 +105,14 @@ public class HubServletTest extends UsingClassMock {
     @SuppressWarnings({"ThrowableInstanceNeverThrown"})
     @Test
     public void forwardReturnAnErrorMessageWhenACommandParsingExceptionIsThrown() throws IOException, NoSuchMethodException {
-        // Moved to JRuby but not working yet -- Clint
-        final ServletParametersAdapter requestParameters;
+        final HttpParameters requestParameters;
         final Mock environmentManager;
         final Response response;
         final HubServlet servlet;
         final Mock pool;
 
         servlet = new HubServlet();
-        requestParameters = new ServletParametersAdapter();
+        requestParameters = new HttpParameters();
         requestParameters.put("cmd", "aSeleneseCommand");
         requestParameters.put("sessionId", "a session id");
         pool = mock(DynamicRemoteControlPool.class);
@@ -134,8 +128,7 @@ public class HubServletTest extends UsingClassMock {
 
     @Test
     public void requestParametersReturnsAdaptedRequestParameters() {
-        // Moved to JRuby but not working yet -- Clint
-        final ServletParametersAdapter parameters;
+        final HttpParameters parameters;
         final Map<String, String[]> parameterMap;
         final HubServlet servlet;
         final Mock request;

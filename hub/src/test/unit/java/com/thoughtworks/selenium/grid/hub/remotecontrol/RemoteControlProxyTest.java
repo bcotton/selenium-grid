@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
+
 
 public class RemoteControlProxyTest extends UsingClassMock {
 
@@ -44,24 +46,18 @@ public class RemoteControlProxyTest extends UsingClassMock {
     }
 
     @Test
-    public void commandURLReturnsTheCompleteURLToRequestOnSeleniumRC() {
-        final RemoteControlProxy proxy = new RemoteControlProxy("grid.thoughtworks.org", 44, "", null);
-        assertEquals("http://grid.thoughtworks.org:44/selenium-server/driver/?cmd=foo&1=bar",
-                     proxy.commandURL("cmd=foo&1=bar"));
-    }
-
-    @Test
     public void forwardReturnsTheResponseOfTheSeleniumRC() throws IOException {
         final RemoteControlProxy proxy;
         final Response expectedResponse;
+        final HttpParameters parameters;
         final Mock client;
 
         expectedResponse = new Response(0, "");
         client = mock(HttpClient.class);
-        client.expects("get").with(eq("http://foo:10/selenium-server/driver/?a_query")).will(returnValue(expectedResponse));
-
+        parameters = new HttpParameters();
+        client.expects("post").with(eq("http://foo:10/selenium-server/driver/"), eq(parameters)).will(returnValue(expectedResponse));
         proxy = new RemoteControlProxy("foo", 10, "", (HttpClient) client);
-        assertEquals(expectedResponse, proxy.forward("a_query"));
+        assertEquals(expectedResponse, proxy.forward(parameters));
 
         verifyMocks();
     }

@@ -21,6 +21,7 @@
     <orderEntry type="library" name="Unit Testing" level="project" />
     <orderEntry type="library" name="HttpClient" level="project" />
     <orderEntry type="module" module-name="Core" />
+    <orderEntry type="library" name="Selenium Java Client Driver" level="project" />
     <orderEntryProperties />
   </component>
 </module>

@@ -2,6 +2,7 @@ package com.thoughtworks.selenium.grid.hub.remotecontrol.commands;
 
 import com.thoughtworks.selenium.grid.hub.remotecontrol.Response;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlPool;
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
 
 import java.io.IOException;
 
@@ -10,8 +11,8 @@ import java.io.IOException;
  */
 public class TestCompleteCommand extends SeleneseCommand {
 
-    public TestCompleteCommand(String sessionId, String queryString) {
-        super(sessionId, queryString);
+    public TestCompleteCommand(String sessionId, String queryString, HttpParameters parameters) {
+        super(sessionId, queryString, parameters);
     }
 
 

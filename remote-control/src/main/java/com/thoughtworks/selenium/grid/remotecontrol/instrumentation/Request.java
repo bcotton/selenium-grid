@@ -1,7 +1,10 @@
 package com.thoughtworks.selenium.grid.remotecontrol.instrumentation;
 
+import com.thoughtworks.selenium.grid.IOHelper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.StringWriter;
 
 /**
  * HTTP Requests
@@ -10,35 +13,37 @@ public class Request {
 
     final static String CRLF = "\r\n";
 
-    private String content;
+    private String body;
 
-    public Request(String content) {
-        this.content = content;
+    public Request(String body) {
+        this.body = body;
     }
 
     public static Request parse(BufferedReader reader) throws IOException {
-        System.out.println(">>>>>>>>>> parsing header");
         readHeader(reader);
-//        System.out.println(">>>>>>>>>> parsing body");
-//        readBody(reader);
-//        System.out.println(">>>>>>>>>> don with body");
-        return new Request("");
+        return new Request(readBody(reader));
     }
 
     public static void readHeader(BufferedReader reader) throws IOException {
-        while(true) {
+        while (reader.ready()) {
             String headerLine = reader.readLine();
             System.out.println(headerLine);
-            if (headerLine.equals(CRLF) || headerLine.equals("")) break;
+            if (headerLine.equals(CRLF) || headerLine.equals("")) {
+                break;
+            }
         }
     }
 
-    public static void readBody(BufferedReader reader) throws IOException {
-//        while (true) {
-            String line = reader.readLine();
-            System.out.println(">>>>>>>>>>>>>>> " + line);
-//            if (null == line || line.equals(CRLF) || line.equals("")) break;
-//        }
+    public static String readBody(BufferedReader reader) throws IOException {
+        StringWriter body = new StringWriter();
+        IOHelper.copyStream(reader, body, 1024);
+
+        return body.toString();
+    }
+
+
+    public String body() {
+        return body;
     }
 
 }

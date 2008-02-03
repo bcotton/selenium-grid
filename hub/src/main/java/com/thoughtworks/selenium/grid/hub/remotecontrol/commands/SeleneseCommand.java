@@ -3,6 +3,7 @@ package com.thoughtworks.selenium.grid.hub.remotecontrol.commands;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.Response;
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
 
 import java.io.IOException;
 
@@ -13,10 +14,12 @@ public class SeleneseCommand {
 
     private final String queryString;
     private final String sessionId;
+    private final HttpParameters parameters;
 
-    public SeleneseCommand(String sessionId, String queryString) {
+    public SeleneseCommand(String sessionId, String queryString, HttpParameters parameters) {
         this.queryString = queryString;
         this.sessionId = sessionId;
+        this.parameters = parameters;
     }
 
     public String queryString() {
@@ -27,6 +30,10 @@ public class SeleneseCommand {
         return sessionId;
     }
 
+    public HttpParameters parameters() {
+        return parameters;
+    }
+
     public Response execute(RemoteControlPool pool) throws IOException {
         final RemoteControlProxy remoteControl;
 
@@ -34,7 +41,7 @@ public class SeleneseCommand {
             return new Response("Selenium Driver error: No sessionId provided for command '" + queryString + "'");
         }
         remoteControl = pool.retrieve(sessionId());
-        return remoteControl.forward(queryString());
+        return remoteControl.forward(parameters());
     }
 
 }

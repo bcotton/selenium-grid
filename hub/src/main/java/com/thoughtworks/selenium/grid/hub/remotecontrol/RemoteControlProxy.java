@@ -1,5 +1,7 @@
 package com.thoughtworks.selenium.grid.hub.remotecontrol;
 
+import com.thoughtworks.selenium.grid.hub.HttpParameters;
+
 import java.io.IOException;
 
 /**
@@ -41,12 +43,8 @@ public class RemoteControlProxy {
         return "http://" + host + ":" + port + "/selenium-server/driver/";
     }
 
-    public String commandURL(String queryString) {
-        return remoteControlURL() + "?" + queryString;
-    }
-
-    public Response forward(String queryString) throws IOException {
-        return httpClient.get(commandURL(queryString));
+    public Response forward(HttpParameters parameters) throws IOException {
+        return httpClient.post(remoteControlURL(), parameters);
     }
 
     public String toString() {

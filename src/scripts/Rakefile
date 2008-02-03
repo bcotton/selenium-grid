@@ -44,7 +44,7 @@ def launch_rc(options)
     classpath = Java::Classpath.new(File.dirname(__FILE__))
     classpath =  classpath << "." << "lib/selenium-server-*.jar" << "lib/selenium-grid-remote-control-standalone-*.jar"
 
-    Java::VM.new.run "com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServer",
+    Java::VM.new.run "com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher",
                      :classpath => classpath.definition,
                      :args => rc_args(options),
                      :background => ENV['BACKGROUND'],

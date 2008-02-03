@@ -13,9 +13,9 @@ public class HttpCommandParser {
 
     public static final String NEW_BROWSER_SESSION = "getNewBrowserSession";
     private static final String TEST_COMPLETE = "testComplete";
-    private final ServletParametersAdapter parameters;
+    private final HttpParameters parameters;
 
-    public HttpCommandParser(ServletParametersAdapter parameters) {
+    public HttpCommandParser(HttpParameters parameters) {
         this.parameters = parameters;
     }
 
@@ -31,19 +31,19 @@ public class HttpCommandParser {
                 throw new CommandParsingException("ERROR: Unknown environment '" + environmentName + "'");
             }
             parameters.put("1", environment.browser());
-            return new NewBrowserSessionCommand(environment, parameters.queryString());
+            return new NewBrowserSessionCommand(environment, parameters.queryString(), parameters);
         } else if (command.equals(TEST_COMPLETE)) {
-            return new TestCompleteCommand(retrieveSessionId(parameters), parameters.queryString());
+            return new TestCompleteCommand(retrieveSessionId(parameters), parameters.queryString(), parameters);
         } else {
-            return new SeleneseCommand(retrieveSessionId(parameters), parameters.queryString());
+            return new SeleneseCommand(retrieveSessionId(parameters), parameters.queryString(), parameters);
         }
     }
 
-    protected ServletParametersAdapter parameters() {
+    public HttpParameters parameters() {
         return parameters;
     }
 
-    protected String retrieveSessionId(ServletParametersAdapter parameters) {
+    protected String retrieveSessionId(HttpParameters parameters) {
         final String sessionId = parameters.get("sessionId");
         if (null == sessionId) {
             throw new CommandParsingException("ERROR: No sessionId provided. Most likely your original newBrowserSession command failed.");
