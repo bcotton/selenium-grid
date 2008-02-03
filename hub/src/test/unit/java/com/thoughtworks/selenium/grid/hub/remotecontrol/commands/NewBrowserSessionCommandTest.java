@@ -18,22 +18,22 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
 
     @Test
     public void sessionIdIsAlwaysNull() {
-        assertEquals(null, new NewBrowserSessionCommand(null, "a query", null).sessionId());
+        assertEquals(null, new NewBrowserSessionCommand(null, null).sessionId());
     }
 
     @Test
     public void parseSessionIdReturnsTheSessionIdWhenResponseIsSuccessful() {
-        assertEquals("22207", new NewBrowserSessionCommand(null, "", null).parseSessionId("OK,22207"));
+        assertEquals("22207", new NewBrowserSessionCommand(null, null).parseSessionId("OK,22207"));
     }
 
     @Test
     public void parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID() {
-        assertEquals("36d3cc124c8b4b4f8c53c5b600052da3", new NewBrowserSessionCommand(null, "", null).parseSessionId("OK,36d3cc124c8b4b4f8c53c5b600052da3"));
+        assertEquals("36d3cc124c8b4b4f8c53c5b600052da3", new NewBrowserSessionCommand(null, null).parseSessionId("OK,36d3cc124c8b4b4f8c53c5b600052da3"));
     }
 
     @Test
     public void parseSessionIdReturnsNullWhenResponseIsNotSuccessful() {
-        assertEquals(null, new NewBrowserSessionCommand(null, "", null).parseSessionId(""));
+        assertEquals(null, new NewBrowserSessionCommand(null, null).parseSessionId(""));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
         pool = mock(DynamicRemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
         environment = new Environment("an environment", "*browser", null);
-        command = new NewBrowserSessionCommand(environment, null, parameters);
+        command = new NewBrowserSessionCommand(environment, parameters);
         remoteControl.expects("forward").with(parameters).will(returnValue(expectedResponse));
         pool.expects("reserve").with(environment).will(returnValue(remoteControl));
         pool.expects("associateWithSession").with(anything(), eq("1234"));  // TODO with(remoteControl, ...)
@@ -70,7 +70,7 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
         pool = mock(DynamicRemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
         environment = new Environment("an environment", "*browser", null);
-        command = new NewBrowserSessionCommand(environment, null, new HttpParameters());
+        command = new NewBrowserSessionCommand(environment, new HttpParameters());
         pool.expects("reserve").with(environment).will(returnValue(remoteControl));
         remoteControl.expects("forward").with(command.parameters()).will(returnValue(new Response(500, "")));
 
@@ -92,7 +92,7 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
         pool = mock(DynamicRemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
         environment = new Environment("an environment", "*browser", null);
-        command = new NewBrowserSessionCommand(environment, null, new HttpParameters());
+        command = new NewBrowserSessionCommand(environment, new HttpParameters());
         remoteControl.expects("forward").with(command.parameters()).will(throwException(new IOException("an error message")));
         pool.expects("reserve").with(environment).will(returnValue(remoteControl));
         pool.expects("release").with(remoteControl);
@@ -112,7 +112,7 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
 
         pool = mock(DynamicRemoteControlPool.class);
         environment = new Environment("an environment", "*browser", null);
-        command = new NewBrowserSessionCommand(environment, "a query", null);
+        command = new NewBrowserSessionCommand(environment, null);
         pool.expects("reserve").with(environment).will(returnValue(null));
 
         response = command.execute((RemoteControlPool) pool);

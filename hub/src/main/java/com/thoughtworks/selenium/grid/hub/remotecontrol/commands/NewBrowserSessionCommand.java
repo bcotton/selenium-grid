@@ -22,8 +22,8 @@ public class NewBrowserSessionCommand extends SeleneseCommand {
     private static final Log logger = LogFactory.getLog(NewBrowserSessionCommand.class);
     private final Environment environment;
 
-    public NewBrowserSessionCommand(Environment environment, String queryString, HttpParameters parameters) {
-        super(null, queryString, parameters);
+    public NewBrowserSessionCommand(Environment environment, HttpParameters parameters) {
+        super(null, parameters);
         this.environment = environment;
     }
 

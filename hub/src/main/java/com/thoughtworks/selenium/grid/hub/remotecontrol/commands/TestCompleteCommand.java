@@ -11,8 +11,8 @@ import java.io.IOException;
  */
 public class TestCompleteCommand extends SeleneseCommand {
 
-    public TestCompleteCommand(String sessionId, String queryString, HttpParameters parameters) {
-        super(sessionId, queryString, parameters);
+    public TestCompleteCommand(String sessionId, HttpParameters parameters) {
+        super(sessionId, parameters);
     }
 
 
