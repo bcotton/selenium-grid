@@ -32,14 +32,14 @@
    }
       
    table#start-tracks tr td {
-     padding: 2em 2em;
-     width: 12em;
-     text-align: center;
+     padding: .8em 1.5em 2em 1.5em;
+     width: 14em;
+/*     text-align: center;*/
 
-	 -moz-border-radius: .5em;
-	 -webkit-border-radius: .5em;
-	 border-radius: .5em;
-	 -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+	 -moz-border-radius: .6em;
+	 -webkit-border-radius: .8em;
+	 border-radius: .8em;
+	 -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5)
    }
 
    table#start-tracks tr td#get-started {
@@ -58,9 +58,28 @@
 	background: #A87AAD;
    }
 
-   table#start-tracks tr td a {
+   table#start-tracks ul {
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+   }
+
+   table#start-tracks tr td ul li {
+     margin: .9em 0 0 0;
+   }
+
+   table#start-tracks tr td ul li a {
      color: #0E3062;
-     font-size: 1.6em;
+     font-size: 1.1em;
+   }
+
+   table#start-tracks tr td h2 {
+	 text-align: center;
+     color: black;
+     font-size: 1.4em;
+     margin: 0 0 1em 0;
+     padding: 0;
    }
 
    div.section {
@@ -77,6 +96,7 @@
      color: black;
      font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
      background: none;
+     text-shadow: .1em .1em .2em #222;
    }
 
    div.section div.content {
