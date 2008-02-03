@@ -2,30 +2,30 @@
      font: 11pt "Lucida Grande", "Verdana", sans-serif;
    }
 
-   div#actual-content div.header {
+   div.header {
      text-align: center;
      font: bold 2em "Chalkboard", "Georgia", serif;
      padding: 0;
      margin: 1em 0 2.5em 0;
    }
 
-   div#actual-content div.header a {
+   div.header a {
      border: 0;
    }
 
-   div#actual-content div.header img {
+   div.header img {
      padding: 0;
      margin: 0 1em 0 0;
      vertical-align: middle;
      border: 0;
    }
 
-   div#actual-content div.section {
+   div.section {
      clear: both;
      margin: 1em;
    }
             
-   div#actual-content div.section h2 {
+   div.section h2 {
      float: left;
      width: 15%;
      border: 0;
@@ -36,7 +36,7 @@
      background: none;
    }
 
-   div#actual-content div.section div.content {
+   div.section div.content {
      float: left;
      width: 70%;
      border: 0;
@@ -44,7 +44,7 @@
      margin: 0 0 2em 0;     
    }
 
-   div#actual-content div.section div.content p {
+   div.section div.content p {
      margin-top: .3em;
    }
 
