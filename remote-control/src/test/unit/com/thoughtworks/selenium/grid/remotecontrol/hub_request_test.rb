@@ -1,6 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + "/../../../../../unit_test_helper")
 
 include_class 'com.thoughtworks.selenium.grid.remotecontrol.HubRequest'
+include_class 'org.apache.commons.httpclient.HttpClient'
 
 class HubRequestTest < Test::Unit::TestCase
 
@@ -28,5 +29,5 @@ class HubRequestTest < Test::Unit::TestCase
   test "target_url  returns target URL as provided in constructor" do
     assert_equal "http://target-url", HubRequest.new("http://target-url", "", "", "").target_url
   end
-
+  
 end

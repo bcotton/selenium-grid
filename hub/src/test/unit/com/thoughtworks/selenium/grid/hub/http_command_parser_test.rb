@@ -33,7 +33,7 @@ class HttpCommandParserTest < Test::Unit::TestCase
     expected_environment = Environment.new("", "aBrowser", nil)
     environment_manager = EnvironmentManager.new
     p environment_manager
-    environment_manager.stubs(:environment).with("an environment name").returns(expected_environment)
+    environment_manager.instrumentation(:environment).with("an environment name").returns(expected_environment)
 
     assert_equal expected_environment, environment_manager.environment("an environment name")
     command = HttpCommandParser.new(parameters).parse(environment_manager)

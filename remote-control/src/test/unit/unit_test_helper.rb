@@ -16,9 +16,9 @@ begin
   "remotecontrol/lib/selenium-server-*.jar",
   "remote-control/src/main/java",
   "remote-control/src/test/unit/java",
-#  "target/classes/production/Core/",
-#  "target/classes/production/Hub/",
-#  "target/classes/production/Remote Control/",
+  "target/classes/production/Core/",
+  "target/classes/production/Hub/",
+  "target/classes/production/Remote Control/",
   "remote-control/target/classes/",
   ].each {|path| $CLASSPATH << (project_basedir + "/" + path) }
 end
