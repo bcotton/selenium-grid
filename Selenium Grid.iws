@@ -19,37 +19,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClientTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClientTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/HttpRequestProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/SimplisticHttpServer.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/SimplisticHttpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ServletParameterAdapterTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ServletParameterAdapterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/Remote Control.iml" afterPath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpCommandParser.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpCommandParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ServletParametersAdapter.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpParameters.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/servlet_parameter_adapter_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/servlet_parameter_adapter_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/ruby/console/index.html" afterPath="$PROJECT_DIR$/hub/src/main/ruby/console/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommand.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/TestCompleteCommandTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/TestCompleteCommandTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/Rakefile" afterPath="$PROJECT_DIR$/src/scripts/Rakefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_servlet_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_servlet_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/EchoRemoteControl.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/EchoRemoteControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/remote-control/src/test/integration/com/thoughtworks/selenium/grid/remotecontrol/HugeRequestTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/TestCompleteCommand.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/TestCompleteCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HubServletTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HubServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_server_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_server_test.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/RemoteControlCommandTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClient.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -160,7 +136,7 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HugeRequestTest$HugeRequestTest.es" NAME="HugeRequestTest" MODIFIED="1202003174338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$SeleneseCommandTest$SeleneseCommandTest.es" NAME="SeleneseCommandTest" MODIFIED="1202010103245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$SeleneseCommandTest$SeleneseCommandTest.es" NAME="SeleneseCommandTest" MODIFIED="1202024334762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$MartinOnAmazonSeleniumTestNG.aSlowTest$MartinOnAmazonSeleniumTestNG.aSlowTest.es" NAME="MartinOnAmazonSeleniumTestNG.aSlowTest" MODIFIED="1197764466213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
@@ -274,33 +250,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NewBrowserSessionCommand.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java">
+      <file leaf-file-name="SeleneseCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="41" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.52882206">
+            <state line="34" column="112" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.88324875">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="28" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.61904764">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="589" selection-end="589" vertical-scroll-proportion="-0.042606518">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -308,7 +262,16 @@
       <file leaf-file-name="HttpParameters.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpParameters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="47" selection-start="1710" selection-end="1710" vertical-scroll-proportion="1.160401">
+            <state line="43" column="18" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.57457215">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpCommandParserTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.3248731">
               <folding />
             </state>
           </provider>
@@ -317,52 +280,61 @@
       <file leaf-file-name="http_command_parser_test.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="916" selection-end="916" vertical-scroll-proportion="0.33333334">
+            <state line="54" column="30" selection-start="2270" selection-end="2270" vertical-scroll-proportion="1.190709">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="servlet_parameter_adapter_test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/servlet_parameter_adapter_test.rb">
+      <file leaf-file-name="unit_test_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/remote-control/src/test/unit/unit_test_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="9" selection-start="969" selection-end="969" vertical-scroll-proportion="0.39849624">
+            <state line="22" column="0" selection-start="591" selection-end="627" vertical-scroll-proportion="0.64547676">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rakefile" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scripts/Rakefile">
+      <file leaf-file-name="unit_test_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="86" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-1.5625">
+            <state line="30" column="8" selection-start="894" selection-end="894" vertical-scroll-proportion="0.8801956">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Selenium Grid.iws" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Selenium Grid.iws">
+      <file leaf-file-name="NewBrowserSessionCommandTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="106" selection-start="3614" selection-end="3614" vertical-scroll-proportion="0.33333334">
+            <state line="37" column="0" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.14213198">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClientTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClientTest.java">
+      <file leaf-file-name="SeleneseCommandTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="14" selection-start="3093" selection-end="3093" vertical-scroll-proportion="1.1002506">
+            <state line="54" column="97" selection-start="2229" selection-end="2229" vertical-scroll-proportion="1.2284263">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServletParameterAdapterTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ServletParameterAdapterTest.java">
+      <file leaf-file-name="NewBrowserSessionCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="12" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.9498747">
+            <state line="24" column="27" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.18337408">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpCommandParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpCommandParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="36" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.7106599">
               <folding />
             </state>
           </provider>
@@ -770,6 +742,10 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1260,16 +1236,16 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.ServletParameterAdapterTest">
-    <tempConfiguration default="false" name="ServletParameterAdapterTest" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
-      <pattern value="com.thoughtworks.selenium.grid.hub.*" />
+  <component name="RunManager" selected="JUnit.SeleneseCommandTest.executeReturnsAnErrorResponseWhenNoSessionIdIsProvided">
+    <tempConfiguration default="false" name="SeleneseCommandTest.executeReturnsAnErrorResponseWhenNoSessionIdIsProvided" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
+      <pattern value="com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*" />
       <module name="Hub" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="com.thoughtworks.selenium.grid.hub" />
-      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.hub.ServletParameterAdapterTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.selenium.grid.hub.remotecontrol.commands" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommandTest" />
+      <option name="METHOD_NAME" value="executeReturnsAnErrorResponseWhenNoSessionIdIsProvided" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1280,8 +1256,12 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59597" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -1634,7 +1614,26 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="10">
+    <configuration default="false" name="http_command_parser_test" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="Hub Tests" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <list size="11">
       <item index="0" class="java.lang.String" itemvalue="Application.SelfRegisteringRemoteControlLauncher" />
       <item index="1" class="java.lang.String" itemvalue="Application.TestDriver" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.PageTest" />
@@ -1644,7 +1643,8 @@
       <item index="6" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
       <item index="7" class="java.lang.String" itemvalue="RubyOnRails.HttpCommandParserTest" />
       <item index="8" class="java.lang.String" itemvalue="RubyOnRails.http_client_test" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.ServletParameterAdapterTest" />
+      <item index="9" class="java.lang.String" itemvalue="RubyOnRails.http_command_parser_test" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.SeleneseCommandTest.executeReturnsAnErrorResponseWhenNoSessionIdIsProvided" />
     </list>
     <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1740,14 +1740,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="22" width="1420" height="792" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" order="6" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32944608" order="0" />
       <window_info id="RDoc" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" order="14" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31838566" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31838566" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31838566" order="11" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39784947" order="5" />
@@ -1757,7 +1757,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39280576" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" order="4" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3251928" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30343798" order="2" x="25" y="383" width="1379" height="169" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30343798" order="2" x="25" y="383" width="1379" height="169" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39760837" order="3" />
@@ -1903,74 +1903,9 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HubServletTest.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/servlet_parameter_adapter_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="70" selection-start="4621" selection-end="4621" vertical-scroll-proportion="1.0659899">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="7" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.46867168">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/TestCompleteCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="24" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.93233085">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="32" selection-start="4864" selection-end="4864" vertical-scroll-proportion="0.6927374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="41" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.52882206">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="28" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.61904764">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/commons-httpclient-3.0.1.jar!/org/apache/commons/httpclient/HttpClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.030456852">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClientTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="14" selection-start="3093" selection-end="3093" vertical-scroll-proportion="1.1002506">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.4.jar!/junit/framework/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="23" selection-start="1076" selection-end="1088" vertical-scroll-proportion="0.79187816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ServletParameterAdapterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="12" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.9498747">
+        <state line="26" column="9" selection-start="969" selection-end="969" vertical-scroll-proportion="0.39849624">
           <folding />
         </state>
       </provider>
@@ -1984,6 +1919,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.61904764">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Selenium Grid.iws">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="106" selection-start="3614" selection-end="3614" vertical-scroll-proportion="0.33333334">
@@ -1991,30 +1935,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpParameters.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/HttpClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="47" selection-start="1710" selection-end="1710" vertical-scroll-proportion="1.160401">
+        <state line="81" column="14" selection-start="3093" selection-end="3093" vertical-scroll-proportion="1.1002506">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ServletParameterAdapterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="12" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.9498747">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.3248731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpCommandParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="36" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.7106599">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="27" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.18337408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.14213198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remote-control/src/test/unit/unit_test_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="591" selection-end="627" vertical-scroll-proportion="0.64547676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="8" selection-start="894" selection-end="894" vertical-scroll-proportion="0.8801956">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="916" selection-end="916" vertical-scroll-proportion="0.33333334">
+        <state line="54" column="30" selection-start="2270" selection-end="2270" vertical-scroll-proportion="1.190709">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/servlet_parameter_adapter_test.rb">
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HttpParameters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="9" selection-start="969" selection-end="969" vertical-scroll-proportion="0.39849624">
+        <state line="43" column="18" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.57457215">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/Rakefile">
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="86" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-1.5625">
+        <state line="34" column="112" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.88324875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/SeleneseCommandTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="97" selection-start="2229" selection-end="2229" vertical-scroll-proportion="1.2284263">
           <folding />
         </state>
       </provider>
