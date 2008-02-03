@@ -10,17 +10,17 @@ import java.net.ConnectException;
  *
  * @author Philippe Hanrigou
  */
-public class SelfRegisteringSeleniumServerLauncher {
+public class SelfRegisteringRemoteControlLauncher {
 
-    private static final Log logger = LogFactory.getLog(SelfRegisteringSeleniumServerLauncher.class);
+    private static final Log logger = LogFactory.getLog(SelfRegisteringRemoteControlLauncher.class);
 
 
     public static void main(String[] args) throws Exception {
-        final SelfRegisteringSeleniumServer server;
+        final SelfRegisteringRemoteControl server;
         final OptionParser.Options options;
 
         options = new OptionParser().parseOptions(args);
-        server = new SelfRegisteringSeleniumServer(
+        server = new SelfRegisteringRemoteControl(
                 options.hubURL(), options.environment(), options.host(), options.port());
         try {
             server.register();

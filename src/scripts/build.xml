@@ -68,7 +68,7 @@
   <property name="seleniumArgs" value=""/>  
   <target name="launch-remote-control" description="Launch A Remote Control">
     <java classpathref="remote-control.classpath"
-          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringSeleniumServerLauncher"
+          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher"
           fork="true"
           failonerror="true">
       <arg value="-port"/>

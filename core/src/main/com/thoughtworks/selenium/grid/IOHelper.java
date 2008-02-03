@@ -3,11 +3,8 @@ package com.thoughtworks.selenium.grid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
+import java.net.Socket;
 
 /**
  * Band-aid for painful Java IO API.
@@ -89,6 +86,36 @@ public class IOHelper {
                 writer.close();
             } catch (IOException e) {
                 LOGGER.info("Ignoring exception while closing writer stream '" + writer + "'", e);
+            }
+        }
+    }
+
+    /**
+     * Safely close an output stream  without bothering about null or IOExceptions.
+     *
+     * @param os OutputStream to close. Can be null.
+     */
+    public static void close(OutputStream os) {
+        if (null != os) {
+            try {
+                os.close();
+            } catch (IOException e) {
+                LOGGER.info("Ignoring exception while closing input stream '" + os + "'", e);
+            }
+        }
+    }
+
+    /**
+     * Safely close an output stream  without bothering about null or IOExceptions.
+     *
+     * @param socket OutputStream to close. Can be null.
+     */
+    public static void close(Socket socket) {
+        if (null != socket) {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                LOGGER.info("Ignoring exception while closing input stream '" + socket + "'", e);
             }
         }
     }

@@ -11,16 +11,16 @@ import java.io.IOException;
  *
  * @author Philippe Hanrigou
  */
-public class SelfRegisteringSeleniumServer {
+public class SelfRegisteringRemoteControl {
 
 
-    private static final Log logger = LogFactory.getLog(SelfRegisteringSeleniumServerLauncher.class);
+    private static final Log logger = LogFactory.getLog(SelfRegisteringRemoteControlLauncher.class);
     private final String seleniumHubURL;
     private final String environment;
     private final String host;
     private final String port;
 
-    public SelfRegisteringSeleniumServer(String seleniumHubURL, String environment, String host, String port) {
+    public SelfRegisteringRemoteControl(String seleniumHubURL, String environment, String host, String port) {
         this.seleniumHubURL = seleniumHubURL;
         this.environment = environment;
         this.host = host;
