@@ -12,18 +12,12 @@ import java.io.IOException;
  */
 public class SeleneseCommand {
 
-    private final String queryString;
     private final String sessionId;
     private final HttpParameters parameters;
 
     public SeleneseCommand(String sessionId, String queryString, HttpParameters parameters) {
-        this.queryString = queryString;
         this.sessionId = sessionId;
         this.parameters = parameters;
-    }
-
-    public String queryString() {
-        return queryString;
     }
 
     public String sessionId() {
@@ -38,7 +32,7 @@ public class SeleneseCommand {
         final RemoteControlProxy remoteControl;
 
         if (null == sessionId) {
-            return new Response("Selenium Driver error: No sessionId provided for command '" + queryString + "'");
+            return new Response("Selenium Driver error: No sessionId provided for command '" + parameters.queryString() + "'");
         }
         remoteControl = pool.retrieve(sessionId());
         return remoteControl.forward(parameters());

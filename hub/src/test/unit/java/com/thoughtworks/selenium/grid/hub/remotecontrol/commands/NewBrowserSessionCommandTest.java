@@ -37,14 +37,6 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
     }
 
     @Test
-    public void queryStringSubstitutesBrowserWithTheEnvironmentBrowser() {
-        final Environment environment;
-
-        environment = new Environment("Firefox / Windows", "*chrome", null);
-        assertEquals("a query string", new NewBrowserSessionCommand(environment, "a query string", null).queryString());
-    }
-
-    @Test
     public void executeReserveAndThenAssociateARemoteControlWithTheSession() throws IOException {
         final NewBrowserSessionCommand command;
         final Mock remoteControl;

@@ -28,6 +28,7 @@ begin
     "hub/src/test/unit/java",
     "target/classes/production/Core/",
     "target/classes/production/Hub/",
+    "hub/target/classes/",          
   ].each {|path| $CLASSPATH << (project_basedir + "/" + path) }
 end
 

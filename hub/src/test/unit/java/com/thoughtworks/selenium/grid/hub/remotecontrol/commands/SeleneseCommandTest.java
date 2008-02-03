@@ -14,10 +14,6 @@ import java.io.IOException;
 
 public class SeleneseCommandTest extends UsingClassMock {
 
-      @Test
-      public void queryStringReturnsTheQueryStringProvidedToConstructor() {
-          assertEquals("a query", new SeleneseCommand("", "a query", null).queryString());
-      }
 
     @Test
     public void parametersReturnsTheParametersProvidedToConstructor() {
@@ -25,36 +21,38 @@ public class SeleneseCommandTest extends UsingClassMock {
         assertEquals(theParameters, new SeleneseCommand("", null, theParameters).parameters());
     }
 
-      @Test
-      public void sessionIdReturnsTheSessionIdProvidedToConstructor() {
-          assertEquals("a session id", new SeleneseCommand("a session id", "", null).sessionId());
-      }
+    @Test
+    public void sessionIdReturnsTheSessionIdProvidedToConstructor() {
+        assertEquals("a session id", new SeleneseCommand("a session id", "", null).sessionId());
+    }
 
-      @Test
-      public void executeForwardsTheRequestToTheRemoteControl() throws Exception {
-          final Mock remoteControl;
-          final SeleneseCommand command;
-          final Response expectedResponse;
-          final Mock pool;
+    @Test
+    public void executeForwardsTheRequestToTheRemoteControl() throws Exception {
+        final Mock remoteControl;
+        final SeleneseCommand command;
+        final Response expectedResponse;
+        final Mock pool;
 
-          command = new SeleneseCommand("a session id", "a query", new HttpParameters());
-          expectedResponse = new Response(0, "");
-          remoteControl = mock(RemoteControlProxy.class);
-          pool = mock(RemoteControlPool.class);
-          pool.expects("retrieve").with("a session id").will(returnValue(remoteControl));
-          remoteControl.expects("forward").with(command.parameters()).will(returnValue(expectedResponse));
+        command = new SeleneseCommand("a session id", "a query", new HttpParameters());
+        expectedResponse = new Response(0, "");
+        remoteControl = mock(RemoteControlProxy.class);
+        pool = mock(RemoteControlPool.class);
+        pool.expects("retrieve").with("a session id").will(returnValue(remoteControl));
+        remoteControl.expects("forward").with(command.parameters()).will(returnValue(expectedResponse));
 
-          assertEquals(expectedResponse, command.execute((RemoteControlPool) pool));
-          verifyMocks();
-      }
+        assertEquals(expectedResponse, command.execute((RemoteControlPool) pool));
+        verifyMocks();
+    }
 
     @Test
     public void executeReturnsAnErrorResponseWhenNoSessionIdIsProvided() throws IOException {
+        final HttpParameters parameters;
         final Response response;
 
-        response = new SeleneseCommand(null, "a query", null).execute(null);
-        assertEquals("ERROR: Selenium Driver error: No sessionId provided for command 'a query'",
-                     response.body());
+        parameters = new HttpParameters();
+        parameters.put("foo", "bar");
+        response = new SeleneseCommand(null, null, parameters).execute(null);
+        assertEquals("ERROR: Selenium Driver error: No sessionId provided for command 'foo=bar'", response.body());
     }
-    
+
 }

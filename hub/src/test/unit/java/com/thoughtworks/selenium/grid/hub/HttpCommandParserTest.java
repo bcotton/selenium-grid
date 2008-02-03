@@ -33,9 +33,6 @@ public class HttpCommandParserTest extends UsingClassMock {
         command = new HttpCommandParser(parameters).parse((EnvironmentManager) environmentManager);
         assertEquals(true, command instanceof NewBrowserSessionCommand);
         browserSessionCommand = (NewBrowserSessionCommand) command;
-        assertTrue(browserSessionCommand.queryString().contains("cmd=getNewBrowserSession"));
-        assertTrue(browserSessionCommand.queryString().contains("1=aBrowser"));
-        assertTrue(browserSessionCommand.queryString().contains("2=http%3A%2F%2Fopenqa.org"));
 
         assertEquals("getNewBrowserSession", browserSessionCommand.parameters().get("cmd"));
         assertEquals("aBrowser", browserSessionCommand.parameters().get("1"));

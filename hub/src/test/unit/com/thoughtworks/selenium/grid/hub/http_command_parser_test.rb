@@ -21,7 +21,8 @@ class HttpCommandParserTest < Test::Unit::TestCase
     parameters.put "sessionId", "1234"
 
     command = HttpCommandParser.new(parameters).parse nil
-    assert_equal "cmd=generic&sessionId=1234", command.query_string
+    assert_equal "generic", command.parameters.get("cmd")
+    assert_equal "1234", command.parameters.get("sessionId")
     assert_equal "1234", command.session_id
   end
 
@@ -51,7 +52,8 @@ class HttpCommandParserTest < Test::Unit::TestCase
 
     command = HttpCommandParser.new(parameters).parse nil
     assert_true command.is_a?(TestCompleteCommand)
-    assert_equal "cmd=testComplete&sessionId=1234", command.query_string
+    assert_equal "testComplete", command.parameters.get("cmd")
+    assert_equal "1234", command.parameters.get("sessionId")
     assert_equal "1234", command.sessionId
   end
 
