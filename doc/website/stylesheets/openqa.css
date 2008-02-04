@@ -1,0 +1,76 @@
+/*
+ * Stylesheet dedicated to integration with layout on opeanqa.org
+ */
+
+body {
+  text-align: center;
+}
+
+#ads {
+  background-color: rgb(153, 204, 255);
+  text-align: center;
+  padding:5px;
+}
+
+#top-menu {
+  color: #999;
+  text-align: center;
+  font-size: .8em;
+  padding-top: 0;
+  padding-bottom: 1.5em;
+}
+
+#top-menu ul li {
+ display: inline;
+ border-left: 1px solid #000000;
+ padding-left: 3px;
+}
+
+#top-menu ul li.last {
+   padding-right: 3px;
+   border-right: 1px solid #000000;
+}
+
+#top-menu ul li a {
+ color: black;
+}
+
+div#content {
+ float: left;
+ width: 85%;
+ margin: 0 0 0 0;
+ padding: 0;
+ text-align: left;
+}
+
+div#sponsor-sidebar {
+  float: right;
+  width: 15%;
+}
+
+div#sponsor-sidebar a.logo img {
+  padding: 0 0 2.8em 0;
+  border: none;
+}
+
+div#openqa-project-list {
+  text-align: left;
+}
+
+div#openqa-project-list ul {
+  list-style-type: none;
+}
+
+div#openqa-project-list ul li a {
+  color: #222;
+}
+
+div#footer {
+  clear: both;
+  color: #666;
+  padding: 1em 0;
+}
+
+div#actual-content div.section {
+   clear: none;
+}
