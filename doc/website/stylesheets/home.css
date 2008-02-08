@@ -2,10 +2,6 @@
  * Stylesheet for Selenium Grid website home page.
  */
 
-body {
-  font: 12pt "Lucida Grande", "Verdana", sans-serif;
-}
-
 h2 {
   background: none;
   border: 0;
@@ -14,29 +10,29 @@ h2 {
 }
 
 div.marketing-banner {
-  margin: 1em 15%; 
+  margin: 1em 5em; 
   text-align: center
 }
 
 div.marketing-banner p {
   color: #444;
-  font: 1.2em "Lucida Grande", Verdana, sans-serif;
+  font: 1em "Lucida Grande", Verdana, sans-serif;
   padding: 0 3em;
 }
 
 div.marketing-banner p.tagline {
   color: black;
-  font: bold 2em "Chalkboard", "Georgia", serif;
+  font: bold 1.7em "Chalkboard", "Georgia", serif;
   padding: 0;
 }
 
 table#start-tracks {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   border-spacing: .6em 1em;
 }
    
 table#start-tracks tr td {
-  padding: .8em 1.5em 2em 1.5em;
+  padding: .8em 1.2em 2em 1.2em;
   width: 14em;
 
   -moz-border-radius: .6em;
@@ -64,10 +60,10 @@ background: #99D194;
 }
 
 table#start-tracks ul {
-list-style: none inside;
-margin: 0;
-padding: 0;
-text-align: center;
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 table#start-tracks tr td ul li {
@@ -76,13 +72,13 @@ table#start-tracks tr td ul li {
 
 table#start-tracks tr td ul li a {
   color: #0E3062;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 table#start-tracks tr td h2 {
-text-align: center;
+  text-align: center;
   color: black;
-  font-size: 1.4em;
+  font-size: 1.1em;
   margin: 0 0 1em 0;
   padding: 0;
 }
@@ -97,9 +93,9 @@ div.section h2 {
   width: 15%;
   border: 0;
   padding: 0;
-  margin: 0 2em 2.5em 0;
+  margin: 0 0em 2.5em 0;
   color: black;
-  font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
+  font: bold 1.3em "Lucida Grande", Verdana, sans-serif;
   background: none;
   text-shadow: .1em .1em .2em #222;
 }
