@@ -18,7 +18,7 @@
       testing tool works.
     </p>
 
-  <h2>Traditional Selenium Setup</h2>
+  <h2 id="traditional-setup">Traditional Selenium Setup</h2>
 
     <p>
       To understand Selenium Grid you first need to understand how the 
@@ -49,7 +49,7 @@
 
 <p>Due to all these limitations, Selenium tests typically run in sequence or are only mildly parallelized. That makes for test suites that take from half an hour to multiple hours to run. Not ideal, especially if you strive for Agile processes emphasizing a quick feedback loop. </p>
 
-<h2>Selenium Grid Setup</h2>
+<h2 id="grid-setup">Selenium Grid Setup</h2>
 
 <p>Selenium Grid builds on the traditional Selenium setup, taking advantage of the following properties: </p>
 
@@ -81,7 +81,7 @@
 
 <p>Of course to really take advantage of the Selenium Grid, you need to run your tests in parallel. If you are writing your Selenium tests in Java, you can leverage <a href="http://testng.org/doc/documentation-main.html#parallel-running">TestNG parallel runs</a> or <a href="https://parallel-junit.dev.java.net/">Parallel JUnit</a>. If you prefer to write your Selenium tests in Ruby, you might want to look into <a href="http://deep-test.rubyforge.org/">DeepTest</a> or spawn multiple processes. Chances are that your favorite programming language and development platform already have a solution. </p>
 
-<h2>Requesting a Specific Environment</h2>
+<h2 id="requesting-a-specific-environment">Requesting a Specific Environment</h2>
 
 <p>A traditional Selenium test requests a specific browser at the beginning of every Selenium session. It requests it in the form of a pre-defined string such as <code>*firefox</code> or <code>*iexplore</code>. Nevertheless a test cannot request more fine grained capabilities such as Firefox on Linux or IE 6.0 on Windows XP SP2. The underlying assumption is that you are targetting a single Remote Control, so you should be aware if it runs on Windows XP or not. </p>
 
