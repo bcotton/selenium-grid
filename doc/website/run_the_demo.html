@@ -11,7 +11,7 @@
      Run the Demo
    </div>
    
-  <h2>Requirements</h2>
+  <h2 id="requirements">Requirements</h2>
 
     <p>
       To run the demo you will need to complete the steps described
@@ -32,7 +32,7 @@
       <code>selenium-grid-0.9.x</code>).
     </p>
 
-  <h2>Running the Tests in Sequence on Firefox on a Single Machine</h2>
+  <h2 id="run-in-sequence">Running the Tests in Sequence on Firefox on a Single Machine</h2>
 
 <p>Go to the selenium distribution directory and launch in a new terminal: </p>
 
@@ -65,7 +65,7 @@
 
 <p>Note: if you want to understand what the selenium test is about, or what is going on under the cover, have a look at the <code>demo</code> sub-project in the source code. </p>
 
-  <h2>Running the Tests in Parallel on Firefox on a Single Machine</h2>
+  <h2 id="run-in-parallel">Running the Tests in Parallel on Firefox on a Single Machine</h2>
 
     <p>First make sure that you already have the Hub and a remote control running. If not, follow the instructions described in the <a href="#tests_in_sequence">Running the Tests in Sequence</a> section. </p>
 
@@ -98,7 +98,7 @@
 
 <p>You can then experiment with bringing down one or two remote controls and check that the total run time is directly proportional to the number of available remote controls. </p>
 
-  <h2>Running the Tests in Parallel on Multiple Machines</h2>
+  <h2 id="run-distributed">Running the Tests in Parallel on Multiple Machines</h2>
 
 <p>Until now we have been running the hub and the remote controls on the same machine. This was quick and easy to set up, but ultimately we want to run the remote controls on multiple machines. Now let&#8217;s try to distribute the whole grid on 3 different machines. </p>
 
@@ -148,7 +148,7 @@
 
 <p>The total run time is likely to be slighly higher than when running the tests in parallel on the same machine but still significantly faster than when running the tests in sequence. As you scale the number of remote controls upward to the point of stressing a single RC machine, as you would expect, the performance advantage moves towards a distributed environment. </p>
 
-<h2>Running the Tests with Remote Controls Providing Different Environments</h2>
+  <h2 id="run-for-multiple-environments">Running the Tests with Remote Controls Providing Different Environments</h2>
 
 <p>Until now we have distributed the remote controls, but all of them were equivalent. For instance, when the Selenium test was openning a new session for the Firefox browser, it had no idea whether it ended up running on Windows, Linux or Mac OS. </p>
 
