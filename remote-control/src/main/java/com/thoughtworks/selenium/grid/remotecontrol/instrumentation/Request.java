@@ -27,7 +27,6 @@ public class Request {
     public static void readHeader(BufferedReader reader) throws IOException {
         while (reader.ready()) {
             String headerLine = reader.readLine();
-            System.out.println(headerLine);
             if (headerLine.equals(CRLF) || headerLine.equals("")) {
                 break;
             }
