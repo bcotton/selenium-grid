@@ -14,6 +14,14 @@
   <property name="test.src" location="src/test/unit"/>
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
+  <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
+
+  <path id="jruby.classpath">
+    <fileset dir="${basedir}/../lib/jruby-1.0.2">
+      <include name="jruby.jar"/>
+    </fileset>
+    <pathelement path="${basedir}/../lib/jruby-1.0.2/ruby/1.8"/>
+  </path>
 
   <path id="compile.classpath">
     <fileset dir="${basedir}/../lib">
@@ -58,6 +66,18 @@
     </copy>
   </target>
 
+  <target name="jruby-test" depends="compile" description="Run JRuby Tests">
+    <java classname="org.jruby.Main" fork="true" failonerror="true">
+      <classpath refid="compile.classpath"/>
+      <classpath refid="testing.classpath"/>
+      <classpath refid="jruby.classpath"/>
+
+      <arg value="-I"/>
+      <arg value="${jruby.test.dir}"/>
+      <arg value="${jruby.test.dir}/all_tests.rb"/>
+    </java>
+  </target>
+  
   <target name="test" depends="compile" description="run tests">
     <mkdir dir="${test.output}"/>
     <mkdir dir="${test.reports}"/>

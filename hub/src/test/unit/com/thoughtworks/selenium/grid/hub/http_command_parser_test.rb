@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + "/../../../../../unit_test_helper")
 
-include_class 'com.thoughtworks.selenium.grid.hub.HttpParameters'
+include_class 'com.thoughtworks.selenium.grid.HttpParameters'
 include_class 'com.thoughtworks.selenium.grid.hub.HttpCommandParser'
 include_class 'com.thoughtworks.selenium.grid.hub.Environment'
 include_class 'com.thoughtworks.selenium.grid.hub.EnvironmentManager'
