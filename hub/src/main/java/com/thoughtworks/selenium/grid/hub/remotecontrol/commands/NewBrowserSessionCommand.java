@@ -3,10 +3,10 @@ package com.thoughtworks.selenium.grid.hub.remotecontrol.commands;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.thoughtworks.selenium.grid.hub.Environment;
-import com.thoughtworks.selenium.grid.hub.HttpParameters;
+import com.thoughtworks.selenium.grid.HttpParameters;
+import com.thoughtworks.selenium.grid.Response;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.Response;
 
 import java.io.IOException;
 import java.util.regex.Matcher;

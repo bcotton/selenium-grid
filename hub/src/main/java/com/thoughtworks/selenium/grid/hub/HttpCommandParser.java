@@ -3,6 +3,7 @@ package com.thoughtworks.selenium.grid.hub;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.NewBrowserSessionCommand;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommand;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.TestCompleteCommand;
+import com.thoughtworks.selenium.grid.HttpParameters;
 
 /**
  * Parse HTTP commands targeting a Remote Control

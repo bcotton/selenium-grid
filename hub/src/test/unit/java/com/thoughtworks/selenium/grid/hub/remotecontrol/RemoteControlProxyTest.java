@@ -8,7 +8,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import com.thoughtworks.selenium.grid.hub.HttpParameters;
+import com.thoughtworks.selenium.grid.HttpParameters;
+import com.thoughtworks.selenium.grid.Response;
+import com.thoughtworks.selenium.grid.HttpClient;
 
 
 public class RemoteControlProxyTest extends UsingClassMock {

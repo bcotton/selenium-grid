@@ -1,6 +1,8 @@
 package com.thoughtworks.selenium.grid.hub.remotecontrol;
 
-import com.thoughtworks.selenium.grid.hub.HttpParameters;
+import com.thoughtworks.selenium.grid.HttpParameters;
+import com.thoughtworks.selenium.grid.Response;
+import com.thoughtworks.selenium.grid.HttpClient;
 
 import java.io.IOException;
 

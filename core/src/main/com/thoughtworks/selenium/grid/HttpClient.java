@@ -1,4 +1,4 @@
-package com.thoughtworks.selenium.grid.hub.remotecontrol;
+package com.thoughtworks.selenium.grid;
 
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -8,7 +8,6 @@ import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 
-import com.thoughtworks.selenium.grid.hub.HttpParameters;
 
 /**
  * Invoke HTTP GET requests and gather status code and text body for the response.

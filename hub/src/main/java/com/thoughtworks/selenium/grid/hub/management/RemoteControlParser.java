@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management;
 
-import com.thoughtworks.selenium.grid.hub.remotecontrol.HttpClient;
+import com.thoughtworks.selenium.grid.HttpClient;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
 
 import javax.servlet.http.HttpServletRequest;
