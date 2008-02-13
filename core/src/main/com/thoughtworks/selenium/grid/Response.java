@@ -1,4 +1,4 @@
-package com.thoughtworks.selenium.grid.hub.remotecontrol;
+package com.thoughtworks.selenium.grid;
 
 
 public class Response {

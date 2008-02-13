@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.thoughtworks.selenium.grid.HttpParameters;
+
 
 public class ServletParameterAdapterTest {
 

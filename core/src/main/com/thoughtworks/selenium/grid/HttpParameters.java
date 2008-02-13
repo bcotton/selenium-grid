@@ -1,4 +1,4 @@
-package com.thoughtworks.selenium.grid.hub;
+package com.thoughtworks.selenium.grid;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

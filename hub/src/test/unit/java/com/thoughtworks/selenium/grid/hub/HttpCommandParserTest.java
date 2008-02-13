@@ -2,6 +2,7 @@ package com.thoughtworks.selenium.grid.hub;
 
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.NewBrowserSessionCommand;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommand;
+import com.thoughtworks.selenium.grid.HttpParameters;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import org.jbehave.classmock.UsingClassMock;

@@ -21,7 +21,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Jetty" level="project" />
-    <orderEntry type="library" name="HttpClient" level="project" />
     <orderEntry type="library" name="Unit Testing" level="project" />
     <orderEntry type="library" name="Web" level="project" />
     <orderEntry type="library" name="Yaml" level="project" />

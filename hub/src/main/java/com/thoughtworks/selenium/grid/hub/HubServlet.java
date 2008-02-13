@@ -1,7 +1,8 @@
 package com.thoughtworks.selenium.grid.hub;
 
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.Response;
+import com.thoughtworks.selenium.grid.Response;
+import com.thoughtworks.selenium.grid.HttpParameters;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommand;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

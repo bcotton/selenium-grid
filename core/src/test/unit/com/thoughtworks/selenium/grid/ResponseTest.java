@@ -1,7 +1,8 @@
-package com.thoughtworks.selenium.grid.hub.remotecontrol;
+package com.thoughtworks.selenium.grid;
 
 import junit.framework.Assert;
 import org.junit.Test;
+import com.thoughtworks.selenium.grid.Response;
 
 
 public class ResponseTest {

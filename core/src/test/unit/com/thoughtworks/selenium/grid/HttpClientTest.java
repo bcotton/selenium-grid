@@ -1,6 +1,7 @@
-package com.thoughtworks.selenium.grid.hub.remotecontrol;
+package com.thoughtworks.selenium.grid;
 
 import static junit.framework.Assert.assertEquals;
+import junit.framework.Assert;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.jbehave.classmock.UsingClassMock;
@@ -10,7 +11,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.ConnectException;
 
-import com.thoughtworks.selenium.grid.hub.HttpParameters;
 
 public class HttpClientTest extends UsingClassMock {
 
@@ -27,7 +27,7 @@ public class HttpClientTest extends UsingClassMock {
         method.expects("getResponseBodyAsString").will(returnValue("Body content"));
         HttpClient client = new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient);
         response = client.request((GetMethod) method);
-        assertEquals("Body content", response.body());
+        Assert.assertEquals("Body content", response.body());
         verifyMocks();
     }
 
@@ -71,7 +71,7 @@ public class HttpClientTest extends UsingClassMock {
         final PostMethod postmethod;
         
         postmethod = new HttpClient().buildPostMethod("http://a.url/somwhere", new HttpParameters());
-        assertEquals("http://a.url/somwhere", postmethod.getURI().toString());
+        Assert.assertEquals("http://a.url/somwhere", postmethod.getURI().toString());
     }
 
     @Test
@@ -83,8 +83,8 @@ public class HttpClientTest extends UsingClassMock {
         parameters.put("selenium", "grid");
         parameters.put("open", "qa");
         postmethod = new HttpClient().buildPostMethod("", parameters);
-        assertEquals("grid", postmethod.getParameter("selenium").getValue());
-        assertEquals("qa", postmethod.getParameter("open").getValue());
+        Assert.assertEquals("grid", postmethod.getParameter("selenium").getValue());
+        Assert.assertEquals("qa", postmethod.getParameter("open").getValue());
     }
 
 }
