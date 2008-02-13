@@ -5,27 +5,21 @@ include_class 'com.thoughtworks.selenium.grid.hub.HttpParameters'
 
 class ServletParameterAdapterTest < Test::Unit::TestCase
 
-  test "query string is empty when request has no parameter" do
-    assert_equal "", HttpParameters.new.queryString
+  test "toString just have class name when request has no parameter" do
+    assert_equal "", HttpParameters.new.to_s
   end
 
-  test "build query string contructs the query string from request parameters" do
+  test "toString includes request parameters when any" do
     parameters = HttpParameters.new
     parameters.put "cmd", "testComplete"
-    assert_equal "cmd=testComplete", parameters.queryString
+    assert_equal 'cmd => "testComplete"', parameters.to_s
   end
 
-  test "build query string is escaped" do
-    parameters = HttpParameters.new
-    parameters.put "param", "A value with space / slash"
-    assert_equal "param=A+value+with+space+%2F+slash", parameters.queryString
-  end
-
-  test "build query string seperates parameters with ampersands" do
+  test "toString seperates parameters with space" do
     parameters = HttpParameters.new
     parameters.put "cmd", "testComplete"
     parameters.put "sessionId", "1234"
-    assert_equal "cmd=testComplete&sessionId=1234", parameters.queryString
+    assert_equal 'cmd => "testComplete", sessionId => "1234"', parameters.to_s
   end
 
   test "get returns null when parameter does not exist" do

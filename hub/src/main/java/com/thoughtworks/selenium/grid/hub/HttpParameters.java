@@ -58,6 +58,24 @@ public class HttpParameters {
         return builder.toString();
     }
 
+    public String toString() {
+        final StringBuilder builder;
+
+        builder = new StringBuilder(150);
+        for (String name : parameterMap.keySet()) {
+            builder.append(name);
+            builder.append(" => \"");
+            builder.append(get(name));
+            builder.append("\", ");
+        }
+        if (!parameterMap.isEmpty()) {
+          builder.deleteCharAt(builder.length() - 1);
+          builder.deleteCharAt(builder.length() - 1);
+        }
+
+        return builder.toString();
+    }
+
     protected String encode(String value) {
         try {
             return URLEncoder.encode(value, "UTF-8");

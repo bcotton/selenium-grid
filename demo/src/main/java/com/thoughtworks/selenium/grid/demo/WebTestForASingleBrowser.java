@@ -2,6 +2,8 @@ package com.thoughtworks.selenium.grid.demo;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import com.thoughtworks.selenium.Selenium;
+import static org.testng.AssertJUnit.assertEquals;
 
 /**
  * Traditional Selenium Test checking the quality of Amazon comments ;o).
@@ -32,7 +34,12 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void secondTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
-        runAmazonScenario();
+
+        seleniumDriver().open("/");
+        seleniumDriver().type("twotabsearchtextbox", "32 décembre");
+        seleniumDriver().click("Go");
+        seleniumDriver().waitForPageToLoad("60000");
+        assertEquals("32 décembre", seleniumDriver().getValue("twotabsearchtextbox"));
         closeSeleniumSession();
     }
 
