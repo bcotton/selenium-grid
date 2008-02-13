@@ -44,12 +44,12 @@ public class HubServlet extends HttpServlet {
         final SeleneseCommand command;
         final Response response;
 
-        logger.info("Processing '" + parameters.queryString() + "'");
+        logger.info("Processing '" + parameters.toString() + "'");
         try {
             command = new HttpCommandParser(parameters).parse(environmentManager);
             response = command.execute(pool);
         } catch (CommandParsingException e) {
-            logger.error("Failed to parse '" + parameters.queryString() + "' : " + e.getMessage());
+            logger.error("Failed to parse '" + parameters.toString() + "' : " + e.getMessage());
             return new Response(e.getMessage());
         }
         logger.info("Responding with " + response.statusCode() + "/ '" + response.body() + "'");

@@ -41,23 +41,6 @@ public class HttpParameters {
         return parameterMap.keySet();
     }
 
-    public String queryString() {
-        final StringBuilder builder;
-
-        builder = new StringBuilder(150);
-        if (parameterMap.isEmpty()) {
-            return "";
-        }
-        for (String name : parameterMap.keySet()) {
-            builder.append(encode(name));
-            builder.append("=").append(encode(get(name)));
-            builder.append("&");
-        }
-        builder.deleteCharAt(builder.length() - 1);
-
-        return builder.toString();
-    }
-
     public String toString() {
         final StringBuilder builder;
 

@@ -52,7 +52,7 @@ public class SeleneseCommandTest extends UsingClassMock {
         parameters = new HttpParameters();
         parameters.put("foo", "bar");
         response = new SeleneseCommand(null, parameters).execute(null);
-        assertEquals("ERROR: Selenium Driver error: No sessionId provided for command 'foo=bar'", response.body());
+        assertEquals("ERROR: Selenium Driver error: No sessionId provided for command 'foo => \"bar\"'", response.body());
     }
 
 }

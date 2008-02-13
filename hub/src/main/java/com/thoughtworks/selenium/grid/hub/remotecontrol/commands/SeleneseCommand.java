@@ -32,7 +32,7 @@ public class SeleneseCommand {
         final RemoteControlProxy remoteControl;
 
         if (null == sessionId) {
-            return new Response("Selenium Driver error: No sessionId provided for command '" + parameters.queryString() + "'");
+            return new Response("Selenium Driver error: No sessionId provided for command '" + parameters.toString() + "'");
         }
         remoteControl = pool.retrieve(sessionId());
         return remoteControl.forward(parameters());
