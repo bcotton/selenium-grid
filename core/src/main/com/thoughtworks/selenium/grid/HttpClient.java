@@ -41,7 +41,6 @@ public class HttpClient {
 
         postMethod = new PostMethod(url);
         for (String name : parameters.names()) {
-            System.out.println(">>>>> " + name + " -> " + parameters.get(name));            
             postMethod.setParameter(name, parameters.get(name));
         }
         return postMethod;

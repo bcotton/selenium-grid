@@ -34,12 +34,17 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void secondTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        runAmazonScenario();
+        closeSeleniumSession();
 
-        seleniumDriver().open("/");
-        seleniumDriver().type("twotabsearchtextbox", "32 d残embre");
-        seleniumDriver().click("Go");
-        seleniumDriver().waitForPageToLoad("60000");
-        assertEquals("32 d残embre", seleniumDriver().getValue("twotabsearchtextbox"));
+//        runAmazonScenario();
+//        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+//
+//        seleniumDriver().open("/");
+//        seleniumDriver().type("twotabsearchtextbox", "32 d残embre");
+//        seleniumDriver().click("Go");
+//        seleniumDriver().waitForPageToLoad("60000");
+//        assertEquals("32 d残embre", seleniumDriver().getValue("twotabsearchtextbox"));
         closeSeleniumSession();
     }
 
