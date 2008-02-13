@@ -11,7 +11,7 @@
   <property name="build.src" location="src/main"/>
   <property name="build.output" location="target/classes"/>
   <property name="dist" location="${basedir}/target/dist"/>
-  <property name="test.src" location="src/test/unit"/>
+  <property name="test.src" location="src/test/unit/java"/>
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
@@ -78,7 +78,7 @@
     </java>
   </target>
   
-  <target name="test" depends="compile" description="run tests">
+  <target name="test" depends="compile, jruby-test" description="run tests">
     <mkdir dir="${test.output}"/>
     <mkdir dir="${test.reports}"/>
 
