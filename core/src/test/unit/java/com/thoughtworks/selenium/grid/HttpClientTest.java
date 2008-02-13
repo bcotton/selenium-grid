@@ -24,10 +24,25 @@ public class HttpClientTest extends UsingClassMock {
 
         httpClient = mock(org.apache.commons.httpclient.HttpClient.class);
         method = mock(GetMethod.class);
-        method.expects("getResponseBodyAsString").will(returnValue("Body content"));
+        method.expects("getResponseBody").will(returnValue("Body content".getBytes()));
         HttpClient client = new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient);
         response = client.request((GetMethod) method);
         Assert.assertEquals("Body content", response.body());
+        verifyMocks();
+    }
+
+    @Test
+    public void responseHandleInternationalCharactersWhenUTF8EncodedAsRemoteControlDo() throws IOException {
+        final Response response;
+        final Mock method;
+        final Mock httpClient;
+
+        httpClient = mock(org.apache.commons.httpclient.HttpClient.class);
+        method = mock(PostMethod.class);
+        method.expects("getResponseBody").will(returnValue("32 décembre".getBytes("utf-8")));
+        HttpClient client = new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient);
+        response = client.request((PostMethod) method);
+        Assert.assertEquals("32 décembre", response.body());
         verifyMocks();
     }
 
@@ -38,6 +53,7 @@ public class HttpClientTest extends UsingClassMock {
 
         httpClient = mock(org.apache.commons.httpclient.HttpClient.class);
         method = mock(GetMethod.class);
+        method.expects("getResponseBody").will(returnValue("".getBytes()));
         method.expects("releaseConnection");
         HttpClient client = new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient);
         client.request((GetMethod) method);
@@ -56,13 +72,6 @@ public class HttpClientTest extends UsingClassMock {
         method.expects("releaseConnection");
         HttpClient client = new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient);
         client.request((GetMethod) method);
-        verifyMocks();
-    }
-
-    @Test
-    public void getAlsoAcceptAURL() throws IOException {
-        final Mock httpClient = mock(org.apache.commons.httpclient.HttpClient.class);
-        new HttpClient((org.apache.commons.httpclient.HttpClient) httpClient).get("http://a/url");
         verifyMocks();
     }
 
