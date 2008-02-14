@@ -36,15 +36,6 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
         createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
         runAmazonScenario();
         closeSeleniumSession();
-
-//        runAmazonScenario();
-//        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
-//
-//        seleniumDriver().open("/");
-//        seleniumDriver().type("twotabsearchtextbox", "32 décembre");
-//        seleniumDriver().click("Go");
-//        seleniumDriver().waitForPageToLoad("60000");
-//        assertEquals("32 décembre", seleniumDriver().getValue("twotabsearchtextbox"));
         closeSeleniumSession();
     }
 

@@ -1,0 +1,33 @@
+
+Summary of changes from v0.9.3 to v0.9.4
+========================================
+
+Philippe Hanrigou <http://ph7spot.com>:
+
+  * Sample parallel test suite using Ruby/RSpec
+
+  * Converted Demo to TestNG
+
+  * Made Selenium Grid work with Selenium 0.9.3 RC.
+    Latest RC has changed the way the session IDs are set and 
+    is now using GUIDs.
+
+  * Allow custom arguments to be passed to RCs at startup
+
+    ant -DseleniumArgs="..." launch-remote-control
+    
+  * Bug Fix: Can handle commands with huge text payload.
+    Use POST not GET to transfer commands to RCs to be able 
+    to process type commands with a huge text
+
+  * Bug Fix: Properly handle international characters.
+    Fixed HttpClient wrapper to assume UTF-8 as Charset is 
+    not explicitely set.
+
+  * Introduced JRuby for testing
+
+
+Clinton Bishop:
+
+  * Helped converting some tests to JRuby
+
