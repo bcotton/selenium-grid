@@ -136,7 +136,6 @@
           <attribute name="Specification-Vendor" value="ThoughtWorks"/>
         </section>
       </manifest>
-      <fileset dir="${basedir}/src/main/ruby"/>
     </jar>
   </target>
 
