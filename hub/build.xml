@@ -163,11 +163,6 @@
       <zipfileset src="${basedir}/../lib/commons-httpclient-3.0.1.jar"/>
       <zipfileset src="${basedir}/../lib/commons-codec-1.3.jar"/>
       <zipfileset src="${basedir}/../lib/commons-logging-1.0.4.jar"/>
-      <zipfileset src="${basedir}/../lib/jruby-1.0.2/jruby.jar"/>
-      <zipfileset src="${basedir}/../lib/jruby-1.0.2/backport-util-concurrent.jar"/>
-      <zipfileset src="${basedir}/../lib/jruby-1.0.2/asm-commons-2.2.3.jar"/>
-      <zipfileset src="${basedir}/../lib/jruby-1.0.2/asm-2.2.3.jar"/>
-      <fileset dir="${basedir}/../lib/jruby-1.0.2/ruby/1.8"/>
     </jar>
   </target>
 
