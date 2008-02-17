@@ -37,8 +37,8 @@ module SeleniumGrid
       
       def refresh_status
         info = self.class.describe instance_id
-        public_dns = info[:public_dns]
-        private_dns = info[:private_dns]
+        @public_dns = info[:public_dns]
+        @private_dns = info[:private_dns]
       end
                   
     end

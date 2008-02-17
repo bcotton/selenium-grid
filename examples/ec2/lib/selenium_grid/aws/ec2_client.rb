@@ -2,8 +2,8 @@ module SeleniumGrid
   module AWS
     module Ec2Client
       
-      def describe(ami)
-        output = ec2_shell "ec2-describe-instances #{ami}"
+      def describe(instance_id)
+        output = ec2_shell "ec2-describe-instances #{instance_id}"
         output =~ /INSTANCE\s+(i-.*)$/
         fields = $1.split(/\s+/)
         if output =~ /running/
