@@ -3,22 +3,14 @@
 #
 # http://groups.google.com/group/ec2-on-rails-discuss/browse_thread/thread/48825d5a0abf9647/e20c2f506dafc435?lnk=gst&q=ssh+capistrano#e20c2f506dafc435
 #
+require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
+
 set :ami, ENV["AMI"] || "ami-6801e401"
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
-set :selenium_grid_path, "/usr/local/lib/selenium-grid"
-
-require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
-
+set :selenium_grid_path, "/usr/local/lib/selenium-grid-0.9.4"
+set :grid, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
-set :user, "root"
-# set :ssh_options, { :keys => [ "" ] }
-# NOTE: for some reason Capistrano requires you to have both the public and
-# the private key in the same folder, the public key should have the 
-# extension ".pub".
-# ssh_options[:keys] = %w(/Volumes/Private Disk/New Stuff Mac Only/Amazon EC2/id_rsa-grid-keypair)
-
-set :grid_hub, SeleniumGrid::AWS::Cloud.load.hub 
  
 namespace :hub do
 
@@ -26,7 +18,8 @@ namespace :hub do
   task :boot do
     SeleniumGrid::AWS::Cloud.update do |cloud|
       puts "Starting a new EC2 Instance..."
-      cloud.hub = SeleniumGrid::AWS::Server.boot_and_acquire_dns AMI, :keypair => KEYPAIR
+      cloud.hub = SeleniumGrid::AWS::Server.boot_and_acquire_dns ami, :keypair => keypair_name
+      set :cloud, cloud
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
     ec2_client.authorize_port 22
@@ -35,18 +28,18 @@ namespace :hub do
 
   desc "Start Selenium Grid Hub."
   task :start do
-    grid_hub.run "cd #{selenium_grid_path}; nohup rake hub:start BACKGROUND=true", :keypair => keypair    
+    grid.hub.run "cd #{selenium_grid_path}; nohup rake hub:start BACKGROUND=true", :keypair => keypair    
   end
 
   desc("Stop Selenium Grid Hub.")
   task :stop, :roles => :hub do
-    grid_hub.run 'kill `lsof -t -i :4444`', :keypair => keypair
+    grid.hub.run 'kill `lsof -t -i :4444`', :keypair => keypair
   end
 
   desc "Open Selenium Grid Hub Console in a browser."
   task :console do
     launcher = PLATFORM["darwin"] ? "open" : "firefox "
-    system "open http://#{grid_hub.public_dns}:4444/console"
+    system "open http://#{grid.hub.public_dns}:4444/console"
   end
   
   task :refresh_status do
@@ -59,8 +52,9 @@ end
 
 namespace :ec2 do
     
-  task :env do
-    ["EC2_HOMEX", "EC2_PRIVATE_KEY", "EC2_CERT"].each do |variable|
+  desc "Check EC2 related configuration."
+  task :check_settings do
+    %w(EC2_HOME EC2_PRIVATE_KEY EC2_CERT EC2_KEYPAIR).each do |variable|
       raise <<-EOS unless ENV[variable]
       
         +++++++++++++++++++++++++++++++++++++++++++++++
