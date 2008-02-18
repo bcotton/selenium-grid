@@ -40,7 +40,13 @@ module SeleniumGrid
         @public_dns = info[:public_dns]
         @private_dns = info[:private_dns]
       end
-                  
+      
+      def run(command, options)
+        actual_command = "ssh -i '#{options[:keypair]}' root@#{public_dns} '#{command}'"
+        puts actual_command
+        system actual_command
+        raise "Error with #{command}" if 0 != $?
+      end         
     end
 
   end

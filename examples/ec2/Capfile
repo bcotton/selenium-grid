@@ -1,14 +1,25 @@
 #
 # Required : sudo gem install amazon-ec2 
 #
-AMI = ENV["AMI"] || "ami-6801e401"
-KEYPAIR = ENV["KEYPAIR"] || "grid-keypair"
+# http://groups.google.com/group/ec2-on-rails-discuss/browse_thread/thread/48825d5a0abf9647/e20c2f506dafc435?lnk=gst&q=ssh+capistrano#e20c2f506dafc435
+#
+set :ami, ENV["AMI"] || "ami-6801e401"
+set :keypair, ENV["EC2_KEYPAIR"]
+set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
+set :selenium_grid_path, "/usr/local/lib/selenium-grid"
 
 require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
 
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
+set :user, "root"
+# set :ssh_options, { :keys => [ "" ] }
+# NOTE: for some reason Capistrano requires you to have both the public and
+# the private key in the same folder, the public key should have the 
+# extension ".pub".
+# ssh_options[:keys] = %w(/Volumes/Private Disk/New Stuff Mac Only/Amazon EC2/id_rsa-grid-keypair)
 
-
+set :grid_hub, SeleniumGrid::AWS::Cloud.load.hub 
+ 
 namespace :hub do
 
   desc "Boot a new EC2 Instance to Run Selenium Grid Hub."
@@ -18,13 +29,24 @@ namespace :hub do
       cloud.hub = SeleniumGrid::AWS::Server.boot_and_acquire_dns AMI, :keypair => KEYPAIR
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
-    ec2_client.authorize_port(22)
-    ec2_client.authorize_port(4444)    
+    ec2_client.authorize_port 22
+    ec2_client.authorize_port 4444
   end
 
-  desc "Start Selenium Grid Hub, launching a new EC2 instance if necessary."
+  desc "Start Selenium Grid Hub."
   task :start do
-    run "ls", :hosts => hub.public_dns, :keys => "no-akey"
+    grid_hub.run "cd #{selenium_grid_path}; nohup rake hub:start BACKGROUND=true", :keypair => keypair    
+  end
+
+  desc("Stop Selenium Grid Hub.")
+  task :stop, :roles => :hub do
+    grid_hub.run 'kill `lsof -t -i :4444`', :keypair => keypair
+  end
+
+  desc "Open Selenium Grid Hub Console in a browser."
+  task :console do
+    launcher = PLATFORM["darwin"] ? "open" : "firefox "
+    system "open http://#{grid_hub.public_dns}:4444/console"
   end
   
   task :refresh_status do
