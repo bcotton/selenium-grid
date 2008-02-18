@@ -8,6 +8,8 @@ require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
 set :ami, ENV["AMI"] || "ami-6801e401"
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
+set :remote_control_port_range, "5555-5555"
+
 set :selenium_grid_path, "/usr/local/lib/selenium-grid-0.9.4"
 set :grid, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
@@ -19,9 +21,9 @@ namespace :hub do
     SeleniumGrid::AWS::Cloud.update do |cloud|
       puts "Starting a new EC2 Instance..."
       cloud.hub = SeleniumGrid::AWS::Server.boot_and_acquire_dns ami, :keypair => keypair_name
-      set :cloud, cloud
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
+    set :grid, SeleniumGrid::AWS::Cloud.load
     ec2_client.authorize_port 22
     ec2_client.authorize_port 4444
   end
@@ -32,14 +34,20 @@ namespace :hub do
   end
 
   desc("Stop Selenium Grid Hub.")
-  task :stop, :roles => :hub do
-    grid.hub.run 'kill `lsof -t -i :4444`', :keypair => keypair
+  task :stop do
+    grid.hub.run 'cd #{selenium_grid_path}; rake hub:stop', :keypair => keypair
   end
 
   desc "Open Selenium Grid Hub Console in a browser."
   task :console do
     launcher = PLATFORM["darwin"] ? "open" : "firefox "
-    system "open http://#{grid.hub.public_dns}:4444/console"
+    system "open #{grid.hub.console_url}"
+  end
+
+  desc "View Selenium Grid Hub logs."
+  task :logs do
+    launcher = PLATFORM["darwin"] ? "open" : "firefox "
+    grid.hub.run 'tail -200f #{selenium_grid_path}/log/hub.log', :keypair => keypair
   end
   
   task :refresh_status do
@@ -49,6 +57,40 @@ namespace :hub do
   end
   
 end
+
+namespace :rc do
+
+  desc "Boot a new EC2 Instance to run a collection of Selenium Grid Remote Controls."
+  task :boot do
+    SeleniumGrid::AWS::Cloud.update do |cloud|
+      puts "Starting a new EC2 Instance..."
+      new_farm = SeleniumGrid::AWS::Server.boot_and_acquire_dns ami, :keypair => keypair_name
+      cloud.farms << new_farm
+      puts "Started new Remote Control farm at #{new_farm.public_dns}"
+    end
+    set :grid, SeleniumGrid::AWS::Cloud.load
+    ec2_client.authorize_port 22
+    ec2_client.authorize_port 5555
+  end
+  
+  desc "Start Remote Controls for all farms."
+  task :start do
+    grid.farms.each do |farm|
+      farm.run "cd #{selenium_grid_path}; nohup rake rc:start_all HUB_URL=#{grid.hub.private_url} HOST=#{farm.private_dns} PORTS=#{remote_control_port_range} BACKGROUND=true", 
+               :keypair => keypair
+    end
+  end
+
+  desc "Stop Remote Controls for all farms."
+  task :stop do
+    grid.farms.each do |farm|
+      farm.run "cd #{selenium_grid_path}; rake rc:stop_all PORTS=#{remote_control_port_range}", 
+               :keypair => keypair
+    end
+  end
+  
+end
+
 
 namespace :ec2 do
     
