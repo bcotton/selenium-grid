@@ -3,8 +3,8 @@ module SeleniumGrid
   
     class Cloud
       FILE = "cloud.yml"
-      attr_accessor :hub
-      
+      attr_accessor :hub, :farms
+            
       def self.load
         begin
           YAML.load(File.read(FILE))
@@ -22,6 +22,10 @@ module SeleniumGrid
       
       def write 
         File.open(FILE, "w") {|file| file.write(self.to_yaml)}
+      end
+      
+      def farms
+        @farms ||= []
       end
             
     end

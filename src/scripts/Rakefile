@@ -13,6 +13,11 @@ task :'hub:start' do
                     :log_file => File.native_path(File.dirname(__FILE__) + "/log/hub.log")
 end
 
+desc("Stop Hub")
+task :'hub:stop' do
+  sh "kill `lsof -t -i :4444`"
+end
+
 desc("Launch Remote Control")
 task :'rc:start' do
   launch_rc(:port => (ENV['PORT'] || 5555)) 
