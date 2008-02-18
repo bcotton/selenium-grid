@@ -53,6 +53,7 @@
     <ant target="clean" antfile="build.xml" dir="remote-control"/>
     <ant target="clean" antfile="build.xml" dir="tools"/>
     <ant target="clean" antfile="build.xml" dir="demo"/>
+    <ant target="clean" antfile="build.xml" dir="examples/java"/>
     <delete dir="target"/>
   </target>
 
@@ -62,6 +63,7 @@
     <ant target="test" antfile="build.xml" dir="remote-control"/>
     <ant target="test" antfile="build.xml" dir="tools"/>
     <ant target="test" antfile="build.xml" dir="demo"/>
+    <ant target="compile" antfile="build.xml" dir="examples/java"/>
   </target>
 
   <target name="dist" depends="dist-bin, dist-src" description="Build binary and source distributions"/>
@@ -80,8 +82,9 @@
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/tools/target/dist/lib"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
-      <fileset file="${basedir}/demo/lib/testng-5.7-jdk15.jar"/>
-      <fileset file="${basedir}/demo/lib/demo.policy"/>
+      <fileset file="${basedir}/lib/testng.policy"/>
+      <fileset file="${basedir}/lib/testng-5.7-jdk15.jar"/>
+      <fileset file="${basedir}/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
     </copy>
     <copy todir="${dist}/${artifact}-${version}" overwrite="true">
       <fileset dir="${basedir}">

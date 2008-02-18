@@ -91,7 +91,7 @@
         failonerror="true"
 
         >
-      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
+      <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444"/>
@@ -112,7 +112,7 @@
         failonerror="true"
 
         >
-      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
+      <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />
@@ -138,7 +138,7 @@
         failonerror="true"
 
         >
-      <sysproperty key="java.security.policy" file="${basedir}/lib/demo.policy"/>
+      <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
       <sysproperty key="webSite" value="http://amazon.com" />
       <sysproperty key="seleniumHost" value="localhost" />
       <sysproperty key="seleniumPort" value="4444" />

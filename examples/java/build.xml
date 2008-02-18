@@ -1,0 +1,62 @@
+<project name="Selenium Grid Java Example" default="run" basedir=".">
+
+  <description>Selenium Grid Java Example</description>
+
+  <property file="${basedir}/../../project.properties"/>
+  <property name="name" value="Selenium Grid Demo"/>
+  <property name="artifact" value="selenium-grid-demo"/>
+  <property name="version" value="SNAPSHOT"/>
+  <tstamp/>
+  <property name="build.src" location="src/"/>
+  <property name="build.output" location="target/classes"/>
+  <property name="dist" location="${basedir}/target/dist"/>
+
+  <path id="test.classpath">
+    <pathelement location="${basedir}/../../lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
+    <pathelement location="${basedir}/../../lib/testng-5.7-jdk15.jar"/>
+    <pathelement location="${basedir}/../../tools/target/classes"/>
+    <pathelement location="${basedir}/../../lib/selenium-grid-tools-${version}.jar"/>
+    <pathelement path="${java.class.path}/"/>
+    <pathelement location="${build.output}" />
+  </path>
+
+  <target name="compile" description="compile the source ">
+    <mkdir dir="${build.output}"/>
+    <javac srcdir="${build.src}"
+           destdir="${build.output}"
+           debug="true"
+           source="1.5"
+           target="1.5">
+      <classpath refid="test.classpath"/>
+    </javac>
+  </target>
+
+  <target name="clean" description="Remove generated artifacts">
+    <delete dir="target"/>
+  </target>
+
+  <target name="run" description="Run Selenium tests in parallel (20 threads)">
+    <java classpathref="test.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true">
+
+      <sysproperty key="java.security.policy" file="${basedir}/../../lib/testng.policy"/>
+      <sysproperty key="webSite" value="http://amazon.com" />
+      <sysproperty key="seleniumHost" value="localhost" />
+      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="browser" value="*chrome" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Java Sample Test Suite" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="10"/>
+      <arg value="-testclass"/>
+      <arg value="com.thoughtworks.selenium.grid.examples.java.TechnicalBookTest"/>
+    </java>
+
+  </target>
+
+</project>
