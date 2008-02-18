@@ -19,8 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/build.xml" afterPath="$PROJECT_DIR$/src/scripts/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All.iml" afterPath="$PROJECT_DIR$/All.iml" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -88,18 +89,18 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.setAcceptsArbitraryObjectsAsValue$PageTest.setAcceptsArbitraryObjectsAsValue.es" NAME="PageTest.setAcceptsArbitraryObjectsAsValue" MODIFIED="1189727071140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1194104594250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself.es" NAME="EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself" MODIFIED="1190156189543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1202008928391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
+    <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1194104594250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$ServletParameterAdapterTest$ServletParameterAdapterTest.es" NAME="ServletParameterAdapterTest" MODIFIED="1202022522221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1202008928391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubServletTest$HubServletTest.es" NAME="HubServletTest" MODIFIED="1202009256141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
@@ -173,11 +174,11 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound.es" NAME="ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound" MODIFIED="1190156618965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.templateIsTheOneProvidedInTheConstructor$PageTest.templateIsTheOneProvidedInTheConstructor.es" NAME="PageTest.templateIsTheOneProvidedInTheConstructor" MODIFIED="1189726413204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest$HttpClientTest.es" NAME="HttpClientTest" MODIFIED="1202935503439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.templateIsTheOneProvidedInTheConstructor$PageTest.templateIsTheOneProvidedInTheConstructor.es" NAME="PageTest.templateIsTheOneProvidedInTheConstructor" MODIFIED="1189726413204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID.es" NAME="NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID" MODIFIED="1197830937264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
@@ -248,33 +249,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HugeRequestTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/remote-control/src/test/integration/com/thoughtworks/selenium/grid/remotecontrol/HugeRequestTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="51" selection-start="878" selection-end="878" vertical-scroll-proportion="0.50403875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="44" selection-start="754" selection-end="754" vertical-scroll-proportion="0.5541195">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebTestForASingleBrowser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.54801327">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/build.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -302,10 +276,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HubServer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HubServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.6203554">
+            <state line="36" column="36" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.6978998">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="3" selection-start="116" selection-end="116" vertical-scroll-proportion="0.06122449">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="28" selection-start="141" selection-end="141" vertical-scroll-proportion="0.06122449">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="0" selection-start="3384" selection-end="3466" vertical-scroll-proportion="0.6567164">
               <folding />
             </state>
           </provider>
@@ -407,7 +408,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
+          <option name="myItemId" value="Demo" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -417,219 +418,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
+          <option name="myItemId" value="Demo" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java/com" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/com" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java/com" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java/com/thoughtworks" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/demo" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -641,6 +434,60 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="All" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="All" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="All" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src/scripts" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="All" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
     </subPane>
@@ -656,7 +503,7 @@
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="false" />
       <abbreviatePackageNames />
-      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
+      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -728,49 +575,6 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
-      <module name="All" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -826,12 +630,69 @@
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" />
     </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
+      <module name="All" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -871,20 +732,6 @@
           </MavenBuilderState>
         </option>
       </MavenSettings>
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <configuration default="false" name="SelfRegisteringRemoteControlLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher" />
@@ -1427,20 +1274,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/test/unit/com/thoughtworks/selenium/grid/http_parameters_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="45" selection-start="159" selection-end="163" vertical-scroll-proportion="0.08801956">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/unit/unit_test_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="20" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.28822055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="62" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.55889726">
@@ -1464,7 +1297,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remote-control/src/test/integration/com/thoughtworks/selenium/grid/remotecontrol/HugeRequestTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="51" selection-start="878" selection-end="878" vertical-scroll-proportion="0.50403875">
+        <state line="26" column="51" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1497,13 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jruby-1.0.2/ruby/1.8/rexml/xpath_parser.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="710" column="15" selection-start="23473" selection-end="23473" vertical-scroll-proportion="0.32148626">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="478" column="0" selection-start="18809" selection-end="18809" vertical-scroll-proportion="0.01986755">
@@ -1525,9 +1351,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jruby-1.0.2/ruby/1.8/rexml/xpath_parser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="710" column="15" selection-start="23473" selection-end="23473" vertical-scroll-proportion="0.32148626">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.6203554">
+        <state line="36" column="36" selection-start="1642" selection-end="1642" vertical-scroll-proportion="0.6978998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="3384" selection-end="3466" vertical-scroll-proportion="0.6567164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="3" selection-start="116" selection-end="116" vertical-scroll-proportion="0.06122449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="28" selection-start="141" selection-end="141" vertical-scroll-proportion="0.06122449">
           <folding />
         </state>
       </provider>

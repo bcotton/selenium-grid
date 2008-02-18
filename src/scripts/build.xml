@@ -1,7 +1,8 @@
 <project name="Selenium Grid Distribution" basedir=".">
 
   <description>Selenium Grid Distribution</description>
-  <property name="version" value="0.9"/>
+  <property file="${basedir}/project.properties"/>
+  <property name="version" value="SNAPSHOT"/>
 
   <taskdef resource="testngtasks" classpath="${basedir}/lib/testng-5.7-jdk15.jar"/>
   
@@ -27,6 +28,7 @@
   <path id="demo.classpath">
     <fileset dir="${basedir}/lib">
       <include name="selenium-grid-demo-standalone-${version}*.jar"/>
+      <include name="testng-*.jar"/>
     </fileset>
     <pathelement path="${java.class.path}/"/>
   </path>

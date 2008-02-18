@@ -79,6 +79,12 @@
       <fileset file="${basedir}/demo/lib/testng-5.7-jdk15.jar"/>
       <fileset file="${basedir}/demo/lib/demo.policy"/>
     </copy>
+    <copy todir="${dist}/${artifact}-${version}" overwrite="true">
+      <fileset dir="${basedir}">
+        <include name="project.properties"/>
+        <include name="examples/**/*"/>
+      </fileset>
+    </copy>
     <mkdir dir="${dist}/${artifact}-${version}/sample-scripts"/>
     <copy todir="${dist}/${artifact}-${version}/sample-scripts" overwrite="true">
       <fileset dir="${basedir}/src/scripts">
