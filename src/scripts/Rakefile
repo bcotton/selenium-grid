@@ -23,6 +23,11 @@ task :'rc:start' do
   launch_rc(:port => (ENV['PORT'] || 5555)) 
 end
 
+desc("Stop Remote Control")
+task :'rc:stop' do
+  sh "kill `lsof -t -i :#{ENV['PORT'] || 5555}`"
+end
+
 desc("Launch Remote Control")
 task :'rc:start_all' do
   ports = ENV['PORTS'] || "5000-5020"
