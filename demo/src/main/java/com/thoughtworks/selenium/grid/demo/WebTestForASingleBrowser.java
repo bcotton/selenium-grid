@@ -1,9 +1,9 @@
 package com.thoughtworks.selenium.grid.demo;
 
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.thoughtworks.selenium.Selenium;
-import static org.testng.AssertJUnit.assertEquals;
 
 /**
  * Traditional Selenium Test checking the quality of Amazon comments ;o).
@@ -25,7 +25,7 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void firstTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }
@@ -33,16 +33,15 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (2).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void secondTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
         runAmazonScenario();
-        closeSeleniumSession();
         closeSeleniumSession();
     }
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (3).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void thirdTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }
@@ -50,7 +49,7 @@ public class WebTestForASingleBrowser extends AmazonCommentTestBase {
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (4).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void fourthTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, browser, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }

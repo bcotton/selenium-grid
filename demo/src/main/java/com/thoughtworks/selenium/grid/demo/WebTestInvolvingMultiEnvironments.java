@@ -1,5 +1,7 @@
 package com.thoughtworks.selenium.grid.demo;
 
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -22,7 +24,7 @@ public class WebTestInvolvingMultiEnvironments extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "firstEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on Window.")
     public void testForFirstEnvironment(String seleniumHost, int seleniumPort, String firstEnvironment, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, firstEnvironment, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, firstEnvironment, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }
@@ -30,7 +32,7 @@ public class WebTestInvolvingMultiEnvironments extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "secondEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on Windows (2).")
     public void testForSecondEnvironment(String seleniumHost, int seleniumPort, String secondEnvironment, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, secondEnvironment, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, secondEnvironment, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }
@@ -38,7 +40,7 @@ public class WebTestInvolvingMultiEnvironments extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "thirdEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on the Mac.")
     public void testForThirdEnvironment(String seleniumHost, int seleniumPort, String thirdEnvironment, String webSite) throws Throwable {
-        createSeleniumDriver(seleniumHost, seleniumPort, thirdEnvironment, webSite);
+        startSeleniumSession(seleniumHost, seleniumPort, thirdEnvironment, webSite);
         runAmazonScenario();
         closeSeleniumSession();
     }

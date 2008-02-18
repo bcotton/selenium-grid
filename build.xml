@@ -51,6 +51,7 @@
     <ant target="clean" antfile="build.xml" dir="core"/>
     <ant target="clean" antfile="build.xml" dir="hub"/>
     <ant target="clean" antfile="build.xml" dir="remote-control"/>
+    <ant target="clean" antfile="build.xml" dir="tools"/>
     <ant target="clean" antfile="build.xml" dir="demo"/>
     <delete dir="target"/>
   </target>
@@ -59,6 +60,7 @@
     <ant target="test" antfile="build.xml" dir="core"/>
     <ant target="test" antfile="build.xml" dir="hub"/>
     <ant target="test" antfile="build.xml" dir="remote-control"/>
+    <ant target="test" antfile="build.xml" dir="tools"/>
     <ant target="test" antfile="build.xml" dir="demo"/>
   </target>
 
@@ -68,6 +70,7 @@
     <ant target="package" antfile="build.xml" dir="core" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="hub" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="remote-control" inheritall="false"/>
+    <ant target="package" antfile="build.xml" dir="tools" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="demo" inheritall="false"/>
 
     <mkdir dir="${dist}/${artifact}-${version}"/>
@@ -75,6 +78,7 @@
       <fileset dir="${basedir}/hub/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/lib"/>
+      <fileset dir="${basedir}/tools/target/dist/lib"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
       <fileset file="${basedir}/demo/lib/testng-5.7-jdk15.jar"/>
       <fileset file="${basedir}/demo/lib/demo.policy"/>
