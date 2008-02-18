@@ -18,4 +18,5 @@ unit_tests do
     assert_equal :new_private_dns, server.private_dns
   end
 
+  
 end

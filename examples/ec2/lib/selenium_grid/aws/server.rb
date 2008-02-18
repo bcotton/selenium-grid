@@ -42,10 +42,8 @@ module SeleniumGrid
       end
       
       def run(command, options)
-        actual_command = "ssh -i '#{options[:keypair]}' root@#{public_dns} '#{command}'"
-        puts actual_command
-        system actual_command
-        raise "Error with #{command}" if 0 != $?
+        command = RemoteCommand.new command, options.merge(:host => public_dns)
+        command.execute
       end         
     end
 

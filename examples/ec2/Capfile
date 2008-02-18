@@ -13,6 +13,7 @@ set :remote_control_port_range, "5555-5555"
 set :selenium_grid_path, "/usr/local/lib/selenium-grid-0.9.4"
 set :grid, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
+set :vnc_password, 'selenium grid'
  
 namespace :hub do
 
@@ -20,22 +21,28 @@ namespace :hub do
   task :boot do
     SeleniumGrid::AWS::Cloud.update do |cloud|
       puts "Starting a new EC2 Instance..."
-      cloud.hub = SeleniumGrid::AWS::Server.boot_and_acquire_dns ami, :keypair => keypair_name
+      cloud.hub = SeleniumGrid::AWS::Hub.boot_and_acquire_dns ami, :keypair => keypair_name
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
     set :grid, SeleniumGrid::AWS::Cloud.load
     ec2_client.authorize_port 22
     ec2_client.authorize_port 4444
+    ec2_client.authorize_port 5900
+    ec2_client.authorize_port 6000
   end
 
   desc "Start Selenium Grid Hub."
   task :start do
-    grid.hub.run "cd #{selenium_grid_path}; nohup rake hub:start BACKGROUND=true", :keypair => keypair    
+    grid.hub.run "nohup rake hub:start BACKGROUND=true", 
+                 :pwd => selenium_grid_path
+                 :keypair => keypair
   end
 
   desc("Stop Selenium Grid Hub.")
   task :stop do
-    grid.hub.run 'cd #{selenium_grid_path}; rake hub:stop', :keypair => keypair
+    grid.hub.run 'rake hub:stop', 
+                 :pwd => selenium_grid_path
+                 :keypair => keypair    
   end
 
   desc "Open Selenium Grid Hub Console in a browser."
@@ -72,11 +79,28 @@ namespace :rc do
     ec2_client.authorize_port 22
     ec2_client.authorize_port 5555
   end
+
+  task :vnc_start do
+    grid.farms.each do |farm|
+      farm.run "nohup vncserver :0", :keypair => keypair, :su => "grid"
+    end
+    ec2_client.authorize_port 5900
+    ec2_client.authorize_port 6000
+  end
+  
+  desc "(Re)start Remote Controls for all farms."
+  task :restart do
+    stop
+    start
+  end
   
   desc "Start Remote Controls for all farms."
   task :start do
     grid.farms.each do |farm|
-      farm.run "cd #{selenium_grid_path}; nohup rake rc:start_all HUB_URL=#{grid.hub.private_url} HOST=#{farm.private_dns} PORTS=#{remote_control_port_range} BACKGROUND=true", 
+      farm.run "nohup rake rc:start_all HUB_URL=#{grid.hub.private_url} HOST=#{farm.private_dns} PORTS=#{remote_control_port_range} BACKGROUND=true", 
+               :display => ":0",
+               :path => "/usr/lib/firefox", 
+               :pwd => selenium_grid_path,
                :keypair => keypair
     end
   end
@@ -84,8 +108,9 @@ namespace :rc do
   desc "Stop Remote Controls for all farms."
   task :stop do
     grid.farms.each do |farm|
-      farm.run "cd #{selenium_grid_path}; rake rc:stop_all PORTS=#{remote_control_port_range}", 
-               :keypair => keypair
+      farm.run "rake rc:stop_all PORTS=#{remote_control_port_range}", 
+               :keypair => keypair,
+               :pwd => selenium_grid_path
     end
   end
   

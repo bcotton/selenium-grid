@@ -31,13 +31,8 @@ module SeleniumGrid
       end
             
       def ec2_shell(command)
-        puts 
-        puts command
         output = `${EC2_HOME}/bin/#{command}`
         # raise "Error running command '#{command}" unless 0 == $?
-        puts ">>>> got"
-        puts output
-        puts ">>>>>"
         output
       end
       
