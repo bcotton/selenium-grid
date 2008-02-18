@@ -19,14 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/index.html" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/website/run_the_demo.html" afterPath="$PROJECT_DIR$/doc/website/run_the_demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/build.xml" afterPath="$PROJECT_DIR$/demo/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/build.xml" afterPath="$PROJECT_DIR$/hub/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/website/give_feedback.html" afterPath="$PROJECT_DIR$/doc/website/give_feedback.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.xml" afterPath="$PROJECT_DIR$/core/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/build.xml" afterPath="$PROJECT_DIR$/remote-control/build.xml" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
