@@ -40,7 +40,11 @@ module SeleniumGrid
         @public_dns = info[:public_dns]
         @private_dns = info[:private_dns]
       end
-      
+
+      def shutdown
+        self.class.shutdown instance_id
+      end
+            
       def run(command, options)
         command = RemoteCommand.new command, options.merge(:host => public_dns)
         command.execute
