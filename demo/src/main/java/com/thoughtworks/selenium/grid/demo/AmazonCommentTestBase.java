@@ -10,8 +10,6 @@ import static org.testng.AssertJUnit.assertTrue;
 public abstract class AmazonCommentTestBase {
 
     protected void runAmazonScenario() throws Exception {
-        session();
-
         session().open("/");
         session().type("twotabsearchtextbox", "refactoring");
         session().click("navGoButtonPanel");
