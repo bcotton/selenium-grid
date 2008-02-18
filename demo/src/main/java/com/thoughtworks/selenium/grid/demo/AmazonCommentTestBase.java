@@ -14,7 +14,7 @@ public abstract class AmazonCommentTestBase {
     ThreadLocal<Selenium> threadLocalSelenium = new ThreadLocal<Selenium>();
 
     protected void runAmazonScenario() throws Exception {
-        final Selenium seleniumDriver = threadLocalSelenium.get();
+        final Selenium seleniumDriver = seleniumDriver();
 
         seleniumDriver.open("/");
         seleniumDriver.type("twotabsearchtextbox", "refactoring");

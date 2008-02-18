@@ -50,12 +50,12 @@
       <manifest>
         <attribute name="Main-Class"
                    value="com.thoughtworks.selenium.grid.hub.HubServer"/>
-        <attribute name="Built-By" value="ThoughtWorks and friends"/>
+        <attribute name="Built-By" value="OpenQA.org"/>
         <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
         <section name="common">
           <attribute name="Specification-Title" value="${name}"/>
           <attribute name="Specification-Version" value="${version}"/>
-          <attribute name="Specification-Vendor" value="ThoughtWorks"/>
+          <attribute name="Specification-Vendor" value="OpenQA.org"/>
         </section>
       </manifest>
       <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
