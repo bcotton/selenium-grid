@@ -19,8 +19,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/website/give_feedback.html" afterPath="$PROJECT_DIR$/doc/website/give_feedback.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/Demo.iml" afterPath="$PROJECT_DIR$/demo/Demo.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.ipr" afterPath="$PROJECT_DIR$/Selenium Grid.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/build.xml" afterPath="$PROJECT_DIR$/demo/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java" afterPath="$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -251,46 +258,43 @@
       <file leaf-file-name="AmazonCommentTestBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="19" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.8705584">
+            <state line="25" column="0" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.7614213">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebTestForASingleBrowser.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="18" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.66497463">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebTestInvolvingMultiEnvironments.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="0" selection-start="2003" selection-end="2003" vertical-scroll-proportion="1.0761421">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadSafeSeleniumSessionStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="25" selection-start="881" selection-end="881" vertical-scroll-proportion="0.70050764">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automation/build.xml">
+        <entry file="file://$PROJECT_DIR$/tools/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="3437" selection-end="3437" vertical-scroll-proportion="0.86259544">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_the_demo.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/website/run_the_demo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="6" selection-start="9244" selection-end="9244" vertical-scroll-proportion="0.036144577">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="HtmlPreview">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selenium.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/rspec/lib/selenium.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="17" selection-start="18" selection-end="18" vertical-scroll-proportion="0.030456852">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="66" selection-start="4659" selection-end="4659" vertical-scroll-proportion="1.0152671">
+            <state line="36" column="31" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.8244275">
               <folding />
             </state>
           </provider>
@@ -299,28 +303,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="66" selection-start="5743" selection-end="5743" vertical-scroll-proportion="0.73015875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="35" selection-start="2184" selection-end="2184" vertical-scroll-proportion="0.68373495">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="HtmlPreview">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HubServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="20" selection-start="637" selection-end="637" vertical-scroll-proportion="0.41075796">
+            <state line="156" column="0" selection-start="5849" selection-end="5944" vertical-scroll-proportion="0.8888889">
               <folding />
             </state>
           </provider>
@@ -338,7 +321,25 @@
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="66" selection-start="2264" selection-end="2264" vertical-scroll-proportion="0.47582698">
+            <state line="16" column="51" selection-start="767" selection-end="767" vertical-scroll-proportion="0.48854962">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="49" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.4920635">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demo.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/Demo.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -406,6 +407,40 @@
           <option name="myItemId" value="Selenium Grid" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Tools" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Tools" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/tools" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Hub" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -423,6 +458,20 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="Demo" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/demo" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Selenium Grid" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="All" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
@@ -438,24 +487,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="All" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/examples" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -495,11 +526,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="com.thoughtworks.selenium.grid.remotecontrol" />
       <recent name="com.thoughtworks.selenium.grid.demo" />
       <recent name="com.thoughtworks.selenium.grid.hub" />
       <recent name="com.thoughtworks.selenium.grid.hub.management" />
-      <recent name="org.openqa.selenium.farm.hub.management" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.thoughtworks.selenium.grid.hub.management.console.mvc" />
@@ -518,7 +549,7 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="TRUE" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="Application.HubServer">
+  <component name="RunManager" selected="TestNG.WebTestForASingleBrowser.secondTest">
     <tempConfiguration default="false" name="HubServer" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.hub.HubServer" />
       <option name="VM_PARAMETERS" />
@@ -1236,58 +1267,9 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="3" selection-start="116" selection-end="116" vertical-scroll-proportion="0.032608695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="64" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.032608695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="478" column="0" selection-start="18809" selection-end="18809" vertical-scroll-proportion="0.03125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/unit_test_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="39" selection-start="962" selection-end="962" vertical-scroll-proportion="0.030075189">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/unit/all_tests.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="794" selection-end="794" vertical-scroll-proportion="0.20572917">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.8705584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/automation/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="3437" selection-end="3437" vertical-scroll-proportion="0.86259544">
           <folding />
         </state>
       </provider>
@@ -1299,23 +1281,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="66" selection-start="2264" selection-end="2264" vertical-scroll-proportion="0.47582698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="66" selection-start="4659" selection-end="4659" vertical-scroll-proportion="1.0152671">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="66" selection-start="4702" selection-end="4702" vertical-scroll-proportion="0.6084656">
           <folding />
         </state>
       </provider>
@@ -1328,13 +1296,6 @@
       </provider>
       <provider editor-type-id="HtmlPreview">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="66" selection-start="5743" selection-end="5743" vertical-scroll-proportion="0.73015875">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
@@ -1352,6 +1313,76 @@
       </provider>
       <provider editor-type-id="HtmlPreview">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="66" selection-start="4702" selection-end="4702" vertical-scroll-proportion="0.6084656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/Demo.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestInvolvingMultiEnvironments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="2003" selection-end="2003" vertical-scroll-proportion="1.0761421">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="25" selection-start="881" selection-end="881" vertical-scroll-proportion="0.70050764">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="0" selection-start="5849" selection-end="5944" vertical-scroll-proportion="0.8888889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="31" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.8244275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="51" selection-start="767" selection-end="767" vertical-scroll-proportion="0.48854962">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="49" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.4920635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.7614213">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/WebTestForASingleBrowser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="18" selection-start="1655" selection-end="1655" vertical-scroll-proportion="0.66497463">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
