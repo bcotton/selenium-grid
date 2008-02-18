@@ -5,7 +5,7 @@
 #
 require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
 
-set :ami, ENV["AMI"] || "ami-6801e401"
+set :ami, ENV["AMI"] || " ami-4401e42d"
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5555"
@@ -31,17 +31,29 @@ namespace :hub do
     ec2_client.authorize_port 6000
   end
 
+  desc "Shutdown EC2 Instance used to run Selenium Hub."
+  task :shutdown do
+    SeleniumGrid::AWS::Cloud.update do |cloud|
+      puts "Shutting down EC2 Instance #{cloud.hub.public_dns}..."
+      cloud.hub.shutdown
+      cloud.hub = nil
+    end
+    set :grid, SeleniumGrid::AWS::Cloud.load
+  end
+
   desc "Start Selenium Grid Hub."
   task :start do
     grid.hub.run "nohup rake hub:start BACKGROUND=true", 
-                 :pwd => selenium_grid_path
+                 :pwd => selenium_grid_path,
+                 :su => "grid",
                  :keypair => keypair
   end
 
   desc("Stop Selenium Grid Hub.")
   task :stop do
     grid.hub.run 'rake hub:stop', 
-                 :pwd => selenium_grid_path
+                 :pwd => selenium_grid_path,
+                 :su => "grid",
                  :keypair => keypair    
   end
 
@@ -53,7 +65,6 @@ namespace :hub do
 
   desc "View Selenium Grid Hub logs."
   task :logs do
-    launcher = PLATFORM["darwin"] ? "open" : "firefox "
     grid.hub.run 'tail -200f #{selenium_grid_path}/log/hub.log', :keypair => keypair
   end
   
@@ -80,6 +91,18 @@ namespace :rc do
     ec2_client.authorize_port 5555
   end
 
+  desc "Shutdown all EC2 Instances used to run Selenium Grid Remote Controls."
+  task :shutdown_all do
+    SeleniumGrid::AWS::Cloud.update do |cloud|
+      grid.farms.each do |farm|
+        puts "Shutting down EC2 Instance #{farm.public_dns}..."
+        farm.shutdown
+      end
+      cloud.farms = []
+    end
+    set :grid, SeleniumGrid::AWS::Cloud.load
+  end
+
   task :vnc_start do
     grid.farms.each do |farm|
       farm.run "nohup vncserver :0", :keypair => keypair, :su => "grid"
@@ -101,6 +124,7 @@ namespace :rc do
                :display => ":0",
                :path => "/usr/lib/firefox", 
                :pwd => selenium_grid_path,
+               :su => "grid",               
                :keypair => keypair
     end
   end
@@ -109,8 +133,9 @@ namespace :rc do
   task :stop do
     grid.farms.each do |farm|
       farm.run "rake rc:stop_all PORTS=#{remote_control_port_range}", 
-               :keypair => keypair,
-               :pwd => selenium_grid_path
+               :pwd => selenium_grid_path,
+               :su => "grid",
+               :keypair => keypair
     end
   end
   
