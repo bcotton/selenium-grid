@@ -8,7 +8,7 @@
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5555"
-set :remote_control_farms_count, 2
+set :remote_control_farms_count, 10
 
 ##### Internal Configuration ######
 
@@ -16,7 +16,7 @@ require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
 require 'erb'
 
 set :selenium_grid_path, "/usr/local/lib/selenium-grid"
-set :ami, ENV["AMI"] || "ami-e301e48a"
+set :ami, ENV["AMI"] || "ami-dc01e4b5"
 set :cloud, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
 
@@ -30,6 +30,11 @@ namespace :grid do
     remote_control_farms_count.times do
       rc.boot
     end
+    ec2_client.authorize_port 22
+    ec2_client.authorize_port 4444
+    ec2_client.authorize_port 5900
+    ec2_client.authorize_port 6000
+    ec2_client.authorize_port 5555  
   end
 
   desc "Shutdown EC2 Instance used to run Selenium Hub."
@@ -42,7 +47,7 @@ namespace :grid do
   task :start do
     hub.start
     rc.vnc.start
-    sleep 5
+    sleep 8
     rc.start
   end
 
@@ -99,10 +104,6 @@ namespace :hub do
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
     set :cloud, SeleniumGrid::AWS::Cloud.load
-    ec2_client.authorize_port 22
-    ec2_client.authorize_port 4444
-    ec2_client.authorize_port 5900
-    ec2_client.authorize_port 6000
   end
 
   desc "Shutdown EC2 Instance used to run Selenium Hub."
@@ -163,8 +164,6 @@ namespace :rc do
       puts "Started new Remote Control farm at #{new_farm.public_dns}"
     end
     set :cloud, SeleniumGrid::AWS::Cloud.load
-    ec2_client.authorize_port 22
-    ec2_client.authorize_port 5555
   end
 
   desc "Shutdown all EC2 Instances used to run Selenium Grid Remote Controls."
