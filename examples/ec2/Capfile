@@ -1,22 +1,27 @@
 #
-# Required : sudo gem install amazon-ec2 
+# Capistrano Recipes to manage EC2 Selenium Grid Clusters
 #
-# http://groups.google.com/group/ec2-on-rails-discuss/browse_thread/thread/48825d5a0abf9647/e20c2f506dafc435?lnk=gst&q=ssh+capistrano#e20c2f506dafc435
-#
-require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
-require 'erb'
 
-set :ami, ENV["AMI"] || "ami-e301e48a"
+
+###### User Level Configuration ######
+
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5555"
 set :remote_control_farms_count, 2
 
+##### Internal Configuration ######
+
+require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
+require 'erb'
+
 set :selenium_grid_path, "/usr/local/lib/selenium-grid"
+set :ami, ENV["AMI"] || "ami-e301e48a"
 set :cloud, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
-set :vnc_password, 'selenium grid'
- 
+
+###### Global Recipes targeting the Entire Grid ######
+
 namespace :grid do
 
   desc "Boot EC2 Instances for a Selenium Grid of 1 Hub and #{remote_control_farms_count} Remote Control Farms."
@@ -56,10 +61,11 @@ EC2 Selenium Grid:
 
   Hub: 
   ----
+<% if cloud.hub %>  
        - Public DNS:  <%= cloud.hub.public_dns %>
        - Private DNS: <%= cloud.hub.private_dns %>
        - Console:     <%= cloud.hub.console_url %>
-     
+<% end %>     
   Remote Control Farms:
   ---------------------
 <% cloud.farms.each_with_index do |farm, index| %>
@@ -80,6 +86,8 @@ EC2 Selenium Grid:
   end
     
 end
+
+###### Hub Recipes ######
 
 namespace :hub do
 
@@ -141,6 +149,8 @@ namespace :hub do
   end
   
 end
+
+###### Remote Control Recipes ######
 
 namespace :rc do
 
@@ -228,6 +238,7 @@ namespace :rc do
   end
 end
 
+###### Settings Recipes ######
 
 namespace :ec2 do
     
