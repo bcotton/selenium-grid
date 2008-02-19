@@ -108,6 +108,7 @@ namespace :ec2 do
     # scp -i grid_pair... pk-HKZYKTAIG2ECMXYIBH3HXV4ZBZQ55CLO.pem cert-HKZYK TAIG2ECMXYIBH3HXV4ZBZQ55CLO.pem root@domU-12-34-31-00-00-05.usma1.compute.amazonaws.com:/mnt
     # vncpassword -> selenium grid
     # profile with PATH=${PATH}:/usr/lib/firefox
+    # metacity
   end
   
 end

@@ -72,7 +72,7 @@
     <ant target="package" antfile="build.xml" dir="core" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="hub" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="remote-control" inheritall="false"/>
-    <ant target="package" antfile="build.xml" dir="tools" inheritall="false"/>
+    <ant target="package-standalone" antfile="build.xml" dir="tools" inheritall="false"/>
     <ant target="package-standalone" antfile="build.xml" dir="demo" inheritall="false"/>
 
     <mkdir dir="${dist}/${artifact}-${version}"/>
