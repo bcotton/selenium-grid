@@ -4,17 +4,83 @@
 # http://groups.google.com/group/ec2-on-rails-discuss/browse_thread/thread/48825d5a0abf9647/e20c2f506dafc435?lnk=gst&q=ssh+capistrano#e20c2f506dafc435
 #
 require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
+require 'erb'
 
-set :ami, ENV["AMI"] || " ami-4401e42d"
+set :ami, ENV["AMI"] || "ami-e301e48a"
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5555"
+set :remote_control_farms_count, 2
 
-set :selenium_grid_path, "/usr/local/lib/selenium-grid-0.9.4"
-set :grid, SeleniumGrid::AWS::Cloud.load
+set :selenium_grid_path, "/usr/local/lib/selenium-grid"
+set :cloud, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
 set :vnc_password, 'selenium grid'
  
+namespace :grid do
+
+  desc "Boot EC2 Instances for a Selenium Grid of 1 Hub and #{remote_control_farms_count} Remote Control Farms."
+  task :boot do
+    hub.boot
+    remote_control_farms_count.times do
+      rc.boot
+    end
+  end
+
+  desc "Shutdown EC2 Instance used to run Selenium Hub."
+  task :shutdown do
+    rc.shutdown
+    hub.shutdown
+  end
+
+  desc "Start Selenium Grid Hub."
+  task :start do
+    hub.start
+    rc.vnc.start
+    sleep 5
+    rc.start
+  end
+
+  desc "Stop Selenium Grid Hub."
+  task :stop do
+    rc.stop
+    hub.stop
+  end
+
+  desc "Display infoemation about current Selenium Grid"
+  task :info do
+    template = ERB.new <<-EOS
+    
+EC2 Selenium Grid:
+==================
+
+  Hub: 
+  ----
+       - Public DNS:  <%= cloud.hub.public_dns %>
+       - Private DNS: <%= cloud.hub.private_dns %>
+       - Console:     <%= cloud.hub.console_url %>
+     
+  Remote Control Farms:
+  ---------------------
+<% cloud.farms.each_with_index do |farm, index| %>
+       * Farm #<%= index %>
+           - Public DNS:  <%= farm.public_dns %>
+           - Private DNS: <%= farm.private_dns %>
+           - Port Range: <%= remote_control_port_range %>       
+<% end %>
+    EOS
+    
+    puts template.result(binding)
+  end
+
+  task :refresh_status do
+    SeleniumGrid::AWS::Cloud.update do |cloud|
+      cloud.hub.refresh_status
+    end
+  end
+    
+end
+
 namespace :hub do
 
   desc "Boot a new EC2 Instance to Run Selenium Grid Hub."
@@ -24,7 +90,7 @@ namespace :hub do
       cloud.hub = SeleniumGrid::AWS::Hub.boot_and_acquire_dns ami, :keypair => keypair_name
       puts "Started new Hub at #{cloud.hub.public_dns}"
     end
-    set :grid, SeleniumGrid::AWS::Cloud.load
+    set :cloud, SeleniumGrid::AWS::Cloud.load
     ec2_client.authorize_port 22
     ec2_client.authorize_port 4444
     ec2_client.authorize_port 5900
@@ -38,12 +104,18 @@ namespace :hub do
       cloud.hub.shutdown
       cloud.hub = nil
     end
-    set :grid, SeleniumGrid::AWS::Cloud.load
+    set :cloud, SeleniumGrid::AWS::Cloud.load
+  end
+
+  desc "(Re)start Selenium Grid Hub."
+  task :restart do
+    stop rescue nil
+    start
   end
 
   desc "Start Selenium Grid Hub."
   task :start do
-    grid.hub.run "nohup rake hub:start BACKGROUND=true", 
+    cloud.hub.run "nohup rake hub:start BACKGROUND=true", 
                  :pwd => selenium_grid_path,
                  :su => "grid",
                  :keypair => keypair
@@ -51,7 +123,7 @@ namespace :hub do
 
   desc("Stop Selenium Grid Hub.")
   task :stop do
-    grid.hub.run 'rake hub:stop', 
+    cloud.hub.run 'rake hub:stop', 
                  :pwd => selenium_grid_path,
                  :su => "grid",
                  :keypair => keypair    
@@ -60,18 +132,12 @@ namespace :hub do
   desc "Open Selenium Grid Hub Console in a browser."
   task :console do
     launcher = PLATFORM["darwin"] ? "open" : "firefox "
-    system "open #{grid.hub.console_url}"
+    system "open #{cloud.hub.console_url}"
   end
 
   desc "View Selenium Grid Hub logs."
   task :logs do
-    grid.hub.run 'tail -200f #{selenium_grid_path}/log/hub.log', :keypair => keypair
-  end
-  
-  task :refresh_status do
-    SeleniumGrid::AWS::Cloud.update do |cloud|
-      cloud.hub.refresh_status
-    end
+    cloud.hub.run 'tail -200f #{selenium_grid_path}/log/hub.log', :keypair => keypair
   end
   
 end
@@ -86,41 +152,52 @@ namespace :rc do
       cloud.farms << new_farm
       puts "Started new Remote Control farm at #{new_farm.public_dns}"
     end
-    set :grid, SeleniumGrid::AWS::Cloud.load
+    set :cloud, SeleniumGrid::AWS::Cloud.load
     ec2_client.authorize_port 22
     ec2_client.authorize_port 5555
   end
 
   desc "Shutdown all EC2 Instances used to run Selenium Grid Remote Controls."
-  task :shutdown_all do
+  task :shutdown do
     SeleniumGrid::AWS::Cloud.update do |cloud|
-      grid.farms.each do |farm|
+      cloud.farms.each do |farm|
         puts "Shutting down EC2 Instance #{farm.public_dns}..."
         farm.shutdown
       end
       cloud.farms = []
     end
-    set :grid, SeleniumGrid::AWS::Cloud.load
+    set :cloud, SeleniumGrid::AWS::Cloud.load
   end
 
-  task :vnc_start do
-    grid.farms.each do |farm|
-      farm.run "nohup vncserver :0", :keypair => keypair, :su => "grid"
+  namespace :vnc do
+    
+    desc "Start VNC server on all Remote Control Farms"
+    task :start do
+      cloud.farms.each do |farm|
+        farm.run "nohup vncserver :0", :keypair => keypair, :su => "grid"
+      end
+      ec2_client.authorize_port 5900
+      ec2_client.authorize_port 6000
     end
-    ec2_client.authorize_port 5900
-    ec2_client.authorize_port 6000
+    
   end
-  
+    
   desc "(Re)start Remote Controls for all farms."
   task :restart do
     stop
     start
   end
-  
+
+  desc "(Re)start Remote Controls for all farms."
+  task :restart do
+    stop rescue nil
+    start
+  end
+    
   desc "Start Remote Controls for all farms."
   task :start do
-    grid.farms.each do |farm|
-      farm.run "nohup rake rc:start_all HUB_URL=#{grid.hub.private_url} HOST=#{farm.private_dns} PORTS=#{remote_control_port_range} BACKGROUND=true", 
+    cloud.farms.each do |farm|
+      farm.run "nohup rake rc:start_all HUB_URL=#{cloud.hub.private_url} HOST=#{farm.private_dns} PORTS=#{remote_control_port_range} BACKGROUND=true", 
                :display => ":0",
                :path => "/usr/lib/firefox", 
                :pwd => selenium_grid_path,
@@ -131,7 +208,7 @@ namespace :rc do
 
   desc "Stop Remote Controls for all farms."
   task :stop do
-    grid.farms.each do |farm|
+    cloud.farms.each do |farm|
       farm.run "rake rc:stop_all PORTS=#{remote_control_port_range}", 
                :pwd => selenium_grid_path,
                :su => "grid",
@@ -139,6 +216,16 @@ namespace :rc do
     end
   end
   
+  desc "Visualize what is happening in Remote Control Farms with VNC"
+  task :view, :roles => :rc do
+    cloud.farms.each do |farm|
+      if File.exists?('/Applications/Chicken of the VNC.app/Contents/MacOS/Chicken of the VNC')
+        system "'/Applications/Chicken of the VNC.app/Contents/MacOS/Chicken of the VNC' --Display 0 --PasswordFile vnc_password #{farm.public_dns} &"
+      else
+        system "vncviewer #{farm.public_dns}:0 &"
+      end
+    end
+  end
 end
 
 
