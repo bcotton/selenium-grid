@@ -41,7 +41,7 @@
     <delete dir="target"/>
   </target>
 
-  <target name="run" description="Run Selenium tests in parallel (20 threads)">
+  <target name="run" depends="compile" description="Run Selenium tests in parallel (20 threads)">
     <echo>${seleniumHost}</echo>
     <java classpathref="test.classpath"
         classname="org.testng.TestNG"
@@ -59,7 +59,7 @@
       <arg value="-parallel"/>
       <arg value="methods"/>
       <arg value="-threadcount"/>
-      <arg value="10"/>
+      <arg value="20"/>
       <arg value="-testclass"/>
       <arg value="com.thoughtworks.selenium.grid.examples.java.TechnicalBookTest"/>
     </java>
