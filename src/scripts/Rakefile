@@ -1,8 +1,30 @@
 #
 # Rakefile managing Selenium Grid components
 #
+require 'socket'
 
-desc("Launch Hub")
+desc "Restart all  services (Hub a Remote Controls"
+task :'all:restart' do
+  Rake::Task[:'all:stop'].invoke rescue nil
+  Rake::Task[:'all:start'].invoke
+end
+
+desc "Launch all  services (Hub a Remote Controls"
+task :'all:start' do
+  ENV['BACKGROUND'] = "true"
+  Rake::Task[:'hub:start'].invoke
+  puts "Waiting for Hub to come up..."
+  wait_for_service("localhost", 4444)
+  Rake::Task[:'rc:start_all'].invoke
+end
+
+desc "Stop all  services (Hub a Remote Controls"
+task :'all:stop' do
+  Rake::Task[:'rc:stop_all'].invoke
+  Rake::Task[:'hub:stop'].invoke
+end
+
+desc "Launch Hub"
 task :'hub:start' do
   classpath = Java::Classpath.new(File.dirname(__FILE__))
   classpath = classpath << "." << "lib/selenium-grid-hub-standalone-*.jar"
@@ -13,22 +35,22 @@ task :'hub:start' do
                     :log_file => File.native_path(File.dirname(__FILE__) + "/log/hub.log")
 end
 
-desc("Stop Hub")
+desc "Stop Hub"
 task :'hub:stop' do
   sh "kill `lsof -t -i :4444`"
 end
 
-desc("Launch Remote Control")
+desc "Launch Remote Control"
 task :'rc:start' do
   launch_rc(:port => (ENV['PORT'] || 5555)) 
 end
 
-desc("Stop Remote Control")
+desc "Stop Remote Control"
 task :'rc:stop' do
   sh "kill `lsof -t -i :#{ENV['PORT'] || 5555}`"
 end
 
-desc("Launch Remote Control")
+desc "Launch Remote Control"
 task :'rc:start_all' do
   ports = ENV['PORTS'] || "5000-5020"
   port_range = Range.new(*ports.split("-"))
@@ -38,13 +60,13 @@ task :'rc:start_all' do
   end
 end
 
-desc("Stop Remote Controls. Usage rake rc:stop PORTS=5555-5560")
+desc"Stop Remote Controls. Usage rake rc:stop PORTS=5555-5560"
 task :'rc:stop_all' do
   port_range = ENV['PORTS'] || "5000-5020"
   sh "kill `lsof -t -i :#{port_range}`"
 end
 
-desc("Launch a Xvnc server")
+desc "Launch a Xvnc server"
 task :'xvnc:start' do
   sh "Xvnc :1 -alwaysshared -geometry 1280x1024 -depth 24 -desktop 'Selenium Grid' 2>&1 >#{File.join(File.dirname(__FILE__), "log", "X.log")} &"
 end
@@ -74,6 +96,18 @@ def rc_args(options)
 end
 
 ### To be extracted (eventually) ###
+
+def wait_for_service(host, port)
+  loop do
+    begin
+      socket = TCPSocket.new(host, port)
+      return 0
+    rescue Errno::ECONNREFUSED
+      puts ".\n"
+      sleep 2
+    end
+  end
+end
 
 class File
 
