@@ -43,4 +43,49 @@ public class RubyBooksTest extends BookTest {
         }
     }
 
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void agileWebDevelomentWithRailsTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("Agile Web Development with Rails",
+                      "Agile Web Development with Rails, 2nd Edition",
+                      "Ruby",
+                      "0977616630");
+        } finally {
+            closeSeleniumSession();
+
+        }
+    }
+
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void advancedRailsRecipesTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("Advanced Rails Recipes: 72 New Ways to Build Stunning Rails Apps",
+                      "Advanced Rails Recipes: 72 New Ways to Build Stunning Rails Apps",
+                      "Rails Recipes",
+                      "0978739221");
+        } finally {
+            closeSeleniumSession();
+
+        }
+    }
+
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void railsWayTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("The Rails Way",
+                      "The Rails Way (Addison-Wesley Professional Ruby Series)",
+                      "Rails",
+                      "0321445619");
+        } finally {
+            closeSeleniumSession();
+
+        }
+    }
+
 }

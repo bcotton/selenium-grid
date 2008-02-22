@@ -15,7 +15,7 @@ public class BookTest {
 
 
     protected void checkBook(String title, String thumbnail, String keywords, String isbn) {
-        session().open("/");
+        session().  open("/");
         session().select("url", "Books");
         session().type("twotabsearchtextbox", keywords);
         session().click("navGoButtonPanel");
@@ -24,7 +24,6 @@ public class BookTest {
         session().click("//img[@alt=\"" + thumbnail + "\"]");
         session().waitForPageToLoad("60000");
         assertEquals("1", session().getValue("name=quantity"));
-//        assertTrue(session().isTextPresent("excellent"));
         assertTrue(session().isTextPresent("ISBN-10: " + isbn));
         session().click("link=Explore similar items");
         session().waitForPageToLoad("60000");
