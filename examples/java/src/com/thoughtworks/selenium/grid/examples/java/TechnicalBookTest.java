@@ -17,271 +17,70 @@ public class TechnicalBookTest {
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     public void refactoringBookTest1(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("Refactoring: Improving the Design of Existing Code",
+                    "Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)",
+                    "Refactoring",
+                    "0201485672");
+        } finally {
+            closeSeleniumSession();
+
+        }
     }
 
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest2(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
+    public void designPatternTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("Design Patterns: Elements of Reusable Object-Oriented Software",
+                    "Design Patterns: Elements of Reusable Object-Oriented Software (Addison-Wesley Professional Computing Series)",
+                    "Design Patterns",
+                    "0201633612");
+        } finally {
+            closeSeleniumSession();
+        }
     }
-
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest3(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
+    public void pragmaticProgrammerTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("The Pragmatic Programmer: From Journeyman to Master",
+                    "The Pragmatic Programmer: From Journeyman to Master",
+                    "Pragmatic Programmer",
+                    "020161622");
+        } finally {
+            closeSeleniumSession();
+        }
     }
 
 
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest4(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+    protected void checkBook(String title, String thumbnail, String keywords, String isbn) {
         session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
+        session().type("twotabsearchtextbox", keywords);
         session().click("navGoButtonPanel");
         session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
+        assertTrue(session().isTextPresent(title));
+        session().click("//img[@alt='" + thumbnail + "']");
         session().waitForPageToLoad("60000");
         assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
+//        assertTrue(session().isTextPresent("excellent"));
+        assertTrue(session().isTextPresent("ISBN-10: " + isbn));
+        session().click("link=Details");
+        session().waitForPopUp("SuperSaverShipping", "60000");
+        session().selectWindow("SuperSaverShipping");
+        session().click("//img[@alt='Close window']");
+        session().selectWindow("null");
+        assertEquals("1", session().getValue("quantity"));
+        session().select("quantity", "label=5");
+        session().click("submit.add-to-cart");
+        session().waitForPageToLoad("60000");
+        assertTrue(session().isTextPresent("Added to your\nShopping Cart:"));
+        assertTrue(session().isTextPresent(title));
+        assertTrue(session().isTextPresent("quantity: 5"));
     }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest5(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest6(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest7(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest8(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest9(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest10(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest11(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest12(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest13(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest14(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest15(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-        session().open("/");
-        session().type("twotabsearchtextbox", "refactoring");
-        session().click("navGoButtonPanel");
-        session().waitForPageToLoad("60000");
-        assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
-        session().waitForPageToLoad("60000");
-        assertEquals("1", session().getValue("name=quantity"));
-        assertTrue(session().isTextPresent("excellent"));
-        assertTrue(session().isTextPresent("Hidden Treasure"));
-        closeSeleniumSession();
-    }
-
-
 }
