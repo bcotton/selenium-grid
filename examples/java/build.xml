@@ -60,8 +60,7 @@
       <arg value="methods"/>
       <arg value="-threadcount"/>
       <arg value="20"/>
-      <arg value="-testclass"/>
-      <arg value="com.thoughtworks.selenium.grid.examples.java.TechnicalBookTest"/>
+      <arg value="testng.xml"/>
     </java>
 
   </target>
