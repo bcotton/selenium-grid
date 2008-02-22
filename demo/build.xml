@@ -11,10 +11,16 @@
   <property name="build.output" location="target/classes"/>
   <property name="dist" location="${basedir}/target/dist"/>
 
+  <property name="webSite" value="http://amazon.com" />
+  <property name="seleniumHost" value="localhost" />
+  <property name="seleniumPort" value="4444" />
+  <property name="browser" value="*chrome" />
+  
   <path id="demo.classpath">
-    <pathelement location="${basedir}/../lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
+    <pathelement location="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
-    <pathelement location="${basedir}/../tools/target/classes"/>    
+    <pathelement location="${basedir}/../lib/commons-logging-1.0.4.jar"/>
+    <pathelement location="${basedir}/../tools/target/classes"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
@@ -61,7 +67,7 @@
       </manifest>
       <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
       <zipfileset src="${basedir}/../tools/target/dist/lib/selenium-grid-tools-${version}.jar"/>
-      <zipfileset src="${basedir}/../lib/selenium-java-client-driver-0.9.3-SNAPSHOT.jar"/>
+      <zipfileset src="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
       <zipfileset src="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     </jar>
   </target>
@@ -78,10 +84,10 @@
 
         >
       <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-       <sysproperty key="seleniumPort" value="4444" />
-       <sysproperty key="browser" value="*chrome" />
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
       <arg value="-suitename" />
       <arg value="Selenium Grid Demo In Sequence" />
       <arg value="-d" />
@@ -99,10 +105,10 @@
         failonerror="true">
 
       <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-      <sysproperty key="seleniumPort" value="4444" />
-      <sysproperty key="browser" value="*chrome" />
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
       <arg value="-d" />
       <arg value="${basedir}/target/reports" />
       <arg value="-suitename" />
@@ -125,9 +131,9 @@
 
         >
       <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
       <sysproperty key="firstEnvironment" value="Firefox on Windows" />
       <sysproperty key="secondEnvironment" value="Firefox on Windows" />
       <sysproperty key="thirdEnvironment" value="Firefox on OS X" />

@@ -4,6 +4,11 @@
   <property file="${basedir}/project.properties"/>
   <property name="version" value="SNAPSHOT"/>
 
+  <property name="webSite" value="http://amazon.com" />
+  <property name="seleniumHost" value="localhost" />
+  <property name="seleniumPort" value="4444" />
+  <property name="browser" value="*chrome" />
+  
   <taskdef resource="testngtasks" classpath="${basedir}/lib/testng-5.7-jdk15.jar"/>
   
   <path id="remote-control.classpath">
@@ -29,6 +34,7 @@
     <fileset dir="${basedir}/lib">
       <include name="selenium-grid-demo-standalone-${version}*.jar"/>
       <include name="testng-*.jar"/>
+      <include name="commons-logging-*.jar"/>
     </fileset>
     <pathelement path="${java.class.path}/"/>
   </path>
@@ -92,10 +98,10 @@
 
         >
       <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-      <sysproperty key="seleniumPort" value="4444"/>
-      <sysproperty key="browser" value="*chrome"/>
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
 
       <arg value="-suitename" />
       <arg value="Selenium Grid Demo In Sequence" />
@@ -113,10 +119,10 @@
 
         >
       <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-      <sysproperty key="seleniumPort" value="4444" />
-      <sysproperty key="browser" value="*chrome" />
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
 
       <arg value="-d" />
       <arg value="${basedir}/target/reports" />
@@ -139,9 +145,9 @@
 
         >
       <sysproperty key="java.security.policy" file="${basedir}/lib/testng.policy"/>
-      <sysproperty key="webSite" value="http://amazon.com" />
-      <sysproperty key="seleniumHost" value="localhost" />
-      <sysproperty key="seleniumPort" value="4444" />
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
       <sysproperty key="firstEnvironment" value="Firefox on Windows" />
       <sysproperty key="secondEnvironment" value="Firefox on Windows" />
       <sysproperty key="thirdEnvironment" value="Firefox on OS X" />
