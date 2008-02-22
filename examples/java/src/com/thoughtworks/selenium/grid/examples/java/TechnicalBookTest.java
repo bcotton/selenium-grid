@@ -16,7 +16,7 @@ public class TechnicalBookTest {
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest1(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void refactoringBookTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("Refactoring: Improving the Design of Existing Code",
@@ -70,11 +70,10 @@ public class TechnicalBookTest {
         assertEquals("1", session().getValue("name=quantity"));
 //        assertTrue(session().isTextPresent("excellent"));
         assertTrue(session().isTextPresent("ISBN-10: " + isbn));
-        session().click("link=Details");
-        session().waitForPopUp("SuperSaverShipping", "60000");
-        session().selectWindow("SuperSaverShipping");
-        session().click("//img[@alt='Close window']");
-        session().selectWindow("null");
+        session().click("link=See all Editorial Reviews");
+        session().waitForPageToLoad("60000");
+        session().goBack();
+        session().waitForPageToLoad("60000");
         assertEquals("1", session().getValue("quantity"));
         session().select("quantity", "label=5");
         session().click("submit.add-to-cart");
