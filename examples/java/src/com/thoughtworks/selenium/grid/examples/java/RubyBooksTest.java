@@ -15,17 +15,32 @@ public class RubyBooksTest extends BookTest {
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoringBookTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void programmingRubyBookTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Refactoring: Improving the Design of Existing Code",
-                    "Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)",
-                    "Refactoring",
-                    "0201485672");
+            checkBook("Programming Ruby: The Pragmatic Programmers' Guide, Second Edition",
+                      "Programming Ruby: The Pragmatic Programmers' Guide, Second Edition",
+                      "Ruby",
+                      "0974514055");
         } finally {
             closeSeleniumSession();
 
         }
     }    
+
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void rubyWayBookTest(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("The Ruby Way, Second Edition: Solutions and Techniques in Ruby Programming",
+                      "The Ruby Way, Second Edition: Solutions and Techniques in Ruby Programming (2nd Edition) (Addison-Wesley Professional Ruby Series)",
+                      "Ruby",
+                      "0672328844");
+        } finally {
+            closeSeleniumSession();
+
+        }
+    }
 
 }
