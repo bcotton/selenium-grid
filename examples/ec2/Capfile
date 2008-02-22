@@ -7,7 +7,7 @@
 
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
-set :remote_control_port_range, "5555-5555"
+set :remote_control_port_range, "5555-5560"
 set :remote_control_farms_count, 10
 
 ##### Internal Configuration ######
@@ -34,7 +34,10 @@ namespace :grid do
     ec2_client.authorize_port 4444
     ec2_client.authorize_port 5900
     ec2_client.authorize_port 6000
-    ec2_client.authorize_port 5555  
+    boundaries = remote_control_port_range.split(/\s*-\s*/)
+    Range.new(boundaries.first, boundaries.last).each do |port|
+      ec2_client.authorize_port port
+    end
   end
 
   desc "Shutdown EC2 Instance used to run Selenium Hub."
