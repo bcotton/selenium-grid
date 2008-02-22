@@ -1,7 +1,8 @@
 $:.unshift
 require 'rubygems'
 require 'spec'
-#require 'spec/ui'
+require 'spec/runner/formatter/html_formatter'
+require 'spec/ui'
 require 'spec/ui/selenium/driver_ext'
 require File.expand_path(File.dirname(__FILE__) + "/selenium")
 require File.expand_path(File.dirname(__FILE__) + "/selenium_driver_extensions")
@@ -22,7 +23,7 @@ Spec::Runner.configure do |config|
   end
 
   config.after(:each) do
-    formatter = Spec::Ui::ScreenshotFormatter.instance
+    formatter = Spec::ScreenshotFormatter.instance
     formatter.take_screenshot_of(@selenium) unless formatter.nil?
   end
 

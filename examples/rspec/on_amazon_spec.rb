@@ -6,7 +6,7 @@ describe "Martin Fowler's Refactoring Book" do
     @selenium.open '/'
     @selenium.type "twotabsearchtextbox", "refactoring"
     @selenium.click_and_wait "navGoButtonPanel"
-    @selenium.location.should match(%r{^http://amazon.com/s/ref=})
+    @selenium.location.should match(%r{^http://www.xxamazon.com/s/ref=})
     @selenium.click_and_wait "//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']"
   end
 
