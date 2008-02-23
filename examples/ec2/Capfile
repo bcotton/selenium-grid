@@ -2,13 +2,14 @@
 # Capistrano Recipes to manage EC2 Selenium Grid Clusters
 #
 
+require File.dirname(__FILE__) + '/../../lib/ruby/tcp_socket_extensions'
 
 ###### User Level Configuration ######
 
 set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5560"
-set :remote_control_farms_count, 10
+set :remote_control_farms_count, 5
 
 ##### Internal Configuration ######
 
@@ -50,7 +51,7 @@ namespace :grid do
   task :start do
     hub.start
     rc.vnc.start
-    sleep 8
+    TCPSocket.wait_for_service :host => cloud.hub.public_dns, :port => 4444
     rc.start
   end
 
