@@ -33,7 +33,9 @@ class MultiProcessSpecRunner
   protected
  
   def options(process_number)
-    "--require 'spec/ui' --format='Spec::Ui::ScreenshotFormatter:#{screenshot_dir}/Selenium-Build-Report-#{process_number}.html'"
+    [ "--require 'spec/ui'",
+      "--format='Spec::ScreenshotFormatter:#{screenshot_dir}/Selenium-Build-Report-#{process_number}.html'" 
+    ].join(" ")
   end
   
   def screenshot_dir

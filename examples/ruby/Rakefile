@@ -4,7 +4,7 @@ require 'spec/rake/spectask'
 desc "Run all behaviors in sequence"
 Spec::Rake::SpecTask.new('run_in_sequence') do |t|
   t.spec_files = FileList['*_spec.rb']
-  t.spec_opts = %w[--require './lib/spec_ui_fix' --format Spec::ScreenshotFormatter:./reports/Selenium-Build-Report.html]
+  t.spec_opts = %w[--require './lib/spec/screenshot_formatter' --format Spec::ScreenshotFormatter:./reports/Selenium-Build-Report.html]
   t.fail_on_error = true
 end
 
@@ -37,10 +37,7 @@ task :sanity_check do
   verify "You must install rspec to run this example: `sudo gem install rspec`. Tested with RSpec 1.1.3" do
     require "spec"
   end
-  verify "You must install Spec UI to run this example: `sudo gem install spec_ui`" do
-    p File.dirname(__FILE__) + "/lib/spec_ui_fix"
-    require File.dirname(__FILE__) + "/lib/spec_ui_fix"
-  end
+  require File.dirname(__FILE__) + "/lib/spec/screenshot_formatter"
 end
 
 def verify(error_message)
