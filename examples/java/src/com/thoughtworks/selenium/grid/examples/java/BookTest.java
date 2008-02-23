@@ -9,19 +9,6 @@ import static org.testng.AssertJUnit.assertTrue;
  */
 public class BookTest {
 
-//    @BeforeTest
-//    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-//    public void startSession(String seleniumHost, int seleniumPort, String browser, String webSite) {
-//        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-//    }
-//
-//    @AfterTest
-//    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-//    public void closeSession() throws Exception {
-//        closeSeleniumSession();
-//    }
-
-
     protected void checkBook(String title, String thumbnail, String keywords, String isbn) {
         session().open("/");
         session().select("url", "Books");

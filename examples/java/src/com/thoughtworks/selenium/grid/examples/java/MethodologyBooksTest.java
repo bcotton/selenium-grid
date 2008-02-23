@@ -67,5 +67,19 @@ public class MethodologyBooksTest extends BookTest {
         }
     }
 
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void implementingLeanSoftwareDevelopment(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("Implementing Lean Software Development: From Concept to Cash",
+                    "Implementing Lean Software Development: From Concept to Cash (The Addison-Wesley Signature Series)",
+                    "Lean Software Development",
+                    "0321437381");
+        } finally {
+            closeSeleniumSession();
+        }
+    }
+
 
 }
