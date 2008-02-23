@@ -1,6 +1,5 @@
 package com.thoughtworks.selenium.grid;
 
-import static junit.framework.Assert.assertEquals;
 import junit.framework.Assert;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -13,8 +12,6 @@ import java.net.ConnectException;
 
 
 public class HttpClientTest extends UsingClassMock {
-
-
 
     @Test
     public void requestReturnsAResponseWithHttpBody() throws IOException {

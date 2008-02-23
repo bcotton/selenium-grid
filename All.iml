@@ -11,12 +11,17 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/configuration" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/regression" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scripts" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Hub Resources" level="project" />
+    <orderEntry type="library" name="Selenium Java Client Driver" level="project" />
+    <orderEntry type="module" module-name="Tools" />
+    <orderEntry type="library" name="TestNG" level="project" />
     <orderEntryProperties />
   </component>
 </module>
