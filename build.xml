@@ -81,6 +81,7 @@
       <fileset dir="${basedir}/remote-control/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/tools/target/dist/lib"/>
+      <fileset dir="${basedir}/lib" includes="ruby/**/*.rb"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
       <fileset file="${basedir}/lib/testng.policy"/>
       <fileset file="${basedir}/lib/testng-5.7-jdk15.jar"/>

@@ -1,7 +1,7 @@
 #
 # Rakefile managing Selenium Grid components
 #
-require 'socket'
+require File.dirname(__FILE__) + '/lib/ruby/tcp_socket_extensions'
 
 desc "Restart all  services (Hub a Remote Controls"
 task :'all:restart' do
@@ -14,7 +14,7 @@ task :'all:start' do
   ENV['BACKGROUND'] = "true"
   Rake::Task[:'hub:start'].invoke
   puts "Waiting for Hub to come up..."
-  wait_for_service("localhost", 4444)
+  TCPSocket.wait_for_service :host => "localhost", :port => 4444
   Rake::Task[:'rc:start_all'].invoke
 end
 
@@ -97,17 +97,7 @@ end
 
 ### To be extracted (eventually) ###
 
-def wait_for_service(host, port)
-  loop do
-    begin
-      socket = TCPSocket.new(host, port)
-      return 0
-    rescue Errno::ECONNREFUSED
-      puts ".\n"
-      sleep 2
-    end
-  end
-end
+
 
 class File
 
