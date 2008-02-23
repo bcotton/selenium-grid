@@ -1,4 +1,5 @@
-# Code from Spec UI with fixes for RSpec 1.1.3
+# Code from Spec::UI by Aslak Hellesøy
+# Changed to have it run with RSpec 1.1.3
 
 require 'stringio'
 require 'rubygems'
@@ -8,6 +9,7 @@ require File.dirname(__FILE__) + '/screenshot_saver'
 
 module Spec
   class ScreenshotFormatter < Spec::Runner::Formatter::HtmlFormatter
+    
     class << self
       attr_accessor :instance
     end
@@ -25,34 +27,22 @@ module Spec
       ScreenshotFormatter.instance = self
     end
     
-    # Takes screenshot and snapshot of the +browser+'s html.
-    # This method calls #screenshot! so that method should not be called
-    # when this method is used.
+    # Writes the HTML from +browser+ to disk
     # This method *must* be called in an after(:each) block.
-    def take_screenshot_of(browser)
-      screenshot
-      save_html(browser)
+    def save_html_snapshot(selenium_driver)
+      dir = File.dirname(absolute_html_path)
+      FileUtils.mkdir_p(dir) unless File.directory?(dir)
+      File.open(absolute_html_path, "w") do |io| 
+        io.write(selenium_driver.html)
+      end
     end
     
     # Takes a screenshot of the current window and saves it to disk. 
     # Use this method when you don't have a browser object.
-    def screenshot
-      png_path = File.join(@root, relative_png_path)
-      ensure_dir(png_path)
-      save_screenshot(png_path)
+    def save_screenshot(selenium_driver)
+      save_screenshot_to absolute_png_path
     end
-    
-    # Writes the HTML from +browser+ to disk
-    def save_html(browser)
-      ensure_dir(absolute_html_path)
-      File.open(absolute_html_path, "w") {|io| io.write(browser.html)}
-    end
-    
-    def ensure_dir(file)
-      dir = File.dirname(file)
-      FileUtils.mkdir_p(dir) unless File.directory?(dir)
-    end
-
+        
     def absolute_png_path
       File.join(@root, relative_png_path)
     end
@@ -150,7 +140,7 @@ EOF
     def screenshot
     end
     
-    def save_html(browser)
+    def save_html_snapshot(browser)
     end
   end
   
