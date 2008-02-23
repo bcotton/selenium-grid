@@ -6,6 +6,7 @@ require 'spec/ui'
 require 'spec/ui/selenium/driver_ext'
 require File.expand_path(File.dirname(__FILE__) + "/selenium")
 require File.expand_path(File.dirname(__FILE__) + "/selenium_driver_extensions")
+require File.expand_path(File.dirname(__FILE__) + "/spec/screenshot_formatter")
 require File.expand_path(File.dirname(__FILE__) + "/../book_example")
 
 Spec::Runner.configure do |config|
