@@ -121,5 +121,17 @@ unit_tests do
     assert_equal "terminated", client.describe(:an_ami)[:status]
   end
 
+  test "shutdown terminates an instance" do
+    client = Class.new.extend SeleniumGrid::AWS::Ec2Client
+    client.expects(:ec2_shell).with("ec2-terminate-instances The-Instance-ID")
+    client.shutdown("The-Instance-ID")
+  end
 
+  test "version returns EC2 version using defined keypair" do
+    client = Class.new.extend SeleniumGrid::AWS::Ec2Client
+    client.expects(:ec2_shell).with("ec2-version").returns(:ec2_version)
+    assert_equal :ec2_version, client.version
+  end
+
+# ec2-version -K "${EC2_PRIVATE_KEY}"
 end

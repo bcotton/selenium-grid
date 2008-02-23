@@ -28,6 +28,10 @@ module SeleniumGrid
       def shutdown(instance_id)
         ec2_shell "ec2-terminate-instances #{instance_id}"
       end
+
+      def version
+        ec2_shell "ec2-version"
+      end
             
       def authorize_port(port)
         puts "Opening port #{port}..."        
