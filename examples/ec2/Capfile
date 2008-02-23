@@ -246,6 +246,7 @@ namespace :ec2 do
     
   desc "Check EC2 related configuration."
   task :check_settings do
+    puts "Validating environment variables..."
     %w(EC2_HOME EC2_PRIVATE_KEY EC2_CERT EC2_KEYPAIR).each do |variable|
       raise <<-EOS unless ENV[variable]
       
@@ -257,8 +258,17 @@ namespace :ec2 do
           
         ++++++++++++++++++++++++++++++++++++++++++++++++
       EOS
-
     end
+    %w(EC2_PRIVATE_KEY EC2_CERT EC2_KEYPAIR).each do |variable|
+      unless File.exists?(ENV[variable])
+        raise "#{variable} environment variable does not point to a valid path: '#{ENV[variable]}'" 
+      end
+      unless File.file?(ENV[variable])
+        raise "#{variable} environment variable does not point to a valid file: '#{ENV[variable]}'" 
+      end
+    end
+    puts "EC2 Version: #{ec2_client.version}"
+    puts "Validated EC2 settings."
   end
   
 end
