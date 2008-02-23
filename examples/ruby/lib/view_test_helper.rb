@@ -24,8 +24,11 @@ Spec::Runner.configure do |config|
   end
 
   config.after(:each) do
-    # formatter = Spec::ScreenshotFormatter.instance
-    # formatter.take_screenshot_of(@selenium) unless formatter.nil?
+    formatter = Spec::ScreenshotFormatter.instance
+    unless formatter.nil?
+      formatter.save_html_snapshot @selenium
+      formatter.save_screenshot @selenium
+    end
   end
 
   config.after(:all) do
