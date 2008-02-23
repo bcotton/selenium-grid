@@ -65,4 +65,28 @@
 
   </target>
 
+  <target name="run-in-sequence" depends="compile" description="Run Selenium tests in sequence">
+    <echo>${seleniumHost}</echo>
+    <java classpathref="test.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true">
+
+      <sysproperty key="java.security.policy" file="${basedir}/../../lib/testng.policy"/>
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Java Sample Test Suite" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="20"/>
+      <arg value="testng-slow.xml"/>
+    </java>
+
+  </target>
+
 </project>

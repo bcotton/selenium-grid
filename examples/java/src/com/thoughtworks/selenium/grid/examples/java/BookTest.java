@@ -1,21 +1,29 @@
 package com.thoughtworks.selenium.grid.examples.java;
 
-import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
-import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.session;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 
 /**
  */
 public class BookTest {
 
+//    @BeforeTest
+//    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+//    public void startSession(String seleniumHost, int seleniumPort, String browser, String webSite) {
+//        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+//    }
+//
+//    @AfterTest
+//    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+//    public void closeSession() throws Exception {
+//        closeSeleniumSession();
+//    }
+
 
     protected void checkBook(String title, String thumbnail, String keywords, String isbn) {
-        session().  open("/");
+        session().open("/");
         session().select("url", "Books");
         session().type("twotabsearchtextbox", keywords);
         session().click("navGoButtonPanel");
@@ -37,4 +45,5 @@ public class BookTest {
         assertTrue(session().isTextPresent(title));
         assertTrue(session().isTextPresent("quantity: 5"));
     }
+
 }
