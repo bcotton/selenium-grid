@@ -8,34 +8,18 @@ import org.testng.annotations.Test;
 
 /**
  */
-public class DesignBooksTest extends BookTest {
+public class ProjectManagementBooksTest extends BookTest {
 
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void refactoring(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void shipIt(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Refactoring: Improving the Design of Existing Code",
-                    "Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)",
-                    "Refactoring",
-                    "0201485672");
-        } finally {
-            closeSeleniumSession();
-
-        }
-    }
-
-
-    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
-    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void designPatterns(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
-        try {
-            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Design Patterns: Elements of Reusable Object-Oriented Software",
-                    "Design Patterns: Elements of Reusable Object-Oriented Software (Addison-Wesley Professional Computing Series)",
-                    "Design Patterns",
-                    "0201633612");
+            checkBook("Ship it! A Practical Guide to Successful Software Projects",
+                    "Ship it! A Practical Guide to Successful Software Projects",
+                    "Ship It",
+                    "0974514047");
         } finally {
             closeSeleniumSession();
         }
@@ -43,13 +27,13 @@ public class DesignBooksTest extends BookTest {
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void testDrivenDevelopment(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void releaseIt(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Test Driven Development: By Example",
-                    "Test Driven Development: By Example (The Addison-Wesley Signature Series)",
-                    "Test Driven Development",
-                    "0321146530");
+            checkBook("Release It!: Design and Deploy Production-Ready Software",
+                    "Release It!: Design and Deploy Production-Ready Software (Pragmatic Programmers) (Pragmatic Programmers)",
+                    "Release It",
+                    "0978739213");
         } finally {
             closeSeleniumSession();
         }
@@ -57,13 +41,13 @@ public class DesignBooksTest extends BookTest {
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void enterpriseDesignPatterns(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void behindCloseDoors(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Patterns of Enterprise Application Architecture",
-                    "Patterns of Enterprise Application Architecture (The Addison-Wesley Signature Series)",
-                    "enterprise design patterns",
-                    "0321127420");
+            checkBook("Behind Closed Doors: Secrets of Great Management",
+                    "Behind Closed Doors: Secrets of Great Management (Pragmatic Programmers)",
+                    "Ship It",
+                    "0976694026");
         } finally {
             closeSeleniumSession();
         }
@@ -71,13 +55,27 @@ public class DesignBooksTest extends BookTest {
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
-    public void domainDrivenDesign(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+    public void agileRetrospectives(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
-            checkBook("Domain-Driven Design: Tackling Complexity in the Heart of Software",
-                    "Domain-Driven Design: Tackling Complexity in the Heart of Software",
-                    "domain driven design",
-                    "0321125215");
+            checkBook("Agile Retrospectives: Making Good Teams Great",
+                    "Agile Retrospectives: Making Good Teams Great",
+                    "Agile Retrospectives",
+                    "0977616649");
+        } finally {
+            closeSeleniumSession();
+        }
+    }
+
+    @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    public void theMythicalManMonth(String seleniumHost, int seleniumPort, String browser, String webSite) throws Throwable {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+            checkBook("The Mythical Man-Month: Essays on Software Engineering",
+                    "The Mythical Man-Month: Essays on Software Engineering, Anniversary Edition (2nd Edition)",
+                    "Mythical Man-Month",
+                    "0201835959");
         } finally {
             closeSeleniumSession();
         }

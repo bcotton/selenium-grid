@@ -2,11 +2,8 @@ package com.thoughtworks.selenium.grid.examples.java;
 
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
-import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.session;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import static org.testng.AssertJUnit.assertTrue;
-import static org.testng.AssertJUnit.assertEquals;
 
 
 /**
@@ -19,14 +16,13 @@ public class RubyBooksTest extends BookTest {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("Programming Ruby: The Pragmatic Programmers' Guide, Second Edition",
-                      "Programming Ruby: The Pragmatic Programmers' Guide, Second Edition",
-                      "Ruby",
-                      "0974514055");
+                    "Programming Ruby: The Pragmatic Programmers' Guide, Second Edition",
+                    "Ruby",
+                    "0974514055");
         } finally {
             closeSeleniumSession();
-
         }
-    }    
+    }
 
     @Test(groups = {"demo", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
@@ -34,12 +30,11 @@ public class RubyBooksTest extends BookTest {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("The Ruby Way, Second Edition: Solutions and Techniques in Ruby Programming",
-                      "The Ruby Way, Second Edition: Solutions and Techniques in Ruby Programming (2nd Edition) (Addison-Wesley Professional Ruby Series)",
-                      "Ruby",
-                      "0672328844");
+                    "The Ruby Way, Second Edition: Solutions and Techniques in Ruby Programming (2nd Edition) (Addison-Wesley Professional Ruby Series)",
+                    "Ruby",
+                    "0672328844");
         } finally {
             closeSeleniumSession();
-
         }
     }
 
@@ -49,12 +44,11 @@ public class RubyBooksTest extends BookTest {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("Agile Web Development with Rails",
-                      "Agile Web Development with Rails, 2nd Edition",
-                      "Ruby",
-                      "0977616630");
+                    "Agile Web Development with Rails, 2nd Edition",
+                    "Ruby",
+                    "0977616630");
         } finally {
             closeSeleniumSession();
-
         }
     }
 
@@ -64,12 +58,11 @@ public class RubyBooksTest extends BookTest {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("Advanced Rails Recipes: 72 New Ways to Build Stunning Rails Apps",
-                      "Advanced Rails Recipes: 72 New Ways to Build Stunning Rails Apps",
-                      "Rails Recipes",
-                      "0978739221");
+                    "Advanced Rails Recipes: 72 New Ways to Build Stunning Rails Apps",
+                    "Rails Recipes",
+                    "0978739221");
         } finally {
             closeSeleniumSession();
-
         }
     }
 
@@ -79,12 +72,11 @@ public class RubyBooksTest extends BookTest {
         try {
             startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
             checkBook("The Rails Way",
-                      "The Rails Way (Addison-Wesley Professional Ruby Series)",
-                      "Rails",
-                      "0321445619");
+                    "The Rails Way (Addison-Wesley Professional Ruby Series)",
+                    "Rails",
+                    "0321445619");
         } finally {
             closeSeleniumSession();
-
         }
     }
 
