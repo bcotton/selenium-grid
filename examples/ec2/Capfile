@@ -17,7 +17,7 @@ require File.dirname(__FILE__) + '/lib/selenium_grid/aws/ec2'
 require 'erb'
 
 set :selenium_grid_path, "/usr/local/lib/selenium-grid"
-set :ami, ENV["AMI"] || "ami-dc01e4b5"
+set :ami, ENV["AMI"] || "ami-780fea11"
 set :cloud, SeleniumGrid::AWS::Cloud.load
 set :ec2_client, Class.new.extend(::SeleniumGrid::AWS::Ec2Client)
 
