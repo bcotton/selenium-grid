@@ -3,25 +3,25 @@
      margin-left: 1em;
    }
 
-   div#actual-content div.header {
+   div.header {
      text-align: center;
      font: bold 1.7em "Chalkboard", "Georgia", serif;
      padding: 0;
      margin: 1em 0 2.5em 0;
    }
 
-   div#actual-content div.header img {
+   div.header img {
      padding: 0;
      margin: 0 1em 0 0;
      vertical-align: middle;
    }
 
-   div#actual-content div.section {
+   div.section {
      clear: both;
      margin: 1em;
    }
             
-   div#actual-content div.section h2 {
+   div.section h2 {
      float: left;
      width: 15%;
      border: 0;
@@ -32,7 +32,7 @@
      background: none;
    }
 
-   div#actual-content div.section div.content {
+   div.section div.content {
      float: left;
      width: 70%;
      border: 0;
@@ -41,16 +41,26 @@
      font-size: 1em;
    }
 
-   div#actual-content div.section div.content p {
+   div.section div.content p {
      margin-top: .3em;
    }
    
-    div#actual-content h2 {
-     font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
-     padding: .2em .2em;
-     border: 0;
-     border-bottom: solid medium #a20017;
-     background: none;
+    h2 {
+      font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
+      padding: .2em .2em;
+      border: 0;
+      border-bottom: solid medium #a20017;
+      background: none;
+    }
+
+    h3 {
+      font: bold 1.2em "Lucida Grande", Verdana, sans-serif;
+      padding: .2em .2em;
+      border: 0;
+      border-bottom: solid thin #a20017;
+      color: #333;
+      background: none;
+      margin-left: 1.3em;
     }
     
 img {
@@ -67,12 +77,12 @@ a:hover {
     text-decoration: underline;
 }
 
-p, ul, ol, dl {
+p, ul, ol, dl, pre {
   font-size: 1em;  
-  margin-left: 2em;
+  margin-left: 2.3em;
 }
 
-ul p, ul pre, ol p, ol pre {
+ul p, ul pre, ol p, ol pre, p pre {
     margin-left: .2em;
 }
 
