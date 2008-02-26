@@ -1,15 +1,14 @@
-<html>
- <head>
-   <title>Selenium Grid</title>
-   <link rel="stylesheet" type="text/css" href="stylesheets/site.css" />
-   <link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+   
+   <title>Selenium Grid</title><link rel="stylesheet" type="text/css" href="stylesheets/site.css">
+   <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 
-   <script type="text/javascript" src="javascripts/shadedborder.js"></script>
- </head>
- <body>
+   <script type="text/javascript" src="javascripts/shadedborder.js"></script></head>
+<body>
 
     <div class="marketing-banner">
-      <img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/>
+      <img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png">
       <p class="tagline">Web Testing That Doesn't Take Hours!</p>
       <p>
         Selenium Grid is an open-source tool that dramatically speeds up web 
@@ -22,13 +21,14 @@
     </div>
     
     <table id="start-tracks" align="center">
-      <tr valign="top">
+      <tbody><tr valign="top">
         <td id="get-started">
 	      <h2>Get Started</h2>
 	      <ul>
 	        <li><a href="download.html">Download Selenium Grid</a></li>
 	        <li><a href="get_started.html">Setup Your Environment</a></li>
 	        <li><a href="run_the_demo.html">Run The Demo</a></li>
+	        <li><a href="run_the_demo_on_ec2.html">Run The Demo on EC2</a></li>
 	      </ul>
 	    </td>
         <td id="get-better">
@@ -52,20 +52,19 @@
           </ul>
 	    </td>
       </tr>
-    </table>
+    </tbody></table>
 
     <div class="section">
       <h2>What is It?</h2>
       <div class="content">
-        <p>
-          Selenium Grid is a tool that dramatically speeds up web 
-          testing by leveraging your existing computing infrastructure. 
+        <p>Selenium Grid is a tool that dramatically speeds up functional 
+          testing of web-apps by leveraging your existing computing infrastructure. 
           It allows you to easily run multiple tests in parallel, on multiple
-          machines, in an heterogeneous enviroment.
+          machines, in an heterogeneous enviroment.&nbsp;
         </p>
         <p>
           Based on the excellent 
-          <a href="http://www.openqa.org/selenium/">Selenium</a> web 
+          <a href="http://www.openqa.org/selenium/">Selenium Remote Control</a> web 
           testing tool, Selenium Grid allows you to run multiple instances 
           of Selenium Remote Control in parallel. Even better, it makes all 
           these Selenium Remote Controls appear as a single one, so your tests 
@@ -75,10 +74,15 @@
           would take to run.
         </p>
         <p>
-          Last but not least, Selenium Grid is easy to use and simple to install.
+          Last but not least, Selenium Grid is easy to use and simple to install.</p><p>Here is a view of a hypothetical deployment architecture....</p><p><img style="width: 581px; height: 532px;" alt="grid" src="http://selenium.openqa.org/selenium-grid.png"></p><p>You
+get to choose which language you develop your tests in, and what
+configurations of browser on each operating system. You choose the
+number of nodes, even the versions of each operating system within type
+&nbsp;... Mac OS Tiger and Leopard can be nodes in the same farm.
+Similarly&nbsp;Windows XP, Vista and Server 2003 can be nodes in the
+same farm.
         </p>
       </div>
     </div>
 
-</body>
-</html>
+</body></html>
