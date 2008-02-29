@@ -33,9 +33,8 @@ div#news {
 
 div#news,
 div#news a {
-  color: #9f0118;
+  color: #55f;
   font-weight: bold;
-  text-shadow: .1em .1em .2em #888;
 }
 
 table#start-tracks {
@@ -89,10 +88,11 @@ table#start-tracks tr td ul li a {
 
 table#start-tracks tr td h2 {
   text-align: center;
-  color: black;
+  color: #9f0118;
   font-size: 1.1em;
   margin: 0 0 1em 0;
   padding: 0;
+  text-shadow: .1em .1em .2em #888;
 }
 
 div.section {
