@@ -26,6 +26,18 @@ div.marketing-banner p.tagline {
   padding: 0;
 }
 
+div#news {
+  text-align: center;
+  margin: 0 30%;
+}
+
+div#news,
+div#news a {
+  color: #9f0118;
+  font-weight: bold;
+  text-shadow: .1em .1em .2em #888;
+}
+
 table#start-tracks {
   margin-bottom: 1em;
   border-spacing: .6em 1em;
