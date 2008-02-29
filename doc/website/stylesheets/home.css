@@ -44,19 +44,19 @@ table#start-tracks tr td {
 /* Color Scheme from http://www.colourlovers.com/palette/270694/The_Rainbow_Song_I */
 
 table#start-tracks tr td#get-started {
-background: #E08282;
+  background: url("../images/background_started.png") repeat-x; 
 }
 
 table#start-tracks tr td#get-better {
-background: #F2B272;
+  background: url("../images/background_better.png") repeat-x; 
 }
 
 table#start-tracks tr td#give-feedback {
-background: #FFDA82;
+  background: url("../images/background_feedback.png") repeat-x; 
 }
 
 table#start-tracks tr td#participate {
-background: #99D194;
+  background: url("../images/background_participate.png") repeat-x; 
 }
 
 table#start-tracks ul {
