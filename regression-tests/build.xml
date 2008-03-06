@@ -1,0 +1,68 @@
+<project name="Selenium Grid Regression Tests" default="run" basedir=".">
+
+  <description>Selenium Grid Regression Tests</description>
+
+  <property file="${basedir}/../project.properties"/>
+  <property name="name" value="Selenium Grid Demo"/>
+  <property name="artifact" value="selenium-grid-demo"/>
+  <property name="version" value="SNAPSHOT"/>
+  <tstamp/>
+  <property name="build.src" location="src/"/>
+  <property name="build.output" location="target/classes"/>
+  <property name="dist" location="${basedir}/target/dist"/>
+
+  <property name="webSite" value="http://amazon.com" />
+  <property name="seleniumHost" value="localhost" />
+  <property name="seleniumPort" value="4444" />
+  <property name="browser" value="*chrome" />
+
+  <path id="test.classpath">
+    <pathelement location="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
+    <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+    <pathelement location="${basedir}/../tools/target/classes"/>
+    <pathelement location="${basedir}/../tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
+    <pathelement location="${basedir}/../lib/selenium-grid-tools-standalone-${version}.jar"/>
+    <pathelement path="${java.class.path}/"/>
+    <pathelement location="${build.output}" />
+  </path>
+
+  <target name="compile" description="compile the source ">
+    <mkdir dir="${build.output}"/>
+    <javac srcdir="${build.src}"
+           destdir="${build.output}"
+           debug="true"
+           source="1.5"
+           target="1.5">
+      <classpath refid="test.classpath"/>
+    </javac>
+  </target>
+
+  <target name="clean" description="Remove generated artifacts">
+    <delete dir="target"/>
+  </target>
+
+  <target name="run" depends="compile" description="Run Selenium tests in parallel (20 threads)">
+    <echo>${seleniumHost}</echo>
+    <java classpathref="test.classpath"
+        classname="org.testng.TestNG"
+        failonerror="true">
+
+      <sysproperty key="java.security.policy" file="${basedir}/../../lib/testng.policy"/>
+      <sysproperty key="webSite" value="${webSite}" />
+      <sysproperty key="seleniumHost" value="${seleniumHost}" />
+      <sysproperty key="seleniumPort" value="${seleniumPort}" />
+      <sysproperty key="browser" value="${browser}" />
+      <arg value="-d" />
+      <arg value="${basedir}/target/reports" />
+      <arg value="-suitename" />
+      <arg value="Selenium Grid Java Sample Test Suite" />
+      <arg value="-parallel"/>
+      <arg value="methods"/>
+      <arg value="-threadcount"/>
+      <arg value="20"/>
+      <arg value="testng.xml"/>
+    </java>
+
+  </target>
+
+</project>
