@@ -18,9 +18,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -87,18 +85,18 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.setAcceptsArbitraryObjectsAsValue$PageTest.setAcceptsArbitraryObjectsAsValue.es" NAME="PageTest.setAcceptsArbitraryObjectsAsValue" MODIFIED="1189727071140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1194104594250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself.es" NAME="EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself" MODIFIED="1190156189543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1202008928391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
+    <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1194104594250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$ServletParameterAdapterTest$ServletParameterAdapterTest.es" NAME="ServletParameterAdapterTest" MODIFIED="1202022522221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1202008928391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubServletTest$HubServletTest.es" NAME="HubServletTest" MODIFIED="1202009256141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
@@ -175,11 +173,11 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound.es" NAME="ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound" MODIFIED="1190156618965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest$HttpClientTest.es" NAME="HttpClientTest" MODIFIED="1203758832799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.templateIsTheOneProvidedInTheConstructor$PageTest.templateIsTheOneProvidedInTheConstructor.es" NAME="PageTest.templateIsTheOneProvidedInTheConstructor" MODIFIED="1189726413204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest$HttpClientTest.es" NAME="HttpClientTest" MODIFIED="1203758832799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID.es" NAME="NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID" MODIFIED="1197830937264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
@@ -253,7 +251,7 @@
       <file leaf-file-name="HttpClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="28" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.8386308">
+            <state line="44" column="28" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.5541195">
               <folding />
             </state>
           </provider>
@@ -262,7 +260,7 @@
       <file leaf-file-name="HttpClientTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="21" selection-start="352" selection-end="352" vertical-scroll-proportion="-1.6405869">
+            <state line="12" column="21" selection-start="352" selection-end="352" vertical-scroll-proportion="0.019386107">
               <folding />
             </state>
           </provider>
@@ -271,11 +269,8 @@
       <file leaf-file-name="SeleniumRCProxyIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/SeleniumRCProxyIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.39897698">
-              <folding>
-                <marker date="1201473219000" expanded="true" signature="212:260" placeholder="/**...*/" />
-                <marker date="1201473219000" expanded="true" signature="447:799" placeholder="{...}" />
-              </folding>
+            <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.25201938">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,7 +278,7 @@
       <file leaf-file-name="RegressionTests.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/regression/com/thoughtworks/selenium/grid/qa/RegressionTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="36" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.23670213">
+            <state line="28" column="36" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.50827813">
               <folding />
             </state>
           </provider>
@@ -292,7 +287,7 @@
       <file leaf-file-name="BookTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="499" selection-end="699" vertical-scroll-proportion="0.58679706">
+            <state line="20" column="0" selection-start="499" selection-end="699" vertical-scroll-proportion="0.38772213">
               <folding />
             </state>
           </provider>
@@ -301,7 +296,7 @@
       <file leaf-file-name="DesignBooksTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/DesignBooksTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="0" selection-end="4210" vertical-scroll-proportion="0.30456853">
+            <state line="10" column="13" selection-start="0" selection-end="4210" vertical-scroll-proportion="0.01986755">
               <folding />
             </state>
           </provider>
@@ -310,12 +305,8 @@
       <file leaf-file-name="RequestProxyTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RequestProxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.41489363">
-              <folding>
-                <marker date="1201473219000" expanded="true" signature="212:260" placeholder="/**...*/" />
-                <marker date="1201473219000" expanded="true" signature="433:744" placeholder="{...}" />
-                <marker date="1201473219000" expanded="true" signature="814:1089" placeholder="{...}" />
-              </folding>
+            <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.25827813">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -323,11 +314,8 @@
       <file leaf-file-name="BasicHttpClientIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/BasicHttpClientIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="14" selection-start="517" selection-end="517" vertical-scroll-proportion="0.3776596">
-              <folding>
-                <marker date="1201473219000" expanded="true" signature="344:392" placeholder="/**...*/" />
-                <marker date="1201473219000" expanded="true" signature="500:1643" placeholder="{...}" />
-              </folding>
+            <state line="19" column="14" selection-start="517" selection-end="517" vertical-scroll-proportion="0.3294702">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -335,7 +323,7 @@
       <file leaf-file-name="testng.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.24427481">
+            <state line="8" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.15920398">
               <folding />
             </state>
           </provider>
@@ -344,7 +332,7 @@
       <file leaf-file-name="AmazonCommentTestBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="0.2741117">
+            <state line="9" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="0.17880794">
               <folding />
             </state>
           </provider>
@@ -604,7 +592,7 @@
       <showLibraryContents />
       <hideEmptyPackages ProjectPane="false" />
       <abbreviatePackageNames />
-      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
+      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -676,12 +664,14 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
     </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -696,37 +686,6 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
-      <module name="All" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
@@ -762,6 +721,13 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -773,6 +739,22 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -813,26 +795,32 @@
         </option>
       </MavenSettings>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
+      <module name="All" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <envs />
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" />
     </configuration>
     <configuration default="false" name="SelfRegisteringRemoteControlLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher" />
@@ -1105,18 +1093,18 @@
       </method>
     </configuration>
     <list size="12">
-      <item index="0" class="java.lang.String" itemvalue="Application.SelfRegisteringRemoteControlLauncher" />
-      <item index="1" class="java.lang.String" itemvalue="Application.TestDriver" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PageTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TemplateTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ControllerTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.configuration in Core" />
-      <item index="6" class="java.lang.String" itemvalue="RubyOnRails.HttpCommandParserTest" />
-      <item index="7" class="java.lang.String" itemvalue="RubyOnRails.http_client_test" />
-      <item index="8" class="java.lang.String" itemvalue="RubyOnRails.http_command_parser_test" />
-      <item index="9" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
-      <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
-      <item index="11" class="java.lang.String" itemvalue="JUnit.HttpClientTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpClientTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SelfRegisteringRemoteControlLauncher" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TestDriver" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PageTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TemplateTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ControllerTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.configuration in Core" />
+      <item index="7" class="java.lang.String" itemvalue="RubyOnRails.HttpCommandParserTest" />
+      <item index="8" class="java.lang.String" itemvalue="RubyOnRails.http_client_test" />
+      <item index="9" class="java.lang.String" itemvalue="RubyOnRails.http_command_parser_test" />
+      <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
+      <item index="11" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
     </list>
     <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1417,82 +1405,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.24427481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="0.2741117">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="28" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.8386308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/BasicHttpClientIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="14" selection-start="517" selection-end="517" vertical-scroll-proportion="0.3776596">
-          <folding>
-            <marker date="1201473219000" expanded="true" signature="344:392" placeholder="/**...*/" />
-            <marker date="1201473219000" expanded="true" signature="500:1643" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RequestProxyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.41489363">
-          <folding>
-            <marker date="1201473219000" expanded="true" signature="212:260" placeholder="/**...*/" />
-            <marker date="1201473219000" expanded="true" signature="433:744" placeholder="{...}" />
-            <marker date="1201473219000" expanded="true" signature="814:1089" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/SeleniumRCProxyIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.39897698">
-          <folding>
-            <marker date="1201473219000" expanded="true" signature="212:260" placeholder="/**...*/" />
-            <marker date="1201473219000" expanded="true" signature="447:799" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/DesignBooksTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="0" selection-end="4210" vertical-scroll-proportion="0.30456853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="499" selection-end="699" vertical-scroll-proportion="0.58679706">
+        <state line="44" column="28" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.5541195">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="352" selection-end="352" vertical-scroll-proportion="-1.6405869">
+        <state line="12" column="21" selection-start="352" selection-end="352" vertical-scroll-proportion="0.019386107">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/SeleniumRCProxyIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.25201938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="499" selection-end="699" vertical-scroll-proportion="0.38772213">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/DesignBooksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="0" selection-end="4210" vertical-scroll-proportion="0.01986755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RequestProxyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="274" selection-end="274" vertical-scroll-proportion="0.25827813">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/integration/java/com/thoughtworks/selenium/grid/hub/remotecontrol/BasicHttpClientIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="517" selection-end="517" vertical-scroll-proportion="0.3294702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.15920398">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/src/main/java/com/thoughtworks/selenium/grid/demo/AmazonCommentTestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="0.17880794">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/regression/com/thoughtworks/selenium/grid/qa/RegressionTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.23670213">
+        <state line="28" column="36" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.50827813">
           <folding />
         </state>
       </provider>
