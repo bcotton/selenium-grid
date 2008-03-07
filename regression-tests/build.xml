@@ -41,13 +41,13 @@
     <delete dir="target"/>
   </target>
 
-  <target name="run" depends="compile" description="Run Selenium tests in parallel (20 threads)">
+  <target name="run" depends="compile" description="Run Selenium Regression Tests">
     <echo>${seleniumHost}</echo>
     <java classpathref="test.classpath"
         classname="org.testng.TestNG"
         failonerror="true">
 
-      <sysproperty key="java.security.policy" file="${basedir}/../../lib/testng.policy"/>
+      <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
       <sysproperty key="webSite" value="${webSite}" />
       <sysproperty key="seleniumHost" value="${seleniumHost}" />
       <sysproperty key="seleniumPort" value="${seleniumPort}" />
@@ -55,7 +55,7 @@
       <arg value="-d" />
       <arg value="${basedir}/target/reports" />
       <arg value="-suitename" />
-      <arg value="Selenium Grid Java Sample Test Suite" />
+      <arg value="Selenium Grid Regression Test Suite" />
       <arg value="-parallel"/>
       <arg value="methods"/>
       <arg value="-threadcount"/>
