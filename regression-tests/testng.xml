@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Selenium Grid Regression Test Suite" parallel="methods" thread-count="7" verbose="1" >
+  <test name="Selenium Grid Regression Tests"   >
+    <packages>
+      <package name="com.thoughtworks.selenium.grid.regressiontests" />
+   </packages>
+ </test>
+</suite>
