@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (a_string_or_regexp)
+is_singleton: false
+block_params: 
+name: sanitize
+comment: 
+full_name: Spec::Story::Step#sanitize
+visibility: public
+aliases: []

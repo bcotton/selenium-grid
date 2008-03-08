@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: ModuleMethods
+constants: []
+comment: 
+attributes: 
+- !ruby/object:RI::Attribute
+  name: generated_description
+  comment: 
+  rw: RW
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: clear_generated_description
+full_name: Spec::Matchers::ModuleMethods
+superclass: 
+class_methods: []
