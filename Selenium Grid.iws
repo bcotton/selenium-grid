@@ -19,15 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.ipr" afterPath="$PROJECT_DIR$/Selenium Grid.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/build.xml" afterPath="$PROJECT_DIR$/hub/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/jruby_sanity_check.rb" afterPath="$PROJECT_DIR$/src/scripts/jruby_sanity_check.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.xml" afterPath="$PROJECT_DIR$/core/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/website/hack.html" afterPath="$PROJECT_DIR$/doc/website/hack.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/build.xml" afterPath="$PROJECT_DIR$/remote-control/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/Hub Tests.iml" afterPath="$PROJECT_DIR$/hub/Hub Tests.iml" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -270,7 +262,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="65" selection-start="658" selection-end="658" vertical-scroll-proportion="0.3478261">
+            <state line="30" column="65" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.47826087">
               <folding />
             </state>
           </provider>
@@ -1648,7 +1640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="65" selection-start="658" selection-end="658" vertical-scroll-proportion="0.3478261">
+        <state line="30" column="65" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.47826087">
           <folding />
         </state>
       </provider>
