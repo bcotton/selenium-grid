@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: before_eval
+comment: 
+full_name: Spec::DSL::Behaviour#before_eval
+visibility: protected
+aliases: []

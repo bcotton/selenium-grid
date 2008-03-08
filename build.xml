@@ -24,10 +24,10 @@
     <fail message="Your must use Java 1.5 or newer. You are currrenltly using '${ant.java.version}'." unless="java-5"/>
 
     <path id="jruby.classpath">
-      <fileset dir="${basedir}/lib/jruby-1.0.2">
+      <fileset dir="${basedir}/lib/jruby-1.1-RC2">
         <include name="*.jar"/>
       </fileset>
-      <pathelement path="${basedir}/lib/jruby-1.0.2/ruby/1.8"/>      
+      <pathelement path="${basedir}/lib/jruby-1.1-RC2/ruby/1.8"/>      
     </path>
 
     <java classname="org.jruby.Main" fork="true" failonerror="true">

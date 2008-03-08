@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (key)
+block_params: 
+is_singleton: false
+name: '[]'
+comment: 
+full_name: Spec::DSL::Description#[]
+visibility: public
+aliases: []

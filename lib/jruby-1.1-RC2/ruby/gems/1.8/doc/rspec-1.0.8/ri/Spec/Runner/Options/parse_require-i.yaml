@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (req)
+block_params: 
+is_singleton: false
+name: parse_require
+comment: 
+full_name: Spec::Runner::Options#parse_require
+visibility: public
+aliases: []

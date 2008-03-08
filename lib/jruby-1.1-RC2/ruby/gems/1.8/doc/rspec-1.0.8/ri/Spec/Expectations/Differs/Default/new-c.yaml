@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (format=:unified,context_lines=nil,colour=nil)
+block_params: 
+is_singleton: true
+name: new
+comment: 
+full_name: Spec::Expectations::Differs::Default::new
+visibility: public
+aliases: []

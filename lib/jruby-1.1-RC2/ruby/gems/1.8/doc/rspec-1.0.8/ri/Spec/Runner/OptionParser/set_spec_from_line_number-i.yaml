@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (options, args, err)
+block_params: 
+is_singleton: false
+name: set_spec_from_line_number
+comment: 
+full_name: Spec::Runner::OptionParser#set_spec_from_line_number
+visibility: public
+aliases: []

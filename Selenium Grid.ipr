@@ -732,7 +732,7 @@
         <root url="file://$PROJECT_DIR$/hub/src/test/unit/java" />
         <root url="file://$PROJECT_DIR$/hub/src/main/java" />
         <root url="file://$PROJECT_DIR$/hub/src/main/ruby" />
-        <root url="file://$PROJECT_DIR$/lib/jruby-1.0.2/ruby" />
+        <root url="file://$PROJECT_DIR$/lib/jruby-1.1-RC2/ruby" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -755,12 +755,12 @@
     </library>
     <library name="Embedded JRuby">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/jruby-1.0.2/ruby" />
-        <root url="jar://$PROJECT_DIR$/lib/jruby-1.0.2/asm-2.2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jruby-1.0.2/asm-commons-2.2.3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jruby-1.0.2/backport-util-concurrent.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jruby-1.0.2/jruby.jar!/" />
-        <root url="file://$PROJECT_DIR$/lib/jruby-1.0.2/ruby/1.8" />
+        <root url="file://$PROJECT_DIR$/lib/jruby-1.1-RC2/ruby" />
+        <root url="jar://$PROJECT_DIR$/lib/jruby-1.1-RC2/asm-2.2.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jruby-1.1-RC2/asm-commons-2.2.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jruby-1.1-RC2/backport-util-concurrent.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jruby-1.1-RC2/jruby.jar!/" />
+        <root url="file://$PROJECT_DIR$/lib/jruby-1.1-RC2/ruby/1.8" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

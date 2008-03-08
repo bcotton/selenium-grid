@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (heckle)
+block_params: 
+is_singleton: false
+name: parse_heckle
+comment: 
+full_name: Spec::Runner::Options#parse_heckle
+visibility: public
+aliases: []

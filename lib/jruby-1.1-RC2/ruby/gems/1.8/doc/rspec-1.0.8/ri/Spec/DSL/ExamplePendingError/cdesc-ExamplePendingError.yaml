@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: ExamplePendingError
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::DSL::ExamplePendingError
+superclass: StandardError
+class_methods: []

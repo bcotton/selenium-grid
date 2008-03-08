@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (out_stream)
+block_params: 
+is_singleton: false
+name: parse_version
+comment: 
+full_name: Spec::Runner::OptionParser#parse_version
+visibility: public
+aliases: []

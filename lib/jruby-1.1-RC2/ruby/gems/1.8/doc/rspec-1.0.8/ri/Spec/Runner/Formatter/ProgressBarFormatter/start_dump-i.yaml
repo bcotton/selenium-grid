@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: start_dump
+comment: 
+full_name: Spec::Runner::Formatter::ProgressBarFormatter#start_dump
+visibility: public
+aliases: []

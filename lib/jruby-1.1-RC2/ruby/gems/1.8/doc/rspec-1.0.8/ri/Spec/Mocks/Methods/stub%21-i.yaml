@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (sym)
+block_params: 
+is_singleton: false
+name: stub!
+comment: 
+full_name: Spec::Mocks::Methods#stub!
+visibility: public
+aliases: []

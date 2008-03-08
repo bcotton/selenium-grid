@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (reporter, dry_run)
+block_params: 
+is_singleton: false
+name: run_before_all
+comment: 
+full_name: Spec::DSL::Behaviour#run_before_all
+visibility: protected
+aliases: []

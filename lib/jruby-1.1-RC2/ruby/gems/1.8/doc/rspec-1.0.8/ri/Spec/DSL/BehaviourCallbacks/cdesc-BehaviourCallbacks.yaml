@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: BehaviourCallbacks
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: See http://rspec.rubyforge.org/documentation/before_and_after.html
+constants: []
+attributes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: add
+- !ruby/object:RI::MethodSummary
+  name: after
+- !ruby/object:RI::MethodSummary
+  name: append_after
+- !ruby/object:RI::MethodSummary
+  name: append_before
+- !ruby/object:RI::MethodSummary
+  name: before
+- !ruby/object:RI::MethodSummary
+  name: prepend_after
+- !ruby/object:RI::MethodSummary
+  name: prepend_before
+- !ruby/object:RI::MethodSummary
+  name: remove_after
+- !ruby/object:RI::MethodSummary
+  name: scope_and_options
+- !ruby/object:RI::MethodSummary
+  name: setup
+- !ruby/object:RI::MethodSummary
+  name: teardown
+full_name: Spec::DSL::BehaviourCallbacks
+superclass: 
+class_methods: []

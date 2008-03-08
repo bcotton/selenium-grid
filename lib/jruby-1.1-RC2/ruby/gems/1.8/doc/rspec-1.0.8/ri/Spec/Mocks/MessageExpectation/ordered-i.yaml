@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (&block)
+block_params: 
+is_singleton: false
+name: ordered
+comment: 
+full_name: Spec::Mocks::MessageExpectation#ordered
+visibility: public
+aliases: []

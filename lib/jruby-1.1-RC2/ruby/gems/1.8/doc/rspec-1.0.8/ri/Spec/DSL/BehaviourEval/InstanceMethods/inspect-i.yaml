@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: inspect
+comment: 
+full_name: Spec::DSL::BehaviourEval::InstanceMethods#inspect
+visibility: public
+aliases: []

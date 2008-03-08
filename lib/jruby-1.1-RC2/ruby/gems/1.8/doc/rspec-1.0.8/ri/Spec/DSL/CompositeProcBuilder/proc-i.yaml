@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (&error_handler)
+block_params: 
+is_singleton: false
+name: proc
+comment: 
+full_name: Spec::DSL::CompositeProcBuilder#proc
+visibility: public
+aliases: []

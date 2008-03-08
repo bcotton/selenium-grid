@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour_type, klass)
+block_params: 
+is_singleton: true
+name: add_behaviour_class
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: 'Registers a behaviour class <tt>klass</tt> with the symbol <tt>behaviour_type</tt>.
+    For example:'
+- !ruby/struct:SM::Flow::VERB
+  body: "  Spec::DSL::BehaviourFactory.add_behaviour_class(:farm, Spec::Farm::DSL::FarmBehaviour)\n"
+- !ruby/struct:SM::Flow::P
+  body: This will cause Kernel#describe from a file living in <tt>spec/farm</tt> to
+    create behaviour instances of type Spec::Farm::DSL::FarmBehaviour.
+full_name: Spec::DSL::BehaviourFactory::add_behaviour_class
+visibility: public
+aliases: []

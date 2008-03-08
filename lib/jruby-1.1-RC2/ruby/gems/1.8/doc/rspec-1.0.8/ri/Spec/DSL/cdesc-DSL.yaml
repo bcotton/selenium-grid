@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: DSL
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::DSL
+superclass: 
+class_methods: []

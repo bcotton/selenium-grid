@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: EvalModule
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::DSL::EvalModule
+superclass: Module
+class_methods: []

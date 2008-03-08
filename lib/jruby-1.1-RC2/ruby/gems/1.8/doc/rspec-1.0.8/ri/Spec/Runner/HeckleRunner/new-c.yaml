@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (filter)
+block_params: 
+is_singleton: true
+name: new
+comment: 
+full_name: Spec::Runner::HeckleRunner::new
+visibility: public
+aliases: []

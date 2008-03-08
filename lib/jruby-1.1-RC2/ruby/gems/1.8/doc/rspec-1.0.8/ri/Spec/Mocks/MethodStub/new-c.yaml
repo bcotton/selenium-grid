@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (message, expectation_ordering, expected_from, sym, method_block)
+block_params: 
+is_singleton: true
+name: new
+comment: 
+full_name: Spec::Mocks::MethodStub::new
+visibility: public
+aliases: []

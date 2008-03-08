@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (text)
+block_params: 
+is_singleton: false
+name: blue
+comment: 
+full_name: Spec::Runner::Formatter::BaseTextFormatter#blue
+visibility: protected
+aliases: []

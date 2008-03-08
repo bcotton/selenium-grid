@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: prepare_execution_context_class
+comment: 
+full_name: Spec::DSL::Behaviour#prepare_execution_context_class
+visibility: protected
+aliases: []

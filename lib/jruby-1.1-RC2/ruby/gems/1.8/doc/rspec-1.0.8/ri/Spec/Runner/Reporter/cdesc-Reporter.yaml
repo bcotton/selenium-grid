@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: Reporter
+comment: 
+constants: []
+attributes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: add_behaviour
+- !ruby/object:RI::MethodSummary
+  name: dump
+- !ruby/object:RI::MethodSummary
+  name: end
+- !ruby/object:RI::MethodSummary
+  name: example_finished
+- !ruby/object:RI::MethodSummary
+  name: example_started
+- !ruby/object:RI::MethodSummary
+  name: start
+full_name: Spec::Runner::Reporter
+superclass: Object
+class_methods: 
+- !ruby/object:RI::MethodSummary
+  name: new

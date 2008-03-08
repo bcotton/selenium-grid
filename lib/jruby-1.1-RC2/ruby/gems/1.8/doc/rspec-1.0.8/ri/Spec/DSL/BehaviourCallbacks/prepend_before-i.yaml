@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (*args, &block)
+block_params: 
+is_singleton: false
+name: prepend_before
+comment: 
+full_name: Spec::DSL::BehaviourCallbacks#prepend_before
+visibility: public
+aliases: []

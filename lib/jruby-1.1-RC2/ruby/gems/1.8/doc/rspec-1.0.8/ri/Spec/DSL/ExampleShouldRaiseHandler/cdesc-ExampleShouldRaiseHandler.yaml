@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: ExampleShouldRaiseHandler
+comment: 
+constants: []
+attributes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: build_message
+- !ruby/object:RI::MethodSummary
+  name: determine_error_class
+- !ruby/object:RI::MethodSummary
+  name: determine_error_message
+- !ruby/object:RI::MethodSummary
+  name: error_matches?
+- !ruby/object:RI::MethodSummary
+  name: handle
+full_name: Spec::DSL::ExampleShouldRaiseHandler
+superclass: Object
+class_methods: 
+- !ruby/object:RI::MethodSummary
+  name: new

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: ExpectationNotMetError
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::Expectations::ExpectationNotMetError
+superclass: StandardError
+class_methods: []

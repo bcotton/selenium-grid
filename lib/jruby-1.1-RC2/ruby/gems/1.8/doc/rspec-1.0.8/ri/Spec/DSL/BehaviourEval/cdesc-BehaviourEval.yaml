@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: BehaviourEval
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::DSL::BehaviourEval
+superclass: 
+class_methods: []

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour_runner)
+block_params: 
+is_singleton: false
+name: heckle_with
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Runs all the contexts held by <tt>behaviour_runner</tt> once for each of the
+    methods in the matched classes.
+full_name: Spec::Runner::HeckleRunner#heckle_with
+visibility: public
+aliases: []

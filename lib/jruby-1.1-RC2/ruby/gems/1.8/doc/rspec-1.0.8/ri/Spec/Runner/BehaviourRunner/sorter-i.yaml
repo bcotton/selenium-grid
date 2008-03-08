@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (paths)
+block_params: 
+is_singleton: false
+name: sorter
+comment: 
+full_name: Spec::Runner::BehaviourRunner#sorter
+visibility: public
+aliases: []

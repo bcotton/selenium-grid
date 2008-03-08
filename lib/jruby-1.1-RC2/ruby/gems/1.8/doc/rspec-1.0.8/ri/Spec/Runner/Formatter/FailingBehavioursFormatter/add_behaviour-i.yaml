@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour_name)
+block_params: 
+is_singleton: false
+name: add_behaviour
+comment: 
+full_name: Spec::Runner::Formatter::FailingBehavioursFormatter#add_behaviour
+visibility: public
+aliases: []

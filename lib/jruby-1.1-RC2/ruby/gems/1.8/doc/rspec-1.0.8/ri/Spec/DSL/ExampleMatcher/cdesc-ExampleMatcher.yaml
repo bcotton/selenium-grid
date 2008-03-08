@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: ExampleMatcher
+comment: 
+constants: []
+attributes: 
+- !ruby/object:RI::Attribute
+  name: example_desc
+  comment: 
+  rw: W
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: matches?
+full_name: Spec::DSL::ExampleMatcher
+superclass: Object
+class_methods: 
+- !ruby/object:RI::MethodSummary
+  name: new

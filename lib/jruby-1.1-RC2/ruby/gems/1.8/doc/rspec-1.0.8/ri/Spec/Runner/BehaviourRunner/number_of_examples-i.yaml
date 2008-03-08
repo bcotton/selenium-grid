@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: number_of_examples
+comment: 
+full_name: Spec::Runner::BehaviourRunner#number_of_examples
+visibility: public
+aliases: []

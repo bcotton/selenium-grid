@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (*args)
+block_params: 
+is_singleton: false
+name: scope_and_options
+comment: 
+full_name: Spec::DSL::BehaviourCallbacks#scope_and_options
+visibility: public
+aliases: []

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription
+params: (*mods)
+block_params: 
+is_singleton: false
+name: include
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: You can pass this one or many modules. Each module will subsequently be included
+    in the each object in which an example is run. Use this to provide global helper
+    methods to your examples.
+- !ruby/struct:SM::Flow::H
+  level: 2
+  text: Example
+- !ruby/struct:SM::Flow::VERB
+  body: "  module HelperMethods\n    def helper_method\n      ...\n    end\n  end\n\
+    \n  describe Thing do\n    include HelperMethods\n    it &quot;should do stuff&quot; \
+    do\n      helper_method\n    end\n  end\n"
+full_name: Spec::DSL::BehaviourEval::ModuleMethods#include
+visibility: public
+aliases: []

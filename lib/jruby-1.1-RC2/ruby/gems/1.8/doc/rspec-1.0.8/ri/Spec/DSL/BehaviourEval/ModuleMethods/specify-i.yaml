@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription
+params: (description=:__generate_description, opts={}, &block)
+block_params: 
+is_singleton: false
+name: specify
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Alias for it.
+full_name: Spec::DSL::BehaviourEval::ModuleMethods#specify
+visibility: public
+aliases: []

@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription
+params: (*args)
+block_params: 
+is_singleton: false
+name: include
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Includes modules in the Behaviour (the <tt>describe</tt> block).
+full_name: Spec::DSL::Behaviour#include
+visibility: public
+aliases: []

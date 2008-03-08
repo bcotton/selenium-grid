@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: BehaviourFactory
+comment: 
+constants: 
+- !ruby/object:RI::Constant
+  name: BEHAVIOUR_CLASSES
+  value: '{:default => Spec::DSL::Behaviour}'
+  comment: 
+attributes: []
+instance_methods: []
+full_name: Spec::DSL::BehaviourFactory
+superclass: Object
+class_methods: 
+- !ruby/object:RI::MethodSummary
+  name: add_behaviour_class
+- !ruby/object:RI::MethodSummary
+  name: create
+- !ruby/object:RI::MethodSummary
+  name: remove_behaviour_class
