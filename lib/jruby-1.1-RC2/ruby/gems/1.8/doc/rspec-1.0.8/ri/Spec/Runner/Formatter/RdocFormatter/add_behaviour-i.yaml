@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (name)
-block_params: 
-is_singleton: false
-name: add_behaviour
-comment: 
-full_name: Spec::Runner::Formatter::RdocFormatter#add_behaviour
-visibility: public
-aliases: []

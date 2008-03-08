@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (behaviour_type, &error_handler)
-block_params: 
-is_singleton: false
-name: before_all_proc
-comment: 
-full_name: Spec::DSL::BehaviourEval::ModuleMethods#before_all_proc
-visibility: protected
-aliases: []

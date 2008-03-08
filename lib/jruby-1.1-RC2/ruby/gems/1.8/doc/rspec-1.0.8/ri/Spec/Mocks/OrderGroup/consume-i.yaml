@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: ()
-block_params: 
-is_singleton: false
-name: consume
-comment: 
-full_name: Spec::Mocks::OrderGroup#consume
-visibility: public
-aliases: []

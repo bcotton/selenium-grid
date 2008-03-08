@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (sym, *args, &block)
-block_params: 
-is_singleton: false
-name: method_missing
-comment: 
-full_name: Spec::Mocks::Mock#method_missing
-visibility: public
-aliases: []

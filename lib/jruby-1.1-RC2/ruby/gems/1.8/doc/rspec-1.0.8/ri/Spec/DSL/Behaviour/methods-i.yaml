@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: ()
-block_params: 
-is_singleton: false
-name: methods
-comment: 
-full_name: Spec::DSL::Behaviour#methods
-visibility: public
-aliases: []

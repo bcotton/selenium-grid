@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (prefix)
-block_params: 
-is_singleton: false
-name: starts_with?
-comment: 
-full_name: Spec::Expectations::StringHelpers#starts_with?
-visibility: public
-aliases: []

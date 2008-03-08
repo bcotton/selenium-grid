@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (options_file, out_stream, error_stream, args_copy, warn_if_no_files)
-block_params: 
-is_singleton: false
-name: parse_options_file
-comment: 
-full_name: Spec::Runner::OptionParser#parse_options_file
-visibility: public
-aliases: []

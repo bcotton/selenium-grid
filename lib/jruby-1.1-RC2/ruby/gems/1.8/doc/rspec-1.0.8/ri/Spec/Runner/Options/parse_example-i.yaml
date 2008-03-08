@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (example)
-block_params: 
-is_singleton: false
-name: parse_example
-comment: 
-full_name: Spec::Runner::Options#parse_example
-visibility: public
-aliases: []

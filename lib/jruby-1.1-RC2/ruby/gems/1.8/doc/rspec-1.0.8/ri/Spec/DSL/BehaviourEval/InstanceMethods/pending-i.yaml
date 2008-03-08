@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (message) {|| ...}
-block_params: ""
-is_singleton: false
-name: pending
-comment: 
-full_name: Spec::DSL::BehaviourEval::InstanceMethods#pending
-visibility: public
-aliases: []

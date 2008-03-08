@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (expectation)
-block_params: 
-is_singleton: false
-name: handle_order_constraint
-comment: 
-full_name: Spec::Mocks::OrderGroup#handle_order_constraint
-visibility: public
-aliases: []

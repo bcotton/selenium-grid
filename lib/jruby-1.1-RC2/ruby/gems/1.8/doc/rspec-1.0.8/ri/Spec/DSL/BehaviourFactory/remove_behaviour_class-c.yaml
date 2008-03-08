@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (behaviour_type)
-block_params: 
-is_singleton: true
-name: remove_behaviour_class
-comment: 
-full_name: Spec::DSL::BehaviourFactory::remove_behaviour_class
-visibility: public
-aliases: []

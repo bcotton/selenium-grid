@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (specified_examples)
-block_params: 
-is_singleton: false
-name: retain_examples_matching!
-comment: 
-full_name: Spec::DSL::Behaviour#retain_examples_matching!
-visibility: public
-aliases: []

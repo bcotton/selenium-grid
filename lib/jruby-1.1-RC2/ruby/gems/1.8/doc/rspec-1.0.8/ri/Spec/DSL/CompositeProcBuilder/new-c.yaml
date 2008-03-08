@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (callbacks=[])
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::DSL::CompositeProcBuilder::new
-visibility: public
-aliases: []

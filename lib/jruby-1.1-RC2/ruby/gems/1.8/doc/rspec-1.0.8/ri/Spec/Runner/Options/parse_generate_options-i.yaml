@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (options_file, args_copy, out_stream)
-block_params: 
-is_singleton: false
-name: parse_generate_options
-comment: 
-full_name: Spec::Runner::Options#parse_generate_options
-visibility: public
-aliases: []

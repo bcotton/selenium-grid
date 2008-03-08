@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (args, err, out, warn_if_no_files)
-block_params: 
-is_singleton: false
-name: create_behaviour_runner
-comment: 
-full_name: Spec::Runner::OptionParser#create_behaviour_runner
-visibility: public
-aliases: []
