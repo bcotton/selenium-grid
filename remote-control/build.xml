@@ -62,10 +62,10 @@
   </path>
 
   <path id="jruby.classpath">
-    <fileset dir="${basedir}/../lib/jruby-1.0.2">
+    <fileset dir="${basedir}/../lib/jruby-1.1-RC2">
       <include name="jruby.jar"/>
     </fileset>
-    <pathelement path="${basedir}/../lib/jruby-1.0.2/ruby/1.8"/>
+    <pathelement path="${basedir}/../lib/jruby-1.1-RC2/ruby/1.8"/>
   </path>
   
   <target name="compile" description="compile the source ">

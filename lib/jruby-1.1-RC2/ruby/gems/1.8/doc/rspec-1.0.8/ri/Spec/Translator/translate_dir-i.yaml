@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (from, to)
+block_params: 
+is_singleton: false
+name: translate_dir
+comment: 
+full_name: Spec::Translator#translate_dir
+visibility: public
+aliases: []

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour)
+block_params: 
+is_singleton: false
+name: add_behaviour
+comment: 
+full_name: Spec::Runner::BehaviourRunner#add_behaviour
+visibility: public
+aliases: []

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: PendingFixedError
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::DSL::PendingFixedError
+superclass: StandardError
+class_methods: []

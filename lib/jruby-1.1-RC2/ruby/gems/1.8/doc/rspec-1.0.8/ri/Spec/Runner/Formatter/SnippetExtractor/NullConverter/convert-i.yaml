@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (code, pre)
+block_params: 
+is_singleton: false
+name: convert
+comment: 
+full_name: Spec::Runner::Formatter::SnippetExtractor::NullConverter#convert
+visibility: public
+aliases: []

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (callback)
+block_params: 
+is_singleton: false
+name: description_generated
+comment: 
+full_name: Spec::Matchers::ModuleMethods#description_generated
+visibility: public
+aliases: []

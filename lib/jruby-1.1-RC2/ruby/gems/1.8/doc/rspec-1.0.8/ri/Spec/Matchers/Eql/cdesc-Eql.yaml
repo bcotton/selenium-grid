@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: Eql
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::Matchers::Eql
+superclass: Object
+class_methods: []

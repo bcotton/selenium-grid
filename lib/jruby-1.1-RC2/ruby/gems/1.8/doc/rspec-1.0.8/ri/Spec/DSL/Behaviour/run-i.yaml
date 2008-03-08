@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (reporter, dry_run=false, reverse=false, timeout=nil)
+block_params: 
+is_singleton: false
+name: run
+comment: 
+full_name: Spec::DSL::Behaviour#run
+visibility: public
+aliases: []

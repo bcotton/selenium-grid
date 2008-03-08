@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: NegativeOperatorMatcher
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::Matchers::NegativeOperatorMatcher
+superclass: BaseOperatorMatcher
+class_methods: []

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour_description)
+block_params: 
+is_singleton: true
+name: find_shared_behaviour
+comment: 
+full_name: Spec::DSL::Behaviour::find_shared_behaviour
+visibility: public
+aliases: []

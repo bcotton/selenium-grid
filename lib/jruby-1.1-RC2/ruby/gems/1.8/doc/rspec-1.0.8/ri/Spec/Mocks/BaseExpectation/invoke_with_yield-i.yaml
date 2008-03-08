@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (block)
+block_params: 
+is_singleton: false
+name: invoke_with_yield
+comment: 
+full_name: Spec::Mocks::BaseExpectation#invoke_with_yield
+visibility: protected
+aliases: []

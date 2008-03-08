@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (expectation, *args)
+block_params: 
+is_singleton: false
+name: raise_unexpected_message_args_error
+comment: 
+full_name: Spec::Mocks::Proxy#raise_unexpected_message_args_error
+visibility: public
+aliases: []

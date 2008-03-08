@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: described_type
+comment: 
+full_name: Spec::DSL::Behaviour#described_type
+visibility: protected
+aliases: []

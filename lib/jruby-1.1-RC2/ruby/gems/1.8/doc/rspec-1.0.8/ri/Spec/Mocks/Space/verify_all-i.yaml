@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: verify_all
+comment: 
+full_name: Spec::Mocks::Space#verify_all
+visibility: public
+aliases: []

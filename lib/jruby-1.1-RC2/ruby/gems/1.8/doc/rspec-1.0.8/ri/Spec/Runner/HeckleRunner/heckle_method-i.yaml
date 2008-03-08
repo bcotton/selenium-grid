@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (class_name, method_name)
+block_params: 
+is_singleton: false
+name: heckle_method
+comment: 
+full_name: Spec::Runner::HeckleRunner#heckle_method
+visibility: public
+aliases: []

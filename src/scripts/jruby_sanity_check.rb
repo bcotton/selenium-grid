@@ -2,14 +2,14 @@
 # Validates JRuby Installation
 #
 
-EXPECTED_JRUBY_VERSION = "1.0.2"
+EXPECTED_JRUBY_VERSION = "1.1RC2"
 FORUM_URL = "http://forums.openqa.org/forum.jspa?forumID=42"
 
 unless defined? JRUBY_VERSION
   raise "Sorry you must run this script with JRuby"
 end
 
-puts "Detecting JRuby #{JRUBY_VERSION}"
+puts "Detected JRuby #{JRUBY_VERSION}"
 unless JRUBY_VERSION == EXPECTED_JRUBY_VERSION
   raise <<-EOS
     Selenium Grid has been tested with JRuby #{EXPECTED_JRUBY_VERSION}. You are using #{JRUBY_VERSION}.

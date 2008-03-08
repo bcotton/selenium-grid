@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: Match
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::Matchers::Match
+superclass: Object
+class_methods: []

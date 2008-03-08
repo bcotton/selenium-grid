@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (formatters, backtrace_tweaker)
+block_params: 
+is_singleton: true
+name: new
+comment: 
+full_name: Spec::Runner::Reporter::new
+visibility: public
+aliases: []

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (str)
+block_params: 
+is_singleton: false
+name: parse_description
+comment: 
+full_name: Spec::Runner::SpecParser#parse_description
+visibility: protected
+aliases: []

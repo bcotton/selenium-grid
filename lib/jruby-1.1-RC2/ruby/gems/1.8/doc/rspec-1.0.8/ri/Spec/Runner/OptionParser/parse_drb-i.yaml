@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (args_copy, out_stream, error_stream, warn_if_no_files)
+block_params: 
+is_singleton: false
+name: parse_drb
+comment: 
+full_name: Spec::Runner::OptionParser#parse_drb
+visibility: public
+aliases: []

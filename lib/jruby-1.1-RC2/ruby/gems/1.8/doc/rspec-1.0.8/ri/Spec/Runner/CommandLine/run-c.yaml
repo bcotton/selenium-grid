@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription
+params: (argv, err, out, exit=true, warn_if_no_files=true)
+block_params: 
+is_singleton: true
+name: run
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Runs specs. <tt>argv</tt> is the commandline args as per the spec commandline
+    API, <tt>err</tt> and <tt>out</tt> are the streams output will be written to.
+    <tt>exit</tt> tells whether or not a system exit should be called after the specs
+    are run and <tt>warn_if_no_files</tt> tells whether or not a warning (the help
+    message) should be printed to <tt>err</tt> in case no files are specified.
+full_name: Spec::Runner::CommandLine::run
+visibility: public
+aliases: []

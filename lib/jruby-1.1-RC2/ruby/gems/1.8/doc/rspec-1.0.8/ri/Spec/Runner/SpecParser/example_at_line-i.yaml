@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (source, line_number)
+block_params: 
+is_singleton: false
+name: example_at_line
+comment: 
+full_name: Spec::Runner::SpecParser#example_at_line
+visibility: protected
+aliases: []

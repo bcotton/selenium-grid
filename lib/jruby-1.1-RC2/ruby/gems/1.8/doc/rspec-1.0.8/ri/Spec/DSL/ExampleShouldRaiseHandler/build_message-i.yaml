@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (exception=nil)
+block_params: 
+is_singleton: false
+name: build_message
+comment: 
+full_name: Spec::DSL::ExampleShouldRaiseHandler#build_message
+visibility: public
+aliases: []

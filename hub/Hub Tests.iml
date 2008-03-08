@@ -2,7 +2,7 @@
 <module relativePaths="true" type="RUBY_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="JRuby SDK 1.8.5" jdkType="JRUBY_SDK" />
+    <orderEntry type="jdk" jdkName="JRuby SDK 1.8.6" jdkType="JRUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Hub" />
     <orderEntry type="module-library">

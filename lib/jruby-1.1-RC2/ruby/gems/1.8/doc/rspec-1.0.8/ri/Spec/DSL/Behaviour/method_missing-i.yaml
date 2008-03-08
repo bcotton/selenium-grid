@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription
+params: (sym, *args, &block)
+block_params: 
+is_singleton: false
+name: method_missing
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Messages that this class does not understand are passed directly to the @eval_module.
+full_name: Spec::DSL::Behaviour#method_missing
+visibility: protected
+aliases: []

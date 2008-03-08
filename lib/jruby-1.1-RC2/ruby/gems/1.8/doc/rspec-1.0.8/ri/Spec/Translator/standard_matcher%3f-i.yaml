@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (matcher)
+block_params: 
+is_singleton: false
+name: standard_matcher?
+comment: 
+full_name: Spec::Translator#standard_matcher?
+visibility: public
+aliases: []

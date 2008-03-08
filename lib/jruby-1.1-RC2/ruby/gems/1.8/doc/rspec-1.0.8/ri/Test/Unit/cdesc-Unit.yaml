@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: Unit
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Test::Unit
+superclass: 
+class_methods: []

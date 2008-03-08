@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: InstanceMethods
+comment: 
+constants: []
+attributes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: inspect
+- !ruby/object:RI::MethodSummary
+  name: pending
+- !ruby/object:RI::MethodSummary
+  name: violated
+full_name: Spec::DSL::BehaviourEval::InstanceMethods
+superclass: 
+class_methods: []

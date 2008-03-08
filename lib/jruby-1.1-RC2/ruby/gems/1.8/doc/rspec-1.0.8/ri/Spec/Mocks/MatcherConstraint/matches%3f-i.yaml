@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (value)
+block_params: 
+is_singleton: false
+name: matches?
+comment: 
+full_name: Spec::Mocks::MatcherConstraint#matches?
+visibility: public
+aliases: []

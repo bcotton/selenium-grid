@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: null_object?
+comment: 
+full_name: Spec::Mocks::Proxy#null_object?
+visibility: public
+aliases: []

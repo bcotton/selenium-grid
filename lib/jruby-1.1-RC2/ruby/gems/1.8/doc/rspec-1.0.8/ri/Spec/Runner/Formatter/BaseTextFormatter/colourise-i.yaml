@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (s, failure)
+block_params: 
+is_singleton: false
+name: colourise
+comment: 
+full_name: Spec::Runner::Formatter::BaseTextFormatter#colourise
+visibility: public
+aliases: []

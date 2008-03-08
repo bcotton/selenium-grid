@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (other)
+block_params: 
+is_singleton: false
+name: ==
+comment: 
+full_name: Spec::Mocks::AnyArgConstraint#==
+visibility: public
+aliases: []

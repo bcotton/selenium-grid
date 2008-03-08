@@ -1,0 +1,10 @@
+--- !ruby/object:RI::ClassDescription
+includes: []
+name: Equal
+comment: 
+constants: []
+attributes: []
+instance_methods: []
+full_name: Spec::Matchers::Equal
+superclass: Object
+class_methods: []

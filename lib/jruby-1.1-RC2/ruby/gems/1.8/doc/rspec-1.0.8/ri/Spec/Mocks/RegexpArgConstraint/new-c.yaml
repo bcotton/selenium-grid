@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (regexp)
+block_params: 
+is_singleton: true
+name: new
+comment: 
+full_name: Spec::Mocks::RegexpArgConstraint::new
+visibility: public
+aliases: []

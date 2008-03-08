@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription
+params: (&block)
+block_params: 
+is_singleton: false
+name: teardown
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Deprecated. Use after(:each)
+full_name: Spec::DSL::BehaviourCallbacks#teardown
+visibility: public
+aliases: []

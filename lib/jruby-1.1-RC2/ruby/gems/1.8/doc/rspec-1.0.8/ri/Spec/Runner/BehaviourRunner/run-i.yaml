@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription
+params: (paths, exit_when_done)
+block_params: 
+is_singleton: false
+name: run
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: Runs all behaviours and returns the number of failures.
+full_name: Spec::Runner::BehaviourRunner#run
+visibility: public
+aliases: []

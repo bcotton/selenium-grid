@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription
+includes: 
+- !ruby/object:RI::IncludedModule
+  name: Spec::Expectations::ObjectExpectations
+- !ruby/object:RI::IncludedModule
+  name: Spec::Mocks::Methods
+name: Object
+comment: 
+- !ruby/struct:SM::Flow::P
+  body: The following copyright applies to Object#copy_instance_variables_from, which
+    we borrowed from active_support.
+- !ruby/struct:SM::Flow::P
+  body: Copyright (c) 2004 David Heinemeier Hansson
+- !ruby/struct:SM::Flow::P
+  body: 'Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the &quot;Software&quot;),
+    to deal in the Software without restriction, including without limitation the
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is furnished
+    to do so, subject to the following conditions:'
+- !ruby/struct:SM::Flow::P
+  body: The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+- !ruby/struct:SM::Flow::P
+  body: THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+    OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+constants: []
+attributes: []
+instance_methods: 
+- !ruby/object:RI::MethodSummary
+  name: args_and_options
+- !ruby/object:RI::MethodSummary
+  name: metaclass
+full_name: Object
+superclass: Object
+class_methods: []

@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (behaviour_type)
+block_params: 
+is_singleton: false
+name: after_each_proc
+comment: 
+full_name: Spec::DSL::BehaviourEval::ModuleMethods#after_each_proc
+visibility: protected
+aliases: []

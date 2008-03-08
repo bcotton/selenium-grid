@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: (*args)
+block_params: 
+is_singleton: false
+name: generate_description
+comment: 
+full_name: Spec::DSL::Description::ClassMethods#generate_description
+visibility: public
+aliases: []

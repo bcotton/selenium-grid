@@ -1,0 +1,9 @@
+--- !ruby/object:RI::MethodDescription
+params: ()
+block_params: 
+is_singleton: false
+name: included_modules
+comment: 
+full_name: Spec::DSL::BehaviourEval::ModuleMethods#included_modules
+visibility: protected
+aliases: []
