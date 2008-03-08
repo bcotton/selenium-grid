@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (errors)
-block_params: 
-is_singleton: false
-name: handle
-comment: 
-full_name: Spec::DSL::ExampleShouldRaiseHandler#handle
-visibility: public
-aliases: []

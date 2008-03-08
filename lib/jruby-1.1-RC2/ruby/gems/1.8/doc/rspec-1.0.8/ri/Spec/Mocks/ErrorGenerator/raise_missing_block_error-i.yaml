@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (args_to_yield)
-block_params: 
-is_singleton: false
-name: raise_missing_block_error
-comment: 
-full_name: Spec::Mocks::ErrorGenerator#raise_missing_block_error
-visibility: public
-aliases: []

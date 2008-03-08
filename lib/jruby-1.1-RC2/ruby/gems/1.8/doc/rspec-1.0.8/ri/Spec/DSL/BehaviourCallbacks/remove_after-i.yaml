@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (scope, &block)
-block_params: 
-is_singleton: false
-name: remove_after
-comment: 
-full_name: Spec::DSL::BehaviourCallbacks#remove_after
-visibility: public
-aliases: []

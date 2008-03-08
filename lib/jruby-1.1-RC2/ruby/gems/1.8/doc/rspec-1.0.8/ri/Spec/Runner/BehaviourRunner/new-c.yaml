@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (options, arg=nil)
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::Runner::BehaviourRunner::new
-visibility: public
-aliases: []

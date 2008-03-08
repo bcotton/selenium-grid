@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (specified_examples)
-block_params: 
-is_singleton: false
-name: matches?
-comment: 
-full_name: Spec::DSL::ExampleMatcher#matches?
-visibility: public
-aliases: []

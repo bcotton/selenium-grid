@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (target)
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::Matchers::BaseOperatorMatcher::new
-visibility: public
-aliases: []

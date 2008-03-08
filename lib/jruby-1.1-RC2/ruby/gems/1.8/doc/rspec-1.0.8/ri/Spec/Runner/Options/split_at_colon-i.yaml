@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (s)
-block_params: 
-is_singleton: false
-name: split_at_colon
-comment: 
-full_name: Spec::Runner::Options#split_at_colon
-visibility: public
-aliases: []

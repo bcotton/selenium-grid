@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (opts)
-block_params: 
-is_singleton: false
-name: determine_error_message
-comment: 
-full_name: Spec::DSL::ExampleShouldRaiseHandler#determine_error_message
-visibility: public
-aliases: []

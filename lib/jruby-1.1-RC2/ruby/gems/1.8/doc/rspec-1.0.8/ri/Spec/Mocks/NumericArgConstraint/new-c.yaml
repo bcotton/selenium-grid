@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (ignore)
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::Mocks::NumericArgConstraint::new
-visibility: public
-aliases: []

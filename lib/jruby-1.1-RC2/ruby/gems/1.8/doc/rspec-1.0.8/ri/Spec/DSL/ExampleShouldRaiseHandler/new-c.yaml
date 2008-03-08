@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (file_and_line_number, opts)
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::DSL::ExampleShouldRaiseHandler::new
-visibility: public
-aliases: []

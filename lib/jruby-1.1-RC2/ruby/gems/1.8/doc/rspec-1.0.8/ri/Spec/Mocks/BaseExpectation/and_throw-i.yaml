@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (symbol)
-block_params: 
-is_singleton: false
-name: and_throw
-comment: 
-full_name: Spec::Mocks::BaseExpectation#and_throw
-visibility: public
-aliases: []

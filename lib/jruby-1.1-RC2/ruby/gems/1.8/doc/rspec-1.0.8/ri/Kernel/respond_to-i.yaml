@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (*names)
-block_params: 
-is_singleton: false
-name: respond_to
-comment: 
-full_name: Kernel#respond_to
-visibility: public
-aliases: []

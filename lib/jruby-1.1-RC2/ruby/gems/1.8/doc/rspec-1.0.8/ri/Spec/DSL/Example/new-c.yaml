@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: (description, options={}, &example_block)
-block_params: 
-is_singleton: true
-name: new
-comment: 
-full_name: Spec::DSL::Example::new
-visibility: public
-aliases: []
