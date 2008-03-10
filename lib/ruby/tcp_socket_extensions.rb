@@ -4,6 +4,7 @@ require 'socket'
 class TCPSocket
   
   def self.wait_for_service(options)
+    socket = nil
     Timeout::timeout(options[:timeout] || 20) do
       loop do
         begin
@@ -15,6 +16,8 @@ class TCPSocket
         end
       end
     end
+  ensure
+    socket.close unless socket.nil?
   end
   
 end
