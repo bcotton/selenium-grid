@@ -105,7 +105,7 @@
     <copy todir="${dist}/${artifact}-${version}" overwrite="true">
       <fileset dir="${basedir}/src/scripts" includes="build.xml"/>
       <fileset dir="${basedir}/src/scripts" includes="Rakefile"/>
-      <fileset dir="${basedir}/src/scripts" includes="selenium_grid_deploy.rb"/>
+      <fileset dir="${basedir}/src/scripts" includes="Capfile"/>
       <fileset dir="${basedir}/src/configuration" includes="*.yml"/>
       <fileset dir="${basedir}">
         <include name="doc/**/*"/>
