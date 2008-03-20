@@ -24,25 +24,34 @@ public class WebTestInvolvingMultiEnvironments extends AmazonCommentTestBase {
     @Parameters({"seleniumHost", "seleniumPort", "firstEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on Window.")
     public void testForFirstEnvironment(String seleniumHost, int seleniumPort, String firstEnvironment, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, firstEnvironment, webSite);
-        runAmazonScenario();
-        closeSeleniumSession();
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, firstEnvironment, webSite);
+            runAmazonScenario();
+        } finally {
+            closeSeleniumSession();
+        }
     }
 
     @Parameters({"seleniumHost", "seleniumPort", "secondEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on Windows (2).")
     public void testForSecondEnvironment(String seleniumHost, int seleniumPort, String secondEnvironment, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, secondEnvironment, webSite);
-        runAmazonScenario();
-        closeSeleniumSession();
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, secondEnvironment, webSite);
+            runAmazonScenario();
+        } finally {
+            closeSeleniumSession();
+        }
     }
 
     @Parameters({"seleniumHost", "seleniumPort", "thirdEnvironment", "webSite"})
     @Test(groups = {"demo", "multiEnvironment"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser on the Mac.")
     public void testForThirdEnvironment(String seleniumHost, int seleniumPort, String thirdEnvironment, String webSite) throws Throwable {
-        startSeleniumSession(seleniumHost, seleniumPort, thirdEnvironment, webSite);
-        runAmazonScenario();
-        closeSeleniumSession();
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, thirdEnvironment, webSite);
+            runAmazonScenario();
+        } finally {
+            closeSeleniumSession();
+        }
     }
 
 }
