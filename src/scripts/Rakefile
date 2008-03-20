@@ -3,6 +3,54 @@
 #
 require File.dirname(__FILE__) + '/lib/ruby/tcp_socket_extensions'
 
+desc "Print help"
+task :help do
+  puts <<-EOS
+  
+ Rake tasks to manage a Selenium Grid on a *single* machine.
+
+   NOTE: To manage a Grid accross *multiple* machines use the 
+         Capistrano recipes provided with Selenium Grid distribution
+ 
+ 
+ Start the Hub and 20 Remote Controls
+ ------------------------------------
+ 
+    rake all:start
+   
+ Stop the Hub and 20 Remote Controls
+ -----------------------------------
+ 
+    rake all:stop
+   
+ Restart the Hub and 20 Remote Controls
+ --------------------------------------
+
+    rake all:restart
+
+ Start the Hub with only 10 Remote Controls, ports 5000 to 5010
+ --------------------------------------------------------------
+
+    rake all:restart PORTS=5000-5010
+
+  Stop them with
+
+    rake all:stop PORTS=5000-5010
+  
+ Start 5 Remote Controls with the Hub, ports 6500 to 6505
+ --------------------------------------------------------
+
+   rake rc:start_all PORTS=6500-6505
+
+ Start a single Remote Control on port 6666
+-------------------------------------------
+
+    rake rc:start PORT=6666
+
+   
+  EOS
+end
+
 desc "Restart all  services (Hub a Remote Controls"
 task :'all:restart' do
   Rake::Task[:'all:stop'].invoke rescue nil
