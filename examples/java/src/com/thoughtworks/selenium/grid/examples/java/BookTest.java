@@ -1,8 +1,13 @@
 package com.thoughtworks.selenium.grid.examples.java;
 
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.session;
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterTest;
 
 
 /**
@@ -10,6 +15,17 @@ import static org.testng.AssertJUnit.assertTrue;
 public class BookTest {
 
     public static final String TIMEOUT = "120000";
+
+    @BeforeTest(alwaysRun = true)
+    @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
+    protected void startSession(String seleniumHost, int seleniumPort, String browser, String webSite) throws Exception {
+        startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
+    }
+
+    @AfterTest(alwaysRun = true)
+    protected void closeSession() throws Exception {
+        closeSeleniumSession();
+    }
 
     protected void checkBook(String title, String thumbnail, String keywords, String isbn) {
         session().open("/");
