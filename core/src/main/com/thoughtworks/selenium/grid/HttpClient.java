@@ -40,6 +40,7 @@ public class HttpClient {
         final PostMethod postMethod;
 
         postMethod = new PostMethod(url);
+        postMethod.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; ; charset=UTF-8");
         for (String name : parameters.names()) {
             postMethod.setParameter(name, parameters.get(name));
         }
