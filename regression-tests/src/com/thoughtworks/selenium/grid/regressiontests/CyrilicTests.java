@@ -35,6 +35,20 @@ public class CyrilicTests {
         }
     }
 
+    @Test(groups = {"regression", "cyrilic"}, description = "Click on a Cyrilic link")
+    @Parameters({"seleniumHost", "seleniumPort", "browser"})
+    public void typeCyrilic(String seleniumHost, int seleniumPort, String browser) throws Exception {
+        try {
+            startSeleniumSession(seleniumHost, seleniumPort, browser, "http://google.ru");
+            session().open("/");
+            session().type("q", "Регистрация");
+            session().click("btnG");
+            session().waitForPageToLoad("60000");
+        } finally {
+            closeSeleniumSession();
+        }
+    }
+
     /**
      * This test not work with cyrilic inputs
      * <p/>
