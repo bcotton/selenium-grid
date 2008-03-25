@@ -19,6 +19,7 @@
   <path id="test.classpath">
     <pathelement location="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+    <pathelement location="${basedir}/../lib/commons-logging-1.0.4.jar"/>
     <pathelement location="${basedir}/../tools/target/classes"/>
     <pathelement location="${basedir}/../tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
     <pathelement location="${basedir}/../lib/selenium-grid-tools-standalone-${version}.jar"/>
@@ -32,6 +33,7 @@
            destdir="${build.output}"
            debug="true"
            source="1.5"
+           encoding="utf-8"
            target="1.5">
       <classpath refid="test.classpath"/>
     </javac>
@@ -48,7 +50,6 @@
         failonerror="true">
 
       <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
-      <sysproperty key="webSite" value="${webSite}" />
       <sysproperty key="seleniumHost" value="${seleniumHost}" />
       <sysproperty key="seleniumPort" value="${seleniumPort}" />
       <sysproperty key="browser" value="${browser}" />
@@ -56,10 +57,6 @@
       <arg value="${basedir}/target/reports" />
       <arg value="-suitename" />
       <arg value="Selenium Grid Regression Test Suite" />
-      <arg value="-parallel"/>
-      <arg value="methods"/>
-      <arg value="-threadcount"/>
-      <arg value="20"/>
       <arg value="testng.xml"/>
     </java>
 

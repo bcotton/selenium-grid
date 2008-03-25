@@ -17,11 +17,11 @@ public class UnicodeTests {
             ThreadSafeSeleniumSessionStorage.startSeleniumSession(seleniumHost, seleniumPort, browser, "http://amazon.fr");
             ThreadSafeSeleniumSessionStorage.session().open("/");
             ThreadSafeSeleniumSessionStorage.session().waitForPageToLoad("30000");
-            ThreadSafeSeleniumSessionStorage.session().type("twotabsearchtextbox", "La Fièvre d'Urbicande");
+            ThreadSafeSeleniumSessionStorage.session().type("twotabsearchtextbox", "La Fi√®vre d'Urbicande");
             ThreadSafeSeleniumSessionStorage.session().click("Go");
             ThreadSafeSeleniumSessionStorage.session().waitForPageToLoad("30000");
-            AssertJUnit.assertTrue(ThreadSafeSeleniumSessionStorage.session().isTextPresent("Les Cités Obscures, tome 2 : La Fièvre d'Urbicande"));
-            AssertJUnit.assertEquals("La Fièvre d'Urbicande", ThreadSafeSeleniumSessionStorage.session().getValue("twotabsearchtextbox"));
+            AssertJUnit.assertTrue(ThreadSafeSeleniumSessionStorage.session().isTextPresent("Les Cit√©s Obscures, tome 2 : La Fi√®vre d'Urbicande"));
+            AssertJUnit.assertEquals("La Fi√®vre d'Urbicande", ThreadSafeSeleniumSessionStorage.session().getValue("twotabsearchtextbox"));
         } finally {
             ThreadSafeSeleniumSessionStorage.closeSeleniumSession();
 

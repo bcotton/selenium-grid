@@ -22,9 +22,11 @@ public class ThreadSafeSeleniumSessionStorage {
         logger.info("Contacting Selenium RC at " + seleniumHost + ":" + seleniumPort);
         threadLocalSelenium.set(new DefaultSelenium(seleniumHost, seleniumPort, browser, webSite));
         session().start();
+        logger.info("Got Selenese session:" + session());
     }
 
     public static void closeSeleniumSession() throws Exception {
+        logger.info("Closing Selenese session: " + session());
         if (null != session()) {
             session().stop();
             resetSession();

@@ -19,5 +19,9 @@
   <component name="RModuleContentRootManager">
     <TEST_URLS url="file://$MODULE_DIR$" />
   </component>
+  <component name="RModuleSettingsStorage">
+    <RMODULE_SETTINGS_STORAGE_ID NAME="SHOULD_USE_RSPEC_TEST_FRAMEWORK" VALUE="false" />
+    <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="0" />
+  </component>
 </module>
 

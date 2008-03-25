@@ -137,8 +137,7 @@ def rc_args(options)
   args << "-host" << (options[:host] || ENV['HOST'] || "localhost")
   args << "-port" << options[:port]
   args << "-hubUrl" << (options[:hub_url] || ENV['HUB_URL'] || 'http://localhost:4444')
-  args << "-env" << (options[:environment] || ENV['ENVIRONMENT'] || "*chrome")
-  args << "-env" << (options[:environment] || ENV['ENVIRONMENT'] || "*chrome")
+  args << "-env '#{options[:environment] || ENV['ENVIRONMENT'] || "*chrome"}'" 
   args << (options[:selenium_args] || ENV['SELENIUM_ARGS'] || "")
   args
 end
