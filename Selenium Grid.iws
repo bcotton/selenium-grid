@@ -18,14 +18,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/InactivityTests.java" afterPath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/InactivityTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/UnicodeTests.java" afterPath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/UnicodeTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/HugeRequestTests.java" afterPath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/HugeRequestTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/CyrilicTests.java" afterPath="$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/CyrilicTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -282,7 +275,7 @@
       <file leaf-file-name="CyrilicTests.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/CyrilicTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="20" selection-start="2643" selection-end="2643" vertical-scroll-proportion="0.635514">
+            <state line="74" column="57" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.94392526">
               <folding />
             </state>
           </provider>
@@ -1268,7 +1261,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="27" width="1421" height="824" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -1285,7 +1278,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3921283" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" order="4" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32436472" order="8" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28673324" order="2" x="25" y="383" width="1379" height="169" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28673324" order="2" x="25" y="383" width="1379" height="169" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39657632" order="3" />
@@ -1538,7 +1531,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/regression-tests/src/com/thoughtworks/selenium/grid/regressiontests/CyrilicTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="20" selection-start="2643" selection-end="2643" vertical-scroll-proportion="0.635514">
+        <state line="74" column="57" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.94392526">
           <folding />
         </state>
       </provider>
