@@ -57,8 +57,8 @@
       font: bold 1.2em "Lucida Grande", Verdana, sans-serif;
       padding: .2em .2em;
       border: 0;
-      border-bottom: solid thin #a20017;
-      color: #333;
+      border-bottom: solid thin #444;
+	  color: #a20017;
       background: none;
       margin-left: 1.3em;
     }
