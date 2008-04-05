@@ -14,6 +14,12 @@
     <h2>Java</h2>
 
     <div class="content">
+	 <p class="note">
+	   Need more detailed instructions? Check out our step-by-step
+	   installation instructions for 
+	   <a href="step_by_step_installation_instructions_for_osx.html">Mac OS X</a>.
+	 </p>
+    
      <p class="note">
        If you are running Mac OS X you can safely skip this step -- the 
        system comes with a 
@@ -22,11 +28,12 @@
      <p>
        Install <a href="http://www.java.com/en/download/index.jsp">Java 5+ JDK</a>
        and make sure it is in your <code>PATH</code>:
-       <pre>$ <strong>java&nbsp;-version</strong>
-java version "1.6.0"
-Java(TM) SE Runtime Environment (build 1.6.0-b105)
-Java HotSpot(TM) Server VM (build 1.6.0-b105, mixed mode)</pre>
+       <pre>$ <strong>java -version</strong>
+java version "1.5.0_13"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_13-b05-237)
+Java HotSpot(TM) Client VM (build 1.5.0_13-119, mixed mode, sharing)</pre>
      </p>
+
     </div>
   </div>
   
@@ -59,7 +66,7 @@ Apache Ant version <strong>1.7.0</strong> compiled on December 13 2006</pre>
           </li>
         </ol>
       </p>
-      </p><p>
+     <p class="note">
         If you feel adventurous, Selenium Grid also comes with alternative
         launchers, based on <a href="http://docs.rubyrake.org/">Rake</a>. 
       </p>
@@ -81,9 +88,15 @@ Apache Ant version <strong>1.7.0</strong> compiled on December 13 2006</pre>
     <h2>Check</h2>
     <div class="content">
       Go at the root of selenium grid directory and validate your installation:
-      <pre>$ cd selenium-grid-<%= version %>
+      <pre>$ cd selenium-grid-1.0
 $ <strong>ant sanity-check</strong></pre>
 </pre>      
+
+      <p class="note">
+        Need more detailed instructions? Check out our step-by-step
+        installation instructions for 
+        <a href="step_by_step_installation_instructions_for_osx.html">Mac OS X</a>.
+      </p>
     </div>
   </div>
   
@@ -94,6 +107,7 @@ $ <strong>ant sanity-check</strong></pre>
         At this point the best way to get up to speed with Selenium Grid usage 
         and concepts is to <a href="run_the_demo.html">run the Demo</a>.
       </p>
+
     </div>
   </div>
 
