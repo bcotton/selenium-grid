@@ -634,10 +634,9 @@
       <module fileurl="file://$PROJECT_DIR$/examples/java/Java Example.iml" filepath="$PROJECT_DIR$/examples/java/Java Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/regression-tests/Regression Tests.iml" filepath="$PROJECT_DIR$/regression-tests/Regression Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-control/Remote Control.iml" filepath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Tools/Tools.iml" filepath="$PROJECT_DIR$/Tools/Tools.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/target/classes" />
   </component>
   <component name="RUBY_DOC_SETTINGS">
@@ -668,7 +667,7 @@
   <component name="libraryTable">
     <library name="Selenium Java Client Driver">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/selenium-java-client-driver-0.9.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/selenium-java-client-driver-1.0-beta-1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -707,7 +706,7 @@
     </library>
     <library name="Selenium Remote Control">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/remote-control/lib/selenium-server-0.9.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/remote-control/lib/selenium-server-1.0-beta-1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
