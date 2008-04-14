@@ -6,6 +6,7 @@
   <property name="name" value="Selenium Grid Demo"/>
   <property name="artifact" value="selenium-grid-demo"/>
   <property name="version" value="SNAPSHOT"/>
+  <property name="selenium.version" value="SET ME"/>
   <tstamp/>
   <property name="build.src" location="src/main/java"/>
   <property name="build.output" location="target/classes"/>
@@ -17,7 +18,7 @@
   <property name="browser" value="*chrome" />
   
   <path id="demo.classpath">
-    <pathelement location="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
+    <pathelement location="${basedir}/../lib/selenium-java-client-driver-${selenium.version}.jar"/>
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${basedir}/../lib/commons-logging-1.0.4.jar"/>
     <pathelement location="${basedir}/../tools/target/classes"/>
@@ -67,7 +68,7 @@
       </manifest>
       <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
       <zipfileset src="${basedir}/../tools/target/dist/lib/selenium-grid-tools-${version}.jar"/>
-      <zipfileset src="${basedir}/../lib/selenium-java-client-driver-0.9.2.jar"/>
+      <zipfileset src="${basedir}/../lib/selenium-java-client-driver-${selenium.version}.jar"/>
       <zipfileset src="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     </jar>
   </target>
