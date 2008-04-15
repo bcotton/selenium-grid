@@ -17,6 +17,14 @@ import java.io.IOException;
 public class NewBrowserSessionCommandTest extends UsingClassMock {
 
     @Test
+    public void environmentReturnsTheEnvironmentProvidedInTheConstructor() {
+        final Environment anEnvironment;
+
+        anEnvironment = new Environment("", null, null);
+        assertEquals(anEnvironment, new NewBrowserSessionCommand(anEnvironment, null).environment());
+    }
+
+    @Test
     public void sessionIdIsAlwaysNull() {
         assertEquals(null, new NewBrowserSessionCommand(null, null).sessionId());
     }
@@ -80,14 +88,36 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
         verifyMocks();
     }
 
+    @Test
+    public void executeReleaseRemoteControlWhenSessionCannotBeCreated() throws IOException {
+        final NewBrowserSessionCommand command;
+        final Environment environment;
+        final Mock remoteControl;
+        final Response response;
+        final Mock pool;
+
+        pool = mock(DynamicRemoteControlPool.class);
+        remoteControl = mock(RemoteControlProxy.class);
+        environment = new Environment("an environment", "*browser", null);
+        command = new NewBrowserSessionCommand(environment, new HttpParameters());
+        pool.stubs("reserve").will(returnValue(remoteControl));
+        pool.expects("release").with(remoteControl);
+        remoteControl.stubs("forward").will(returnValue(new Response(500, "")));
+
+        response = command.execute((RemoteControlPool) pool);
+        assertEquals(200, response.statusCode());
+        assertEquals("ERROR: Could not retrieve a new session", response.body());
+        verifyMocks();
+    }
+
     @SuppressWarnings({"ThrowableInstanceNeverThrown"})
     @Test
-    public void executeReleasesReservedRemoteControlAndReturnsAnErrorResponseWhenThereIsANetworkError() throws IOException {
+    public void executeReturnsAnErrorResponseWhenThereIsANetworkError() throws IOException {
         final NewBrowserSessionCommand command;
-        final Mock remoteControl;
         final Environment environment;
-        final Mock pool;
+        final Mock remoteControl;
         final Response response;
+        final Mock pool;
 
         pool = mock(DynamicRemoteControlPool.class);
         remoteControl = mock(RemoteControlProxy.class);
@@ -95,11 +125,31 @@ public class NewBrowserSessionCommandTest extends UsingClassMock {
         command = new NewBrowserSessionCommand(environment, new HttpParameters());
         remoteControl.expects("forward").with(command.parameters()).will(throwException(new IOException("an error message")));
         pool.expects("reserve").with(environment).will(returnValue(remoteControl));
-        pool.expects("release").with(remoteControl);
+        pool.stubs("release").with(remoteControl);
 
         response = command.execute((RemoteControlPool) pool);
         assertEquals(200, response.statusCode());
         assertEquals("ERROR: an error message", response.body());
+        verifyMocks();
+    }
+
+    @SuppressWarnings({"ThrowableInstanceNeverThrown"})
+    @Test
+    public void executeReleasesReservedRemoteControlAndReturnsAnErrorResponseWhenThereIsANetworkError() throws IOException {
+        final NewBrowserSessionCommand command;
+        final Mock remoteControl;
+        final Environment environment;
+        final Mock pool;
+
+        pool = mock(DynamicRemoteControlPool.class);
+        remoteControl = mock(RemoteControlProxy.class);
+        environment = new Environment("an environment", "*browser", null);
+        command = new NewBrowserSessionCommand(environment, new HttpParameters());
+        remoteControl.stubs("forward").will(throwException(new IOException("an error message")));
+        pool.stubs("reserve").will(returnValue(remoteControl));
+        pool.expects("release").with(remoteControl);
+
+        command.execute((RemoteControlPool) pool);
         verifyMocks();
     }
 

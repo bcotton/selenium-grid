@@ -42,6 +42,7 @@ public class NewBrowserSessionCommand extends SeleneseCommand {
             response = remoteControl.forward(parameters());
             sessionId = parseSessionId(response.body());
             if (null == sessionId) {
+                pool.release(remoteControl);
                 return new Response("Could not retrieve a new session");
             }
             pool.associateWithSession(remoteControl, sessionId);
