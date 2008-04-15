@@ -18,7 +18,7 @@
   <property name="browser" value="*chrome" />
 
   <path id="test.classpath">
-    <pathelement location="${basedir}/../../lib/selenium-java-client-driver-${seleniun.version}.jar"/>
+    <pathelement location="${basedir}/../../lib/selenium-java-client-driver-${selenium.version}.jar"/>
     <pathelement location="${basedir}/../../lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${basedir}/../../tools/target/classes"/>
     <pathelement location="${basedir}/../../tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
