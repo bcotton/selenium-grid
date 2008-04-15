@@ -6,6 +6,7 @@
   <property name="name" value="Selenium Grid Remote Control"/>
   <property name="artifact" value="selenium-grid-remote-control"/>
   <property name="version" value="SNAPSHOT"/>
+  <property name="selenium.version" value="Set Me"/>
   <tstamp/>
 
 
@@ -19,7 +20,7 @@
 
   <path id="compile.classpath">
     <fileset dir="${basedir}/lib">
-      <include name="selenium-server-*.jar"/>
+      <include name="selenium-server-${selenium.version}.jar"/>
     </fileset>
     <fileset dir="${basedir}/../lib">
       <include name="commons-httpclient-3.0.1.jar"/>
