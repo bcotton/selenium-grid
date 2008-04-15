@@ -1,0 +1,138 @@
+<html>
+ <head>
+   <title>Selenium Grid - Step by Step Installation Instructions for Linux</title>
+   <link rel="stylesheet" type="text/css" href="stylesheets/site.css" />
+   <link rel="stylesheet" type="text/css" href="stylesheets/document.css" />
+ </head>
+ <body>
+ 
+   <div class="header">
+     <a href="index.html"><img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/></a>
+     Step by Step Installation Instructions for Linux
+   </div>
+   
+  <p>
+	Here are detailed, step by step instructions, on how to install
+	Selenium Grid on an Linux machine.
+  </p>
+
+  <h2 id="jdk">Step 1: Verify That JDK 1.5 is Installed</h2>
+
+    <p>
+      Ensure that the JDK 1.5 is installed on your machine.  Open a terminal window 
+      and run the following command to check your version 
+      <code>java -version</code>
+    </p>
+    <img style="margin-left: 5em;" src="images/install_guide/linux/linux-java-version.png" />
+    <p>
+    If the JDK is not installed or it is not the correct version please goto the
+    following site(<a href"http://java.sun.com/j2se/1.5.0/install-linux.html">http://java.sun.com/j2se/1.5.0/install-linux.html</a>)
+     to download and install it
+    </p> 
+
+  <h2 id="ant">Step 2: Install Ant 1.7</h2>
+
+    <p>
+	  Check that you have the right Ant version (1.7) by running in a terminal:
+      <code>ant -version</code>
+	</p>
+
+    <img style="margin-left: 5em;" src="images/install_guide/linux/linux-ant-version.png" />
+
+    <p>
+	  Depending on the version of Linux you are running Ant 1.7 may be installed.  
+	  If the correct version is installed you can skip the next section and go 
+	  directly to step 3!
+	</p><p>
+	  If you are running an earlier version of Linux, install Ant 1.7 as 
+	  explained in step 2a.
+	</p>
+    
+    <h3 id="installing_ant">Step 2a: Installing Ant 1.7</h3>
+
+     <ol>
+	   <li>
+	     Download Ant version 1.7 from 
+	     <a href="http://apache.mirrors.hoobly.com/ant/binaries/apache-ant-1.7.0-bin.zip">http://apache.mirrors.hoobly.com/ant/binaries/apache-ant-1.7.0-bin.zip</a>	
+	   </li>
+       <li>
+       <p>
+	     Once it has been downloaded, unzip the file in a 
+	     directory on your local system. For instance under 
+	     <code>/usr/local/apache-ant-1.7.0</code>:
+		</p>
+	     <img src="images/install_guide/linux/linux-ant-install.png" />
+	   </li>
+	   <li>
+		 <p>
+           You then need to modify your <code>PATH</code> so that your
+           system picks up the right Ant launcher. Just go to a Terminal window and:
+         <p><p>
+         <ol style="list-style-type: lower-latin;">
+	       <li>
+		     Navigate to your home directory (type <code>cd</code> 
+		     and then the <code>ENTER</code> key), and open the 
+		     <code>.bash_profile</code> file.
+		     <img src="images/install_guide/linux/linux-navigate-path.png" />
+           </li>
+           <li>
+	         Edit the <code>.bash_profile</code> file so that the freshly installed
+	         Ant version 1.7 is first in your path:
+		     <img src="images/install_guide/linux/linux-ant-profile-update.png" />
+	       </li>
+	       <li>
+		     Save the <code>.bash_profile</code> file (Menu "File"-&gt;"Save")
+		   </li>
+		   <li>
+		   	<p>
+		     Apply the <code>.bash_profile</code> to the current terminal. Then 
+		     verify that your <code>PATH</code> is set accordingly and that you
+		     pick up the right Ant version:
+		     </p>
+		     <img src="images/install_guide/linux/linux-ant-verify.png" />
+		   </li><li>
+			From now on, execute all commands from this terminal window
+		   </li>			
+	     </ol>
+	     </p>
+	   </li>
+     </ol>
+
+  <h2 id="installing_selenium_grid">Step 3: Installing Selenium Grid</h2>
+
+    <ol>
+      <li>
+	    Download the latest version of Selenium Grid from
+	    <a href="http://selenium-grid.openqa.org/download.html">http://selenium-grid.openqa.org/download.html</a>
+	    <br/><br/>
+	  </li>
+
+	  <li>
+        Unzip the file into a directory of your choosing 
+		(say <code>/usr/local/selenium-grid-1.0</code>).
+		We will refer to the directory where Selenium Grid is installed as
+		"Selenium Grid Home". For instance if you unzipped the distribution
+		within <code>/usr/local/selenium-grid-1.0</code>, your Selenium Grid Home is
+		<code>/usr/local/selenium-grid-1.0</code>.
+
+		<img src="images/install_guide/linux/linux-selenium-install.png" />
+      </li>
+
+      <li>
+	    <p>
+          Verify the Selenium Grid install: from the terminal window 
+          go to the Selenium Grid home directory and run:
+          <code> ant sanity-check</code>
+        <p>
+		<img src="images/install_guide/linux/linux-selenium-sanity-check.png" />
+        <p>If the build is successful, you are all set!</p>
+      </li>
+
+      <li>
+	    Congratulations, it now time to put Selenium Grid to work and
+	    <a href="run_the_demo.html">run the demo</a>!
+	  </li>
+
+</body>
+
+</html>
