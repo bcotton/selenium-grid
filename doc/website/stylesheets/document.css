@@ -104,6 +104,10 @@ div.screenshot p {
   font-weight: bold;
 }
 
+img.screenshot {
+  padding: .8em 5em;
+}
+
 code {
   font-size: 1em;
   font-family: Consolas, monospace;

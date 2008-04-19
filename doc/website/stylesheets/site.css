@@ -60,4 +60,10 @@ p.note {
  padding: .6em .8em;
  border: thin solid #9c9c4e;
 }
+
+.todo {
+  color: red;
+  background: yellow;
+  padding: .5em;
+}
  
