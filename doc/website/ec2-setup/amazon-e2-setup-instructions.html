@@ -41,25 +41,66 @@
 	</p>
 	<h3>Step 2a: Create Amazon Web Service Account</h3>
     <p>
-	  Amazon EC2 is based on the Amazon Web Service infrastruce and uses Amazon Simple Storage Service(S3)
-	  for storing your web application.  If you already have an account for all three services please 
-	  proceed to step 3. If not, you will need to setup your accounts.  The following steps will guide you
-	  through setting up your account.
+      Clink on the following link <a href="http://www.amazon.com/aws">http://www.amazon.com/aws</a> and click on the 
+      link Sign up for AWS in the upper right corner.  Complete the information that is required for registering with 
+      Amazon AWS.
 	</p>	
 
+	<h3>Step 2b: Create Amazon Simple Storage Service</h3>
+    <p>
+      If you are not already logged into your AWS account, click on the following link and logging into your account.
+      <a href="http://www.amazon.com/aws">http://www.amazon.com/aws</a>
+      <p>-Goto the bottom of your AWS home page and click on the link "Explore Our WebServices"</p>
+      <p>-Navigate to the bottom of the page and click on the link "Amazon Simple Storage Services"</p>
+      <p>-In the upper right corner, click on the link "Sign up for this Web Service."  You will need a 
+      credit card for this service as it is a pay-for-use service.<p> 
+	</p>
+	
+	<h3>Step 2c: Create Amazon Compute Cloud Account</h3>
+    <p>
+      If you are not already logged into your AWS account, click on the following link and logging into your account.
+      <a href="http://www.amazon.com/aws">http://www.amazon.com/aws</a>
+      <p>-Goto the bottom of your AWS home page and click on the link "Explore Our WebServices"</p>
+      <p>-Navigate to the bottom of the page and click on the link "Amazon Elastic Compute Cloud (Amazon EC2) "</p>
+      <p>-In the upper right corner, click on the link "Sign up for this Web Service."  You will need a 
+      credit card for this service as it is a pay-for-use service.<p> 
+	</p>	
+	
   <h2 id="certificates">Step 3: Creating Web Service Access Keys and X.509 Certificate</h2>
+    <p>
+      Once your AWS account has been created and you have added the 2 web services (S3 and EC2) to your account
+      navigate back to your AWS Home account.
+    </p>
+    <p>
+      If you are not already logged into your AWS account, click on the following link and logging into your account.
+      <a href="http://www.amazon.com/aws">http://www.amazon.com/aws</a>
+    </p>
+    <p>-In the upper right corner click on the link "Your Web Service Account" and select the option "AWS Access Identifiers"</p>
+    <p>-Navigate to the section "Access Key ID and Secret Access Key."  On the right side of the page you will be able to see
+    your Your Access Id Key and Your Secret Access Key (see image below)</p>
+    <p>-To generate your X.509 Certificate, scroll down to the next section and click on the link Create New</p>
+    <p>-Follow the directions for creating your new certificate and private key.  At the end of the process download the private key and save it</p>  
+    <p>-Download the certificate and save it</p>
+    <p>-In your home directory, create a directory ".ec2" and copy private key and the certificate to this directory</p> 
+    <p>-Retrieve your AWS Account Id.  In the upper right corner click on the link "Your Web Service Account" and select the option "AWS Account Activity"</p> 
 
+  <h2 id="certificates">Step 4: Configuring the EC2 Command Line Tools</h2>
     <p>
-	  Amazon EC2 is based on the Amazon Web Service infrastruce and uses Amazon Simple Storage Service(S3)
-	  for storing your web application.  If you already have an account for all three services please 
-	  proceed to step 3. If not, you will need to setup your accounts.  The following steps will guide you
-	  through setting up your account.
-	</p>
-    <img style="margin-left: 5em;" src="../images/java_version_osx_screenshot.png" />
+      Once your accounts have been created and your certificates have been download navigate to the following 
+      link to <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351&categoryID=88">EC2 Command Line Tools</a>download the EC2 Command Line Tools
+    </p>
+    <p>-Extract the downloaded file on your computer.  We will need to setup some enviroment variables in your PATH</p>
+    <p>-Define EC2_HOME.  This the root location of where you exctracted your EC2 command line tools.  Update your profile
+    to include variable EC2_HOME</p>
+
+  <h2 id="refrence">Additional References</h2>
     <p>
-	  The command output should indicate that a 1.5 version of the JDK
-	  is available. If not, update your JDK  to 1.5
-	</p>
+      For more detail instructions or for trouble shooting, consult the EC2 Getting Started Guide for more information
+      
+      Once your AWS account has been created and you have added the 2 web services (S3 and EC2) to your account
+      <a href="http://docs.amazonwebservices.com/AWSEC2/2008-02-01/GettingStartedGuide/?ref=get-started">Amazon Elastic Compute Cloud Getting Started Guide</a>
+    </p>
+
 </body>
 
 </html>
