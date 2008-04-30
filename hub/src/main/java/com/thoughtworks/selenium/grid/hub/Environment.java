@@ -62,7 +62,4 @@ public class Environment {
         return name.hashCode();
     }
 
-    public String foo() {
-            return "hello";
-    }
 }

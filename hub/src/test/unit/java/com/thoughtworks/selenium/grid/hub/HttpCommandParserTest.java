@@ -2,6 +2,7 @@ package com.thoughtworks.selenium.grid.hub;
 
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.NewBrowserSessionCommand;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.SeleneseCommand;
+import com.thoughtworks.selenium.grid.hub.remotecontrol.commands.TestCompleteCommand;
 import com.thoughtworks.selenium.grid.HttpParameters;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
@@ -13,6 +14,59 @@ import java.io.IOException;
 
 
 public class HttpCommandParserTest extends UsingClassMock {
+
+    @Test
+    public void parametersReturnsTheRequestParametersProvidedToTheConstructor() {
+      HttpParameters parameters = new HttpParameters();
+      assertEquals(parameters, new HttpCommandParser(parameters).parameters());
+    }
+
+    @Test
+    public void returnsARemoteControlCommandWithHttpRequestQueryStringForAGenericRequest() {
+      HttpParameters parameters = new HttpParameters();
+      parameters.put("cmd", "generic");
+      parameters.put("sessionId", "1234");
+
+      SeleneseCommand command = new HttpCommandParser(parameters).parse(null);
+      assertEquals("generic", command.parameters().get("cmd"));
+      assertEquals("1234", command.parameters().get("sessionId"));
+      assertEquals("1234", command.sessionId());
+    }
+
+    @Test
+    public void returnsARemoteControlCommandWithMatchingHttpParametersForAGenericRequest() {
+      HttpParameters parameters = new HttpParameters();
+      parameters.put("cmd", "generic");
+      parameters.put("sessionId", "1234");
+
+      SeleneseCommand command = new HttpCommandParser(parameters).parse(null);
+      assertEquals("generic", command.parameters().get("cmd"));
+      assertEquals("1234", command.parameters().get("sessionId"));
+    }
+
+    @Test
+    public void returnsARemoteControlCommandWithMatchingSessionIdForAGenericRequest() {
+      HttpParameters parameters = new HttpParameters();
+      parameters.put("cmd", "generic");
+      parameters.put("sessionId", "1234");
+
+      SeleneseCommand command = new HttpCommandParser(parameters).parse(null);
+      assertEquals("1234", command.sessionId());
+    }
+
+    @Test
+    public void returnsTestCompleteCommandForTestCompleteRequests() {
+      HttpParameters parameters = new HttpParameters();
+      parameters.put("cmd", "testComplete");
+      parameters.put("sessionId", "1234");
+
+      SeleneseCommand command = new HttpCommandParser(parameters).parse(null);
+      assertTrue(command instanceof TestCompleteCommand);
+      assertEquals("testComplete", command.parameters().get("cmd"));
+      assertEquals("1234", command.parameters().get("sessionId"));
+      assertEquals("1234", command.sessionId());
+    }
+
 
     @SuppressWarnings({"ConstantConditions"})
     @Test
