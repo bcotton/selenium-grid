@@ -39,11 +39,16 @@ module SeleniumGrid
       end
             
       def ec2_shell(command)
+        puts "[EC2] '#{command}'" if tracing?
         output = `${EC2_HOME}/bin/#{command}`
-        # raise "Error running command '#{command}" unless 0 == $?
+        puts "[EC2] #{output}" if tracing?
         output
       end
-      
+
+      def tracing?
+        ENV['TRACE_EC2_COMMANDS']
+      end
+              
     end
   end
 end

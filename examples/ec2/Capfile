@@ -10,6 +10,7 @@ set :keypair, ENV["EC2_KEYPAIR"]
 set :keypair_name, ENV["EC2_KEYPAIR_NAME"] || "grid-keypair"
 set :remote_control_port_range, "5555-5560"
 set :remote_control_farms_count, 5
+set :launch_timeout, 240
 
 ##### Internal Configuration ######
 
@@ -51,7 +52,7 @@ namespace :grid do
   task :start do
     hub.start
     rc.vnc.start
-    TCPSocket.wait_for_service :host => cloud.hub.public_dns, :port => 4444
+    TCPSocket.wait_for_service :host => cloud.hub.public_dns, :port => 4444, :timeout => launch_timeout
     rc.start
   end
 
@@ -235,7 +236,7 @@ namespace :rc do
       if File.exists?('/Applications/Chicken of the VNC.app/Contents/MacOS/Chicken of the VNC')
         system "'/Applications/Chicken of the VNC.app/Contents/MacOS/Chicken of the VNC' --Display 0 --PasswordFile vnc_password #{farm.public_dns} &"
       else
-        system "vncviewer #{farm.public_dns}:0 &"
+        system "vncviewer -passwd vnc_password #{farm.public_dns}:0 &"
       end
     end
   end
