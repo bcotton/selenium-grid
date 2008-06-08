@@ -176,4 +176,27 @@
     </java>
   </target>
 
+	<!-- Testing of PMD -->
+	<path id="pmd.classpath">
+      <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
+      <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>  
+	  <pathelement path="${java.class.path}/"/>
+	</path>
+	<target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
+     <echo message="Performing analysis on Java Example code using PMD"/>
+     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
+	 	<classpath refid="pmd.classpath"/>
+	 </taskdef>
+	   <pmd shortFilenames="true">
+	     <ruleset>basic</ruleset>
+         <ruleset>unusedcode</ruleset>
+         <ruleset>design</ruleset>
+         <ruleset>controversial</ruleset>
+         <formatter type="html" toFile="pmd_report.html" linkPrefix="http://pmd.sourceforge.net/xref/"/>
+	     <fileset dir="${build.src}">
+	       <include name="*.java"/>
+	     </fileset>
+	 </pmd>
+	</target>
+
 </project>
