@@ -31,6 +31,7 @@
   <path id="pmd.classpath">
     <pathelement location="${basedir}/../../lib/pmd-4.2.2.jar"/>
     <pathelement location="${basedir}/../../lib/jaxen-1.1.1.jar"/>
+    <pathelement location="${basedir}/../../lib/asm-3.1.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
@@ -109,7 +110,7 @@
       <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
                  linkPrefix="http://pmd.sourceforge.net/xref/"/>
       <fileset dir="${build.src}">
-        <include name="*.java"/>
+        <include name="**/*.java"/>
       </fileset>
     </pmd>
   </target>

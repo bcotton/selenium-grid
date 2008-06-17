@@ -54,6 +54,7 @@
     <ant target="clean" antfile="build.xml" dir="tools"/>
     <ant target="clean" antfile="build.xml" dir="demo"/>
     <ant target="clean" antfile="build.xml" dir="examples/java"/>
+    <ant target="clean" antfile="build.xml" dir="regression-tests"/>
     <delete dir="target"/>
   </target>
 
@@ -63,6 +64,7 @@
     <ant target="test" antfile="build.xml" dir="remote-control"/>
     <ant target="test" antfile="build.xml" dir="tools"/>
     <ant target="test" antfile="build.xml" dir="demo"/>
+    <ant target="compile" antfile="build.xml" dir="regression-tests"/>
     <ant target="compile" antfile="build.xml" dir="examples/java"/>
   </target>
 
