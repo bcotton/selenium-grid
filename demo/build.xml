@@ -10,6 +10,7 @@
   <tstamp/>
   <property name="build.src" location="src/main/java"/>
   <property name="build.output" location="target/classes"/>
+  <property name="metrics.reports" location="target/metrics"/>
   <property name="dist" location="${basedir}/target/dist"/>
 
   <property name="webSite" value="http://amazon.com" />
@@ -29,6 +30,13 @@
     <path refid="demo.classpath"/>
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${build.output}" />
+  </path>
+
+  <path id="pmd.classpath">
+    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
+    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
+    <pathelement location="${basedir}/../lib/asm-3.1.jar"/>
+    <pathelement path="${java.class.path}/"/>
   </path>
 
   <target name="compile" description="compile the source ">
@@ -152,26 +160,21 @@
     </java>
   </target>
     
-
-	<!-- Testing of PMD -->
-	<path id="pmd.classpath">
-      <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
-      <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>  
-	  <pathelement path="${java.class.path}/"/>
-	</path>
-	<target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-     <echo message="Performing analysis on Demo code using PMD"/>
-     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
-	 	<classpath refid="pmd.classpath"/>
-	 </taskdef>
-	   <pmd shortFilenames="true">
-	     <ruleset>rulesets/favorites.xml</ruleset>
-	     <ruleset>basic</ruleset>
-	     <formatter type="html" toFile="pmd_report.html" linkPrefix="http://pmd.sourceforge.net/xref/"/>
-	     <fileset dir="${build.src}">
-	       <include name="*.java"/>
-	     </fileset>
-	 </pmd>
-	</target>
+  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
+    <echo message="Performing analysis on Java Example code using PMD"/>
+    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+    <mkdir dir="${metrics.reports}"/>
+    <pmd shortFilenames="true">
+      <ruleset>basic</ruleset>
+      <ruleset>unusedcode</ruleset>
+      <ruleset>design</ruleset>
+      <ruleset>controversial</ruleset>
+      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
+                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
+      <fileset dir="${build.src}">
+        <include name="**/*.java"/>
+      </fileset>
+    </pmd>
+  </target>
 
 </project>
