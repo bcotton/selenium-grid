@@ -19,21 +19,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Core.iml" afterPath="$PROJECT_DIR$/core/Core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/Hub.iml" afterPath="$PROJECT_DIR$/hub/Hub.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/java/build.xml" afterPath="$PROJECT_DIR$/examples/java/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/http_command_parser_test.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All.iml" afterPath="$PROJECT_DIR$/All.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistryTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistryTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_servlet_test.rb" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/JUnitHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/hub_server_test.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/environment_test.rb" afterPath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/environment_test.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/application_registry_test.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/Remote Control.iml" afterPath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regression-tests/build.xml" afterPath="$PROJECT_DIR$/regression-tests/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/build.xml" afterPath="$PROJECT_DIR$/hub/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/build.xml" afterPath="$PROJECT_DIR$/tools/build.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/coverage.em" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.xml" afterPath="$PROJECT_DIR$/core/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/build.xml" afterPath="$PROJECT_DIR$/remote-control/build.xml" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -283,82 +277,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplicationRegistryTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="16" selection-start="956" selection-end="956" vertical-scroll-proportion="1.0640732">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="environment_test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/environment_test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="2" selection-start="613" selection-end="613" vertical-scroll-proportion="0.44622424">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RemoteControlParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="253" selection-end="253" vertical-scroll-proportion="0.19679634">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsoleServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="496" selection-end="496" vertical-scroll-proportion="0.3318078">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateResolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.33175355">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HubServlet.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HubServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.67535543">
+            <state line="19" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.023041476">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Environment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="76" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.46919432">
+            <state line="17" column="0" selection-start="699" selection-end="762" vertical-scroll-proportion="0.403481">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServlet.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.33175355">
+            <state line="76" column="0" selection-start="2538" selection-end="2748" vertical-scroll-proportion="0.4778481">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnvironmentTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.10663507">
+            <state line="192" column="0" selection-start="7237" selection-end="7957" vertical-scroll-proportion="0.43037975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="41" selection-start="2109" selection-end="2109" vertical-scroll-proportion="0.9287975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="0" selection-start="4308" selection-end="4308" vertical-scroll-proportion="0.023734177">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/regression-tests/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="40" selection-start="284" selection-end="284" vertical-scroll-proportion="0.14240506">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="157" column="28" selection-start="6693" selection-end="6693" vertical-scroll-proportion="0.62025315">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/java/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="513" selection-end="576" vertical-scroll-proportion="0.3085443">
               <folding />
             </state>
           </provider>
@@ -367,7 +361,7 @@
       <file leaf-file-name="JUnitHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/JUnitHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="42" selection-start="330" selection-end="330" vertical-scroll-proportion="0.37757438">
+            <state line="11" column="42" selection-start="330" selection-end="330" vertical-scroll-proportion="0.24774775">
               <folding />
             </state>
           </provider>
@@ -975,7 +969,7 @@
       <showLibraryContents />
       <hideEmptyPackages PackagesPane="true" ProjectPane="false" />
       <abbreviatePackageNames />
-      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
+      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -1046,6 +1040,33 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
+      <module name="All" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" />
+    </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
@@ -1054,6 +1075,20 @@
       <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
@@ -1067,6 +1102,43 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties>
+        <property name="secondEnvironmnet" value="*chrome" />
+        <property name="webSite" value="http://amazon.com" />
+        <property name="browser" value="*chrome" />
+        <property name="thirdEnvironment" value="*chrome" />
+        <property name="firstEnvironment" value="*chrome" />
+        <property name="seleniumHost" value="localhost" />
+        <property name="seleniumPort" value="4444" />
+      </properties>
+      <listeners />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -1113,76 +1185,12 @@
         </option>
       </MavenSettings>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties>
-        <property name="secondEnvironmnet" value="*chrome" />
-        <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
-        <property name="thirdEnvironment" value="*chrome" />
-        <property name="firstEnvironment" value="*chrome" />
-        <property name="seleniumHost" value="localhost" />
-        <property name="seleniumPort" value="4444" />
-      </properties>
-      <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
-      <module name="All" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -1195,20 +1203,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <configuration default="false" name="http_client_test" type="RubyRunConfigurationType" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1526,19 +1520,19 @@
       </method>
     </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="RubyOnRails.http_client_test" />
-      <item index="1" class="java.lang.String" itemvalue="RubyOnRails.HttpCommandParserTest" />
-      <item index="2" class="java.lang.String" itemvalue="RubyOnRails.http_command_parser_test" />
-      <item index="3" class="java.lang.String" itemvalue="Application.SelfRegisteringRemoteControlLauncher" />
-      <item index="4" class="java.lang.String" itemvalue="Application.TestDriver" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.PageTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.TemplateTest" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.ControllerTest" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.configuration in Core" />
-      <item index="9" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
-      <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
-      <item index="11" class="java.lang.String" itemvalue="TestNG.WebTestInvolvingMultiEnvironments" />
-      <item index="12" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.hub" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.hub" />
+      <item index="1" class="java.lang.String" itemvalue="RubyOnRails.http_client_test" />
+      <item index="2" class="java.lang.String" itemvalue="RubyOnRails.HttpCommandParserTest" />
+      <item index="3" class="java.lang.String" itemvalue="RubyOnRails.http_command_parser_test" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SelfRegisteringRemoteControlLauncher" />
+      <item index="5" class="java.lang.String" itemvalue="Application.TestDriver" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.PageTest" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.TemplateTest" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.ControllerTest" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.com.thoughtworks.selenium.grid.configuration in Core" />
+      <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
+      <item index="11" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
+      <item index="12" class="java.lang.String" itemvalue="TestNG.WebTestInvolvingMultiEnvironments" />
     </list>
     <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1656,7 +1650,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39784947" order="5" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28531468" order="2" x="25" y="383" width="1379" height="169" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28531468" order="2" x="25" y="383" width="1379" height="169" />
       <window_info id="RDoc" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" order="14" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" order="7" x="100" y="136" width="1229" height="664" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
@@ -1797,114 +1791,114 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/SelfRegisteringRemoteControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="359" selection-end="403" vertical-scroll-proportion="0.035545025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="8" selection-start="0" selection-end="1451" vertical-scroll-proportion="0.21967964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="5" selection-start="2782" selection-end="2782" vertical-scroll-proportion="0.035545025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="630" selection-end="630" vertical-scroll-proportion="0.4763033">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HubServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="134" selection-end="134" vertical-scroll-proportion="0.20594966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HubServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="61" selection-start="972" selection-end="1022" vertical-scroll-proportion="0.035545025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="16" selection-start="956" selection-end="956" vertical-scroll-proportion="1.0640732">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/com/thoughtworks/selenium/grid/hub/environment_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="613" selection-end="613" vertical-scroll-proportion="0.44622424">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.33175355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="76" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.46919432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.10663507">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/JUnitHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="42" selection-start="330" selection-end="330" vertical-scroll-proportion="0.37757438">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="253" selection-end="253" vertical-scroll-proportion="0.19679634">
+        <state line="10" column="6" selection-start="253" selection-end="253" vertical-scroll-proportion="0.22522523">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="496" selection-end="496" vertical-scroll-proportion="0.3318078">
+        <state line="18" column="13" selection-start="496" selection-end="496" vertical-scroll-proportion="0.4054054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="76" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.59907836">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.3686636">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.023041476">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.33175355">
+        <state line="10" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.23041475">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.67535543">
+        <state line="19" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.023041476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/JUnitHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="42" selection-start="330" selection-end="330" vertical-scroll-proportion="0.24774775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="699" selection-end="762" vertical-scroll-proportion="0.403481">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2538" selection-end="2748" vertical-scroll-proportion="0.4778481">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remote-control/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="0" selection-start="7237" selection-end="7957" vertical-scroll-proportion="0.43037975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="513" selection-end="576" vertical-scroll-proportion="0.3085443">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="0" selection-start="4308" selection-end="4308" vertical-scroll-proportion="0.023734177">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="28" selection-start="6693" selection-end="6693" vertical-scroll-proportion="0.62025315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="41" selection-start="2109" selection-end="2109" vertical-scroll-proportion="0.9287975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regression-tests/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="284" selection-end="284" vertical-scroll-proportion="0.14240506">
           <folding />
         </state>
       </provider>

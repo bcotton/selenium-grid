@@ -16,6 +16,7 @@
   <property name="test.src" location="src/test/unit/java"/>
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
+  <property name="metrics.reports" location="target/metrics"/>
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
 
   <path id="compile.classpath">
@@ -31,7 +32,7 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <path id="testing.classpath">
+  <path id="junit.classpath">
     <fileset dir="${basedir}/../lib">
       <include name="junit-4.4.jar"/>
     </fileset>
@@ -49,6 +50,14 @@
       <include name="jmock-2.2.0.jar"/>
       <include name="cglib-nodep-2.1_3.jar"/>
     </fileset>
+  </path>
+
+  <path id="testing.classpath">
+    <path refid="compile.classpath"/>
+    <path refid="junit.classpath"/>
+    <path refid="mocking.classpath"/>
+    <pathelement location="${build.output}"/>
+    <pathelement location="${test.output}"/>
   </path>
 
   <path id="runtime.classpath">
@@ -69,6 +78,12 @@
     <pathelement path="${basedir}/../lib/jruby-1.1-RC2/ruby/1.8"/>
   </path>
   
+  <path id="pmd.classpath">
+    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
+    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
   <target name="compile" description="compile the source ">
     <mkdir dir="${build.output}"/>
     <javac srcdir="${build.src}"
@@ -81,7 +96,6 @@
 
   <target name="test" depends="compile" description="Run JRuby Tests">
     <java classname="org.jruby.Main" fork="true" failonerror="true">
-      <classpath refid="compile.classpath"/>
       <classpath refid="testing.classpath"/>
       <classpath refid="jruby.classpath"/>
 
@@ -176,27 +190,21 @@
     </java>
   </target>
 
-	<!-- Testing of PMD -->
-	<path id="pmd.classpath">
-      <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
-      <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>  
-	  <pathelement path="${java.class.path}/"/>
-	</path>
-	<target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-     <echo message="Performing analysis on Java Example code using PMD"/>
-     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
-	 	<classpath refid="pmd.classpath"/>
-	 </taskdef>
-	   <pmd shortFilenames="true">
-	     <ruleset>basic</ruleset>
-         <ruleset>unusedcode</ruleset>
-         <ruleset>design</ruleset>
-         <ruleset>controversial</ruleset>
-         <formatter type="html" toFile="pmd_report.html" linkPrefix="http://pmd.sourceforge.net/xref/"/>
-	     <fileset dir="${build.src}">
-	       <include name="*.java"/>
-	     </fileset>
-	 </pmd>
-	</target>
+  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
+    <echo message="Performing analysis on Java Example code using PMD"/>
+    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+    <mkdir dir="${metrics.reports}"/>
+    <pmd shortFilenames="true">
+      <ruleset>basic</ruleset>
+      <ruleset>unusedcode</ruleset>
+      <ruleset>design</ruleset>
+      <ruleset>controversial</ruleset>
+      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
+                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
+      <fileset dir="${build.src}">
+        <include name="*.java"/>
+      </fileset>
+    </pmd>
+  </target>
 
 </project>

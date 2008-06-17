@@ -155,13 +155,14 @@
 
   </target>
 
-  <target name="code-analyzer" description="Uses PMD to perform analysis of code">
+  <target name="pmd-analysis" description="Uses PMD to perform analysis of code">
     <ant target="pmd-analysis" antfile="build.xml" dir="core"/>
     <ant target="pmd-analysis" antfile="build.xml" dir="hub"/>
     <ant target="pmd-analysis" antfile="build.xml" dir="remote-control"/>
     <ant target="pmd-analysis" antfile="build.xml" dir="tools"/>
     <ant target="pmd-analysis" antfile="build.xml" dir="demo"/>
     <ant target="pmd-analysis" antfile="build.xml" dir="examples/java"/>
+    <ant target="pmd-analysis" antfile="build.xml" dir="regression-tests"/>
   </target>
 
 </project>
