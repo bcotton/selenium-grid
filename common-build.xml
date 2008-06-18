@@ -1,0 +1,201 @@
+<project name="Selenium Grid Common Build Tasks">
+
+  <description>Selenium Grid Common Build Tasks</description>
+
+  <tstamp/>
+
+  <property name="build.src" location="src/main/java"/>
+  <property name="build.output" location="target/classes"/>
+  <property name="dist" location="${basedir}/target/dist"/>
+  <property name="test.src" location="src/test/unit/java"/>
+  <property name="test.output" location="target/test-classes"/>
+  <property name="test.reports" location="target/test-reports"/>
+  <property name="metrics.reports" location="target/metrics"/>
+  <property environment="env"/>
+  <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
+
+  <path id="jruby.classpath">
+    <fileset dir="${basedir}/../lib/jruby-1.1-RC2">
+      <include name="jruby.jar"/>
+    </fileset>
+    <pathelement path="${basedir}/../lib/jruby-1.1-RC2/ruby/1.8"/>
+  </path>
+
+  <path id="mocking.classpath">
+    <fileset dir="${basedir}/../lib">
+      <include name="jbehave-1.0.1.jar"/>
+      <include name="jmock-junit4-2.2.0.jar"/>
+      <include name="jmock-legacy-2.2.0.jar"/>
+      <include name="proxytoys-0.2.1.jar"/>
+      <include name="objenesis-1.0.jar"/>
+      <include name="jmock-2.2.0.jar"/>
+      <include name="cglib-nodep-2.1_3.jar"/>
+    </fileset>
+  </path>
+
+  <path id="testing.classpath">
+    <path refid="compile.classpath"/>
+    <path refid="junit.classpath"/>
+    <path refid="mocking.classpath"/>
+    <pathelement location="${build.output}"/>
+    <pathelement location="${test.output}"/>
+  </path>
+
+  <path id="pmd.classpath">
+    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
+    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
+    <pathelement location="${basedir}/../lib/asm-3.1.jar"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="cobertura.classpath">
+    <pathelement location="${basedir}/../lib/cobertura-1.9.jar"/>
+    <pathelement location="${basedir}/../lib/log4j-1.2.9.jar"/>
+    <pathelement location="${basedir}/../lib/asm-2.2.1.jar"/>
+    <pathelement location="${basedir}/../lib/asm-tree-2.2.1.jar"/>
+    <pathelement location="${basedir}/../lib/jakarta-oro-2.0.8.jar"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <target name="clean" description="Remove generated artifacts">
+    <delete dir="target"/>
+  </target>
+
+  <target name="compile" description="compile the source ">
+    <mkdir dir="${build.output}"/>
+    <javac srcdir="${build.src}"
+           destdir="${build.output}"
+           debug="true"
+           source="1.5"
+           target="1.5">
+      <classpath refid="compile.classpath"/>
+      <classpath refid="jruby.classpath"/>
+    </javac>
+    <copy todir="${build.output}" verbose="true">
+      <fileset dir="${build.src}" includes="**/*.html"/>
+      <fileset dir="${build.src}" includes="**/*.yml"/>
+    </copy>
+  </target>
+
+  <target name="jruby-test" depends="compile" description="Run JRuby Tests">
+    <java classname="org.jruby.Main" fork="true" failonerror="true">
+      <classpath refid="testing.classpath"/>
+      <classpath refid="jruby.classpath"/>
+
+      <arg value="-I"/>
+      <arg value="${jruby.test.dir}"/>
+      <arg value="${jruby.test.dir}/all_tests.rb"/>
+    </java>
+  </target>
+
+  <target name="compile-tests" depends="compile" description="compile tests">
+    <mkdir dir="${test.output}"/>
+    <mkdir dir="${test.reports}"/>
+
+    <javac srcdir="${test.src}"
+           destdir="${test.output}"
+           excludes="**/package.html"
+           source="1.5"
+           target="1.5"
+           debug="true"
+           deprecation="true">
+      <classpath refid="testing.classpath"/>
+    </javac>
+  </target>
+
+  <macrodef name="test-unit-run">
+    <attribute name="webxml"/>
+    <attribute name="destfile"/>
+    <sequential>
+      <war destfile="@{destfile}"
+           webxml="@{webxml}">
+        <lib refid="support-libraries"/>
+        <lib file="${jar.name}"/>
+        <fileset dir="${jsps}"/>
+      </war>
+    </sequential>
+  </macrodef>
+
+  <target name="test" depends="compile, jruby-test, compile-tests" description="run tests">
+    <mkdir dir="${test.output}"/>
+    <mkdir dir="${test.reports}"/>
+
+    <copy todir="${test.output}" verbose="true">
+      <fileset dir="${test.src}" includes="**/*.html"/>
+    </copy>
+    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
+      <classpath refid="testing.classpath"/>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/>
+      <formatter type="plain"/>
+      <batchtest todir="${test.reports}">
+        <fileset dir="${test.src}">
+          <include name="**/*Test.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+  
+  <target name="package" depends="test" description="Package as a jar">
+    <mkdir dir="${dist}/lib"/>
+    <jar jarfile="${dist}/lib/${artifact}-${version}.jar" basedir="${build.output}">
+      <manifest>
+        <attribute name="Main-Class" value="com.thoughtworks.selenium.grid.hub.HubServer"/>
+        <attribute name="Built-By" value="OpenQA.org"/>
+        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
+        <section name="common">
+          <attribute name="Specification-Title" value="${name}"/>
+          <attribute name="Specification-Version" value="${version}"/>
+          <attribute name="Specification-Vendor" value="OpenQA.org"/>
+        </section>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
+    <echo message="Performing analysis on Java Example code using PMD"/>
+    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+    <mkdir dir="${metrics.reports}"/>
+    <pmd shortFilenames="true">
+      <ruleset>basic</ruleset>
+      <ruleset>unusedcode</ruleset>
+      <ruleset>design</ruleset>
+      <ruleset>controversial</ruleset>
+      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
+                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
+      <fileset dir="${build.src}">
+        <include name="**/*.java"/>
+      </fileset>
+    </pmd>
+  </target>
+
+  <target name="coverage-analysis" depends="compile, compile-tests" description="Gather code coverage metrics">
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+
+    <delete file="${build.output}/cobertura.ser" />
+
+    <cobertura-instrument datafile="${build.output}/cobertura.ser">
+      <fileset dir="${build.output}">
+        <include name="**/*.class"/>
+      </fileset>
+    </cobertura-instrument>
+    
+    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
+      <sysproperty key="net.sourceforge.cobertura.datafile" file="${build.output}/cobertura.ser" />
+
+      <classpath refid="cobertura.classpath"/>
+      <classpath refid="testing.classpath"/>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/>
+      <formatter type="plain"/>
+      <batchtest todir="${test.reports}">
+        <fileset dir="${test.src}">
+          <include name="**/*Test.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+
+    <cobertura-report srcdir="${build.src}" destdir="${metrics.reports}" datafile="${build.output}/cobertura.ser"/>
+  </target>
+
+</project>
