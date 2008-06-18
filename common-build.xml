@@ -33,8 +33,19 @@
     </fileset>
   </path>
 
+  <path id="junit.core.classpath">
+    <fileset dir="${basedir}/../lib">
+      <include name="junit-4.4.jar"/>
+    </fileset>
+    <pathelement location="${build.output}"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="junit.classpath" />
+  
   <path id="testing.classpath">
     <path refid="compile.classpath"/>
+    <path refid="junit.core.classpath"/>
     <path refid="junit.classpath"/>
     <path refid="mocking.classpath"/>
     <pathelement location="${build.output}"/>
@@ -103,19 +114,6 @@
     </javac>
   </target>
 
-  <macrodef name="test-unit-run">
-    <attribute name="webxml"/>
-    <attribute name="destfile"/>
-    <sequential>
-      <war destfile="@{destfile}"
-           webxml="@{webxml}">
-        <lib refid="support-libraries"/>
-        <lib file="${jar.name}"/>
-        <fileset dir="${jsps}"/>
-      </war>
-    </sequential>
-  </macrodef>
-
   <target name="test" depends="compile, jruby-test, compile-tests" description="run tests">
     <mkdir dir="${test.output}"/>
     <mkdir dir="${test.reports}"/>
@@ -152,6 +150,29 @@
     </jar>
   </target>
 
+  <macrodef name="package-standalone-jar">
+    <attribute name="main-class"/>
+    <element name="dependencies" optional="yes"/>
+    <sequential>
+      <tstamp/>
+      <mkdir dir="${dist}/lib"/>
+      <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
+        <manifest>
+          <attribute name="Main-Class" value="@{main-class} "/>
+          <attribute name="Built-By" value="OpenQA.org"/>
+          <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
+          <section name="common">
+            <attribute name="Specification-Title" value="${name}"/>
+            <attribute name="Specification-Version" value="${version}"/>
+            <attribute name="Specification-Vendor" value="OpenQA.org"/>
+          </section>
+        </manifest>
+        <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
+        <dependencies/>
+      </jar>
+    </sequential>
+  </macrodef>
+  
   <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
     <echo message="Performing analysis on Java Example code using PMD"/>
     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>

@@ -2,20 +2,15 @@
 
   <description>Selenium Grid Automation Tools</description>
 
-  <property file="${basedir}/../project.properties"/>
+  <property name="rootdir" value="${basedir}/.."/>
+  <property file="${rootdir}/project.properties"/>
   <property name="name" value="Selenium Grid Tools"/>
   <property name="artifact" value="selenium-grid-tools"/>
   <property name="version" value="SNAPSHOT"/>
-  <tstamp/>
 
   <property name="build.src" location="src/main"/>
-  <property name="build.output" location="target/classes"/>
-  <property name="dist" location="${basedir}/target/dist"/>
-  <property name="test.src" location="src/test/unit/java"/>
-  <property name="test.output" location="target/test-classes"/>
-  <property name="test.reports" location="target/test-reports"/>
-  <property name="metrics.reports" location="target/metrics"/>
-  <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
+
+  <import file="${rootdir}/common-build.xml" />
 
   <path id="compile.classpath">
     <fileset dir="${basedir}/../lib">
@@ -25,134 +20,14 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <path id="junit.classpath">
-    <fileset dir="${basedir}/../lib">
-      <include name="junit-4.4.jar"/>
-    </fileset>
-    <pathelement location="${build.output}"/>
-    <pathelement path="${java.class.path}/"/>
-  </path>
-
-  <path id="mocking.classpath">
-    <fileset dir="${basedir}/../lib">
-      <include name="jbehave-1.0.1.jar"/>
-      <include name="jmock-junit4-2.2.0.jar"/>
-      <include name="jmock-legacy-2.2.0.jar"/>
-      <include name="proxytoys-0.2.1.jar"/>
-      <include name="objenesis-1.0.jar"/>
-      <include name="jmock-2.2.0.jar"/>
-      <include name="cglib-nodep-2.1_3.jar"/>
-    </fileset>
-  </path>
-
-  <path id="testing.classpath">
-    <path refid="compile.classpath"/>
-    <path refid="junit.classpath"/>
-    <path refid="mocking.classpath"/>
-    <pathelement location="${build.output}"/>
-    <pathelement location="${test.output}"/>
-  </path>
-
-  <path id="pmd.classpath">
-    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
-    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
-    <pathelement location="${basedir}/../lib/asm-3.1.jar"/>
-    <pathelement path="${java.class.path}/"/>
-  </path>
-
-  <target name="compile" description="compile the source ">
-    <mkdir dir="${build.output}"/>
-    <javac srcdir="${build.src}"
-           destdir="${build.output}"
-           source="1.5"
-           target="1.5">
-      <classpath refid="compile.classpath"/>
-    </javac>
-    <copy todir="${build.output}" verbose="true">
-      <fileset dir="${build.src}" includes="**/*.yml"/>
-    </copy>
-  </target>
-
-  <target name="test" depends="compile" description="run tests">
-    <mkdir dir="${test.output}"/>
-    <mkdir dir="${test.reports}"/>
-
-    <javac srcdir="${test.src}"
-           destdir="${test.output}"
-           excludes="**/package.html"
-           source="1.5"
-           target="1.5"
-           debug="true"
-           deprecation="true">
-      <classpath refid="testing.classpath"/>
-    </javac>
-    <copy todir="${test.output}" verbose="true">
-      <fileset dir="${test.src}" includes="**/*.html"/>
-    </copy>
-    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
-      <classpath refid="testing.classpath"/>
-      <formatter type="brief" usefile="false"/>
-      <formatter type="xml"/>
-      <formatter type="plain"/>
-      <batchtest todir="${test.reports}">
-        <fileset dir="${test.src}">
-          <include name="**/*Test.java"/>
-        </fileset>
-      </batchtest>
-    </junit>
-  </target>
-
-  <target name="package" depends="test" description="Package as a jar">
-    <mkdir dir="${dist}/lib"/>
-    <jar jarfile="${dist}/lib/${artifact}-${version}.jar" basedir="${build.output}">
-      <manifest>
-        <attribute name="Built-By" value="OpenQA.org"/>
-        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
-        <section name="common">
-          <attribute name="Specification-Title" value="${name}"/>
-          <attribute name="Specification-Version" value="${version}"/>
-          <attribute name="Specification-Vendor" value="OpenQA.org"/>
-        </section>
-      </manifest>
-    </jar>
-  </target>
+  <target name="jruby-test" depends="compile" description="Run JRuby Tests" />
 
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
-    <mkdir dir="${dist}/lib"/>
-    <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
-      <manifest>
-        <attribute name="Built-By" value="OpenQA.org"/>
-        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
-        <section name="common">
-          <attribute name="Specification-Title" value="${name}"/>
-          <attribute name="Specification-Version" value="${version}"/>
-          <attribute name="Specification-Vendor" value="OpenQA.org"/>
-        </section>
-      </manifest>
-      <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
-      <zipfileset src="${basedir}/../lib/commons-logging-1.0.4.jar"/>
-    </jar>
-  </target>
-
-  <target name="clean" description="Remove generated artifacts">
-    <delete dir="target"/>
-  </target>
-    
-  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-    <echo message="Performing analysis on Java Example code using PMD"/>
-    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
-    <mkdir dir="${metrics.reports}"/>
-    <pmd shortFilenames="true">
-      <ruleset>basic</ruleset>
-      <ruleset>unusedcode</ruleset>
-      <ruleset>design</ruleset>
-      <ruleset>controversial</ruleset>
-      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
-                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
-      <fileset dir="${build.src}">
-        <include name="**/*.java"/>
-      </fileset>
-    </pmd>
+    <package-standalone-jar main-class="">
+      <dependencies>
+        <zipfileset src="${rootdir}/lib/commons-logging-1.0.4.jar"/>
+      </dependencies>
+    </package-standalone-jar>
   </target>
 
 </project>

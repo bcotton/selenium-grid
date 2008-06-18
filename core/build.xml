@@ -22,12 +22,6 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <path id="junit.classpath">
-    <fileset dir="${basedir}/../lib">
-      <include name="junit-4.4.jar"/>
-    </fileset>
-    <pathelement location="${build.output}"/>
-    <pathelement path="${java.class.path}/"/>
-  </path>
+  <path id="junit.classpath" />
     
 </project>
