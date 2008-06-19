@@ -15,14 +15,14 @@
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
 
   <path id="jruby.classpath">
-    <fileset dir="${basedir}/../lib/jruby-1.1-RC2">
+    <fileset dir="${rootdir}/lib/jruby-1.1-RC2">
       <include name="jruby.jar"/>
     </fileset>
     <pathelement path="${basedir}/../lib/jruby-1.1-RC2/ruby/1.8"/>
   </path>
 
   <path id="mocking.classpath">
-    <fileset dir="${basedir}/../lib">
+    <fileset dir="${rootdir}/lib">
       <include name="jbehave-1.0.1.jar"/>
       <include name="jmock-junit4-2.2.0.jar"/>
       <include name="jmock-legacy-2.2.0.jar"/>
@@ -34,7 +34,7 @@
   </path>
 
   <path id="junit.core.classpath">
-    <fileset dir="${basedir}/../lib">
+    <fileset dir="${rootdir}/lib">
       <include name="junit-4.4.jar"/>
     </fileset>
     <pathelement location="${build.output}"/>
@@ -53,20 +53,24 @@
   </path>
 
   <path id="pmd.classpath">
-    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
-    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
-    <pathelement location="${basedir}/../lib/asm-3.1.jar"/>
+    <pathelement location="${rootdir}/lib/pmd-4.2.2.jar"/>
+    <pathelement location="${rootdir}/lib/jaxen-1.1.1.jar"/>
+    <pathelement location="${rootdir}/lib/asm-3.1.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
   <path id="cobertura.classpath">
-    <pathelement location="${basedir}/../lib/cobertura-1.9.jar"/>
-    <pathelement location="${basedir}/../lib/log4j-1.2.9.jar"/>
-    <pathelement location="${basedir}/../lib/asm-2.2.1.jar"/>
-    <pathelement location="${basedir}/../lib/asm-tree-2.2.1.jar"/>
-    <pathelement location="${basedir}/../lib/jakarta-oro-2.0.8.jar"/>
+    <pathelement location="${rootdir}/lib/cobertura-1.9.jar"/>
+    <pathelement location="${rootdir}/lib/log4j-1.2.9.jar"/>
+    <pathelement location="${rootdir}/lib/asm-2.2.1.jar"/>
+    <pathelement location="${rootdir}/lib/asm-tree-2.2.1.jar"/>
+    <pathelement location="${rootdir}/lib/jakarta-oro-2.0.8.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
+
+  <target name="package-standalone" depends="package"/>
+  <target name="build" depends="test"/>
+  <target name="dist" depends="package-standalone"/>
 
   <target name="clean" description="Remove generated artifacts">
     <delete dir="target"/>
@@ -218,5 +222,22 @@
 
     <cobertura-report srcdir="${build.src}" destdir="${metrics.reports}" datafile="${build.output}/cobertura.ser"/>
   </target>
+
+  <macrodef name="build-subprojects">
+    <attribute name="target"/>
+    <sequential>
+      <subant target="@{target}">
+        <filelist dir=".">
+          <file name="core/build.xml"/>
+          <file name="hub/build.xml"/>
+          <file name="remote-control/build.xml"/>
+          <file name="tools/build.xml"/>
+          <file name="demo/build.xml"/>
+          <file name="examples/java/build.xml"/>
+          <file name="regression-tests"/>
+        </filelist>
+      </subant>
+    </sequential>
+  </macrodef>
 
 </project>

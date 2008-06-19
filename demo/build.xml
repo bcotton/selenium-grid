@@ -2,16 +2,14 @@
 
   <description>Selenium Grid Demo</description>
 
-  <property file="${basedir}/../project.properties"/>
+  <property name="rootdir" value="${basedir}/.."/>
+  <property file="${rootdir}/project.properties"/>
   <property name="name" value="Selenium Grid Demo"/>
   <property name="artifact" value="selenium-grid-demo"/>
   <property name="version" value="SNAPSHOT"/>
   <property name="selenium.version" value="SET ME"/>
-  <tstamp/>
-  <property name="build.src" location="src/main/java"/>
-  <property name="build.output" location="target/classes"/>
-  <property name="metrics.reports" location="target/metrics"/>
-  <property name="dist" location="${basedir}/target/dist"/>
+
+  <import file="${rootdir}/common-build.xml" />
 
   <property name="webSite" value="http://amazon.com" />
   <property name="seleniumHost" value="localhost" />
@@ -26,71 +24,39 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
+  <path id="compile.classpath">
+    <fileset dir="${rootdir}/lib">
+      <include name="selenium-java-client-driver-${selenium.version}.jar"/>
+      <include name="testng-5.7-jdk15.jar"/>
+      <include name="commons-logging-1.0.4.jar"/>
+    </fileset>
+    <pathelement location="${rootdir}/tools/target/classes"/>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
   <path id="demo.runtime.classpath">
     <path refid="demo.classpath"/>
     <pathelement location="${basedir}/../lib/testng-5.7-jdk15.jar"/>
     <pathelement location="${build.output}" />
   </path>
 
-  <path id="pmd.classpath">
-    <pathelement location="${basedir}/../lib/pmd-4.2.2.jar"/>
-    <pathelement location="${basedir}/../lib/jaxen-1.1.1.jar"/>
-    <pathelement location="${basedir}/../lib/asm-3.1.jar"/>
-    <pathelement path="${java.class.path}/"/>
-  </path>
-
-  <target name="compile" description="compile the source ">
-    <mkdir dir="${build.output}"/>
-    <javac srcdir="${build.src}"
-           destdir="${build.output}"
-           debug="true"
-           source="1.5"
-           target="1.5">
-      <classpath refid="demo.classpath"/>
-    </javac>
-  </target>
-
   <target name="test" depends="compile"/>
 
-  <target name="package" depends="compile"
-          description="Generate the distribution">
-    <mkdir dir="${dist}/lib"/>
-    <jar jarfile="${dist}/lib/selenium-grid-demo-${version}.jar"
-         basedir="${build.output}"/>
+  <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
+    <package-standalone-jar main-class="">
+      <dependencies>
+        <zipfileset src="${basedir}/../tools/target/dist/lib/selenium-grid-tools-${version}.jar"/>
+        <zipfileset src="${basedir}/../lib/selenium-java-client-driver-${selenium.version}.jar"/>
+        <zipfileset src="${basedir}/../lib/testng-5.7-jdk15.jar"/>
+      </dependencies>
+    </package-standalone-jar>
   </target>
-
-  <target name="package-standalone" depends="package"
-          description="Package as a jar including all dependencies">
-    <mkdir dir="${dist}/lib"/>
-    <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
-      <manifest>
-        <attribute name="Main-Class"
-                   value="com.thoughtworks.selenium.grid.hub.HubServer"/>
-        <attribute name="Built-By" value="OpenQA.org"/>
-        <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
-        <section name="common">
-          <attribute name="Specification-Title" value="${name}"/>
-          <attribute name="Specification-Version" value="${version}"/>
-          <attribute name="Specification-Vendor" value="OpenQA.org"/>
-        </section>
-      </manifest>
-      <zipfileset src="${dist}/lib/${artifact}-${version}.jar"/>
-      <zipfileset src="${basedir}/../tools/target/dist/lib/selenium-grid-tools-${version}.jar"/>
-      <zipfileset src="${basedir}/../lib/selenium-java-client-driver-${selenium.version}.jar"/>
-      <zipfileset src="${basedir}/../lib/testng-5.7-jdk15.jar"/>
-    </jar>
-  </target>
-
-  <target name="clean" description="Remove generated artifacts">
-    <delete dir="target"/>
-  </target>
-
+  
   <target name="run-demo-in-sequence"
           description="Run Selenium tests one by one">
     <java classpathref="demo.runtime.classpath"
         classname="org.testng.TestNG"
         failonerror="true"
-
         >
       <sysproperty key="java.security.policy" file="${basedir}/../lib/testng.policy"/>
       <sysproperty key="webSite" value="${webSite}" />
@@ -105,7 +71,6 @@
       <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
   </target>
-
 
   <target name="run-demo-in-parallel"
           description="Run Selenium tests in parallel">
@@ -129,7 +94,6 @@
       <arg value="-testclass"/>
       <arg value="com.thoughtworks.selenium.grid.demo.WebTestForASingleBrowser"/>
     </java>
-
   </target>
 
   <target name="run-demo-for-multiple-environments"
@@ -160,21 +124,7 @@
     </java>
   </target>
     
-  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-    <echo message="Performing analysis on Java Example code using PMD"/>
-    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
-    <mkdir dir="${metrics.reports}"/>
-    <pmd shortFilenames="true">
-      <ruleset>basic</ruleset>
-      <ruleset>unusedcode</ruleset>
-      <ruleset>design</ruleset>
-      <ruleset>controversial</ruleset>
-      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
-                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
-      <fileset dir="${build.src}">
-        <include name="**/*.java"/>
-      </fileset>
-    </pmd>
-  </target>
 
+  <target name="build" depends="compile"/>
+  
 </project>

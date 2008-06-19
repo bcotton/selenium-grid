@@ -22,6 +22,6 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <path id="junit.classpath" />
-    
+  <target name="dist" depends="package"/>
+
 </project>

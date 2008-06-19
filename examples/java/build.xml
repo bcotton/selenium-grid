@@ -2,57 +2,42 @@
 
   <description>Selenium Grid Java Example</description>
 
-  <property file="${basedir}/../../project.properties"/>
+  <property name="rootdir" value="${basedir}/../.."/>
+  <property file="${rootdir}/project.properties"/>
   <property name="name" value="Selenium Grid Demo"/>
   <property name="artifact" value="selenium-grid-demo"/>
   <property name="version" value="SNAPSHOT"/>
   <property name="selenium.version" value="SET ME"/>
-  <tstamp/>
-  <property name="build.src" location="src/"/>
-  <property name="build.output" location="target/classes"/>
-  <property name="metrics.reports" location="target/metrics"/>
-  <property name="dist" location="${basedir}/target/dist"/>
+
+  <property name="build.src" location="src"/>
+
+  <import file="${rootdir}/common-build.xml" />
 
   <property name="webSite" value="http://amazon.com" />
   <property name="seleniumHost" value="localhost" />
   <property name="seleniumPort" value="4444" />
   <property name="browser" value="*chrome" />
 
-  <path id="test.classpath">
-    <pathelement location="${basedir}/../../lib/selenium-java-client-driver-${selenium.version}.jar"/>
-    <pathelement location="${basedir}/../../lib/testng-5.7-jdk15.jar"/>
-    <pathelement location="${basedir}/../../tools/target/classes"/>
-    <pathelement location="${basedir}/../../tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
-    <pathelement location="${basedir}/../../lib/selenium-grid-tools-standalone-${version}.jar"/>
-    <pathelement path="${java.class.path}/"/>
-    <pathelement location="${build.output}" />
-  </path>
-
-  <path id="pmd.classpath">
-    <pathelement location="${basedir}/../../lib/pmd-4.2.2.jar"/>
-    <pathelement location="${basedir}/../../lib/jaxen-1.1.1.jar"/>
-    <pathelement location="${basedir}/../../lib/asm-3.1.jar"/>
+  <path id="compile.classpath">
+    <fileset dir="${rootdir}/lib">
+      <include name="selenium-java-client-driver-${selenium.version}.jar"/>
+      <include name="testng-5.7-jdk15.jar"/>
+      <include name="commons-logging-1.0.4.jar"/>
+    </fileset>
+    <pathelement location="${rootdir}/tools/target/classes"/>
+    <pathelement location="${rootdir}/tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
+    <pathelement location="${rootdir}/lib/selenium-grid-tools-standalone-${version}.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <target name="compile" description="compile the source ">
-    <mkdir dir="${build.output}"/>
-    <javac srcdir="${build.src}"
-           destdir="${build.output}"
-           debug="true"
-           source="1.5"
-           target="1.5">
-      <classpath refid="test.classpath"/>
-    </javac>
-  </target>
-
-  <target name="clean" description="Remove generated artifacts">
-    <delete dir="target"/>
-  </target>
+  <path id="runtime.classpath">
+    <path refid="compile.classpath"/>
+    <pathelement path="${build.output}/"/>
+  </path>
 
   <target name="run" depends="compile" description="Run Selenium tests in parallel (20 threads)">
     <echo>${seleniumHost}</echo>
-    <java classpathref="test.classpath"
+    <java classpathref="runtime.classpath"
         classname="org.testng.TestNG"
         failonerror="true">
 
@@ -76,7 +61,7 @@
 
   <target name="run-in-sequence" depends="compile" description="Run Selenium tests in sequence">
     <echo>${seleniumHost}</echo>
-    <java classpathref="test.classpath"
+    <java classpathref="runtime.classpath"
         classname="org.testng.TestNG"
         failonerror="true">
 
@@ -98,21 +83,7 @@
 
   </target>
 
-  <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-    <echo message="Performing analysis on Java Example code using PMD"/>
-    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
-    <mkdir dir="${metrics.reports}"/>
-    <pmd shortFilenames="true">
-      <ruleset>basic</ruleset>
-      <ruleset>unusedcode</ruleset>
-      <ruleset>design</ruleset>
-      <ruleset>controversial</ruleset>
-      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
-                 linkPrefix="http://pmd.sourceforge.net/xref/"/>
-      <fileset dir="${build.src}">
-        <include name="**/*.java"/>
-      </fileset>
-    </pmd>
-  </target>
-
+  <target name="build" depends="compile"/>
+  <target name="dist" depends="build"/>
+  
 </project>
