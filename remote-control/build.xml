@@ -24,6 +24,17 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
+  <path id="runtime.classpath">
+    <fileset dir="${basedir}/lib">
+      <include name="selenium-server-*.jar"/>
+    </fileset>
+    <!-- Selenium Server must be first in classpath -->
+    <fileset dir="${dist}/lib">
+      <include name="selenium-grid-remote-control-standalone-${version}.jar"/>
+    </fileset>
+    <pathelement path="${java.class.path}/"/>
+  </path>
+  
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
     <package-standalone-jar main-class="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher">
       <dependencies>
