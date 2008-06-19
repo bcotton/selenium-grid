@@ -85,5 +85,6 @@
 
   <target name="build" depends="compile"/>
   <target name="dist" depends="build"/>
+  <target name="coverage-analysis" />
   
 </project>

@@ -126,5 +126,6 @@
     
 
   <target name="build" depends="compile"/>
-  
+  <target name="coverage-analysis" />
+
 </project>

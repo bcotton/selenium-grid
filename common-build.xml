@@ -11,6 +11,8 @@
   <property name="test.output" location="target/test-classes"/>
   <property name="test.reports" location="target/test-reports"/>
   <property name="metrics.reports" location="target/metrics"/>
+  <property name="metrics.pmd.reports" location="${metrics.reports}/pmd"/>
+  <property name="metrics.coverage.reports" location="${metrics.reports}/coverage"/>
   <property environment="env"/>
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
 
@@ -48,6 +50,7 @@
     <path refid="junit.core.classpath"/>
     <path refid="junit.classpath"/>
     <path refid="mocking.classpath"/>
+    <path refid="cobertura.classpath"/>
     <pathelement location="${build.output}"/>
     <pathelement location="${test.output}"/>
   </path>
@@ -118,24 +121,32 @@
     </javac>
   </target>
 
-  <target name="test" depends="compile, jruby-test, compile-tests" description="run tests">
-    <mkdir dir="${test.output}"/>
-    <mkdir dir="${test.reports}"/>
+  <macrodef name="run-unit-tests">
+    <element name="options" optional="true"/>
+    <sequential>
+      <mkdir dir="${test.output}"/>
+      <mkdir dir="${test.reports}"/>
 
-    <copy todir="${test.output}" verbose="true">
-      <fileset dir="${test.src}" includes="**/*.html"/>
-    </copy>
-    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
-      <classpath refid="testing.classpath"/>
-      <formatter type="brief" usefile="false"/>
-      <formatter type="xml"/>
-      <formatter type="plain"/>
-      <batchtest todir="${test.reports}">
-        <fileset dir="${test.src}">
-          <include name="**/*Test.java"/>
-        </fileset>
-      </batchtest>
-    </junit>
+      <copy todir="${test.output}" verbose="true">
+        <fileset dir="${test.src}" includes="**/*.html"/>
+      </copy>
+      <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
+        <options/>
+        <classpath refid="testing.classpath"/>
+        <formatter type="brief" usefile="false"/>
+        <formatter type="xml"/>
+        <formatter type="plain"/>
+        <batchtest todir="${test.reports}">
+          <fileset dir="${test.src}">
+            <include name="**/*Test.java"/>
+          </fileset>
+        </batchtest>
+      </junit>
+    </sequential>
+  </macrodef>
+
+  <target name="test" depends="compile, jruby-test, compile-tests" description="run tests">
+    <run-unit-tests/>
   </target>
   
   <target name="package" depends="test" description="Package as a jar">
@@ -180,13 +191,13 @@
   <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
     <echo message="Performing analysis on Java Example code using PMD"/>
     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
-    <mkdir dir="${metrics.reports}"/>
+    <mkdir dir="${metrics.pmd.reports}"/>
     <pmd shortFilenames="true">
       <ruleset>basic</ruleset>
       <ruleset>unusedcode</ruleset>
       <ruleset>design</ruleset>
       <ruleset>controversial</ruleset>
-      <formatter type="html" toFile="${metrics.reports}/pmd_report.html"
+      <formatter type="html" toFile="${metrics.pmd.reports}/pmd_report.html"
                  linkPrefix="http://pmd.sourceforge.net/xref/"/>
       <fileset dir="${build.src}">
         <include name="**/*.java"/>
@@ -198,29 +209,21 @@
     <taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
 
     <delete file="${build.output}/cobertura.ser" />
-
+    
     <cobertura-instrument datafile="${build.output}/cobertura.ser">
       <fileset dir="${build.output}">
         <include name="**/*.class"/>
       </fileset>
     </cobertura-instrument>
-    
-    <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
-      <sysproperty key="net.sourceforge.cobertura.datafile" file="${build.output}/cobertura.ser" />
 
-      <classpath refid="cobertura.classpath"/>
-      <classpath refid="testing.classpath"/>
-      <formatter type="brief" usefile="false"/>
-      <formatter type="xml"/>
-      <formatter type="plain"/>
-      <batchtest todir="${test.reports}">
-        <fileset dir="${test.src}">
-          <include name="**/*Test.java"/>
-        </fileset>
-      </batchtest>
-    </junit>
+    <run-unit-tests>
+      <options>
+        <sysproperty key="net.sourceforge.cobertura.datafile" file="${build.output}/cobertura.ser" />
+        <classpath refid="cobertura.classpath"/>
+      </options>
+    </run-unit-tests>
 
-    <cobertura-report srcdir="${build.src}" destdir="${metrics.reports}" datafile="${build.output}/cobertura.ser"/>
+    <cobertura-report srcdir="${build.src}" destdir="${metrics.coverage.reports}" datafile="${build.output}/cobertura.ser"/>
   </target>
 
   <macrodef name="build-subprojects">

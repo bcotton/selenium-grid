@@ -144,8 +144,31 @@
 
   </target>
 
-  <target name="pmd-analysis" description="Uses PMD to perform analysis of code">
+  <target name="pmd-analysis" description="Uses PMD to perform static analysis of the code">
     <build-subprojects target="pmd-analysis"/>
+  </target>
+
+  <target name="coverage-analysis" description="Uses Cobertura to perform code coverage analysis">
+    <build-subprojects target="coverage-analysis"/>
+  </target>
+
+  <target name="metrics" depends="coverage-analysis, pmd-analysis, aggregate-reports"/>
+  
+  <macrodef name="copyreports">
+    <attribute name="project" />
+    <sequential>
+      <mkdir dir="${metrics.reports}/@{project}"/>
+      <copy todir="${metrics.reports}/@{project}" overwrite="true">
+        <fileset dir="${basedir}/@{project}/target/metrics" includes="**/*"/>
+      </copy>
+    </sequential>
+  </macrodef>
+
+  <target name="aggregate-reports" description="Aggregates subproject reports">
+    <copyreports project="core"/>
+    <copyreports project="hub"/>
+    <copyreports project="remote-control"/>
+    <copyreports project="tools"/>
   </target>
 
 </project>
