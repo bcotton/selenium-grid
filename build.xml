@@ -169,6 +169,9 @@
     <copyreports project="hub"/>
     <copyreports project="remote-control"/>
     <copyreports project="tools"/>
+    <copy todir="${metrics.reports}" overwrite="true">
+      <fileset dir="src/reports" includes="**/*"/>
+    </copy>
   </target>
 
 </project>
