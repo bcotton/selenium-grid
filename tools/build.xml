@@ -13,7 +13,7 @@
   <import file="${rootdir}/common-build.xml" />
 
   <path id="compile.classpath">
-    <fileset dir="${basedir}/../lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="selenium-java-client-driver-*.jar"/>
       <include name="commons-logging-1.0.4.jar"/>      
     </fileset>
@@ -25,7 +25,7 @@
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
     <package-standalone-jar main-class="">
       <dependencies>
-        <zipfileset src="${rootdir}/lib/commons-logging-1.0.4.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-logging-1.0.4.jar"/>
       </dependencies>
     </package-standalone-jar>
   </target>

@@ -13,7 +13,7 @@
   <import file="${rootdir}/common-build.xml" />
 
   <path id="compile.classpath">
-    <fileset dir="${basedir}/../lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="jyaml-1.3.jar"/>
       <include name="commons-httpclient-3.0.1.jar"/>
       <include name="commons-codec-1.3.jar"/>

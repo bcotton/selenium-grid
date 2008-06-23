@@ -10,9 +10,9 @@ begin
   project_basedir = File.expand_path(File.dirname(__FILE__) + '/../../../..');
   [
 
-  "lib/commons-httpclient-3.0.1.jar",
-  "lib/commons-codec-1.3.jar",
-  "lib/commons-logging-1.0.4.jar",
+  "vendor/commons-httpclient-3.0.1.jar",
+  "vendor/commons-codec-1.3.jar",
+  "vendor/commons-logging-1.0.4.jar",
   "remotecontrol/lib/selenium-server-*.jar",
   "remote-control/src/main/java",
   "remote-control/src/test/unit/java",
@@ -26,7 +26,7 @@ end
 ### Test::Unit Goodness ###
 
 require 'test/unit'
-$: << File.expand_path(File.dirname(__FILE__) + "/../../../../lib/gems/mocha-0.5.5/lib")
+$: << File.expand_path(File.dirname(__FILE__) + "/../../../../vendor/gems/mocha-0.5.5/lib")
 require "mocha"
 
 class Test::Unit::TestCase

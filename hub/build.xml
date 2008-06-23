@@ -11,7 +11,7 @@
   <import file="${rootdir}/common-build.xml" />
   
   <path id="compile.classpath">
-    <fileset dir="${basedir}/../lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="jetty-6.0.2.jar"/>
       <include name="jetty-util-6.0.2.jar"/>
       <include name="jyaml-1.3.jar"/>
@@ -26,7 +26,7 @@
   </path>
 
   <path id="junit.classpath">
-    <fileset dir="${rootdir}/lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="commons-httpclient-3.0.1.jar"/>
     </fileset>
   </path>
@@ -36,13 +36,13 @@
       <dependencies>
         <zipfileset src="${rootdir}/core/target/dist/lib/selenium-grid-core-${version}.jar"/>
         <zipfileset src="${basedir}/lib/freemarker-2.3.10.jar"/>
-        <zipfileset src="${rootdir}/lib/jetty-6.0.2.jar"/>
-        <zipfileset src="${rootdir}/lib/jetty-util-6.0.2.jar"/>
-        <zipfileset src="${rootdir}/lib/servlet-api-2.5-6.1.5.jar"/>
-        <zipfileset src="${rootdir}/lib/jyaml-1.3.jar"/>
-        <zipfileset src="${rootdir}/lib/commons-httpclient-3.0.1.jar"/>
-        <zipfileset src="${rootdir}/lib/commons-codec-1.3.jar"/>
-        <zipfileset src="${rootdir}/lib/commons-logging-1.0.4.jar"/>
+        <zipfileset src="${rootdir}/vendor/jetty-6.0.2.jar"/>
+        <zipfileset src="${rootdir}/vendor/jetty-util-6.0.2.jar"/>
+        <zipfileset src="${rootdir}/vendor/servlet-api-2.5-6.1.5.jar"/>
+        <zipfileset src="${rootdir}/vendor/jyaml-1.3.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-httpclient-3.0.1.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-codec-1.3.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-logging-1.0.4.jar"/>
       </dependencies>
     </package-standalone-jar>
   </target>

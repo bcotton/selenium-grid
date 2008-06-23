@@ -17,14 +17,14 @@
   <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
 
   <path id="jruby.classpath">
-    <fileset dir="${rootdir}/lib/jruby-1.1-RC2">
+    <fileset dir="${rootdir}/vendor/jruby-1.1-RC2">
       <include name="jruby.jar"/>
     </fileset>
-    <pathelement path="${basedir}/../lib/jruby-1.1-RC2/ruby/1.8"/>
+    <pathelement path="${rootdir}/vendor/jruby-1.1-RC2/ruby/1.8"/>
   </path>
 
   <path id="mocking.classpath">
-    <fileset dir="${rootdir}/lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="jbehave-1.0.1.jar"/>
       <include name="jmock-junit4-2.2.0.jar"/>
       <include name="jmock-legacy-2.2.0.jar"/>
@@ -36,7 +36,7 @@
   </path>
 
   <path id="junit.core.classpath">
-    <fileset dir="${rootdir}/lib">
+    <fileset dir="${rootdir}/vendor">
       <include name="junit-4.4.jar"/>
     </fileset>
     <pathelement location="${build.output}"/>
@@ -56,18 +56,22 @@
   </path>
 
   <path id="pmd.classpath">
-    <pathelement location="${rootdir}/lib/pmd-4.2.2.jar"/>
-    <pathelement location="${rootdir}/lib/jaxen-1.1.1.jar"/>
-    <pathelement location="${rootdir}/lib/asm-3.1.jar"/>
+      <fileset dir="${rootdir}/vendor">
+        <include name="pmd-4.2.2.jar"/>
+        <include name="jaxen-1.1.1.jar"/>
+        <include name="asm-3.1.jar"/>
+      </fileset>
     <pathelement path="${java.class.path}/"/>
   </path>
 
   <path id="cobertura.classpath">
-    <pathelement location="${rootdir}/lib/cobertura-1.9.jar"/>
-    <pathelement location="${rootdir}/lib/log4j-1.2.9.jar"/>
-    <pathelement location="${rootdir}/lib/asm-2.2.1.jar"/>
-    <pathelement location="${rootdir}/lib/asm-tree-2.2.1.jar"/>
-    <pathelement location="${rootdir}/lib/jakarta-oro-2.0.8.jar"/>
+      <fileset dir="${rootdir}/vendor">
+        <include name="cobertura-1.9.jar"/>
+        <include name="log4j-1.2.9.jar"/>
+        <include name="asm-2.2.1.jar"/>
+        <include name="asm-tree-2.2.1.jar"/>
+        <include name="jakarta-oro-2.0.8.jar"/>
+      </fileset>
     <pathelement path="${java.class.path}/"/>
   </path>
 

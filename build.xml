@@ -25,10 +25,10 @@
     <fail message="Your must use Java 1.5 or newer. You are currrenltly using '${ant.java.version}'." unless="java-5"/>
 
     <path id="jruby.classpath">
-      <fileset dir="${basedir}/lib/jruby-1.1-RC2">
+      <fileset dir="${basedir}/vendor/jruby-1.1-RC2">
         <include name="*.jar"/>
       </fileset>
-      <pathelement path="${basedir}/lib/jruby-1.1-RC2/ruby/1.8"/>      
+      <pathelement path="${basedir}/vendor/jruby-1.1-RC2/ruby/1.8"/>
     </path>
 
     <java classname="org.jruby.Main" fork="true" failonerror="true">
@@ -70,12 +70,12 @@
       <fileset dir="${basedir}/remote-control/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/tools/target/dist/lib"/>
-      <fileset dir="${basedir}/lib" includes="ruby/**/*.rb"/>
+      <fileset dir="${basedir}/vendor" includes="ruby/**/*.rb"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
-      <fileset file="${basedir}/lib/testng.policy"/>
-      <fileset file="${basedir}/lib/testng-5.7-jdk15.jar"/>
-      <fileset file="${basedir}/lib/selenium-java-client-driver-${selenium.version}.jar"/>
-      <fileset file="${basedir}/lib/commons-logging-1.0.4.jar"/>
+      <fileset file="${basedir}/vendor/testng.policy"/>
+      <fileset file="${basedir}/vendor/testng-5.7-jdk15.jar"/>
+      <fileset file="${basedir}/vendor/selenium-java-client-driver-${selenium.version}.jar"/>
+      <fileset file="${basedir}/vendor/commons-logging-1.0.4.jar"/>
     </copy>
     <copy todir="${dist}/${artifact}-${version}" overwrite="true">
       <fileset dir="${basedir}">
