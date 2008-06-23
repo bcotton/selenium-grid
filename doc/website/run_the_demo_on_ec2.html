@@ -51,8 +51,26 @@
 	  </p><pre>cap hub:console</pre>
 	<p>
 	  You can also VNC to all the Remote Controls with:
-	  </p><pre>cap rc:view</pre>
-	
+	</p>
+	<pre>cap rc:view</pre>
+    <p>
+	  You do not even need the password if you use the "cap rc:view"
+      command: This task will detect vncviewer or chicken of VNC on your machine and
+      gives the vnc password file directly to the VNC client so that you are
+	  not even prompted for any password. Quite handy to open a VNC window
+	  for all of your RCs in one command ;-)
+	</p>
+    <p>
+     In case you need it the super secret password is 
+     "<code>seleniumgrid</code>" (no double quotes).
+     It is stored on EC2 instance in an encrypted form under 
+     <code>~/.vnc/password</code>.      
+    </p><p>
+    <p>
+      If you cannot connect, it might be that the VNC servers were not
+      started. You can start them with 
+    </p>
+    <pre>cap rc:vnc:start</pre>
 
  <h2>Running The demo against the your EC2 Grid</h2>
    <p>
