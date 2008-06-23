@@ -193,10 +193,10 @@
     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
     <mkdir dir="${metrics.pmd.reports}"/>
     <pmd shortFilenames="true">
-      <ruleset>basic</ruleset>
       <ruleset>unusedcode</ruleset>
+      <ruleset>basic</ruleset>
       <ruleset>design</ruleset>
-      <ruleset>controversial</ruleset>
+      <!--<ruleset>controversial</ruleset>-->
       <formatter type="html" toFile="${metrics.pmd.reports}/pmd_report.html"
                  linkPrefix="http://pmd.sourceforge.net/xref/"/>
       <fileset dir="${build.src}">
