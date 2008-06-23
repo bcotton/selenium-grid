@@ -8,18 +8,18 @@ end
 
 begin
   project_basedir = File.expand_path(File.dirname(__FILE__) + '/../../../..');
-  [ "lib/commons-codec-1.3.jar",
-    "lib/commons-logging-1.0.4.jar",
-    "lib/commons-httpclient-3.0.1.jar",
-    "lib/objenesis-1.0.jar",
-    "lib/cglib-nodep-2.1_3.jar",
-    "lib/junit-4.1.jar",
-    "lib/jmock-junit4-2.2.0.jar",
-    "lib/jmock-legacy-2.2.0.jar",
-    "lib/proxytoys-0.2.1.jar",
-    "lib/jmock-2.2.0.jar",
-    "lib/jbehave-1.0.1.jar",
-    "lib/jyaml-1.3.jar",
+  [ "vendor/commons-codec-1.3.jar",
+    "vendor/commons-logging-1.0.4.jar",
+    "vendor/commons-httpclient-3.0.1.jar",
+    "vendor/objenesis-1.0.jar",
+    "vendor/cglib-nodep-2.1_3.jar",
+    "vendor/junit-4.1.jar",
+    "livendorb/jmock-junit4-2.2.0.jar",
+    "vendor/jmock-legacy-2.2.0.jar",
+    "vendor/proxytoys-0.2.1.jar",
+    "vendor/jmock-2.2.0.jar",
+    "vendor/jbehave-1.0.1.jar",
+    "vendor/jyaml-1.3.jar",
     "core/src/main/java",
     "core/src/test/unit/java",
     "target/classes/production/Core/",
@@ -30,7 +30,7 @@ end
 ### Test::Unit Goodness ###
 
 require 'test/unit'
-$: << File.expand_path(File.dirname(__FILE__) + "/../../../../lib/gems/mocha-0.5.5/lib")
+$: << File.expand_path(File.dirname(__FILE__) + "/../../../../vendor/gems/mocha-0.5.5/lib")
 require "mocha"
 
 class Test::Unit::TestCase
