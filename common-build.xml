@@ -149,7 +149,7 @@
     </sequential>
   </macrodef>
 
-  <target name="test" depends="compile, jruby-test, compile-tests" description="run tests">
+  <target name="test" depends="compile, compile-tests" description="run tests">
     <run-unit-tests/>
   </target>
   

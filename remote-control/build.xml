@@ -9,6 +9,7 @@
   <property name="version" value="SNAPSHOT"/>
   <property name="selenium.version" value="Set Me"/>
 
+  
   <import file="${rootdir}/common-build.xml" />
 
   <path id="compile.classpath">
