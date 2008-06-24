@@ -630,7 +630,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/Core.iml" filepath="$PROJECT_DIR$/core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/Demo.iml" filepath="$PROJECT_DIR$/demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/hub/Hub.iml" filepath="$PROJECT_DIR$/hub/Hub.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hub/Hub Tests.iml" filepath="$PROJECT_DIR$/hub/Hub Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/examples/java/Java Example.iml" filepath="$PROJECT_DIR$/examples/java/Java Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/regression-tests/Regression Tests.iml" filepath="$PROJECT_DIR$/regression-tests/Regression Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-control/Remote Control.iml" filepath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
@@ -759,6 +758,7 @@
     <library name="Commons">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.0.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/vendor/commons-logging-1.0.4.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
