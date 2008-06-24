@@ -91,23 +91,11 @@
            source="1.5"
            target="1.5">
       <classpath refid="compile.classpath"/>
-      <classpath refid="jruby.classpath"/>
     </javac>
     <copy todir="${build.output}" verbose="true">
       <fileset dir="${build.src}" includes="**/*.html"/>
       <fileset dir="${build.src}" includes="**/*.yml"/>
     </copy>
-  </target>
-
-  <target name="jruby-test" depends="compile" description="Run JRuby Tests">
-    <java classname="org.jruby.Main" fork="true" failonerror="true">
-      <classpath refid="testing.classpath"/>
-      <classpath refid="jruby.classpath"/>
-
-      <arg value="-I"/>
-      <arg value="${jruby.test.dir}"/>
-      <arg value="${jruby.test.dir}/all_tests.rb"/>
-    </java>
   </target>
 
   <target name="compile-tests" depends="compile" description="compile tests">

@@ -31,6 +31,11 @@
     <exclude name="OnlyOneReturn"/>
   </rule>
 
+  <rule ref="rulesets/optimizations.xml">
+    <exclude name="MethodArgumentCouldBeFinal"/>
+  </rule>
+
+
   <!-- Now we'll customize a rule's property value -->
   <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
     <properties>
