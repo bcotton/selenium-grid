@@ -17,7 +17,6 @@
   <rule ref="rulesets/junit.xml"/>
   <rule ref="rulesets/logging-java.xml"/>
   <rule ref="rulesets/naming.xml"/>
-  <rule ref="rulesets/optimizations.xml"/>
   <rule ref="rulesets/strictexception.xml"/>
   <rule ref="rulesets/strings.xml"/>
   <rule ref="rulesets/typeresolution.xml"/>

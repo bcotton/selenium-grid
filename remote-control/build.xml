@@ -10,7 +10,7 @@
   <property name="selenium.version" value="Set Me"/>
 
   
-  <import file="${rootdir}/common-build.xml" />
+  <import file="${rootdir}/lib/build/common-build.xml" />
 
   <path id="compile.classpath">
     <fileset dir="${basedir}/lib">
