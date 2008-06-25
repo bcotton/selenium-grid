@@ -6,7 +6,7 @@ module BookExample
     @selenium.type "twotabsearchtextbox", options[:keywords]
     @selenium.click_and_wait "navGoButtonPanel"
     @selenium.is_text_present(options[:title]).should be_true
-    @selenium.click_and_wait "//img[@alt=\"#{options[:anchor]}\"]"
+    @selenium.click_and_wait "link=#{options[:anchor]}"
     @selenium.field("name=quantity").should == "1"
     @selenium.is_text_present("ISBN-10: #{options[:isbn]}").should be_true
     @selenium.click_and_wait "link=Explore similar items"

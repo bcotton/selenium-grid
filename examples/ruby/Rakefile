@@ -22,6 +22,16 @@ task :run_in_parallel => [:sanity_check, :report_dir] do
   runner.run(Dir['*_spec.rb'])
 end 
 
+require "rubygems"
+require 'deep_test'
+require "deep_test/rake_tasks"
+
+Spec::Rake::SpecTask.new(:deep_spec) do |t|
+    t.spec_files = FileList['*_spec.rb']
+    t.deep_test :number_of_workers => 3,
+                :timeout_in_seconds => 30
+end
+  
 task :run_in_sequence => [:sanity_check, :report_dir]
 task :run_in_parallel_single_process => [:sanity_check, :report_dir]
 

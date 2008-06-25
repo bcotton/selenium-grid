@@ -8,7 +8,7 @@
   <property name="artifact" value="selenium-grid-hub"/>
   <property name="version" value="SNAPSHOT"/>
 
-  <import file="${rootdir}/common-build.xml" />
+  <import file="${rootdir}/lib/build/common-build.xml" />
   
   <path id="compile.classpath">
     <fileset dir="${rootdir}/vendor">

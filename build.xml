@@ -7,7 +7,7 @@
 
   <property file="${basedir}/project.properties"/>
 
-  <import file="${basedir}/common-build.xml" />
+  <import file="${basedir}/lib/build/common-build.xml" />
   
   <target name="sanity-check" description="Check that building tools are been installed and configured properly">
     <property environment="env"/>
@@ -72,7 +72,7 @@
       <fileset dir="${basedir}/tools/target/dist/lib"/>
       <fileset dir="${basedir}/vendor" includes="ruby/**/*.rb"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
-      <fileset file="${basedir}/vendor/testng.policy"/>
+      <fileset file="${basedir}/lib/testng.policy"/>
       <fileset file="${basedir}/vendor/testng-5.7-jdk15.jar"/>
       <fileset file="${basedir}/vendor/selenium-java-client-driver-${selenium.version}.jar"/>
       <fileset file="${basedir}/vendor/commons-logging-1.0.4.jar"/>
