@@ -15,7 +15,7 @@ public abstract class AmazonCommentTestBase {
         session().click("navGoButtonPanel");
         session().waitForPageToLoad("60000");
         assertTrue(session().getLocation().startsWith("http://www.amazon.com/s/ref="));
-        session().click("//img[@alt='Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)']");
+        session().click("link=Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)");
         session().waitForPageToLoad("60000");
         assertEquals("1", session().getValue("name=quantity"));
         assertTrue(session().isTextPresent("excellent"));
