@@ -54,7 +54,7 @@ public class EnvironmentConfiguration {
     }
 
 
-    String compoundKey() {
-        return "" + name + browser;
+    protected String compoundKey() {
+        return name + browser;
     }
 }

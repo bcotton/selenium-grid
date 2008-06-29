@@ -16,7 +16,7 @@ public class OptionParser {
         private String port;
         private String environment;
         private String hubURL;
-        private List<String> seleniumServerOptions;
+        private final List<String> seleniumServerOptions;
 
         protected Options() {
             this.host = "localhost";

@@ -30,7 +30,7 @@ public abstract class RegistrationManagementServlet extends HttpServlet {
         response.getWriter().print("OK");
     }
 
-    ApplicationRegistry registry() {
+    protected ApplicationRegistry registry() {
         return ApplicationRegistry.registry();
     }
 

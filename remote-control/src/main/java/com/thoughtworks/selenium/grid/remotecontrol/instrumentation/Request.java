@@ -13,7 +13,7 @@ public class Request {
 
     final static String CRLF = "\r\n";
 
-    private String body;
+    private final String body;
 
     public Request(String body) {
         this.body = body;

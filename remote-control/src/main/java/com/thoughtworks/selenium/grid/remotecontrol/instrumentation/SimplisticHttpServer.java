@@ -1,13 +1,15 @@
 package com.thoughtworks.selenium.grid.remotecontrol.instrumentation;
 
+import com.thoughtworks.selenium.grid.IOHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.io.*;
-
-import com.thoughtworks.selenium.grid.IOHelper;
 
 /**
  * Single-threaded basic HTTP Server used only for testing purposes. No pretention to be robust,
@@ -17,7 +19,7 @@ import com.thoughtworks.selenium.grid.IOHelper;
  */
 public class SimplisticHttpServer {
 
-    private static final Log logger = LogFactory.getLog(SimplisticHttpServer.class);
+    private static final Log LOGGER = LogFactory.getLog(SimplisticHttpServer.class);
     private final HttpRequestProcessor requestProcessor;
     private final int port;
 
@@ -27,8 +29,10 @@ public class SimplisticHttpServer {
     }
 
     public void start() throws Exception {
-        ServerSocket serverSocket = new ServerSocket(port);
-        logger.info("Now listening for incoming connections on " + serverSocket.getLocalSocketAddress() + ":" + serverSocket.getLocalPort());
+        final ServerSocket serverSocket;
+        
+        serverSocket = new ServerSocket(port);
+        LOGGER.info("Now listening for incoming connections on " + serverSocket.getLocalSocketAddress() + ":" + serverSocket.getLocalPort());
         while (true) {
             processHttpRequest(serverSocket.accept());
         }
@@ -38,7 +42,7 @@ public class SimplisticHttpServer {
         BufferedReader reader = null;
         BufferedWriter writer = null;
 
-        logger.info("Accepted connection from" + socket.getInetAddress() + ":" + socket.getPort());
+        LOGGER.info("Accepted connection from" + socket.getInetAddress() + ":" + socket.getPort());
         try {
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));

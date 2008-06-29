@@ -12,7 +12,7 @@ import java.net.URL;
  */
 public class ResourceLocator {
 
-    private Class root;
+    private final Class root;
     private static final int COPY_BUFFER_SIZE = 1024;
 
     /**

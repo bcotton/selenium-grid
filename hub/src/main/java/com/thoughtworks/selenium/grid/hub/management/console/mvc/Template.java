@@ -28,7 +28,8 @@ public class Template {
     }
 
     public String render(Map<String, Object> assigns)  {
-        StringWriter out = new StringWriter();
+        final StringWriter out = new StringWriter();
+        
         try {
             freemarkerTemplate.process(assigns, out);
         } catch (TemplateException e) {

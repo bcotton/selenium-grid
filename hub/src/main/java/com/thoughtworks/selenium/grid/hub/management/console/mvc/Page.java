@@ -1,6 +1,7 @@
 package com.thoughtworks.selenium.grid.hub.management.console.mvc;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Page to render.
@@ -9,7 +10,7 @@ import java.util.HashMap;
 public class Page {
 
     private final String template;
-    private final HashMap<String, Object> assigns;
+    private final Map<String, Object> assigns;
 
     public Page(String template) {
         this.template = template;
@@ -20,7 +21,7 @@ public class Page {
         return template;
     }
 
-    public HashMap<String, Object> assigns() {
+    public Map<String, Object> assigns() {
         return assigns;
     }
 

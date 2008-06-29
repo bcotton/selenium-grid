@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import freemarker.template.TemplateHashModel;
-
 /**
  * Central authority to track registered remote controls and grant exclusive access
  * to a remote control for a while.

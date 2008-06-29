@@ -16,7 +16,6 @@
   <rule ref="rulesets/imports.xml"/>
   <rule ref="rulesets/junit.xml"/>
   <rule ref="rulesets/logging-java.xml"/>
-  <rule ref="rulesets/naming.xml"/>
   <rule ref="rulesets/strictexception.xml"/>
   <rule ref="rulesets/strings.xml"/>
   <rule ref="rulesets/typeresolution.xml"/>
@@ -34,6 +33,12 @@
     <exclude name="MethodArgumentCouldBeFinal"/>
   </rule>
 
+  <rule ref="rulesets/naming.xml">
+    <exclude name="AvoidFieldNameMatchingMethodName"/>
+    <exclude name="AbstractNaming"/>
+    <exclude name="LongVariable"/>
+  </rule>
+
 
   <!-- Now we'll customize a rule's property value -->
   <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
@@ -41,5 +46,7 @@
         <property name="reportLevel" value="5"/>
     </properties>
   </rule>
+
+
     
 </ruleset>

@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author Philippe Hanrigou
  */
 public class Response {
-    final static String CRLF = "\r\n";
+    private static final String CRLF = "\r\n";
     private final String body;
 
     public Response(String body) {
