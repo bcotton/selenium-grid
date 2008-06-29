@@ -56,7 +56,7 @@ public class NewBrowserSessionCommand extends SeleneseCommand {
     }
 
     protected String parseSessionId(String responseBody) {
-        Matcher matcher = SESSION_ID_PATTERN.matcher(responseBody);
+        final Matcher matcher = SESSION_ID_PATTERN.matcher(responseBody);        
         if (matcher.matches()) {
             return matcher.group(1);
         }

@@ -1,5 +1,6 @@
 package com.thoughtworks.selenium.grid.hub;
 
+import com.thoughtworks.selenium.grid.HttpParameters;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import org.junit.Test;
@@ -7,8 +8,6 @@ import org.junit.Test;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.thoughtworks.selenium.grid.HttpParameters;
 
 
 public class ServletParameterAdapterTest {

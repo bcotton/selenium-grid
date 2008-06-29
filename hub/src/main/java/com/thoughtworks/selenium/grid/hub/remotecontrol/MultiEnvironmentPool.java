@@ -5,7 +5,6 @@ import com.thoughtworks.selenium.grid.hub.EnvironmentManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

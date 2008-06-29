@@ -12,21 +12,21 @@ import org.apache.commons.logging.LogFactory;
  */
 public class ThreadSafeSeleniumSessionStorage {
 
-    private final static Log logger = LogFactory.getLog(ThreadSafeSeleniumSessionStorage.class);
+    private final static Log LOGGER = LogFactory.getLog(ThreadSafeSeleniumSessionStorage.class);
 
     /** Thread local Selenium driver instance so that we can run in multi-threaded mode. */
-    static ThreadLocal<Selenium> threadLocalSelenium = new ThreadLocal<Selenium>();
+    private static ThreadLocal<Selenium> threadLocalSelenium = new ThreadLocal<Selenium>();
 
 
     public static void startSeleniumSession(String seleniumHost, int seleniumPort, String browser, String webSite) {
-        logger.info("Contacting Selenium RC at " + seleniumHost + ":" + seleniumPort);
+        LOGGER.info("Contacting Selenium RC at " + seleniumHost + ":" + seleniumPort);
         threadLocalSelenium.set(new DefaultSelenium(seleniumHost, seleniumPort, browser, webSite));
         session().start();
-        logger.info("Got Selenese session:" + session());
+        LOGGER.info("Got Selenese session:" + session());
     }
 
     public static void closeSeleniumSession() throws Exception {
-        logger.info("Closing Selenese session: " + session());
+        LOGGER.info("Closing Selenese session: " + session());
         if (null != session()) {
             session().stop();
             resetSession();

@@ -1,6 +1,5 @@
 package com.thoughtworks.selenium.grid.hub.management;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
 import org.apache.commons.logging.Log;

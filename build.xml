@@ -188,14 +188,26 @@
   </target>
 
   <target name="automated-java-example">
-    <!--<exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">-->
-        <!--<arg value="all:restart"/>-->
-    <!--</exec>-->
     <ant dir="${dist}/selenium-grid-${version}/examples/java" target="run" />
     <ant dir="${dist}/selenium-grid-${version}/examples/java" target="run-in-sequence" />
     <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
         <arg value="all:stop"/>
     </exec>
   </target>
+
+    <target name="automated-ruby-example" description="Fully Automated Ruby Example (for continuous integration)">
+      <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
+          <arg value="all:restart"/>
+      </exec>
+      <exec executable="${rake}" dir="${dist}/selenium-grid-${version}/examples/ruby" failonerror="true">
+        <arg value="run_in_parallel"/>
+      </exec>
+      <exec executable="${rake}" dir="${dist}/selenium-grid-${version}/examples/ruby" failonerror="true">
+        <arg value="run_in_sequence"/>
+      </exec>
+      <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
+          <arg value="all:stop"/>
+      </exec>
+    </target>
 
 </project>
