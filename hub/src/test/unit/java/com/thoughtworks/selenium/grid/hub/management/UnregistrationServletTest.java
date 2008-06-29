@@ -30,7 +30,7 @@ public class UnregistrationServletTest extends UsingClassMock {
         expectedRemoteControl = new RemoteControlProxy("a host", 24, "an environment", null);
         servlet = new UnregistrationServlet() {
 
-            ApplicationRegistry registry() {
+            protected ApplicationRegistry registry() {
                 return (ApplicationRegistry) registry;
             }
 
