@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class RegistrationRequest extends HubRequest {
 
-    private static final Log logger = LogFactory.getLog(RegistrationRequest.class);
+    private static final Log LOGGER = LogFactory.getLog(RegistrationRequest.class);
 
     public RegistrationRequest(String seleniumHubURL, String host, String port, String environment) {
       super(seleniumHubURL + "/registration-manager/register", host, port, environment);
@@ -20,9 +20,10 @@ public class RegistrationRequest extends HubRequest {
 
 
     public int execute() throws IOException {
-        logger.info("Registering to " + targetURL());
-        int status = super.execute();
+        final int status;
 
+        LOGGER.info("Registering to " + targetURL());
+        status = super.execute();
         if (200 != status) {
             throw new IllegalStateException("Could not register successfuly to " + targetURL()
                     + " with environment '" + environment()

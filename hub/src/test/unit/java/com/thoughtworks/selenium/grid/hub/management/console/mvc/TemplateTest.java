@@ -1,15 +1,12 @@
 package com.thoughtworks.selenium.grid.hub.management.console.mvc;
 
-import static junit.framework.Assert.assertEquals;
 import freemarker.template.TemplateException;
-import junit.framework.Assert;
+import static junit.framework.Assert.assertEquals;
 import org.jbehave.classmock.UsingClassMock;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.io.Reader;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Arrays;
 import java.util.HashMap;

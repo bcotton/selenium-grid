@@ -32,10 +32,11 @@ public class HubServlet extends HttpServlet {
     }
 
     protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        final HttpParameters parameters;
         final Response remoteControlResponse;
+        final ApplicationRegistry registry;
+        final HttpParameters parameters;
 
-        ApplicationRegistry registry = ApplicationRegistry.registry();
+        registry = ApplicationRegistry.registry();
         parameters = requestParameters(request);
         remoteControlResponse = forward(parameters, registry.remoteControlPool(), registry.environmentManager());
         reply(response, remoteControlResponse);
