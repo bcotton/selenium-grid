@@ -40,18 +40,18 @@ public class Template {
         return out.toString();
     }
 
-    String content() throws IOException {
+    protected String content() throws IOException {
         final StringWriter writer = new StringWriter();
         freemarkerTemplate.dump(writer);
         return writer.toString();
     }
 
-    freemarker.template.Template freemarkerTemplate() {
+    protected freemarker.template.Template freemarkerTemplate() {
         return freemarkerTemplate;
     }
 
     /** Do not use. Workaround for the mocking framework */
-    Template() {
+    protected Template() {
         this.freemarkerTemplate = null;
     }
 

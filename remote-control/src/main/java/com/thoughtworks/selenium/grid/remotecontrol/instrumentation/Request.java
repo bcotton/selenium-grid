@@ -11,8 +11,7 @@ import java.io.StringWriter;
  */
 public class Request {
 
-    final static String CRLF = "\r\n";
-
+    private final static String CRLF = "\r\n";
     private final String body;
 
     public Request(String body) {
@@ -26,17 +25,20 @@ public class Request {
 
     public static void readHeader(BufferedReader reader) throws IOException {
         while (reader.ready()) {
-            String headerLine = reader.readLine();
-            if (headerLine.equals(CRLF) || headerLine.equals("")) {
+            final String headerLine;
+            
+            headerLine = reader.readLine();
+            if (CRLF.equals(headerLine) || "".equals(headerLine)) {
                 break;
             }
         }
     }
 
     public static String readBody(BufferedReader reader) throws IOException {
-        StringWriter body = new StringWriter();
-        IOHelper.copyStream(reader, body, 1024);
+        final StringWriter body;
 
+        body = new StringWriter();
+        IOHelper.copyStream(reader, body, 1024);
         return body.toString();
     }
 

@@ -15,6 +15,7 @@ import org.mortbay.jetty.servlet.ServletHolder;
 public class HubServer {
 
     public static void main(String[] args) throws Exception {
+        final ContextHandlerCollection contexts;
         final HubConfiguration configuration;
         final Server server;
         final Context root;
@@ -22,7 +23,7 @@ public class HubServer {
         configuration = ApplicationRegistry.registry().gridConfiguration().getHub();
         server = new Server(configuration.getPort());
 
-        ContextHandlerCollection contexts = new ContextHandlerCollection();
+        contexts = new ContextHandlerCollection();
         server.setHandler(contexts);
 
         root = new Context(contexts, "/", Context.SESSIONS);
