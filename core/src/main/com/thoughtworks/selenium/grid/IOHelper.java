@@ -114,14 +114,14 @@ public class IOHelper {
     /**
      * Safely close an output stream  without bothering about null or IOExceptions.
      *
-     * @param os OutputStream to close. Can be null.
+     * @param outputStream OutputStream to close. Can be null.
      */
-    public static void close(OutputStream os) {
-        if (null != os) {
+    public static void close(OutputStream outputStream) {
+        if (null != outputStream) {
             try {
-                os.close();
+                outputStream.close();
             } catch (IOException e) {
-                LOGGER.info("Ignoring exception while closing input stream '" + os + "'", e);
+                LOGGER.info("Ignoring exception while closing input stream '" + outputStream + "'", e);
             }
         }
     }

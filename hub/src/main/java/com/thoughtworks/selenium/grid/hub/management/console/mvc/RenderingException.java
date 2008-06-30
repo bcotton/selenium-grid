@@ -5,8 +5,8 @@ package com.thoughtworks.selenium.grid.hub.management.console.mvc;
  */
 public class RenderingException extends RuntimeException {
 
-    public RenderingException(Throwable t) {
-        super(t);
+    public RenderingException(Throwable originalProblem) {
+        super(originalProblem);
     }
 
     public RenderingException(String message) {

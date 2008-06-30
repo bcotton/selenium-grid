@@ -37,15 +37,15 @@ public class EnvironmentConfiguration {
         return "[EnvironmentConfiguration name='" + name + "', browser='" + browser + "']";
     }
 
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (other == null || getClass() != other.getClass()) {
             return false;
         }
 
-        final EnvironmentConfiguration otherRemoteControl = (EnvironmentConfiguration) o;
+        final EnvironmentConfiguration otherRemoteControl = (EnvironmentConfiguration) other;
         return compoundKey().equals(otherRemoteControl.compoundKey());
     }
 

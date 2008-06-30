@@ -36,18 +36,18 @@ public class ClasspathHelper {
         }
     }
 
-    protected static String read(InputStream in) throws IOException {
-        DataInputStream ds;
-        final StringBuffer sb;
+    protected static String read(InputStream inputStream) throws IOException {
+        DataInputStream dataInputStream;
+        final StringBuffer buffer;
 
-        sb = new StringBuffer();
+        buffer = new StringBuffer();
         String line = null;
-        ds = new DataInputStream(in);
-        while ((line = ds.readLine()) != null) {
-            sb.append(line);
-            sb.append("\n");
+        dataInputStream = new DataInputStream(inputStream);
+        while ((line = dataInputStream.readLine()) != null) {
+            buffer.append(line);
+            buffer.append('\n');
         }
-        return sb.toString();
+        return buffer.toString();
     }
 
 }

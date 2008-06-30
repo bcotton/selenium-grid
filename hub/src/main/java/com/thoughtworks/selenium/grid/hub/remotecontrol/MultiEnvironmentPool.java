@@ -47,7 +47,9 @@ public class MultiEnvironmentPool implements DynamicRemoteControlPool {
         pool = getPool(remoteControl.environment());
         pool.associateWithSession(remoteControl, sessionId);
         synchronized (sessionIdMap) {
-            Environment env = environmentManager.environment(remoteControl.environment());
+            final Environment env;
+            
+            env = environmentManager.environment(remoteControl.environment());
             sessionIdMap.put(sessionId, env);
         }
     }
