@@ -77,7 +77,7 @@ public class ControllerTest extends UsingClassMock {
         response.stubs("getWriter").will(returnValue(new PrintWriter(writer)));
 
         stubbedController = new Controller(null) {
-            TemplateResolver templateResolver() {
+            protected TemplateResolver templateResolver() {
                 return (TemplateResolver) templateResolver;
             }
         };

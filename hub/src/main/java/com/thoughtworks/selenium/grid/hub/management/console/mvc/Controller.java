@@ -35,7 +35,7 @@ public class Controller {
     }
 
 
-    TemplateResolver templateResolver() {
+    protected TemplateResolver templateResolver() {
       return new TemplateResolver(getClass());
     }
 

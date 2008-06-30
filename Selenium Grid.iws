@@ -40,14 +40,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Template.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Template.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/configuration/EnvironmentConfiguration.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/configuration/EnvironmentConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingException.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Controller.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/RegistrationRequest.java" afterPath="$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/RegistrationRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/build/pmd-ruleset.xml" afterPath="$PROJECT_DIR$/lib/build/pmd-ruleset.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/ClasspathHelper.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/ClasspathHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -65,6 +67,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$TemplateTest$TemplateTest.es" NAME="TemplateTest" MODIFIED="1189728840805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$ControllerTest$ControllerTest.es" NAME="ControllerTest" MODIFIED="1214784602943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HugeRequestTest.typeHugetextBlock$HugeRequestTest.typeHugetextBlock.es" NAME="HugeRequestTest.typeHugetextBlock" MODIFIED="1202025287497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
@@ -304,28 +309,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Template.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Template.java">
+      <file leaf-file-name="ClasspathHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/ClasspathHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="14" selection-start="1599" selection-end="1599" vertical-scroll-proportion="1.1461188">
+            <state line="38" column="56" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.90286976">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TemplateResolverTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateResolverTest.java">
+      <file leaf-file-name="IOHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="366" selection-end="366" vertical-scroll-proportion="0.33333334">
+            <state line="118" column="54" selection-start="3942" selection-end="3942" vertical-scroll-proportion="0.5981735">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RenderingExceptionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingExceptionTest.java">
+      <file leaf-file-name="EnvironmentConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/configuration/EnvironmentConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="189" selection-end="189" vertical-scroll-proportion="0.18543047">
+            <state line="39" column="38" selection-start="869" selection-end="869" vertical-scroll-proportion="0.7439294">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationRegistry.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="13" selection-start="807" selection-end="807" vertical-scroll-proportion="0.10502283">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Environment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="38" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.84474885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="6" selection-start="731" selection-end="731" vertical-scroll-proportion="0.7152318">
               <folding />
             </state>
           </provider>
@@ -334,61 +366,34 @@
       <file leaf-file-name="ControllerTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="17" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.7571744">
+            <state line="13" column="23" selection-start="442" selection-end="442" vertical-scroll-proportion="0.34437087">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HubServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
+      <file leaf-file-name="RenderingException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.43835616">
+            <state line="7" column="55" selection-start="235" selection-end="235" vertical-scroll-proportion="0.18543047">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HubServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServlet.java">
+      <file leaf-file-name="MultiEnvironmentPool.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.3607306">
+            <state line="50" column="12" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.8366446">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationRequest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/RegistrationRequest.java">
+      <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="33" selection-start="755" selection-end="755" vertical-scroll-proportion="0.66225165">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Request.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="18" selection-start="870" selection-end="870" vertical-scroll-proportion="0.5033113">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/PageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="205" selection-end="205" vertical-scroll-proportion="0.1589404">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="11" selection-start="938" selection-end="938" vertical-scroll-proportion="0.82191783">
+            <state line="55" column="38" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.3642384">
               <folding />
             </state>
           </provider>
@@ -961,7 +966,7 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.TemplateTest">
+  <component name="RunManager" selected="JUnit.ControllerTest">
     <tempConfiguration default="false" name="TemplateResolverTest" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
       <pattern value="com.thoughtworks.selenium.grid.hub.management.console.mvc.*" />
       <module name="Hub" />
@@ -1617,7 +1622,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing the Build" />
+    <option name="LAST_COMMIT_MESSAGE" value="More code cleanup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1628,7 +1633,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="First take at ant build" />
     <MESSAGE value="Standalone packaging" />
     <MESSAGE value="Global ant file" />
     <MESSAGE value="Easier way to run the tests" />
@@ -1653,6 +1657,7 @@
     <MESSAGE value="Java Example: Start and close session using TestNG annotations" />
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Fixing the Build" />
+    <MESSAGE value="More code cleanup" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1739,69 +1744,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/SimplisticHttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="8" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.5730594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.7625571">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/UnregistrationServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="665" selection-end="665" vertical-scroll-proportion="0.37899545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="34" selection-start="448" selection-end="448" vertical-scroll-proportion="0.38356164">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="27" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.8767123">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/build/pmd-ruleset.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.7139588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="11" selection-start="938" selection-end="938" vertical-scroll-proportion="0.82191783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Template.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="14" selection-start="1599" selection-end="1599" vertical-scroll-proportion="1.1461188">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/TemplateResolverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="366" selection-end="366" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingExceptionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="189" selection-end="189" vertical-scroll-proportion="0.18543047">
@@ -1816,16 +1758,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.7571744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/HubServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.43835616">
+        <state line="23" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.6666667">
           <folding />
         </state>
       </provider>
@@ -1846,7 +1781,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remote-control/src/main/java/com/thoughtworks/selenium/grid/remotecontrol/instrumentation/Request.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="18" selection-start="870" selection-end="870" vertical-scroll-proportion="0.5033113">
+        <state line="32" column="18" selection-start="870" selection-end="870" vertical-scroll-proportion="0.82339954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/ClasspathHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="56" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.90286976">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="54" selection-start="3942" selection-end="3942" vertical-scroll-proportion="0.5981735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/configuration/EnvironmentConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="38" selection-start="869" selection-end="869" vertical-scroll-proportion="0.7439294">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="807" selection-end="807" vertical-scroll-proportion="0.10502283">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="38" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.84474885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="6" selection-start="731" selection-end="731" vertical-scroll-proportion="0.7152318">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="23" selection-start="442" selection-end="442" vertical-scroll-proportion="0.34437087">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="55" selection-start="235" selection-end="235" vertical-scroll-proportion="0.18543047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="12" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.8366446">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="38" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.3642384">
           <folding />
         </state>
       </provider>

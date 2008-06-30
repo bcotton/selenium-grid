@@ -46,15 +46,15 @@ public class Environment {
         return "[Environment name='" + name + "', browser='" + browser + "']";
     }
 
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (other == null || getClass() != other.getClass()) {
             return false;
         }
 
-        final Environment otherRemoteControl = (Environment) o;
+        final Environment otherRemoteControl = (Environment) other;
         return name.equals(otherRemoteControl.name);
     }
 
