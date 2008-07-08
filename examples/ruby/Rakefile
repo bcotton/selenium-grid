@@ -55,9 +55,9 @@ desc("Run all tests in parallel using DeepTest.")
 Spec::Rake::SpecTask.new("tests:run_in_parallel") do |t|
   t.spec_files = FileList['./**/*_spec.rb']
   t.deep_test :number_of_workers => 5,
-              :timeout_in_seconds => 30
+              :timeout_in_seconds => 180
   t.spec_opts << '--color'
-  t.spec_opts << "--require './lib/spec/screenshot_formatter'"
+  t.spec_opts << "--require './lib/screenshot_formatter'"
   t.spec_opts << "--format=ScreenshotFormatter:./tmp/rspec_report/index.html"
   t.spec_opts << "--format=progress"                
 end  
