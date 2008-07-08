@@ -2,10 +2,10 @@ $:.unshift
 require 'rubygems'
 require 'spec'
 require 'spec/runner/formatter/html_formatter'
-require File.expand_path(File.dirname(__FILE__) + "/../vendor/selenium-client-1.1/lib/selenium.rb")
-require File.expand_path(File.dirname(__FILE__) + "/selenium_driver_extensions")
-require File.expand_path(File.dirname(__FILE__) + "/screenshot_formatter")
-require File.expand_path(File.dirname(__FILE__) + "/../book_example")
+require File.expand_path(File.dirname(__FILE__) + "/vendor/selenium-client-1.1/lib/selenium.rb")
+require File.expand_path(File.dirname(__FILE__) + "/lib/selenium_driver_extensions")
+require File.expand_path(File.dirname(__FILE__) + "/lib/screenshot_formatter")
+require File.expand_path(File.dirname(__FILE__) + "/book_example")
 
 Spec::Runner.configure do |config|
 
