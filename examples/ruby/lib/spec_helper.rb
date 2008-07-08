@@ -2,9 +2,9 @@ $:.unshift
 require 'rubygems'
 require 'spec'
 require 'spec/runner/formatter/html_formatter'
-require File.expand_path(File.dirname(__FILE__) + "/selenium")
+require File.expand_path(File.dirname(__FILE__) + "/../vendor/selenium-client-1.1/lib/selenium.rb")
 require File.expand_path(File.dirname(__FILE__) + "/selenium_driver_extensions")
-require File.expand_path(File.dirname(__FILE__) + "/spec/screenshot_formatter")
+require File.expand_path(File.dirname(__FILE__) + "/screenshot_formatter")
 require File.expand_path(File.dirname(__FILE__) + "/../book_example")
 
 Spec::Runner.configure do |config|
@@ -23,11 +23,7 @@ Spec::Runner.configure do |config|
   end
 
   config.after(:each) do
-    formatter = Spec::ScreenshotFormatter.instance
-    unless formatter.nil?
-      formatter.save_html_snapshot @selenium
-      formatter.save_screenshot @selenium
-    end
+    ScreenshotFormatter.capture_browser_state(@selenium, self)
   end
 
   config.after(:all) do

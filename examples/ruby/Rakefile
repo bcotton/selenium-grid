@@ -1,66 +1,118 @@
-require 'rake'
-require 'spec/rake/spectask'
+# Selenium Grid Ruby Example Rakefile
+#
+# Document best practices to drive Selenium tests written in Ruby and
+# targetting Selenium Grid.
 
-desc "Run all behaviors in sequence"
-Spec::Rake::SpecTask.new('run_in_sequence') do |t|
-  t.spec_files = FileList['*_spec.rb']
-  t.spec_opts = %w[--require './lib/spec/screenshot_formatter' --format Spec::ScreenshotFormatter:./reports/Selenium-Build-Report.html]
-  t.fail_on_error = true
+#
+# Loading required dependencies  
+#
+
+require "rubygems"
+require 'rake'
+begin
+  require "deep_test/rake_tasks"
+rescue Exception
+  STDERR.puts <<-EOS
+**************************************************************  
+
+  Please install the DeepTest gem:
+    
+    sudo gem install deep_test
+      
+  See http://deep-test.rubyforge.org for more information.
+
+**************************************************************  
+  EOS
+  STDERR.flush
+  raise
 end
 
-# desc "Run all behaviors in parallel using Ruby green threads"
-# Spec::Rake::SpecTask.new('run_in_parallel_single_process') do |t|
-#   t.spec_files = FileList['*_spec.rb']
-#   t.spec_opts = %w[--require './lib/multi_threaded_behaviour_runner' --runner MultiThreadedExampleGroupRunner ]
-#   t.fail_on_error = true
-# end
+begin  
+  require 'spec/rake/spectask'
+rescue Exception
+  STDERR.puts <<-EOS
+**************************************************************  
 
-desc("Run all behaviors in parallel spawing multiple processes")
-task :run_in_parallel => [:sanity_check, :report_dir] do
+  Please install the RSpec 1.1.4 gem:
+    
+    sudo gem install rspec
+      
+  See http://spec.info for more information.
+
+**************************************************************  
+  EOS
+  STDERR.flush
+  raise
+end
+
+task :default => :'tests:run_in_parallel'
+
+#
+# Recommended way to run tests in parallel and leverage Selenium Grid.
+#
+
+desc("Run all tests in parallel using DeepTest.")
+Spec::Rake::SpecTask.new("tests:run_in_parallel") do |t|
+  t.spec_files = FileList['./**/*_spec.rb']
+  t.deep_test :number_of_workers => 5,
+              :timeout_in_seconds => 30
+  t.spec_opts << '--color'
+  t.spec_opts << "--require './lib/spec/screenshot_formatter'"
+  t.spec_opts << "--format=ScreenshotFormatter:./tmp/rspec_report/index.html"
+  t.spec_opts << "--format=progress"                
+end  
+task :'tests:run_in_parallel' => :create_report_dir
+
+#
+# Running tests in sequence (without taking advantage of Selenium Grid),
+# useful to troubleshoot problems with the parallel run.
+#  
+
+desc "Run all behaviors in sequence"
+Spec::Rake::SpecTask.new('tests:run_in_sequence') do |t|
+  t.spec_files = FileList['*_spec.rb']
+  t.spec_opts << '--color'
+  t.spec_opts << "--require './lib/screenshot_formatter'"
+  t.spec_opts << "--format=ScreenshotFormatter:./tmp/rspec_report/index.html"
+  t.spec_opts << "--format=progress"                
+  t.fail_on_error = true
+end
+task :'tests:run_in_sequence' => :create_report_dir
+
+
+#
+# Legacy way to drive tests in parallel before DeepTest RSpec support.
+# Kept to document a simple way to run the tests in parallel for non-Ruby
+# platforms.
+#
+
+desc("[DEPRECATED] Run all behaviors in parallel spawing multiple processes. DeepTest offers a better alternative.")
+task :'tests:run_in_parallel:multiprocess' => :create_report_dir do
   require File.expand_path(File.dirname(__FILE__) + '/lib/multi_process_behaviour_runner')
   runner = MultiProcessSpecRunner.new(10)
   runner.run(Dir['*_spec.rb'])
 end 
 
-require "rubygems"
-require 'deep_test'
-require "deep_test/rake_tasks"
-
-Spec::Rake::SpecTask.new(:deep_spec) do |t|
-    t.spec_files = FileList['*_spec.rb']
-    t.deep_test :number_of_workers => 3,
-                :timeout_in_seconds => 30
-end
-  
-task :run_in_sequence => [:sanity_check, :report_dir]
-task :run_in_parallel_single_process => [:sanity_check, :report_dir]
-
-task :report_dir do
-  mkdir_p File.expand_path(File.dirname(__FILE__) + "/reports")
-  rm_f Dir[File.dirname(__FILE__) + "/reports/*.html"]
+task :create_report_dir do
+  rm_f File.expand_path(File.dirname(__FILE__) + "/tmp/rspec_report")
+  mkdir_p File.expand_path(File.dirname(__FILE__) + "/tmp/rspec_report")
 end
 
+desc "Check whether you installed all dependencies and you environmnet is OK."
 task :sanity_check do
-  verify "You must install RubyGems to run this example : http://rubygems.org" do
-    require "rubygems"
-  end
-  verify "You must install rspec to run this example: `sudo gem install rspec`. Tested with RSpec 1.1.3" do
-    require "spec"
-  end
-  require File.dirname(__FILE__) + "/lib/spec/screenshot_formatter"
+  require File.dirname(__FILE__) + "/lib/screenshot_formatter"
+  STDOUT.puts <<-EOS
+
+ Congratulations, your environment is set properly.
+ 
+ Run the tests in parallel with:
+ 
+   rake tests:run_in_parallel
+   
+ Or in sequence with:
+ 
+   rake tests:run_in_sequence
+   
+  EOS
 end
 
-def verify(error_message)
-  begin
-    yield
-  rescue Exception
-    STDERR.puts <<-EOS
-
-*******************************************************************
-#{error_message}
-*******************************************************************
-
-EOS
-    raise
-  end
-end
