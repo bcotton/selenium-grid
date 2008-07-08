@@ -53,7 +53,9 @@ class ScreenshotFormatter < Spec::Runner::Formatter::HtmlFormatter
   ###### Called from After each ####
 
   def self.capture_browser_state(selenium_driver, example)
-    capture_html_snapshot selenium_driver, example
+    # Selenium RC seems to 'freeze' every so often when calling getHTMLSource, especially when DeepTest timeout is low, I need to investigate...
+    # Set deeptest :timeout_in_seconds => 30 to see it happen
+    capture_html_snapshot selenium_driver, example  
     capture_screenshot selenium_driver, example
   end
   
@@ -96,11 +98,11 @@ class ScreenshotFormatter < Spec::Runner::Formatter::HtmlFormatter
   
   
   def self.relative_file_for_html_capture(example)
-    "html/example_#{hash_for_example(example)}.html"
+    "resources/example_#{hash_for_example(example)}.html"
   end
 
   def self.relative_file_for_png_capture(example)
-    "html/example_#{hash_for_example(example)}.png"
+    "resources/example_#{hash_for_example(example)}.png"
   end
   
   def self.file_for_html_capture(example)
@@ -121,7 +123,7 @@ class ScreenshotFormatter < Spec::Runner::Formatter::HtmlFormatter
   
   
   def self.capture_root_dir
-    root_dir + "/html"
+    root_dir + "/resources"
   end
 
   def self.root_dir

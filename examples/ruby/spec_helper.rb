@@ -4,8 +4,10 @@ require 'spec'
 require 'spec/runner/formatter/html_formatter'
 require File.expand_path(File.dirname(__FILE__) + "/vendor/selenium-client-1.1/lib/selenium.rb")
 require File.expand_path(File.dirname(__FILE__) + "/lib/selenium_driver_extensions")
+require File.expand_path(File.dirname(__FILE__) + "/lib/rspec_extensions")
 require File.expand_path(File.dirname(__FILE__) + "/lib/screenshot_formatter")
 require File.expand_path(File.dirname(__FILE__) + "/book_example")
+
 
 Spec::Runner.configure do |config|
 
@@ -23,7 +25,7 @@ Spec::Runner.configure do |config|
   end
 
   config.after(:each) do
-    ScreenshotFormatter.capture_browser_state(@selenium, self)
+    ScreenshotFormatter.capture_browser_state(@selenium, self) if execution_error
   end
 
   config.after(:all) do
