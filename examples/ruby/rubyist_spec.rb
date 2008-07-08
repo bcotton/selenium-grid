@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + "/lib/view_test_helper")
+require File.expand_path(File.dirname(__FILE__) + "/lib/spec_helper")
 
 describe "Good Rubyist" do
   include BookExample
