@@ -33,6 +33,8 @@
   <path id="demo.classpath">
     <fileset dir="${basedir}/lib">
       <include name="selenium-grid-demo-standalone-${version}*.jar"/>
+    </fileset>
+    <fileset dir="${basedir}/vendor">
       <include name="testng-*.jar"/>
       <include name="commons-logging-*.jar"/>
     </fileset>

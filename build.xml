@@ -67,22 +67,26 @@
     <build-subprojects target="dist"/>
 
     <mkdir dir="${dist}/${artifact}-${version}"/>
+    <copy todir="${dist}/${artifact}-${version}/vendor" overwrite="true">
+      <fileset file="${basedir}/vendor/testng-5.7-jdk15.jar"/>
+      <fileset file="${basedir}/vendor/selenium-java-client-driver-${selenium.version}.jar"/>
+      <fileset file="${basedir}/vendor/commons-logging-1.0.4.jar"/>
+    </copy>
     <copy todir="${dist}/${artifact}-${version}/lib" overwrite="true">
       <fileset dir="${basedir}/hub/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/target/dist/lib"/>
       <fileset dir="${basedir}/remote-control/lib"/>
       <fileset dir="${basedir}/tools/target/dist/lib"/>
       <fileset dir="${basedir}/lib" includes="ruby/**/*.rb"/>
+      <fileset dir="${basedir}/lib" includes="build/common-build.xml"/>
       <fileset dir="${basedir}/demo/target/dist/lib"/>
       <fileset file="${basedir}/lib/testng.policy"/>
-      <fileset file="${basedir}/vendor/testng-5.7-jdk15.jar"/>
-      <fileset file="${basedir}/vendor/selenium-java-client-driver-${selenium.version}.jar"/>
-      <fileset file="${basedir}/vendor/commons-logging-1.0.4.jar"/>
     </copy>
     <copy todir="${dist}/${artifact}-${version}" overwrite="true">
       <fileset dir="${basedir}">
         <include name="project.properties"/>
         <include name="examples/**/*"/>
+        <exclude name="**/tmp/*"/>
       </fileset>
     </copy>
     <mkdir dir="${dist}/${artifact}-${version}/sample-scripts"/>

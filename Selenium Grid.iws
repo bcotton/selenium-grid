@@ -64,20 +64,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPoolTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPoolTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/ruby/vendor/selenium-client-1.1/lib/selenium/client/selenese_client.rb" afterPath="$PROJECT_DIR$/examples/ruby/vendor/selenium-client-1.1/lib/selenium/client/selenese_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/build.xml" afterPath="$PROJECT_DIR$/src/scripts/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/java/build.xml" afterPath="$PROJECT_DIR$/examples/java/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/UnregistrationServletTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/UnregistrationServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/ruby/good_developer_spec.rb" afterPath="$PROJECT_DIR$/examples/ruby/good_developer_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServletTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/ruby/Rakefile" afterPath="$PROJECT_DIR$/examples/ruby/Rakefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -340,28 +330,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MultiEnvironmentPool.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="12" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.025">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="74" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.5354839">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationServletTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/RegistrationServletTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="90" selection-start="1249" selection-end="1249" vertical-scroll-proportion="0.72043014">
+            <state line="67" column="74" selection-start="1980" selection-end="1980" vertical-scroll-proportion="1.0589569">
               <folding />
             </state>
           </provider>
@@ -370,43 +342,61 @@
       <file leaf-file-name="RemoteControlParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="75" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.825">
+            <state line="33" column="75" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.8684211">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnregistrationServletTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UnregistrationServletTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/UnregistrationServletTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="90" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.33333334">
+            <state line="31" column="20" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.84126985">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsoleControllerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="106" selection-start="5838" selection-end="5838" vertical-scroll-proportion="1.0301075">
+            <state line="83" column="0" selection-start="3481" selection-end="3481" vertical-scroll-proportion="0.62907267">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonoEnvironmentPoolTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/java/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="61" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.3139785">
+            <state line="28" column="41" selection-start="1221" selection-end="1221" vertical-scroll-proportion="-0.30454546">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiEnvironmentPoolTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPoolTest.java">
+      <file leaf-file-name="BookTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="81" selection-start="9568" selection-end="9568" vertical-scroll-proportion="0.772043">
+            <state line="34" column="20" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.86848074">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadSafeSeleniumSessionStorage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="87" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.5510204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.5082353">
               <folding />
             </state>
           </provider>
@@ -415,7 +405,7 @@
       <file leaf-file-name="RemoteControlProvisionerTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="53" selection-start="7562" selection-end="7562" vertical-scroll-proportion="0.8541667">
+            <state line="165" column="53" selection-start="7562" selection-end="7562" vertical-scroll-proportion="0.89912283">
               <folding />
             </state>
           </provider>
@@ -424,7 +414,7 @@
       <file leaf-file-name="RemoteControlProxyTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="31" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.3139785">
+            <state line="66" column="31" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.33106577">
               <folding />
             </state>
           </provider>
@@ -1721,7 +1711,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" order="6" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31993935" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.315508" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31417114" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24927114" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31417114" order="11" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39784947" order="5" />
@@ -1732,7 +1722,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3921283" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" order="4" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32436472" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28208557" order="2" x="25" y="383" width="1379" height="169" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28208557" order="2" x="25" y="383" width="1379" height="169" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39657632" order="3" />
@@ -1879,41 +1869,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/ControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="442" selection-end="442" vertical-scroll-proportion="0.025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/RenderingException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="55" selection-start="235" selection-end="235" vertical-scroll-proportion="0.175">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="718" selection-end="718" vertical-scroll-proportion="0.55">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/console/mvc/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="19" selection-start="518" selection-end="518" vertical-scroll-proportion="0.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="29" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.026726058">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="25" selection-start="1828" selection-end="1828" vertical-scroll-proportion="1.0301075">
@@ -1935,13 +1890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="75" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="106" selection-start="5838" selection-end="5838" vertical-scroll-proportion="1.0301075">
@@ -1958,35 +1906,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPoolTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="81" selection-start="9568" selection-end="9568" vertical-scroll-proportion="0.772043">
+        <state line="203" column="81" selection-start="9568" selection-end="9568" vertical-scroll-proportion="0.81405896">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="53" selection-start="7562" selection-end="7562" vertical-scroll-proportion="0.8541667">
+        <state line="165" column="53" selection-start="7562" selection-end="7562" vertical-scroll-proportion="0.89912283">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="31" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.3139785">
+        <state line="66" column="31" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.33106577">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="74" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.5354839">
+        <state line="67" column="74" selection-start="1980" selection-end="1980" vertical-scroll-proportion="1.0589569">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/management/RemoteControlParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="75" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.8684211">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/UnregistrationServletTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="90" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.33333334">
+        <state line="31" column="20" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.84126985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="3481" selection-end="3481" vertical-scroll-proportion="0.62907267">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="41" selection-start="1221" selection-end="1221" vertical-scroll-proportion="-0.30454546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="20" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.86848074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="87" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.5510204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.5082353">
           <folding />
         </state>
       </provider>
