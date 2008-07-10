@@ -26,7 +26,7 @@
     </fileset>
     <pathelement location="${rootdir}/tools/target/classes"/>
     <pathelement location="${rootdir}/tools/target/dist/lib/selenium-grid-tools-standalone-${version}.jar"/>
-    <pathelement location="${rootdir}/vendor/selenium-grid-tools-standalone-${version}.jar"/>
+    <pathelement location="${rootdir}/lib/selenium-grid-tools-standalone-${version}.jar"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
