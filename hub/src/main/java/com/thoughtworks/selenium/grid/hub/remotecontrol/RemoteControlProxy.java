@@ -97,4 +97,8 @@ public class RemoteControlProxy {
         }
         concurrentSessionCount -= 1;
     }
+
+    public boolean canHandleNewSessions() {
+        return concurrentSessionCount < concurrentSessionMax;
+    }
 }

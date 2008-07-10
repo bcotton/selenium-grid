@@ -64,13 +64,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby/1.8/test/unit/assertions.rb" afterPath="$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby/1.8/test/unit/assertions.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/AssertionHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/gems/mocha-0.5.5/test/unit/auto_verify_test.rb" afterPath="$PROJECT_DIR$/vendor/gems/mocha-0.5.5/test/unit/auto_verify_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/mocha-0.5.5/test/unit/auto_verify_test.rb" afterPath="$PROJECT_DIR$/vendor/mocha-0.5.5/test/unit/auto_verify_test.rb" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -151,7 +147,7 @@
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1215668141234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProxyTest$RemoteControlProxyTest.es" NAME="RemoteControlProxyTest" MODIFIED="1215669115383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$ServletParameterAdapterTest$ServletParameterAdapterTest.es" NAME="ServletParameterAdapterTest" MODIFIED="1202022522221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
@@ -393,19 +389,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="337" selection-end="337" vertical-scroll-proportion="-1.451613">
+            <state line="97" column="20" selection-start="2946" selection-end="2946" vertical-scroll-proportion="0.66451615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProxyTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RemoteControlProxyTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="34" selection-start="3857" selection-end="3857" vertical-scroll-proportion="0.87741935">
+            <state line="120" column="44" selection-start="4677" selection-end="4677" vertical-scroll-proportion="0.5913978">
               <folding />
             </state>
           </provider>
@@ -1812,16 +1808,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="34" selection-start="3857" selection-end="3857" vertical-scroll-proportion="0.87741935">
+        <state line="97" column="20" selection-start="2946" selection-end="2946" vertical-scroll-proportion="0.66451615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="337" selection-end="337" vertical-scroll-proportion="-1.451613">
+        <state line="120" column="44" selection-start="4677" selection-end="4677" vertical-scroll-proportion="0.5913978">
           <folding />
         </state>
       </provider>
