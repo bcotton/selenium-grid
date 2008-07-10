@@ -1,11 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + "/spec_helper")
 
-describe "Agile Developer" do
+describe "Good Developer" do
   include BookExample
   
   it "refactors aggressively" do
     as_described_on_amazon \
-      :title => "Refactoring: Improving the Design of Existing Code",
+      :title => "Refactoring: Improving the Design of Existing Code BUG",
       :anchor => "Refactoring: Improving the Design of Existing Code (The Addison-Wesley Object Technology Series)",
       :keywords => "Refactoring",
       :isbn => "0201485672"
