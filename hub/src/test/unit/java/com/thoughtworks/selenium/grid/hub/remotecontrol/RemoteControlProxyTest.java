@@ -7,6 +7,9 @@ import com.thoughtworks.selenium.grid.HttpClient;
 import com.thoughtworks.selenium.grid.HttpParameters;
 import com.thoughtworks.selenium.grid.Response;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertFalse;
+import junit.framework.Assert;
 import org.jbehave.classmock.UsingClassMock;
 import org.jbehave.core.mock.Mock;
 import org.junit.Test;
@@ -98,6 +101,24 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
         remoteControl.unregisterSession();
+    }
+
+    @Test
+    public void canHandleNewSessionReturnTrueWhenConcurrentSessinCountIsLowerThanConcurrentSessionMax() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 2, null);
+        remoteControl.registerNewSession();
+        assertTrue(remoteControl.canHandleNewSessions());
+    }
+
+    @Test
+    public void canHandleNewSessionReturnFalseWhenConcurrentSessinCountIsEqualToConcurrentSessionMax() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
+        remoteControl.registerNewSession();
+        assertFalse(remoteControl.canHandleNewSessions());
     }
 
     @Test
