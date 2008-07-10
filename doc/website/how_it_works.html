@@ -85,7 +85,7 @@
 
 <p>A traditional Selenium test requests a specific browser at the beginning of every Selenium session. It requests it in the form of a pre-defined string such as <code>*firefox</code> or <code>*iexplore</code>. Nevertheless a test cannot request more fine grained capabilities such as Firefox on Linux or IE 6.0 on Windows XP SP2. The underlying assumption is that you are targetting a single Remote Control, so you should be aware if it runs on Windows XP or not. </p>
 
-<p>If you want, you can operate a Selenium Grid in the exact same way. It might very well be all that you need. However the more heterogeous your grid becomes, the more you will want to make sure that a specific build runs on Firefox on Windows and only on Firefox on Windows. This makes troubleshooting test failures considerably easier. It might also be that you have a handful of tests that are specifically targeting this nasty bug for this particular browser on this particular platform. </p>
+<p>If you want, you can operate a Selenium Grid in the exact same way. It might very well be all that you need. However the more heterogeneous your grid becomes, the more you will want to make sure that a specific build runs on Firefox on Windows and only on Firefox on Windows. This makes troubleshooting test failures considerably easier. It might also be that you have a handful of tests that are specifically targeting this nasty bug for this particular browser on this particular platform. </p>
 
 <p>Either way, you can make a Selenium Grid aware of the environments you care about. The Selenium Hub will then ensure that a test runs only on the Selenium Remote Controls providing the requested environment. </p>
 
