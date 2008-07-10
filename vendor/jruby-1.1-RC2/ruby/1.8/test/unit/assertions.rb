@@ -337,7 +337,7 @@ EOT
       #   assert_not_equal 'some string', 5
 
       public
-      def assert_not_equal(expected, actual, message="")
+      def assertNotEquals(expected, actual, message="")
         full_message = build_message(message, "<?> expected to be != to\n<?>.", expected, actual)
         assert_block(full_message) { expected != actual }
       end
