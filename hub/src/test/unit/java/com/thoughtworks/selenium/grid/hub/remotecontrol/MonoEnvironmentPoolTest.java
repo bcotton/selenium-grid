@@ -17,7 +17,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("add").with(remoteControl);
@@ -32,7 +32,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("remove").with(remoteControl).will(returnValue(true));
@@ -47,7 +47,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("remove").with(remoteControl).will(returnValue(false));
@@ -62,7 +62,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("remove").with(remoteControl).will(returnValue(true));
@@ -79,7 +79,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("reserve").will(returnValue(remoteControl));
@@ -96,7 +96,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     @Test
     public void getRemoteControlReturnsTheRemoteControlHasBeenAssociatedWithASpecificSession() {
         final MonoEnvironmentPool pool = new MonoEnvironmentPool(new RemoteControlProvisioner());
-        final RemoteControlProxy remoteControl = new RemoteControlProxy("", 0, "", null);
+        final RemoteControlProxy remoteControl = new RemoteControlProxy("", 0, "", 1, null);
 
         pool.associateWithSession(remoteControl, "a session id");
         assertEquals(remoteControl, pool.retrieve("a session id"));
@@ -106,15 +106,15 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     public void associateWithSessionThrowsAnIllegalStateExceptionWhenSessionIdIsAlreadyRegistered() {
         final MonoEnvironmentPool pool = new MonoEnvironmentPool(new RemoteControlProvisioner());
 
-        pool.associateWithSession(new RemoteControlProxy("", 0, "", null), "shared session id");
-        pool.associateWithSession(new RemoteControlProxy("", 0, "", null), "shared session id");
+        pool.associateWithSession(new RemoteControlProxy("", 0, "", 1, null), "shared session id");
+        pool.associateWithSession(new RemoteControlProxy("", 0, "", 1, null), "shared session id");
     }
 
     @Test
     public void associateWithSessionKeepsTrackOfEachSessionIndependently() {
         final MonoEnvironmentPool pool = new MonoEnvironmentPool(new RemoteControlProvisioner());
-        final RemoteControlProxy firstRemoteControl = new RemoteControlProxy("", 0, "", null);
-        final RemoteControlProxy secondRemoteControl = new RemoteControlProxy("", 0, "", null);
+        final RemoteControlProxy firstRemoteControl = new RemoteControlProxy("", 0, "", 1, null);
+        final RemoteControlProxy secondRemoteControl = new RemoteControlProxy("", 0, "", 1, null);
 
         pool.associateWithSession(firstRemoteControl, "first session id");
         pool.associateWithSession(secondRemoteControl, "second session id");
@@ -126,7 +126,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     @Test
     public void afterReleaseForSessionARemoteControlIsNotAssociatedWithASessionAnymore() {
         final MonoEnvironmentPool pool = new MonoEnvironmentPool(new RemoteControlProvisioner());
-        final RemoteControlProxy remoteControl = new RemoteControlProxy("", 0, "", null);
+        final RemoteControlProxy remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         pool.associateWithSession(remoteControl, "a session id");
 
         pool.releaseForSession("a session id");
@@ -144,7 +144,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         pool.associateWithSession(remoteControl, "a session id");
@@ -161,7 +161,7 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         reservationManager = mock(RemoteControlProvisioner.class);
         pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
         reservationManager.expects("release").with(remoteControl);

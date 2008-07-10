@@ -53,7 +53,7 @@
       <arg value="-parallel"/>
       <arg value="methods"/>
       <arg value="-threadcount"/>
-      <arg value="20"/>
+      <arg value="15"/>
       <arg value="testng.xml"/>
     </java>
 

@@ -31,7 +31,7 @@ public class RemoteControlParser {
             throw new IllegalStateException("You must specify an 'environment' parameter");
         }
 
-        remoteControl = new RemoteControlProxy(host, port, environment, new HttpClient());
+        remoteControl = new RemoteControlProxy(host, port, environment, 1, new HttpClient());
 
         return remoteControl;
     }

@@ -24,7 +24,7 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Environment environment;
 
         environmentManager = new EnvironmentManager();
-        remoteControl = new RemoteControlProxy("", 0, "", null);
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
         pool = new MultiEnvironmentPool(environmentManager);
         environmentPool = mock(DynamicRemoteControlPool.class);
         environment = new Environment("an environment", "*chrome", (DynamicRemoteControlPool) environmentPool);
@@ -44,7 +44,7 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock environmentPool;
 
         environmentManager = new EnvironmentManager();
-        remoteControl = new RemoteControlProxy("host", 0, "an environment", null);
+        remoteControl = new RemoteControlProxy("host", 0, "an environment", 1, null);
         pool = new MultiEnvironmentPool(environmentManager);
         environmentPool = mock(DynamicRemoteControlPool.class);
         environment = new Environment("an environment", "*chrome", (DynamicRemoteControlPool) environmentPool);
@@ -77,7 +77,7 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock environmentPool;
 
         environmentManager = new EnvironmentManager();
-        remoteControl = new RemoteControlProxy("host", 0, "an environment", null);
+        remoteControl = new RemoteControlProxy("host", 0, "an environment", 1, null);
         pool = new MultiEnvironmentPool(environmentManager);
         environmentPool = mock(DynamicRemoteControlPool.class);
         environment = new Environment("an environment", "*chrome", (DynamicRemoteControlPool) environmentPool);
@@ -101,7 +101,7 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock environmentPool;
 
         environmentManager = new EnvironmentManager();
-        remoteControl = new RemoteControlProxy("host", 0, "an environment", null);
+        remoteControl = new RemoteControlProxy("host", 0, "an environment", 1, null);
         pool = new MultiEnvironmentPool(environmentManager);
         environmentPool = mock(DynamicRemoteControlPool.class);
         newEnvironment = new Environment("an environment", "*chrome", (DynamicRemoteControlPool) environmentPool);
@@ -121,7 +121,7 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock environmentPool;
 
         environmentManager = new EnvironmentManager();
-        remoteControl = new RemoteControlProxy("host", 0, "an environment", null);
+        remoteControl = new RemoteControlProxy("host", 0, "an environment", 1, null);
         pool = new MultiEnvironmentPool(environmentManager);
         environmentPool = mock(DynamicRemoteControlPool.class);
         environment = new Environment("an environment", "*chrome", (DynamicRemoteControlPool) environmentPool);
@@ -155,10 +155,10 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock firstEnvironmentPool;
         final Mock secondEnvironmentPool;
 
-        remoteControlsForFirstPool = Arrays.asList(new RemoteControlProxy("first host", 0, "first environment", null));
+        remoteControlsForFirstPool = Arrays.asList(new RemoteControlProxy("first host", 0, "first environment", 1, null));
         remoteControlsForSecondPool = Arrays.asList(
-                new RemoteControlProxy("second host", 0, "second environment", null),
-                new RemoteControlProxy("third host", 0, "second environment", null)
+                new RemoteControlProxy("second host", 0, "second environment", 1, null),
+                new RemoteControlProxy("third host", 0, "second environment", 1, null)
         );
         firstEnvironmentPool = mock(DynamicRemoteControlPool.class);
         secondEnvironmentPool = mock(DynamicRemoteControlPool.class);
@@ -198,10 +198,10 @@ public class MultiEnvironmentPoolTest extends UsingClassMock {
         final Mock firstEnvironmentPool;
         final Mock secondEnvironmentPool;
 
-        remoteControlsForFirstPool = Arrays.asList(new RemoteControlProxy("first host", 0, "first environment", null));
+        remoteControlsForFirstPool = Arrays.asList(new RemoteControlProxy("first host", 0, "first environment", 1, null));
         remoteControlsForSecondPool = Arrays.asList(
-                new RemoteControlProxy("second host", 0, "second environment", null),
-                new RemoteControlProxy("third host", 0, "second environment", null)
+                new RemoteControlProxy("second host", 0, "second environment", 1, null),
+                new RemoteControlProxy("third host", 0, "second environment", 1, null)
         );
         firstEnvironmentPool = mock(DynamicRemoteControlPool.class);
         secondEnvironmentPool = mock(DynamicRemoteControlPool.class);

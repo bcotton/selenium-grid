@@ -27,7 +27,7 @@ public class RegistrationServletTest extends UsingClassMock {
         expectedResponse = mock(HttpServletResponse.class);
         registry = mock(ApplicationRegistry.class);
         remoteControlPool = mock(DynamicRemoteControlPool.class);
-        expectedRemoteControl = new RemoteControlProxy("a host", 24, "an environment", null);
+        expectedRemoteControl = new RemoteControlProxy("a host", 24, "an environment", 1, null);
         servlet = new RegistrationServlet() {
 
             protected ApplicationRegistry registry() {

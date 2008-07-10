@@ -11,12 +11,14 @@ import java.io.IOException;
  */
 public class RemoteControlProxy {
 
+    private final int concurrentSessionMax;
     private final HttpClient httpClient;
     private final String environment;
     private final String host;
     private final int port;
 
-    public RemoteControlProxy(String host, int port, String environment, HttpClient httpClient) {
+
+    public RemoteControlProxy(String host, int port, String environment, int concurrentSessionMax, HttpClient httpClient) {
         if (null == host) {
             throw new IllegalArgumentException("host cannot be null");
         }
@@ -26,6 +28,7 @@ public class RemoteControlProxy {
         this.host = host;
         this.port = port;
         this.environment = environment;
+        this.concurrentSessionMax = concurrentSessionMax;
         this.httpClient = httpClient;
     }
 
@@ -70,4 +73,7 @@ public class RemoteControlProxy {
         return (host + port).hashCode();
     }
 
+    public int concurrentSessionsMax() {
+        return concurrentSessionMax;
+    }
 }
