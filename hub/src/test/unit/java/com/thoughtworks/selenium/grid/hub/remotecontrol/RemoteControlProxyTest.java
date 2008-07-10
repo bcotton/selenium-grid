@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.remotecontrol;
 
-import static com.thoughtworks.selenium.grid.AssertionHelper.assertDifferentHashCode;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertDistinctHashCodes;
 import static com.thoughtworks.selenium.grid.AssertionHelper.assertNotEquals;
 import static com.thoughtworks.selenium.grid.AssertionHelper.assertSameHashCode;
 import com.thoughtworks.selenium.grid.HttpClient;
@@ -9,7 +9,6 @@ import com.thoughtworks.selenium.grid.Response;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.assertFalse;
-import junit.framework.Assert;
 import org.jbehave.classmock.UsingClassMock;
 import org.jbehave.core.mock.Mock;
 import org.junit.Test;
@@ -109,7 +108,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         remoteControl = new RemoteControlProxy("a host", 0, "", 2, null);
         remoteControl.registerNewSession();
-        assertTrue(remoteControl.canHandleNewSessions());
+        assertTrue(remoteControl.canHandleNewSession());
     }
 
     @Test
@@ -118,7 +117,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
         remoteControl.registerNewSession();
-        assertFalse(remoteControl.canHandleNewSessions());
+        assertFalse(remoteControl.canHandleNewSession());
     }
 
     @Test
@@ -215,7 +214,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("another.host.com", 24, "", 1, new HttpClient());
-        assertDifferentHashCode(aRemoteControl, anotherRemoteControl);
+        assertDistinctHashCodes(aRemoteControl, anotherRemoteControl);
     }
 
     @Test
@@ -225,7 +224,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("a.host.com", 64, "", 1, new HttpClient());
-        assertDifferentHashCode(aRemoteControl, anotherRemoteControl);
+        assertDistinctHashCodes(aRemoteControl, anotherRemoteControl);
     }
 
 }
