@@ -27,7 +27,37 @@
 
     </div>
   </div>
-  
+
+  <div class="section">
+    <h2>General</h2>
+
+    <div class="content">
+	  <dl>
+		<dt><b>Would you recommend using Selenium Grid for performance/Load testing?</b><br/><br/></dt>
+		  <dd>
+			<p>
+			  Selenium Grid is not designed for performance and load testing, but
+			  very efficient web acceptance/functional testing.
+			  The main reason for this is that conducting performance/load testing
+			  with real browser is a pretty bad idea as it is hard/expensive to
+			  scale the load and the actual load is very inconsistent.
+            </p><p>
+			  For load/performance testing I would advise using tools like JMeter,
+			  Grinder or httperf. What you can do though, is reuse your selenium
+			  tests to record the use cases you will use for your load testing.
+			</p><p>
+			  To simulate 200 concurrent users for instance, you would need 200 concurrent browsers 
+			  with a load testing framework based on Selenium Grid. 
+			  Even if you use Firefox on Linux (so the most
+			  efficient setup) you will probably need at least 10 machines to
+			  generate that kind of load. Quite insane when JMeter/Grinder/httperf
+			  can generate the same kind of load with a single machine.
+            </p>
+		  </dd>
+	  </dl>
+	</div>
+  </div>
+
   <div class="section">
     <h2>Configuring the Demo</h2>
 
