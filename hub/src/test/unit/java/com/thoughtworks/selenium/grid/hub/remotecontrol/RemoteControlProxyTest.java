@@ -1,16 +1,17 @@
 package com.thoughtworks.selenium.grid.hub.remotecontrol;
 
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertDifferentHashCode;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertNotEquals;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertSameHashCode;
+import com.thoughtworks.selenium.grid.HttpClient;
+import com.thoughtworks.selenium.grid.HttpParameters;
+import com.thoughtworks.selenium.grid.Response;
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
 import org.jbehave.classmock.UsingClassMock;
 import org.jbehave.core.mock.Mock;
 import org.junit.Test;
 
 import java.io.IOException;
-
-import com.thoughtworks.selenium.grid.HttpParameters;
-import com.thoughtworks.selenium.grid.Response;
-import com.thoughtworks.selenium.grid.HttpClient;
 
 
 public class RemoteControlProxyTest extends UsingClassMock {
@@ -48,6 +49,58 @@ public class RemoteControlProxyTest extends UsingClassMock {
     }
 
     @Test
+    public void concurrentSessionCountReturnsZeroByDefault() {
+        assertEquals(0, new RemoteControlProxy("a host", 0, "", 1, null).concurrentSesssionCount());
+    }
+
+    @Test
+    public void concurrentSessionCountReturnsOneAfterCallingRegisterNewSession() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
+        remoteControl.registerNewSession();
+        assertEquals(1, remoteControl.concurrentSesssionCount());
+    }
+
+    @Test
+    public void concurrentSessionCountReturnsThreeAfterCallingRegisterNewSessionThreTimes() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 3, null);
+        remoteControl.registerNewSession();
+        remoteControl.registerNewSession();
+        remoteControl.registerNewSession();
+        assertEquals(3, remoteControl.concurrentSesssionCount());
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void registerNewSessionThrowsAnIllegalStateExpressionWhenRegisteringMoreSessionThanAllowedByConcurrentSessionMax() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
+        remoteControl.registerNewSession();
+        remoteControl.registerNewSession();
+    }
+
+    @Test
+    public void unregisterSessionDecreasesConcurrentSessionCountByOne() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
+        remoteControl.registerNewSession();
+        remoteControl.unregisterSession();
+        assertEquals(0, remoteControl.concurrentSesssionCount());
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void unregisterSessionThrowsAnIllegalStateExceptionWhenConcurrentSessionCountIsZero() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("a host", 0, "", 1, null);
+        remoteControl.unregisterSession();
+    }
+
+    @Test
     public void remoteControlURLTargetsASpecificSeleniumRC() {
         final RemoteControlProxy proxy = new RemoteControlProxy("localhost", 5555, "", 1, null);
         assertEquals("http://localhost:5555/selenium-server/driver/", proxy.remoteControlURL());
@@ -72,15 +125,34 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
     @Test
     public void toStringMethodReturnsAHumanFriendlyDescriptionWithServerAndPortInformation() {
-        assertEquals("[RemoteControlProxy grid.thoughtworks.org:4444]",
-                     new RemoteControlProxy("grid.thoughtworks.org", 4444, "", 1, null).toString());
+        assertEquals("[RemoteControlProxy grid.thoughtworks.org:4444 0/24]",
+                     new RemoteControlProxy("grid.thoughtworks.org", 4444, "", 24, null).toString());
+    }
+
+    @Test
+    public void toStringIncludesconcurrentSessinCount() {
+        final RemoteControlProxy remoteControl;
+
+        remoteControl = new RemoteControlProxy("grid.thoughtworks.org", 4444, "", 15, null);
+        remoteControl.registerNewSession();
+        remoteControl.registerNewSession();
+        assertEquals("[RemoteControlProxy grid.thoughtworks.org:4444 2/15]",
+                     remoteControl.toString());
     }
 
     @SuppressWarnings({"EqualsBetweenInconvertibleTypes"})
     @Test
     public void aRemoteControlsIsNotEqualToARandomObject() {
-        assertFalse(new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient())
-                    .equals("a random object"));
+        assertNotEquals(new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient()), "a random object");
+    }
+
+
+    @Test
+    public void aRemoteControlsIsNotEqualToItself() {
+        final RemoteControlProxy aRemoteControl;
+
+        aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
+        assertEquals(aRemoteControl, aRemoteControl);
     }
 
     @Test
@@ -96,7 +168,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("another.host.com", 24, "", 1, new HttpClient());
-        assertFalse(aRemoteControl.equals(anotherRemoteControl));
+        assertNotEquals(aRemoteControl, anotherRemoteControl);
     }
 
     @Test
@@ -106,13 +178,13 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("a.host.com", 64, "", 1, new HttpClient());
-        assertFalse(aRemoteControl.equals(anotherRemoteControl));
+        assertNotEquals(aRemoteControl, anotherRemoteControl);
     }
 
     @Test
     public void twoRemoteControlsHaveTheSameHashcodeIfTheirHostAndPortMatch() {
-        assertEquals(new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient()).hashCode(),
-                     new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient()).hashCode());
+        assertSameHashCode(new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient()),
+                           new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient()));
     }
 
     @Test
@@ -122,7 +194,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("another.host.com", 24, "", 1, new HttpClient());
-        assertFalse(aRemoteControl.hashCode() == anotherRemoteControl.hashCode());
+        assertDifferentHashCode(aRemoteControl, anotherRemoteControl);
     }
 
     @Test
@@ -132,7 +204,7 @@ public class RemoteControlProxyTest extends UsingClassMock {
 
         aRemoteControl = new RemoteControlProxy("a.host.com", 24, "", 1, new HttpClient());
         anotherRemoteControl = new RemoteControlProxy("a.host.com", 64, "", 1, new HttpClient());
-        assertFalse(aRemoteControl.hashCode() == anotherRemoteControl.hashCode());
+        assertDifferentHashCode(aRemoteControl, anotherRemoteControl);
     }
 
 }

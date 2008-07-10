@@ -12,6 +12,7 @@ import java.io.IOException;
 public class RemoteControlProxy {
 
     private final int concurrentSessionMax;
+    private int concurrentSessionCount;
     private final HttpClient httpClient;
     private final String environment;
     private final String host;
@@ -29,6 +30,7 @@ public class RemoteControlProxy {
         this.port = port;
         this.environment = environment;
         this.concurrentSessionMax = concurrentSessionMax;
+        this.concurrentSessionCount = 0;
         this.httpClient = httpClient;
     }
 
@@ -53,7 +55,8 @@ public class RemoteControlProxy {
     }
 
     public String toString() {
-        return "[RemoteControlProxy " + host + ":" + port + "]";
+        return "[RemoteControlProxy " + host + ":" + port + " "
+                                      + concurrentSessionCount  + "/" + concurrentSessionMax + "]";
     }
 
     public boolean equals(Object other) {
@@ -75,5 +78,23 @@ public class RemoteControlProxy {
 
     public int concurrentSessionsMax() {
         return concurrentSessionMax;
+    }
+
+    public int concurrentSesssionCount() {
+        return concurrentSessionCount;
+    }
+
+    public void registerNewSession() {
+        if (concurrentSessionCount == concurrentSessionMax) {
+            throw new IllegalStateException("Exceeded concurrent session max for " + toString());
+        }
+        concurrentSessionCount += 1;
+    }
+
+    public void unregisterSession() {
+        if (0 == concurrentSessionCount) {
+            throw new IllegalStateException("Unregistering session on an idle remote control : " + toString());
+        }
+        concurrentSessionCount -= 1;
     }
 }

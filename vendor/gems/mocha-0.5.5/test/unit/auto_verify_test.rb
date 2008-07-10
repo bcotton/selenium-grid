@@ -48,15 +48,15 @@ class AutoVerifyTest < Test::Unit::TestCase
   end
   
   def test_should_always_new_mock
-    assert_not_equal test_case.mock, test_case.mock
+    assertNotEquals test_case.mock, test_case.mock
   end
   
   def test_should_always_build_new_stub
-    assert_not_equal test_case.stub, test_case.stub
+    assertNotEquals test_case.stub, test_case.stub
   end
   
   def test_should_always_build_new_stub_that_stubs_all_methods
-    assert_not_equal test_case.stub, test_case.stub
+    assertNotEquals test_case.stub, test_case.stub
   end
   
   def test_should_store_each_new_mock
