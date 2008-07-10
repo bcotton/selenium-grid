@@ -12,45 +12,45 @@ import java.util.List;
 public class MonoEnvironmentPoolTest extends UsingClassMock {
 
     @Test
-    public void registerAddsTheRemoteControlToTheReservationManager() {
-        final Mock reservationManager;
+    public void registerAddsTheRemoteControlToTheProvisioner() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("add").with(remoteControl);
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("add").with(remoteControl);
 
         pool.register(remoteControl);
         verifyMocks();
     }
 
     @Test
-    public void unregisterRemovesTheRemoteControlToTheReservationManager() {
-        final Mock reservationManager;
+    public void unregisterRemovesTheRemoteControlToTheProvisioner() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("remove").with(remoteControl).will(returnValue(true));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("remove").with(remoteControl).will(returnValue(true));
 
         pool.unregister(remoteControl);
         verifyMocks();
     }
 
     @Test
-    public void unregisterReturnsTheResultOfReservationManagerRemove() {
-        final Mock reservationManager;
+    public void unregisterReturnsTheResultOfProvisionerRemove() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("remove").with(remoteControl).will(returnValue(false));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("remove").with(remoteControl).will(returnValue(false));
 
         assertEquals(false, pool.unregister(remoteControl));
         verifyMocks();
@@ -58,14 +58,14 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
 
     @Test
     public void onceUnregisteredARemoteControlIsNotassociatedWithAnyExistingSession() {
-        final Mock reservationManager;
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("remove").with(remoteControl).will(returnValue(true));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("remove").with(remoteControl).will(returnValue(true));
 
         pool.associateWithSession(remoteControl, "a session id");
         pool.unregister(remoteControl);
@@ -74,15 +74,15 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     }
 
     @Test
-    public void reserveReturnsTheRemoteControlReservedByTheReservationManager() {
-        final Mock reservationManager;
+    public void reserveReturnsTheRemoteControlReservedByTheProvisioner() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("reserve").will(returnValue(remoteControl));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("reserve").will(returnValue(remoteControl));
 
         assertEquals(remoteControl, pool.reserve(null));
         verifyMocks();
@@ -125,8 +125,15 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
 
     @Test
     public void afterReleaseForSessionARemoteControlIsNotAssociatedWithASessionAnymore() {
-        final MonoEnvironmentPool pool = new MonoEnvironmentPool(new RemoteControlProvisioner());
-        final RemoteControlProxy remoteControl = new RemoteControlProxy("", 0, "", 1, null);
+        final Mock provisioner;
+        final RemoteControlProxy remoteControl;
+        final MonoEnvironmentPool pool;
+
+        remoteControl = new RemoteControlProxy("", 0, "", 1, null);
+        provisioner = mock(RemoteControlProvisioner.class);
+        provisioner.expects("reserve").will(returnValue(remoteControl));
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        pool.reserve(null);
         pool.associateWithSession(remoteControl, "a session id");
 
         pool.releaseForSession("a session id");
@@ -139,16 +146,16 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     }
 
     @Test
-    public void releaseForSessionReleasesTheRemoteControlOnTheReservationManager() {
-        final Mock reservationManager;
+    public void releaseForSessionReleasesTheRemoteControlOnTheProvisioner() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
         pool.associateWithSession(remoteControl, "a session id");
-        reservationManager.expects("release").with(remoteControl);
+        provisioner.expects("release").with(remoteControl);
 
         pool.releaseForSession("a session id");
         assertEquals(null, pool.retrieve("a session id"));
@@ -156,15 +163,15 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     }
 
     @Test
-    public void releaseReleasesTheRemoteControlOnTheReservationManager() {
-        final Mock reservationManager;
+    public void releaseReleasesTheRemoteControlOnTheProvisioner() {
+        final Mock provisioner;
         final RemoteControlProxy remoteControl;
         final MonoEnvironmentPool pool;
 
         remoteControl = new RemoteControlProxy("", 0, "", 1, null);
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("release").with(remoteControl);
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("release").with(remoteControl);
 
         pool.release(remoteControl);
         assertEquals(null, pool.retrieve("a session id"));
@@ -172,30 +179,30 @@ public class MonoEnvironmentPoolTest extends UsingClassMock {
     }
 
     @Test
-    public void availableRemoteControlsReturnAvailableRemoteControlsOfTheReservationManager() {
-        final Mock reservationManager;
+    public void availableRemoteControlsReturnAvailableRemoteControlsOfTheProvisioner() {
+        final Mock provisioner;
         final List<RemoteControlProxy> expectedList;
         final MonoEnvironmentPool pool;
 
         expectedList = new ArrayList<RemoteControlProxy>();
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("availableRemoteControls").will(returnValue(expectedList));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("availableRemoteControls").will(returnValue(expectedList));
 
         assertEquals(expectedList, pool.availableRemoteControls());
         verifyMocks();
     }
 
     @Test
-    public void reservedRemoteControlsReturnAvailableRemoteControlsOfTheReservationManager() {
-        final Mock reservationManager;
+    public void reservedRemoteControlsReturnAvailableRemoteControlsOfTheProvisioner() {
+        final Mock provisioner;
         final List<RemoteControlProxy> expectedList;
         final MonoEnvironmentPool pool;
 
         expectedList = new ArrayList<RemoteControlProxy>();
-        reservationManager = mock(RemoteControlProvisioner.class);
-        pool = new MonoEnvironmentPool((RemoteControlProvisioner) reservationManager);
-        reservationManager.expects("reservedRemoteControls").will(returnValue(expectedList));
+        provisioner = mock(RemoteControlProvisioner.class);
+        pool = new MonoEnvironmentPool((RemoteControlProvisioner) provisioner);
+        provisioner.expects("reservedRemoteControls").will(returnValue(expectedList));
 
         assertEquals(expectedList, pool.reservedRemoteControls());
         verifyMocks();

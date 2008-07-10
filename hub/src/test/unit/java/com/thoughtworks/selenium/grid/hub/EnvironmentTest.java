@@ -1,8 +1,8 @@
 package com.thoughtworks.selenium.grid.hub;
 
-import static com.thoughtworks.selenium.grid.JUnitHelper.assertDifferentHashCodes;
-import static com.thoughtworks.selenium.grid.JUnitHelper.assertNotEquals;
-import static com.thoughtworks.selenium.grid.JUnitHelper.assertSameHashCodes;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertDistinctHashCodes;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertNotEquals;
+import static com.thoughtworks.selenium.grid.AssertionHelper.assertSameHashCode;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertSame;
@@ -56,14 +56,14 @@ public class EnvironmentTest extends UsingClassMock {
 
     @Test
     public void twoEnvironmentsWithTheSameNameHaveTheSameHashcode() {
-      assertSameHashCodes(new Environment("an environment", "*browser", null),
-                          new Environment("an environment", "*browser", null));
+      assertSameHashCode(new Environment("an environment", "*browser", null),
+                         new Environment("an environment", "*browser", null));
     }
 
     @Test
     public void twoEnvironmentsWithDifferentNamesDoNotHaveTheSameHashcode() {
-      assertDifferentHashCodes(new Environment("an environment", "*browser", null),
-                               new Environment("another environment", "*browser", null));
+      assertDistinctHashCodes(new Environment("an environment", "*browser", null),
+                              new Environment("another environment", "*browser", null));
     }
 
     @Test
