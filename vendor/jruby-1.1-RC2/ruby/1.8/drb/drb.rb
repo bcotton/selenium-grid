@@ -1147,7 +1147,7 @@ module DRb
   class DRbConn
     POOL_SIZE = 16  # :nodoc:
     @mutex = Mutex.new
-    @pool = []
+    @getProvisioner = []
 
     def self.open(remote_uri)  # :nodoc:
       begin
@@ -1156,14 +1156,14 @@ module DRb
 	@mutex.synchronize do
 	  #FIXME
 	  new_pool = []
-	  @pool.each do |c|
+	  @getProvisioner.each do |c|
 	    if conn.nil? and c.uri == remote_uri
 	      conn = c if c.alive?
 	    else
 	      new_pool.push c
 	    end
 	  end
-	  @pool = new_pool
+	  @getProvisioner = new_pool
 	end
 
 	conn = self.new(remote_uri) unless conn
@@ -1174,8 +1174,8 @@ module DRb
 	if conn
 	  if succ
 	    @mutex.synchronize do
-	      @pool.unshift(conn)
-	      @pool.pop.close while @pool.size > POOL_SIZE
+	      @getProvisioner.unshift(conn)
+	      @getProvisioner.pop.close while @getProvisioner.size > POOL_SIZE
 	    end
 	  else
 	    conn.close

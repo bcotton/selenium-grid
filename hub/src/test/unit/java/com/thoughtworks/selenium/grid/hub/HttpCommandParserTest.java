@@ -81,7 +81,7 @@ public class HttpCommandParserTest extends UsingClassMock {
         parameters.put("cmd", "getNewBrowserSession");
         parameters.put("1", "an environment name");
         parameters.put("2", "http://openqa.org");
-        expectedEnvironment = new Environment("", "aBrowser", null);
+        expectedEnvironment = new Environment("", "aBrowser");
         environmentManager = mock(EnvironmentManager.class);
         environmentManager.expects("environment").with("an environment name").will(returnValue(expectedEnvironment));
 

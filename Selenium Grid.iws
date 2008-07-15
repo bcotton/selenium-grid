@@ -65,15 +65,24 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/AssertionHelper.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/AssertionHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisioner.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisioner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ConcurrentAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby/1.8/drb/drb.rb" afterPath="$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby/1.8/drb/drb.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/commands/NewBrowserSessionCommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Selenium Grid.iws" afterPath="$PROJECT_DIR$/Selenium Grid.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/JUnitHelper.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentManagerTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentManagerTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/ClasspathHelper.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java" afterPath="$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPool.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java" afterPath="$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpParametersTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistry.java" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPoolTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/IOHelperTest.java" afterPath="$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/IOHelperTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java" afterPath="" />
     </list>
     <list name="Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
     <list name="Failed commit: Failed commit: Default" comment="Renamed to com.thoughtworks.selenium.grid" />
@@ -104,11 +113,17 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlCommandTest$RemoteControlCommandTest.es" NAME="RemoteControlCommandTest" MODIFIED="1202005843209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.getReturnTheResultOfAGetRequestWithTheURLPassedAsAParameter$HttpClientTest.getReturnTheResultOfAGetRequestWithTheURLPassedAsAParameter.es" NAME="HttpClientTest.getReturnTheResultOfAGetRequestWithTheURLPassedAsAParameter" MODIFIED="1216090188776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$ResourceLocatorTest.retrieveResourcesByPathRelativeToRootClass$ResourceLocatorTest.retrieveResourcesByPathRelativeToRootClass.es" NAME="ResourceLocatorTest.retrieveResourcesByPathRelativeToRootClass" MODIFIED="1190156535570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter$HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter.es" NAME="HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter" MODIFIED="1203756953659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter$HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter.es" NAME="HttpClientTest.buildPostMethodUsesParamsProvidedAsParameter" MODIFIED="1216089467812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$GlobalRemoteControlPoolTest.logSessionMapDoesNotBombWhenThereIsNoSession$GlobalRemoteControlPoolTest.logSessionMapDoesNotBombWhenThereIsNoSession.es" NAME="GlobalRemoteControlPoolTest.logSessionMapDoesNotBombWhenThereIsNoSession" MODIFIED="1216096616117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$ResourceLocatorTest$ResourceLocatorTest.es" NAME="ResourceLocatorTest" MODIFIED="1190156624426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
@@ -119,8 +134,14 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubRequestTest.postHostAsProvidedInConstructorForRegistrationRequest$HubRequestTest.postHostAsProvidedInConstructorForRegistrationRequest.es" NAME="HubRequestTest.postHostAsProvidedInConstructorForRegistrationRequest" MODIFIED="1201933904448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpParametersTest.byDefaultNamesReturnsAnEmptySet$HttpParametersTest.byDefaultNamesReturnsAnEmptySet.es" NAME="HttpParametersTest.byDefaultNamesReturnsAnEmptySet" MODIFIED="1216092644758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$SelfRegisteringSeleniumServerTest$SelfRegisteringSeleniumServerTest.es" NAME="SelfRegisteringSeleniumServerTest" MODIFIED="1201935324641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$GlobalRemoteControlPoolTest.registerAddsTheRemoteControlToTheProvisioner$GlobalRemoteControlPoolTest.registerAddsTheRemoteControlToTheProvisioner.es" NAME="GlobalRemoteControlPoolTest.registerAddsTheRemoteControlToTheProvisioner" MODIFIED="1216093477294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="C:\Documents and Settings\phanrigo\.IntelliJIdea70\system\coverage\Selenium Grid$IOHelperTest.closeWorksFineIfInputStreamIsNull$IOHelperTest.closeWorksFineIfInputStreamIsNull.es" NAME="IOHelperTest.closeWorksFineIfInputStreamIsNull" MODIFIED="1190204859640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
@@ -138,6 +159,12 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubRequestTest.targetURLReturnsEnvironmentProvidedInConstructor$HubRequestTest.targetURLReturnsEnvironmentProvidedInConstructor.es" NAME="HubRequestTest.targetURLReturnsEnvironmentProvidedInConstructor" MODIFIED="1201934843421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RemoteControlProvisionerTest.releaseMakesAReservedRemoteControlAvailable$RemoteControlProvisionerTest.releaseMakesAReservedRemoteControlAvailable.es" NAME="RemoteControlProvisionerTest.releaseMakesAReservedRemoteControlAvailable" MODIFIED="1215828292181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.postReturnTheResultOfAPostRequestWithUTF8Encoding$HttpClientTest.postReturnTheResultOfAPostRequestWithUTF8Encoding.es" NAME="HttpClientTest.postReturnTheResultOfAPostRequestWithUTF8Encoding" MODIFIED="1216091197325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$MartinOnAmazonSeleniumTest$MartinOnAmazonSeleniumTest.es" NAME="MartinOnAmazonSeleniumTest" MODIFIED="1197763478593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.demo.*</FILTER>
     </SUITE>
@@ -150,13 +177,13 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.setAcceptsArbitraryObjectsAsValue$PageTest.setAcceptsArbitraryObjectsAsValue.es" NAME="PageTest.setAcceptsArbitraryObjectsAsValue" MODIFIED="1189727071140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1209565181911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself$EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself.es" NAME="EnvironmentConfigurationTest.anEnvironmentInstanceIsEqualToItself" MODIFIED="1190156189543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.remotecontrol$com.thoughtworks.selenium.grid.remotecontrol.es" NAME="com.thoughtworks.selenium.grid.remotecontrol" MODIFIED="1201935517638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$ServletParameterAdapterTest$ServletParameterAdapterTest.es" NAME="ServletParameterAdapterTest" MODIFIED="1202022522221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
@@ -178,6 +205,12 @@
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest$PageTest.es" NAME="PageTest" MODIFIED="1189727186248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$GlobalRemoteControlPoolTest$GlobalRemoteControlPoolTest.es" NAME="GlobalRemoteControlPoolTest" MODIFIED="1216096680037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.postReturnTheResultOfAPostRequestAsUTF8FormEncodingEncoding$HttpClientTest.postReturnTheResultOfAPostRequestAsUTF8FormEncodingEncoding.es" NAME="HttpClientTest.postReturnTheResultOfAPostRequestAsUTF8FormEncodingEncoding" MODIFIED="1216091250226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.buildPostMethodUsesURLProvidedAsAParameter$HttpClientTest.buildPostMethodUsesURLProvidedAsAParameter.es" NAME="HttpClientTest.buildPostMethodUsesURLProvidedAsAParameter" MODIFIED="1202021356142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
     </SUITE>
@@ -189,6 +222,9 @@
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubServletTest.replySetContentTypeAsPlainText$HubServletTest.replySetContentTypeAsPlainText.es" NAME="HubServletTest.replySetContentTypeAsPlainText" MODIFIED="1202009204757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.getReturnAGetMethodObjectWhoseURLIsTheOnePassedAsAParameter$HttpClientTest.getReturnAGetMethodObjectWhoseURLIsTheOnePassedAsAParameter.es" NAME="HttpClientTest.getReturnAGetMethodObjectWhoseURLIsTheOnePassedAsAParameter" MODIFIED="1216089995359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid.hub$com.thoughtworks.selenium.grid.hub.es" NAME="com.thoughtworks.selenium.grid.hub" MODIFIED="1214783256704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$HttpCommandParserTest.parametersReturnsTheRequestParametersProvidedToTheConstructor$HttpCommandParserTest.parametersReturnsTheRequestParametersProvidedToTheConstructor.es" NAME="HttpCommandParserTest.parametersReturnsTheRequestParametersProvidedToTheConstructor" MODIFIED="1197512144614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
@@ -215,8 +251,14 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor$UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor.es" NAME="UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor" MODIFIED="1214270125649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpParametersTest$HttpParametersTest.es" NAME="HttpParametersTest" MODIFIED="1216093233369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubRequestTest$HubRequestTest.es" NAME="HubRequestTest" MODIFIED="1214269801994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.postReturnTheResultOfAPostRequestWithTheParametersPassedAsArgument$HttpClientTest.postReturnTheResultOfAPostRequestWithTheParametersPassedAsArgument.es" NAME="HttpClientTest.postReturnTheResultOfAPostRequestWithTheParametersPassedAsArgument" MODIFIED="1216091741251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$NewBrowserSessionCommandTest$NewBrowserSessionCommandTest.es" NAME="NewBrowserSessionCommandTest" MODIFIED="1202009860689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
@@ -247,10 +289,14 @@
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$ServletParameterAdapterTest$ServletParameterAdapterTest.es" NAME="ServletParameterAdapterTest" MODIFIED="1197485479665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpParametersTest.AParameterValueCanBeRetrievedAfterItIsSet$HttpParametersTest.AParameterValueCanBeRetrievedAfterItIsSet.es" NAME="HttpParametersTest.AParameterValueCanBeRetrievedAfterItIsSet" MODIFIED="1216092388012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$HttpCommandParserTest$HttpCommandParserTest.es" NAME="HttpCommandParserTest" MODIFIED="1209532703142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$com.thoughtworks.selenium.grid.hub in Hub$com.thoughtworks.selenium.grid.hub in Hub.es" NAME="com.thoughtworks.selenium.grid.hub in Hub" MODIFIED="1189737758911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$com.thoughtworks.selenium.grid$com.thoughtworks.selenium.grid.es" NAME="com.thoughtworks.selenium.grid" MODIFIED="1216089459024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$RegistrationRequestTest.postToHubUsingURLProvidedInConstructor$RegistrationRequestTest.postToHubUsingURLProvidedInConstructor.es" NAME="RegistrationRequestTest.postToHubUsingURLProvidedInConstructor" MODIFIED="1214270073663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
@@ -263,8 +309,14 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest.buildPostMethodSetTimeoutsAsParameter$HttpClientTest.buildPostMethodSetTimeoutsAsParameter.es" NAME="HttpClientTest.buildPostMethodSetTimeoutsAsParameter" MODIFIED="1203757360853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$GlobalRemoteControlPoolTest.unregisterReturnsTheResultOfProvisionerRemove$GlobalRemoteControlPoolTest.unregisterReturnsTheResultOfProvisionerRemove.es" NAME="GlobalRemoteControlPoolTest.unregisterReturnsTheResultOfProvisionerRemove" MODIFIED="1215826737501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound$ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound.es" NAME="ResourceLocatorTest.throwAnIllegalStateExceptionWhenResourceCannotBeFound" MODIFIED="1190156618965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.configuration.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest$HttpClientTest.es" NAME="HttpClientTest" MODIFIED="1216092224530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$EnvironmentTest$EnvironmentTest.es" NAME="EnvironmentTest" MODIFIED="1215705288818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.*</FILTER>
@@ -272,9 +324,6 @@
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$com.thoughtworks.selenium.grid.hub$com.thoughtworks.selenium.grid.hub.es" NAME="com.thoughtworks.selenium.grid.hub" MODIFIED="1209565599875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" />
     <SUITE FILE_PATH="\Local\Users\Philippe\.IntelliJIdea70\system\coverage\Selenium Grid$PageTest.templateIsTheOneProvidedInTheConstructor$PageTest.templateIsTheOneProvidedInTheConstructor.es" NAME="PageTest.templateIsTheOneProvidedInTheConstructor" MODIFIED="1189726413204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.management.console.mvc.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpClientTest$HttpClientTest.es" NAME="HttpClientTest" MODIFIED="1203758832799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
-      <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Local/Users/Philippe/.IntelliJIdea70/system/coverage/Selenium Grid$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID$NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID.es" NAME="NewBrowserSessionCommandTest.parseSessionIdReturnsTheSessionIdWhenSessionIdIsAGUID" MODIFIED="1197830937264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.hub.remotecontrol.commands.*</FILTER>
@@ -351,91 +400,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MonoEnvironmentPool.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPool.java">
+      <file leaf-file-name="GlobalRemoteControlPool.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.33333334">
+            <state line="14" column="13" selection-start="407" selection-end="407" vertical-scroll-proportion="-2.2473118">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
+      <file leaf-file-name="ResponseTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/ResponseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="0" selection-start="2804" selection-end="2804" vertical-scroll-proportion="0.61290324">
+            <state line="7" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.175">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProvisioner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisioner.java">
+      <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/Response.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="95" selection-start="5215" selection-end="5215" vertical-scroll-proportion="0.90107524">
+            <state line="3" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.075">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlPool.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlPool.java">
+      <file leaf-file-name="HttpClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="17" selection-start="214" selection-end="214" vertical-scroll-proportion="0.18064517">
+            <state line="44" column="0" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.855914">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProxyTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
+      <file leaf-file-name="HttpParameters.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="801" selection-end="801" vertical-scroll-proportion="0.025806451">
+            <state line="15" column="17" selection-start="372" selection-end="372" vertical-scroll-proportion="0.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssertionHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/AssertionHelper.java">
+      <file leaf-file-name="HttpParametersTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpParametersTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="20" selection-start="623" selection-end="623" vertical-scroll-proportion="0.55">
+            <state line="95" column="75" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.6791667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonoEnvironmentPoolTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java">
+      <file leaf-file-name="GlobalRemoteControlPoolTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPoolTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="45" selection-start="6071" selection-end="6071" vertical-scroll-proportion="0.55125284">
+            <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="0.5354839">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConcurrentAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ConcurrentAction.java">
+      <file leaf-file-name="HttpClientTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="29" selection-start="560" selection-end="560" vertical-scroll-proportion="0.425">
+            <state line="127" column="92" selection-start="5071" selection-end="5071" vertical-scroll-proportion="0.28387097">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteControlProvisionerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java">
+      <file leaf-file-name="IOHelperTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/IOHelperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="4" selection-start="11038" selection-end="11038" vertical-scroll-proportion="0.87916666">
+            <state line="130" column="30" selection-start="3820" selection-end="3820" vertical-scroll-proportion="0.925">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnvironmentTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
+      <file leaf-file-name="EnvironmentManagerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="13" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.41075268">
+            <state line="7" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.175">
               <folding />
             </state>
           </provider>
@@ -521,16 +570,6 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="Selenium Grid" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Remote Control" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -875,16 +914,6 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Core" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Selenium Grid" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
           <option name="myItemId" value="All" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
@@ -902,7 +931,7 @@
       <showLibraryContents />
       <hideEmptyPackages PackagesPane="true" ProjectPane="false" />
       <abbreviatePackageNames />
-      <showStructure ProjectPane="false" Scope="false" PackagesPane="false" Favorites="false" />
+      <showStructure PackagesPane="false" Scope="false" Favorites="false" ProjectPane="false" />
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
@@ -925,11 +954,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.thoughtworks.selenium.grid" />
       <recent name="com.thoughtworks.selenium.grid.hub.remotecontrol" />
       <recent name="com.thoughtworks.selenium.grid.remotecontrol" />
       <recent name="com.thoughtworks.selenium.grid.regressiontests" />
       <recent name="com.thoughtworks.selenium.grid.examples.java" />
-      <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.thoughtworks.selenium.grid.hub.management.console.mvc" />
@@ -948,14 +977,14 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.MonoEnvironmentPoolTest">
-    <tempConfiguration default="false" name="MonoEnvironmentPoolTest" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
+  <component name="RunManager" selected="JUnit.GlobalRemoteControlPoolTest">
+    <tempConfiguration default="false" name="GlobalRemoteControlPoolTest" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
       <pattern value="com.thoughtworks.selenium.grid.hub.remotecontrol.*" />
       <module name="Hub" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="com.thoughtworks.selenium.grid.hub.remotecontrol" />
-      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.hub.remotecontrol.MonoEnvironmentPoolTest" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.hub.remotecontrol.GlobalRemoteControlPoolTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="" />
@@ -974,35 +1003,10 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" />
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -1045,20 +1049,6 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-    </configuration>
-    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -1104,17 +1094,44 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby script">
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="MODULE_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_CLASS_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="INHERITANCE_CHECK_DISABLED" VALUE="false" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="true" merge="false">
       <module name="All" />
@@ -1137,6 +1154,18 @@
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="false" name="SelfRegisteringRemoteControlLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher" />
@@ -1466,7 +1495,7 @@
       <item index="9" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
       <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
       <item index="11" class="java.lang.String" itemvalue="TestNG.WebTestInvolvingMultiEnvironments" />
-      <item index="12" class="java.lang.String" itemvalue="JUnit.MonoEnvironmentPoolTest" />
+      <item index="12" class="java.lang.String" itemvalue="JUnit.GlobalRemoteControlPoolTest" />
     </list>
     <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1562,12 +1591,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="22" width="1368" height="871" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" order="6" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31993935" order="0" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36694464" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31417114" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24927114" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31417114" order="11" />
@@ -1579,7 +1608,7 @@
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18716578" order="8" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" order="4" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32436472" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28208557" order="2" x="25" y="383" width="1379" height="169" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28208557" order="2" x="25" y="383" width="1379" height="169" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945612" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39657632" order="3" />
@@ -1726,114 +1755,114 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPoolTest.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisioner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="688" selection-end="688" vertical-scroll-proportion="0.44516128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MultiEnvironmentPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="37" selection-start="773" selection-end="773" vertical-scroll-proportion="0.325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/EnvironmentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="399" selection-end="399" vertical-scroll-proportion="0.25787964">
+        <state line="32" column="0" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.025806451">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="35" selection-start="954" selection-end="954" vertical-scroll-proportion="0.25416666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/DynamicRemoteControlPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/ApplicationRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.70107526">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="214" selection-end="214" vertical-scroll-proportion="0.18064517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/ConcurrentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="29" selection-start="560" selection-end="560" vertical-scroll-proportion="0.425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisioner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="95" selection-start="5215" selection-end="5215" vertical-scroll-proportion="0.90107524">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProvisionerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="4" selection-start="11038" selection-end="11038" vertical-scroll-proportion="0.87916666">
+        <state line="19" column="0" selection-start="836" selection-end="836" vertical-scroll-proportion="0.40416667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="13" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.41075268">
+        <state line="65" column="63" selection-start="2499" selection-end="2499" vertical-scroll-proportion="1.2541667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxyTest.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/management/console/ConsoleControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="801" selection-end="801" vertical-scroll-proportion="0.025806451">
+        <state line="137" column="97" selection-start="5977" selection-end="5977" vertical-scroll-proportion="1.1655914">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/AssertionHelper.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/HttpCommandParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="623" selection-end="623" vertical-scroll-proportion="0.55">
+        <state line="83" column="60" selection-start="3403" selection-end="3403" vertical-scroll-proportion="0.025806451">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/RemoteControlProxy.java">
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="2804" selection-end="2804" vertical-scroll-proportion="0.61290324">
+        <state line="7" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.175">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPool.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/IOHelperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.33333334">
+        <state line="130" column="30" selection-start="3820" selection-end="3820" vertical-scroll-proportion="0.925">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/MonoEnvironmentPoolTest.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/ResponseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="45" selection-start="6071" selection-end="6071" vertical-scroll-proportion="0.55125284">
+        <state line="7" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/IOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="43" selection-start="468" selection-end="468" vertical-scroll-proportion="0.516129">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="92" selection-start="5071" selection-end="5071" vertical-scroll-proportion="0.28387097">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.855914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="372" selection-end="372" vertical-scroll-proportion="0.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpParametersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="75" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.6791667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPoolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="0.5354839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="407" selection-end="407" vertical-scroll-proportion="-2.2473118">
           <folding />
         </state>
       </provider>

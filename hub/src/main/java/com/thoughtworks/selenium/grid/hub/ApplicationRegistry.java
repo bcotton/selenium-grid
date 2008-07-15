@@ -4,9 +4,7 @@ import com.thoughtworks.selenium.grid.configuration.EnvironmentConfiguration;
 import com.thoughtworks.selenium.grid.configuration.GridConfiguration;
 import com.thoughtworks.selenium.grid.configuration.ResourceLocator;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.MonoEnvironmentPool;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.MultiEnvironmentPool;
-import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProvisioner;
+import com.thoughtworks.selenium.grid.hub.remotecontrol.GlobalRemoteControlPool;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -32,7 +30,7 @@ public class ApplicationRegistry {
 
     public synchronized DynamicRemoteControlPool remoteControlPool() {
         if (null == pool) {
-            pool = new MultiEnvironmentPool(environmentManager());
+            pool = new GlobalRemoteControlPool();
         }
         return pool;
     }
@@ -41,8 +39,7 @@ public class ApplicationRegistry {
         if (null == environmentManager) {
             environmentManager = new EnvironmentManager();
             for (EnvironmentConfiguration envConfig :gridConfiguration().getHub().getEnvironments()) {
-                environmentManager.addEnvironment(new Environment(envConfig.getName(), envConfig.getBrowser(),
-                        new MonoEnvironmentPool(new RemoteControlProvisioner())));
+                environmentManager.addEnvironment(new Environment(envConfig.getName(), envConfig.getBrowser()));
             }
         }
         return environmentManager;

@@ -18,7 +18,7 @@ public class EnvironmentManagerTest {
         final EnvironmentManager manager;
 
         manager = new EnvironmentManager();
-        knownEnvironment = new Environment("an environment", "*browser", null);
+        knownEnvironment = new Environment("an environment", "*browser");
         manager.addEnvironment(knownEnvironment);
         
         assertEquals(1, manager.environments().size());
@@ -36,7 +36,7 @@ public class EnvironmentManagerTest {
         final EnvironmentManager manager;
 
         manager = new EnvironmentManager();
-        knownEnvironment = new Environment("an environment", "*browser", null);
+        knownEnvironment = new Environment("an environment", "*browser");
         manager.addEnvironment(knownEnvironment);
 
         assertEquals(knownEnvironment, manager.environment("an environment"));
