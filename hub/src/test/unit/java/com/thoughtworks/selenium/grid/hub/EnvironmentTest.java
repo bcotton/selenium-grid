@@ -14,62 +14,56 @@ public class EnvironmentTest extends UsingClassMock {
 
     @Test(expected = IllegalArgumentException.class)
     public void throwsAnIllegalArgumentExceptionWhenNameIsNull() {
-        new Environment(null, "a browser", (DynamicRemoteControlPool) mock(DynamicRemoteControlPool.class));
+        new Environment(null, "a browser");
     }
 
     @Test
     public void nameIsTheNameProvidedToConstructor() {
-      assertEquals("an environment", new Environment("an environment", "a browser", null).name());
+      assertEquals("an environment", new Environment("an environment", "a browser").name());
     }
 
     @Test
     public void browserIsTheBrowserProvidedToConstructor() {
-      assertEquals("some browser", new Environment("an environment", "some browser", null).browser());
-    }
-
-    @Test
-    public void poolIsThePoolProvidedToConstructor() {
-      DynamicRemoteControlPool aPool = (DynamicRemoteControlPool) mock(DynamicRemoteControlPool.class);
-      assertSame(aPool, new Environment("an environment", "some browser", aPool).pool());
+      assertEquals("some browser", new Environment("an environment", "some browser").browser());
     }
 
     @Test
     public void anEnvironmentIsNotEqualToNull() {
-      assertNotEquals(null, new Environment("an env", "a browser", null));
+      assertNotEquals(null, new Environment("an env", "a browser"));
     }
 
     @Test
     public void anEnvironmentIsNotEqualToARandomObject() {
-      assertNotEquals("random", new Environment("an env", "a browser", null));
+      assertNotEquals("random", new Environment("an env", "a browser"));
     }
 
     @Test
     public void twoEnvironmentsWithTheSameNameAreEquals() {
-      assertEquals(new Environment("an environment", "*firefox", null), new Environment("an environment", "*ie", null));
+      assertEquals(new Environment("an environment", "*firefox"), new Environment("an environment", "*ie"));
     }
 
     @Test
     public void twoEnvironmentsWithDifferentNamesAreNotEqual() {
-      assertNotEquals(new Environment("an environment", "*browser", null),
-                      new Environment("another environment", "*browser", null));
+      assertNotEquals(new Environment("an environment", "*browser"),
+                      new Environment("another environment", "*browser"));
     }
 
     @Test
     public void twoEnvironmentsWithTheSameNameHaveTheSameHashcode() {
-      assertSameHashCode(new Environment("an environment", "*browser", null),
-                         new Environment("an environment", "*browser", null));
+      assertSameHashCode(new Environment("an environment", "*browser"),
+                         new Environment("an environment", "*browser"));
     }
 
     @Test
     public void twoEnvironmentsWithDifferentNamesDoNotHaveTheSameHashcode() {
-      assertDistinctHashCodes(new Environment("an environment", "*browser", null),
-                              new Environment("another environment", "*browser", null));
+      assertDistinctHashCodes(new Environment("an environment", "*browser"),
+                              new Environment("another environment", "*browser"));
     }
 
     @Test
     public void toStringReturnsAHumanFriendlyString() {
       assertEquals("[Environment name='Firefox / Linux', browser='*chrome']",
-                   new Environment("Firefox / Linux", "*chrome", null).toString());
+                   new Environment("Firefox / Linux", "*chrome").toString());
     }
 
 }

@@ -1,7 +1,5 @@
 package com.thoughtworks.selenium.grid;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -57,14 +55,6 @@ public class HttpParameters {
         }
 
         return builder.toString();
-    }
-
-    protected String encode(String value) {
-        try {
-            return URLEncoder.encode(value, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new IllegalStateException("Problem while encoding '" + value + "'", e);
-        }
     }
 
 }

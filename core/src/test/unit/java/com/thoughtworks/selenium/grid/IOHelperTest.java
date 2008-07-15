@@ -6,6 +6,7 @@ import org.jbehave.core.mock.Mock;
 import org.junit.Test;
 
 import java.io.*;
+import java.net.Socket;
 
 public class IOHelperTest extends UsingClassMock {
 
@@ -80,6 +81,54 @@ public class IOHelperTest extends UsingClassMock {
         reader.stubs("close").will(throwException(new IOException("fake IO exception")));
         IOHelper.close((Reader) reader);
         IOHelper.close((Reader) reader);
+    }
+
+    @Test
+    public void closeWorksFineIfOutputStreamIsNull() {
+        IOHelper.close((OutputStream) null);
+    }
+
+    @Test
+    public void closeCallsCloseOnTheOutputStreamWhenNotNull() {
+        final Mock outputStream;
+
+        outputStream = mock(OutputStream.class);
+        outputStream.expects("close");
+        IOHelper.close((OutputStream) outputStream);
+    }
+
+    @SuppressWarnings({"ThrowableInstanceNeverThrown"})
+    @Test
+    public void closeOnOutputStreamDoNotThowExceptionIfCloseRaisesAnIOException() {
+        final Mock outputStream;
+
+        outputStream = mock(OutputStream.class);
+        outputStream.stubs("close").will(throwException(new IOException("fake IO exception")));
+        IOHelper.close((OutputStream) outputStream);
+    }
+
+    @Test
+    public void closeWorksFineIfSocketIsNull() {
+        IOHelper.close((Socket) null);
+    }
+
+    @Test
+    public void closeCallsCloseOnTheSocketWhenNotNull() {
+        final Mock socket;
+
+        socket = mock(Socket.class);
+        socket.expects("close");
+        IOHelper.close((Socket) socket);
+    }
+
+    @SuppressWarnings({"ThrowableInstanceNeverThrown"})
+    @Test
+    public void closeOnSocketDoNotThowExceptionIfCloseRaisesAnIOException() {
+        final Mock socket;
+
+        socket = mock(Socket.class);
+        socket.stubs("close").will(throwException(new IOException("fake IO exception")));
+        IOHelper.close((Socket) socket);
     }
 
     @Test

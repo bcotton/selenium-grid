@@ -1,7 +1,5 @@
 package com.thoughtworks.selenium.grid.hub;
 
-import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
-
 /**
  * Environment offered by the Selenium Farm. For instance 'Firefox on Windows' or 'IE 6.0, Chinese locale'.
  * <br/>
@@ -19,15 +17,13 @@ public class Environment {
 
     private final String name;
     private final String browser;
-    private final DynamicRemoteControlPool remoteControlPool;
 
-    public Environment(String name, String browser, DynamicRemoteControlPool remoteControlPool) {
+    public Environment(String name, String browser) {
         if (null == name) {
             throw new IllegalArgumentException("name cannot be null");
         }
         this.name = name;
         this.browser = browser;
-        this.remoteControlPool = remoteControlPool;
     }
 
     public String name() {
@@ -36,10 +32,6 @@ public class Environment {
 
     public String browser() {
         return browser;
-    }
-
-    public DynamicRemoteControlPool pool() {
-        return remoteControlPool;
     }
 
     public String toString() {
