@@ -244,7 +244,7 @@
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor$UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor.es" NAME="UnregistrationRequestTest.postToHubUsingURLProvidedInConstructor" MODIFIED="1214270125649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.remotecontrol.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpParametersTest$HttpParametersTest.es" NAME="HttpParametersTest" MODIFIED="1216102923157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+    <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HttpParametersTest$HttpParametersTest.es" NAME="HttpParametersTest" MODIFIED="1216103658355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
       <FILTER>com.thoughtworks.selenium.grid.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="/Users/ph7/Library/Caches/IntelliJIDEA70/coverage/Selenium Grid$HubRequestTest$HubRequestTest.es" NAME="HubRequestTest" MODIFIED="1214269801994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
@@ -432,7 +432,16 @@
       <file leaf-file-name="HttpParameters.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.825">
+            <state line="45" column="14" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.52916664">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="284" column="11" selection-start="13730" selection-end="13730" vertical-scroll-proportion="4.35">
               <folding />
             </state>
           </provider>
@@ -441,7 +450,7 @@
       <file leaf-file-name="Collections.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/util/Collections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1107" column="42" selection-start="45971" selection-end="45971" vertical-scroll-proportion="0.22323462">
+            <state line="1086" column="35" selection-start="45200" selection-end="45200" vertical-scroll-proportion="0.31435078">
               <folding />
             </state>
           </provider>
@@ -450,7 +459,7 @@
       <file leaf-file-name="HttpParametersTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpParametersTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="35" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.425">
+            <state line="90" column="35" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.5541667">
               <folding />
             </state>
           </provider>
@@ -459,7 +468,7 @@
       <file leaf-file-name="GlobalRemoteControlPoolTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPoolTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="0.5354839">
+            <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="1.0043011">
               <folding />
             </state>
           </provider>
@@ -469,15 +478,6 @@
         <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="127" column="92" selection-start="5071" selection-end="5071" vertical-scroll-proportion="0.28387097">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IOHelperTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/IOHelperTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="30" selection-start="3820" selection-end="3820" vertical-scroll-proportion="0.925">
               <folding />
             </state>
           </provider>
@@ -1616,13 +1616,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hub/src/main/java/com/thoughtworks/selenium/grid/hub/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="836" selection-end="836" vertical-scroll-proportion="0.40416667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/EnvironmentTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="63" selection-start="2499" selection-end="2499" vertical-scroll-proportion="1.2541667">
@@ -1695,7 +1688,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hub/src/test/unit/java/com/thoughtworks/selenium/grid/hub/remotecontrol/GlobalRemoteControlPoolTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="0.5354839">
+        <state line="425" column="66" selection-start="18083" selection-end="18083" vertical-scroll-proportion="1.0043011">
           <folding />
         </state>
       </provider>
@@ -1709,21 +1702,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/unit/java/com/thoughtworks/selenium/grid/HttpParametersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="35" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.425">
+        <state line="90" column="35" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.5541667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1107" column="42" selection-start="45971" selection-end="45971" vertical-scroll-proportion="0.22323462">
+        <state line="1086" column="35" selection-start="45200" selection-end="45200" vertical-scroll-proportion="0.31435078">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/src.jar!/src/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="284" column="11" selection-start="13730" selection-end="13730" vertical-scroll-proportion="4.35">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/com/thoughtworks/selenium/grid/HttpParameters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="18" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.825">
+        <state line="45" column="14" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.52916664">
           <folding />
         </state>
       </provider>
