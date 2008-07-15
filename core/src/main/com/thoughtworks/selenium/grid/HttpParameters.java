@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.Collections;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  * Simpler interface for the parameter map available in a servlet container.
@@ -41,14 +43,17 @@ public class HttpParameters {
     }
 
     public String toString() {
+        final TreeSet<String> orderedNames;
         final StringBuilder builder;
 
         builder = new StringBuilder(150);
-        
-        for (String name : Collections.unmodifiableSet(parameterMap.keySet())) {
+
+        orderedNames = new TreeSet<String>();
+        orderedNames.addAll(parameterMap.keySet());
+        for (String name : orderedNames) {
             builder.append(name);
             builder.append(" => \"");
-            builder.append(get(name));
+            builder.append(get((String) name));
             builder.append("\", ");
         }
         if (!parameterMap.isEmpty()) {
