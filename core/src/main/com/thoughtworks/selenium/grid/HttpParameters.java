@@ -3,6 +3,7 @@ package com.thoughtworks.selenium.grid;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.Collections;
 
 /**
  * Simpler interface for the parameter map available in a servlet container.
@@ -43,7 +44,8 @@ public class HttpParameters {
         final StringBuilder builder;
 
         builder = new StringBuilder(150);
-        for (String name : parameterMap.keySet()) {
+        
+        for (String name : Collections.unmodifiableSet(parameterMap.keySet())) {
             builder.append(name);
             builder.append(" => \"");
             builder.append(get(name));
