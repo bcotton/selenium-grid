@@ -1,4 +1,8 @@
-task :default => [ :copy_stylesheets, :copy_images, :copy_pages]
+#
+# Generate documentation to be published on Selenium Grid website  
+#
+
+task :default => [ :generate_faq, :copy_stylesheets, :copy_images, :copy_pages]
 
 OUTPUT_DIR = "../../../website/src/main/webapp"
 
@@ -21,5 +25,10 @@ end
 task :copy_javascripts do
   mkdir_p File.join(OUTPUT_DIR, "javascripts")
   cp Dir["javascripts/*"], File.join(OUTPUT_DIR, "javascripts")
+end
+
+
+task :generate_faq do
+  sh "maruku faq.markdown"
 end
 
