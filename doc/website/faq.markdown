@@ -82,12 +82,10 @@ Configuring the Demo
  How to run the demo in the EC2 enviroment
  -----------------------------------------
 
- sdcs	
 
 Running Examples
 ================
 
-sdcds 
 
  How to run the examples in Java
  -------------------------------
@@ -95,7 +93,29 @@ sdcds
  How to run the examples in Ruby 
  -------------------------------
 
- 
+
+Running Your Tests Against Selenium Grid
+========================================
+
+I have some test cases and I want to run them against Selenium Grid, what do I need to do?
+------------------------------------------------------------------------------------------
+
+  The idea is that all you have to do to take advantage of the Selenium Grid
+  is to point your Selenium client driver to the Hub and run your tests in
+  parallel.
+
+  If you writing your tests using Java, the best is to run your
+  tests with [TestNG parallel runner](http://testng.org/doc/documentation-main.html#parallel-running). 
+
+  If you use Ruby, the best is to use
+  [DeepTest](http://deep-test.rubyforge.org) which can even distribute the test run 
+  accross multiple machines.
+
+  You can find concrete examples on
+  how this can be achieved in the standard Selenium Grid distribution under
+  the [`examples/java`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/java/)
+  and [`examples/ruby`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/)  directories.
+
  Is there a way to generate test reports using Selenium?
  -------------------------------------------------------
 
@@ -104,9 +124,57 @@ sdcds
   programming language and test runner you are using (for instance 
   `JUnit`, `TestNG`, `Test::Unit` or `RSpec`).
 
-  You can look at the [examples/ruby](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/) 
+  You can look at the [`examples/ruby`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/) 
   directory in the Selenium Grid
   distribution to see how you can use RSpec and Selenium to generate reports
   which [include HTML capture and OS screenshots when a test
   fail](http://ph7spot.com/examples/rspec_report/index.html).
+
+My test cases are in HTML (Selense), how can I run those against Selenium Grid ?
+------------------------------------------------------------------
+
+You would need a parallel test runner for Selenium Grid.
+
+I might eventually end up working on such a parallel test runner for HTML 
+test suites, nevertheless my time is limited and this feature is quite low 
+in my priority list: in my experience HTML test suites are a nightmare 
+to maintain you are better off writing and refactoring real code by the time 
+your test suite grows big enough that it takes too long to run.
+
+This said, there might be hope as some guys seem to be working on it though: see 
+[this thread](http://clearspace.openqa.org/thread/11482)
+
+
+Analysing Failures
+==================
+
+ When we test the applicaiton with Selenium Grid, we get nondeterministic results
+ --------------------------------------------------------------------------------
+
+> Locally, when we test the applicaiton with Selenium Grid, we get 
+> nondeterministic results. Tests seem to fail randomly. Messing with the 
+> number of nodes in the grid seems to help, but its really annoying that we 
+> can't seem to get consistent results.
+
+  Most likely some tests are timing out in a non-deterministic manner because
+  your CPU or Network is over-utilized. Monitor your CPU and Network activity on
+  all the machines involved. Once you find the bottleneck launch fewer
+  processes. For instance if your load average is way higher than the number of
+  CPUs on the machine running the remote controls, cut the number of remote
+  controls you launch by two until you get to a sustainable machine load.
+
+  Make sure you spend some time figuring out the optimal number of 
+  concurrent test runners and remote controls to run in parallel on each 
+  machine, before deploying a Selenium Grid infrastructure your organization
+  is going to depend on.
+
+Development
+===========
+
+ Where Can I Get Feedback Selenium Grid on Continuous Integration Builds?
+ ------------------------------------------------------------------------
+  
+  Check out the Selenium Grid builds on 
+  [http://teamcity.openqa.org](http://teamcity.openqa.org) (you can login as a guest user).
+
 
