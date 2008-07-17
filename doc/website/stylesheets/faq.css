@@ -15,3 +15,7 @@ h2 {
   background: none;
   margin-left: 1.3em;
 }
+
+blockquote p {
+	color: #666;
+}
