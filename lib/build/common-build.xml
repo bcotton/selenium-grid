@@ -222,6 +222,7 @@
         <filelist dir=".">
           <file name="core/build.xml"/>
           <file name="hub/build.xml"/>
+          <file name="agent/build.xml"/>
           <file name="remote-control/build.xml"/>
           <file name="tools/build.xml"/>
           <file name="demo/build.xml"/>
