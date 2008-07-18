@@ -151,7 +151,7 @@ Analysing Failures
  When we test the applicaiton with Selenium Grid, we get nondeterministic results
  --------------------------------------------------------------------------------
 
-> Locally, when we test the applicaiton with Selenium Grid, we get 
+> Locally, when we test the application with Selenium Grid, we get 
 > nondeterministic results. Tests seem to fail randomly. Messing with the 
 > number of nodes in the grid seems to help, but its really annoying that we 
 > can't seem to get consistent results.
