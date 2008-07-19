@@ -2,7 +2,7 @@
 
   <description>Selenium Grid Core</description>
 
-  <property name="rootdir" value="${basedir}/.."/>
+  <property name="rootdir" value="${basedir}/../.."/>
   <property file="${rootdir}/project.properties"/>
   <property name="name" value="Selenium Grid Core"/>
   <property name="artifact" value="selenium-grid-core"/>

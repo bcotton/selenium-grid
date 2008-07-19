@@ -8,7 +8,7 @@ import com.thoughtworks.selenium.grid.webserver.WebServer;
 public class AgentServer extends WebServer {
 
     public AgentServer(int port) {
-        super(port, new RouteResolver());
+        super(port, RouteResolver.class);
     }
 
     public static void main(String[] args) throws Exception {

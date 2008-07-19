@@ -181,7 +181,7 @@
   </macrodef>
   
   <target name="pmd-analysis" description="Performs Code Analysis using PMD Inspection Tool">
-    <echo message="Performing analysis on Java Example code using PMD"/>
+    <echo message="Performing analysis code using PMD"/>
     <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
     <mkdir dir="${metrics.pmd.reports}"/>
     <pmd shortFilenames="true">
@@ -220,7 +220,8 @@
     <sequential>
       <subant target="@{target}">
         <filelist dir=".">
-          <file name="core/build.xml"/>
+          <file name="infrastructure/core/build.xml"/>
+          <file name="infrastructure/webserver/build.xml"/>
           <file name="hub/build.xml"/>
           <file name="agent/build.xml"/>
           <file name="remote-control/build.xml"/>

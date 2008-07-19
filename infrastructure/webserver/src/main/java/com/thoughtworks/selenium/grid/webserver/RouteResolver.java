@@ -1,7 +1,5 @@
 package com.thoughtworks.selenium.grid.webserver;
 
-import com.thoughtworks.selenium.grid.webserver.Controller;
-
 import javax.servlet.http.HttpServletRequest;
 
 /**

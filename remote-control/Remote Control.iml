@@ -21,8 +21,8 @@
     <orderEntry type="library" name="Selenium Remote Control" level="project" />
     <orderEntry type="library" name="Unit Testing" level="project" />
     <orderEntry type="library" name="HttpClient" level="project" />
-    <orderEntry type="module" module-name="Core" />
     <orderEntry type="library" name="Selenium Java Client Driver" level="project" />
+    <orderEntry type="module" module-name="Core" />
     <orderEntryProperties />
   </component>
 </module>

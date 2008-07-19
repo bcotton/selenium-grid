@@ -1,0 +1,45 @@
+<project name="Selenium Grid Webserver" default="package-standalone" basedir=".">
+
+  <description>Selenium Grid Remote Control</description>
+
+  <property name="rootdir" value="${basedir}/../.."/>
+  <property file="${rootdir}/project.properties"/>
+  <property name="name" value="Selenium Grid Webserver"/>
+  <property name="artifact" value="selenium-grid-webserver"/>
+  <property name="version" value="SNAPSHOT"/>
+  <property name="selenium.version" value="Set Me"/>
+
+  
+  <import file="${rootdir}/lib/build/common-build.xml" />
+
+  <path id="compile.classpath">
+    <fileset dir="${rootdir}/vendor">                       
+      <include name="servlet-api-2.5-6.1.5.jar"/>
+      <include name="jetty-6.0.2.jar"/>
+      <include name="jetty-util-6.0.2.jar"/>
+      <include name="commons-httpclient-3.0.1.jar"/>
+      <include name="commons-codec-1.3.jar"/>
+      <include name="commons-logging-1.0.4.jar"/>
+    </fileset>
+    <pathelement location="${basedir}/../core/target/classes"/>    
+    <pathelement path="${java.class.path}/"/>
+  </path>
+
+  <path id="runtime.classpath">
+    <pathelement path="${java.class.path}/"/>
+  </path>
+  
+  <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
+    <package-standalone-jar main-class="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher">
+      <dependencies>
+        <zipfileset src="${rootdir}/vendor/jetty-6.0.2.jar"/>
+        <zipfileset src="${rootdir}/vendor/jetty-util-6.0.2.jar"/>
+        <zipfileset src="${rootdir}/vendor/servlet-api-2.5-6.1.5.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-httpclient-3.0.1.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-codec-1.3.jar"/>
+        <zipfileset src="${rootdir}/vendor/commons-logging-1.0.4.jar"/>
+      </dependencies>
+    </package-standalone-jar>
+  </target>
+
+</project>

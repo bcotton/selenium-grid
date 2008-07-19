@@ -21,7 +21,7 @@
     <fileset dir="${basedir}/lib">
       <include name="freemarker-2.3.10.jar"/>
     </fileset>
-    <pathelement location="${rootdir}/core/target/classes"/>
+    <pathelement location="${rootdir}/infrastructure/core/target/classes"/>
     <pathelement path="${java.class.path}/"/>
   </path>
 
@@ -34,7 +34,7 @@
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
     <package-standalone-jar main-class="com.thoughtworks.selenium.grid.hub.HubServer">
       <dependencies>
-        <zipfileset src="${rootdir}/core/target/dist/lib/selenium-grid-core-${version}.jar"/>
+        <zipfileset src="${rootdir}/infrastructure/core/target/dist/lib/selenium-grid-core-${version}.jar"/>
         <zipfileset src="${basedir}/lib/freemarker-2.3.10.jar"/>
         <zipfileset src="${rootdir}/vendor/jetty-6.0.2.jar"/>
         <zipfileset src="${rootdir}/vendor/jetty-util-6.0.2.jar"/>

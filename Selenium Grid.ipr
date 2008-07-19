@@ -626,15 +626,16 @@
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Agent/Agent.iml" filepath="$PROJECT_DIR$/Agent/Agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/agent/Agent.iml" filepath="$PROJECT_DIR$/agent/Agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/All.iml" filepath="$PROJECT_DIR$/All.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/Core.iml" filepath="$PROJECT_DIR$/core/Core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/core/Core.iml" filepath="$PROJECT_DIR$/infrastructure/core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/Demo.iml" filepath="$PROJECT_DIR$/demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/hub/Hub.iml" filepath="$PROJECT_DIR$/hub/Hub.iml" />
       <module fileurl="file://$PROJECT_DIR$/examples/java/Java Example.iml" filepath="$PROJECT_DIR$/examples/java/Java Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/regression-tests/Regression Tests.iml" filepath="$PROJECT_DIR$/regression-tests/Regression Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/remote-control/Remote Control.iml" filepath="$PROJECT_DIR$/remote-control/Remote Control.iml" />
       <module fileurl="file://$PROJECT_DIR$/tools/Tools.iml" filepath="$PROJECT_DIR$/tools/Tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/webserver/WebServer.iml" filepath="$PROJECT_DIR$/infrastructure/webserver/WebServer.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">

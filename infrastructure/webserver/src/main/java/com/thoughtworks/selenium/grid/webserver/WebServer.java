@@ -4,7 +4,6 @@ import org.mortbay.jetty.Server;
 import org.mortbay.jetty.handler.ContextHandlerCollection;
 import org.mortbay.jetty.servlet.Context;
 import org.mortbay.jetty.servlet.ServletHolder;
-import org.mortbay.component.AbstractLifeCycle;
 
 /**
  * Self contained Selenium Grid Hub. Uses Jetty to as a standalone web application.
@@ -12,13 +11,13 @@ import org.mortbay.component.AbstractLifeCycle;
 public class WebServer {
 
     private final int port;
-    private final RouteResolver routeResolver;
+    private final Class routeResolverClass;
     private Server httpServer;
 
 
-    public WebServer(int port, RouteResolver routeResolver) {
+    public WebServer(int port, Class routeResolverClass) {
         this.port = port;
-        this.routeResolver = routeResolver;
+        this.routeResolverClass = routeResolverClass;
     }
 
     public int port() {
@@ -41,6 +40,7 @@ public class WebServer {
 
     protected void createHttpServer() {
         final ContextHandlerCollection contexts;
+        final ServletHolder servletHolder;
         final Context root;
 
         httpServer = new Server(port);
@@ -48,12 +48,14 @@ public class WebServer {
         httpServer.setHandler(contexts);
 
         root = new Context(contexts, "/", Context.SESSIONS);
-        root.addServlet(new ServletHolder(new MainServlet()), "/*");
+        servletHolder = new ServletHolder(new MainServlet());
+        servletHolder.setInitParameter("route_resolver", routeResolverClass().getName());
+        root.addServlet(servletHolder, "/*");
     }
 
 
-    protected RouteResolver routeResolver() {
-        return routeResolver;
+    protected Class routeResolverClass() {
+        return routeResolverClass;
     }
 
     protected Server httpServer() {

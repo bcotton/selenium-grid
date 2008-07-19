@@ -3,28 +3,12 @@ package com.thoughtworks.selenium.grid.webserver;
 import org.jbehave.classmock.UsingClassMock;
 import org.jbehave.core.mock.Mock;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.mortbay.jetty.Server;
 
 public class WebServerTest extends UsingClassMock {
 
-    /*
-     * Class holding a boolean. Useful to pass as a final reference to inner classes
-     * so that they can modify the encapsulated boolean value.
-     */
-    class BooleanHolder {
-        private boolean isTrue;
-
-        public boolean value() {
-            return isTrue;
-        }
-
-        public void changeTo(boolean newValue) {
-            isTrue = newValue;
-        }
-    }
 
     @Test
     public void portIsTheOneGivenInTheConstructor() {
@@ -33,10 +17,7 @@ public class WebServerTest extends UsingClassMock {
 
     @Test
     public void routeResolverIsTheOneGivenInTheConstructor() {
-        final Mock resolver;
-
-        resolver = mock(RouteResolver.class);
-        assertSame(resolver, new WebServer(0, (RouteResolver) resolver).routeResolver());
+        assertEquals(String.class, new WebServer(0, String.class).routeResolverClass());
     }
 
 
@@ -80,6 +61,22 @@ public class WebServerTest extends UsingClassMock {
 
         webServer.startListeningForIncomingRequests();
         assertTrue("Did not start the Jetty server as expected", jettyServerStarted.value());
+    }
+
+    /*
+     * Class holding a boolean. Useful to pass as a final reference to inner classes
+     * so that they can modify the encapsulated boolean value.
+     */
+    public static class BooleanHolder {
+        private boolean isTrue;
+
+        public boolean value() {
+            return isTrue;
+        }
+
+        public void changeTo(boolean newValue) {
+            isTrue = newValue;
+        }
     }
 
 }
