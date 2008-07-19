@@ -171,9 +171,11 @@
   </macrodef>
 
   <target name="aggregate-reports" description="Aggregates subproject reports">
-    <copyreports project="core"/>
+    <copyreports project="infrastructure/core"/>
+    <copyreports project="infrastructure/webserver"/>
     <copyreports project="hub"/>
     <copyreports project="remote-control"/>
+    <copyreports project="agent"/>
     <copyreports project="tools"/>
     <copy todir="${metrics.reports}" overwrite="true">
       <fileset dir="src/reports" includes="**/*"/>

@@ -1,6 +1,6 @@
 <project name="Selenium Grid Agent" default="package-standalone" basedir=".">
 
-  <description>Selenium Grid Remote Control</description>
+  <description>Selenium Grid Agent</description>
 
   <property name="rootdir" value="${basedir}/.."/>
   <property file="${rootdir}/project.properties"/>
@@ -15,13 +15,17 @@
   <path id="compile.classpath">
     <fileset dir="${rootdir}/vendor">
       <include name="servlet-api-2.5-6.1.5.jar"/>
-      <include name="jetty-6.0.2.jar"/>
-      <include name="jetty-util-6.0.2.jar"/>
-      <include name="commons-httpclient-3.0.1.jar"/>
-      <include name="commons-codec-1.3.jar"/>
       <include name="commons-logging-1.0.4.jar"/>
+
+        <include name="cobertura-1.9.jar"/>
+        <include name="log4j-1.2.9.jar"/>
+        <include name="asm-2.2.1.jar"/>
+        <include name="asm-tree-2.2.1.jar"/>
+        <include name="jakarta-oro-2.0.8.jar"/>
+      
     </fileset>
-    <pathelement location="${basedir}/../core/target/classes"/>    
+    <pathelement location="${rootdir}/infrastructure/core/target/classes"/>
+    <pathelement location="${rootdir}/infrastructure/webserver/target/classes"/>    
     <pathelement path="${java.class.path}/"/>
   </path>
 

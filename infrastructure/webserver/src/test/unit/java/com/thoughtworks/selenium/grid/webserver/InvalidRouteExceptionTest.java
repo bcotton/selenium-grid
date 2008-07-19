@@ -2,7 +2,6 @@ package com.thoughtworks.selenium.grid.webserver;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import com.thoughtworks.selenium.grid.webserver.InvalidRouteException;
 
 public class InvalidRouteExceptionTest {
 

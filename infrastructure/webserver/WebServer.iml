@@ -3,14 +3,17 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/main/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/unit/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/unit/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Jetty" level="project" />
     <orderEntry type="library" name="Unit Testing" level="project" />
-    <orderEntry type="module" module-name="WebServer" />
+    <orderEntry type="module" module-name="Core" />
+    <orderEntry type="library" name="Web" level="project" />
+    <orderEntry type="library" name="Jetty" level="project" />
     <orderEntryProperties />
   </component>
 </module>

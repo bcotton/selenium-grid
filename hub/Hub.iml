@@ -26,9 +26,9 @@
     <orderEntry type="library" name="Web" level="project" />
     <orderEntry type="library" name="Yaml" level="project" />
     <orderEntry type="library" name="Hub Resources" level="project" />
-    <orderEntry type="module" module-name="Core" />
     <orderEntry type="library" name="Embedded JRuby" level="project" />
     <orderEntry type="library" name="Commons" level="project" />
+    <orderEntry type="module" module-name="Core" />
     <orderEntryProperties />
   </component>
 </module>

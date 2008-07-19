@@ -8,6 +8,7 @@ public class InvalidRouteException extends RuntimeException {
     private final String path;
 
     public InvalidRouteException(String path) {
+        super();
         this.path = path;
     }
 
