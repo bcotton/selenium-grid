@@ -751,7 +751,6 @@
         <root url="file://$PROJECT_DIR$/hub/src/main/java" />
         <root url="file://$PROJECT_DIR$/hub/src/test/unit/java" />
         <root url="file://$PROJECT_DIR$/hub/src/main/java" />
-        <root url="file://$PROJECT_DIR$/lib/jruby-1.1-RC2/ruby" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -759,7 +758,6 @@
     </library>
     <library name="Commons">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.0.4.jar!/" />
         <root url="jar://$PROJECT_DIR$/vendor/commons-logging-1.0.4.jar!/" />
       </CLASSES>
       <JAVADOC />

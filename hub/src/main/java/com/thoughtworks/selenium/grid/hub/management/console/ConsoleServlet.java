@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 
 /**
  * Gateway to Selenium Farm.
@@ -28,6 +28,6 @@ public class ConsoleServlet extends HttpServlet {
     }
 
     protected ConsoleController controller() {
-        return new ConsoleController(ApplicationRegistry.registry());
+        return new ConsoleController(HubRegistry.registry());
     }
 }

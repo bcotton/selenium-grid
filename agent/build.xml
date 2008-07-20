@@ -30,12 +30,25 @@
   </path>
 
   <path id="runtime.classpath">
+      <fileset dir="${rootdir}/vendor">
+        <include name="jetty-6.0.2.jar"/>
+        <include name="jetty-util-6.0.2.jar"/>
+        <include name="servlet-api-2.5-6.1.5.jar"/>
+        <include name="commons-httpclient-3.0.1.jar"/>
+        <include name="commons-codec-1.3.jar"/>
+        <include name="commons-logging-1.0.4.jar"/>
+      </fileset>
+      <pathelement location="${rootdir}/infrastructure/core/target/classes"/>
+      <pathelement location="${rootdir}/infrastructure/webserver/target/classes"/>
+      <pathelement location="${build.output}"/>
     <pathelement path="${java.class.path}/"/>
   </path>
   
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
-    <package-standalone-jar main-class="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher">
+    <package-standalone-jar main-class="com.thoughtworks.selenium.grid.agent.AgentServer">
       <dependencies>
+        <zipfileset src="${rootdir}/infrastructure/core/target/dist/lib/selenium-grid-core-${version}.jar"/>
+        <zipfileset src="${rootdir}/infrastructure/webserver/target/dist/lib/selenium-grid-webserver-${version}.jar"/>
         <zipfileset src="${rootdir}/vendor/jetty-6.0.2.jar"/>
         <zipfileset src="${rootdir}/vendor/jetty-util-6.0.2.jar"/>
         <zipfileset src="${rootdir}/vendor/servlet-api-2.5-6.1.5.jar"/>
@@ -46,25 +59,11 @@
     </package-standalone-jar>
   </target>
 
-  <property name="host" value="localhost"/>
-  <property name="port" value="5555"/>
-  <property name="hubURL" value="http://localhost:4444"/>
-  <property name="environment" value="*chrome"/>
-  <property name="seleniumArgs" value=""/>
   <target name="run" description="Launch a remote control">
     <java classpathref="runtime.classpath"
-          classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher"
+          classname="com.thoughtworks.selenium.grid.agent.AgentServer"
           fork="true"
           failonerror="true">
-      <arg value="-port"/>
-      <arg value="${port}"/>
-      <arg value="-host"/>
-      <arg value="${host}"/>
-      <arg value="-hubURL"/>
-      <arg value="${hubURL}"/>
-      <arg value="-env"/>
-      <arg value="${environment}"/>
-      <arg line="${seleniumArgs}"/>
     </java>
   </target>
 

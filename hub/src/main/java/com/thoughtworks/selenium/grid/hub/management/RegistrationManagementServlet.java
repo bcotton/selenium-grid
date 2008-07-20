@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +30,8 @@ public abstract class RegistrationManagementServlet extends HttpServlet {
         response.getWriter().print("OK");
     }
 
-    protected ApplicationRegistry registry() {
-        return ApplicationRegistry.registry();
+    protected HubRegistry registry() {
+        return HubRegistry.registry();
     }
 
 }

@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management.console.mvc;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -12,10 +12,10 @@ import java.io.IOException;
  */
 public class Controller {
 
-    private final ApplicationRegistry registry;
+    private final HubRegistry registry;
 
 
-    public Controller(ApplicationRegistry registry) {
+    public Controller(HubRegistry registry) {
         this.registry = registry;
     }
 
@@ -30,7 +30,7 @@ public class Controller {
         response.getWriter().print(content);
     }
 
-    protected ApplicationRegistry registry() {
+    protected HubRegistry registry() {
         return registry;
     }
 

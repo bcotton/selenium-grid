@@ -13,17 +13,17 @@ import org.apache.commons.logging.LogFactory;
  * <p/>
  * Provides access to global remote control pool and global environment manager.
  */
-public class ApplicationRegistry {
+public class HubRegistry {
 
-    private static final Log LOGGER = LogFactory.getLog(ApplicationRegistry.class);
-    private static ApplicationRegistry singleton;
+    private static final Log LOGGER = LogFactory.getLog(HubRegistry.class);
+    private static HubRegistry singleton;
     private DynamicRemoteControlPool pool;
     private EnvironmentManager environmentManager;
     private GridConfiguration gridConfiguration;
 
-    public static synchronized ApplicationRegistry registry() {
+    public static synchronized HubRegistry registry() {
         if (null == singleton) {
-            singleton = new ApplicationRegistry();
+            singleton = new HubRegistry();
         }
         return singleton;
     }
