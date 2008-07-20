@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management.console;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 import com.thoughtworks.selenium.grid.hub.management.console.mvc.Controller;
 import com.thoughtworks.selenium.grid.hub.management.console.mvc.Page;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class ConsoleController extends Controller {
 
-    public ConsoleController(ApplicationRegistry registry) {
+    public ConsoleController(HubRegistry registry) {
         super(registry);
     }
 

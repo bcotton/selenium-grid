@@ -20,7 +20,7 @@ public class HubServer {
         final Server server;
         final Context root;
 
-        configuration = ApplicationRegistry.registry().gridConfiguration().getHub();
+        configuration = HubRegistry.registry().gridConfiguration().getHub();
         server = new Server(configuration.getPort());
 
         contexts = new ContextHandlerCollection();

@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.RemoteControlProxy;
 import static junit.framework.Assert.assertSame;
@@ -25,13 +25,13 @@ public class RegistrationServletTest extends UsingClassMock {
 
         request = mock(HttpServletRequest.class);
         expectedResponse = mock(HttpServletResponse.class);
-        registry = mock(ApplicationRegistry.class);
+        registry = mock(HubRegistry.class);
         remoteControlPool = mock(DynamicRemoteControlPool.class);
         expectedRemoteControl = new RemoteControlProxy("a host", 24, "an environment", 1, null);
         servlet = new RegistrationServlet() {
 
-            protected ApplicationRegistry registry() {
-                return (ApplicationRegistry) registry;
+            protected HubRegistry registry() {
+                return (HubRegistry) registry;
             }
 
             protected void witeSuccessfulResponse(HttpServletResponse response) throws IOException {

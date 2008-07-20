@@ -122,10 +122,9 @@
       <copy todir="${test.output}" verbose="true">
         <fileset dir="${test.src}" includes="**/*.html"/>
       </copy>
-      <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
+      <junit printSummary="no" haltonerror="true" haltonfailure="true" fork="true" dir="${test.reports}">
         <options/>
         <classpath refid="testing.classpath"/>
-        <formatter type="brief" usefile="false"/>
         <formatter type="xml"/>
         <formatter type="plain"/>
         <batchtest todir="${test.reports}">
@@ -165,7 +164,7 @@
       <mkdir dir="${dist}/lib"/>
       <jar jarfile="${dist}/lib/${artifact}-standalone-${version}.jar">
         <manifest>
-          <attribute name="Main-Class" value="@{main-class} "/>
+          <attribute name="Main-Class" value="@{main-class}"/>
           <attribute name="Built-By" value="OpenQA.org"/>
           <attribute name="Build-Time" value="${DSTAMP}${TSTAMP}"/>
           <section name="common">

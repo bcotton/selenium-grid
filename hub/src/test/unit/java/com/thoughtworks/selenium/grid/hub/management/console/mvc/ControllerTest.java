@@ -1,6 +1,6 @@
 package com.thoughtworks.selenium.grid.hub.management.console.mvc;
 
-import com.thoughtworks.selenium.grid.hub.ApplicationRegistry;
+import com.thoughtworks.selenium.grid.hub.HubRegistry;
 import static junit.framework.Assert.assertEquals;
 import org.jbehave.classmock.UsingClassMock;
 import org.jbehave.core.mock.Mock;
@@ -15,14 +15,14 @@ public class ControllerTest extends UsingClassMock {
 
     @Test
     public void applicationRegisteryIsTheOneProvidedInTheConstructor() {
-        ApplicationRegistry registry = new ApplicationRegistry();
+        HubRegistry registry = new HubRegistry();
         assertEquals(registry, new Controller(registry).registry());
     }
 
     @Test
     public void renderAsTextHTMLContentType() throws IOException {
         final Mock response = mock(HttpServletResponse.class);
-        final Mock registry = mock(ApplicationRegistry.class);
+        final Mock registry = mock(HubRegistry.class);
         final Mock templateResolver = mock(TemplateResolver.class);
         final Mock template = mock(Template.class);
         final Controller controller;
@@ -33,7 +33,7 @@ public class ControllerTest extends UsingClassMock {
         response.stubs("getWriter").will(returnValue(mock(PrintWriter.class)));
 
         response.expects("setContentType").with("text/html");
-        controller = new Controller((ApplicationRegistry) registry);
+        controller = new Controller((HubRegistry) registry);
         controller.render(new Page(""), (HttpServletResponse) response);
         verifyMocks();
     }
@@ -41,7 +41,7 @@ public class ControllerTest extends UsingClassMock {
     @Test
     public void renderSetCharacterEncodingAsUTF8() throws IOException {
         final Mock response = mock(HttpServletResponse.class);
-        final Mock registry = mock(ApplicationRegistry.class);
+        final Mock registry = mock(HubRegistry.class);
         final Mock templateResolver = mock(TemplateResolver.class);
         final Mock template = mock(Template.class);
         final Controller controller;
@@ -52,7 +52,7 @@ public class ControllerTest extends UsingClassMock {
         response.stubs("getWriter").will(returnValue(mock(PrintWriter.class)));
 
         response.expects("setCharacterEncoding").with("UTF-8");
-        controller = new Controller((ApplicationRegistry) registry);
+        controller = new Controller((HubRegistry) registry);
         controller.render(new Page(""), (HttpServletResponse) response);
         verifyMocks();
     }
