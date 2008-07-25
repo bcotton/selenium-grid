@@ -70,6 +70,30 @@ Launching the Hub and the Remote Controls
   
       rake all:start
   
+ Why do I have duplicate entries in the grid hub after restarting my RCs?
+ ------------------------------------------------------------------------
+
+> Say I have a hub setup with three RCs ready and waiting, and then I
+> go and restart those RCs, my hub now shows 6 RCs eventhough there are
+> actually only 3. Is this anything to worry about? Will the hub try
+> to send requests to the "dead" entries? Do I have to restart the hub
+> everytime I need to restart and RC?
+
+  You are probably stopping the remote controls a little too "harshly"? For
+  instance, if you do a `kill -9` or use Windows task manager, the JVM shutdown
+  hook does not have a chance to unregister the remote control and the Hub
+  does not realize that the remote control is gone. 
+  
+  But if you stop the remote control in a more "civil" manner everything should
+  be fine (e.g. `kill` or using the shutdown method in selenium client api). 
+  Even better use the Rake tasks provided with Selenium Grid distribution:
+  `rake rc:start_all` and `rake rc:stop_all` multiple times on my machine. 
+  
+  If you end up in this state I do recommend that you restart the Hub which
+  would otherwise end up in a "non predictable state". Future releases of
+  Selenium Grid will take care of this problem transparently, but for now a
+  restart is safer.
+
 Configuring the Demo
 ====================
 
