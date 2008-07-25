@@ -69,7 +69,26 @@ Launching the Hub and the Remote Controls
   and od course stop all of them in a similar way
   
       rake all:start
-  
+
+When starting Firefox I get: java java.lang.RuntimeException: Firefox refused shutdown while preparing a profile"
+------------------------------------------------------------------------------------------------------------------
+
+> Here is my log on this error:
+> ...
+> java Caused by: org.openqa.selenium.server.browserlaunchers.FirefoxChromeLauncher$FileLockRemai nedException: Lock file still present! C:\DOKUME1\Semadou\LOKALE1\Temp\customProfileDir9d4a3879bb7d4ca5b75dbbb488ec30b1\parent.lock
+
+
+  Sometimes Selenium Remote Control does not stop Firefox properly on Windows
+  and things get very messy (leaving lock files behind). This does happen when
+  you Ctrl-C while running the test suite for instance.
+
+  If you encounter this problem, I would advise you to:
+
+* Kill all running Firefox instances and make sure that there is no Firefox process in the task manager (or even better reboot)
+* Delete all the directories: `C:\DOCUME1\<your login>\LOCALS1\Temp\customProfileDir*`
+* While you are at it cleanup `C:\DOCUME1\<your login>\LOCALS1\Temp as much as possible`
+* Run your tests or the demo again
+
  Why do I have duplicate entries in the grid hub after restarting my RCs?
  ------------------------------------------------------------------------
 
@@ -107,15 +126,32 @@ Configuring the Demo
  -----------------------------------------
 
 
-Running Examples
-================
+Running the Examples Included in Selenium Grid Distribution
+===========================================================
 
+ How to run the Java example
+ ---------------------------
 
- How to run the examples in Java
- -------------------------------
+1. Go to the root directory of you Selenium Grid distribution
 
- How to run the examples in Ruby 
- -------------------------------
+2. Launch Selenium Grid Hub and 4 remote controls as explained in
+   ["Run the Demo"](http://selenium-grid.openqa.org/run_the_demo.html)
+
+3. Go to the Java example directory: `cd ./examples/java`
+
+4. Launch the tests with: `ant run`  
+
+ How to Run the Ruby Example
+ ---------------------------
+
+1. Go to the root directory of you Selenium Grid distribution
+
+2. (Re)start Selenium Grid Hub and the remote controls with:
+   `rake all:restart`
+
+3. Go to the Ruby example directory: `cd ./examples/ruby`
+
+4. Launch the tests with: `rake tests:run_in_parallel`  
 
 
 Running Your Tests Against Selenium Grid
