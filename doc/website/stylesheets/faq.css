@@ -1,20 +1,29 @@
 h1 {
-  font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
-  padding: .2em .2em;
-  border: 0;
-  border-bottom: solid medium #a20017;
-  background: none;
-}
+   font: bold 2em "Lucida Grande", Verdana, sans-serif;
+   color: #666;
+   padding: .2em .2em;
+   margin-left: .5em;
+   margin-top: 2em;
+ }
 
 h2 {
-  font: bold 1.2em "Lucida Grande", Verdana, sans-serif;
-  padding: .2em .2em;
-  border: 0;
-  border-bottom: solid thin #444;
-  color: #a20017;
-  background: none;
-  margin-left: 1.3em;
-}
+   font: bold 1.4em "Lucida Grande", Verdana, sans-serif;
+   padding: .2em .2em;
+   border: 0;
+   border-bottom: solid medium #a20017;
+   background: none;
+   margin-left: 1.3em;
+ }
+
+ h3 {
+   font: bold 1.2em "Lucida Grande", Verdana, sans-serif;
+   padding: .2em .2em;
+   border: 0;
+   border-bottom: solid thin #444;
+   color: #a20017;
+   background: none;
+   margin-left: 1.8em;
+ }
 
 blockquote p {
 	color: #666;
