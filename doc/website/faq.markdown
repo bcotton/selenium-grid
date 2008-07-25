@@ -132,7 +132,7 @@ Running the Examples Included in Selenium Grid Distribution
  How to run the Java example
  ---------------------------
 
-1. Go to the root directory of you Selenium Grid distribution
+1. Go to the root directory of your Selenium Grid distribution
 
 2. Launch Selenium Grid Hub and 4 remote controls as explained in
    ["Run the Demo"](http://selenium-grid.openqa.org/run_the_demo.html)
@@ -144,7 +144,7 @@ Running the Examples Included in Selenium Grid Distribution
  How to Run the Ruby Example
  ---------------------------
 
-1. Go to the root directory of you Selenium Grid distribution
+1. Go to the root directory of your Selenium Grid distribution
 
 2. (Re)start Selenium Grid Hub and the remote controls with:
    `rake all:restart`
