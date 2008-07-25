@@ -1,5 +1,5 @@
 Title: Selenium Grid FAQ
-CSS: stylesheets/site.css stylesheets/document.css
+CSS: stylesheets/site.css stylesheets/document.css stylesheets/faq.css
 
 <div class="header">
   <a href="index.html"><img alt="Selenium_grid_logo_large" src="images/selenium_grid_logo_large.png"/></a>
@@ -104,17 +104,110 @@ I have some test cases and I want to run them against Selenium Grid, what do I n
   is to point your Selenium client driver to the Hub and run your tests in
   parallel.
 
+### Java ###
+  
   If you writing your tests using Java, the best is to run your
   tests with [TestNG parallel runner](http://testng.org/doc/documentation-main.html#parallel-running). 
+
+  You can find a concrete example on
+  how this can be achieved in the standard Selenium Grid distribution under
+  the [`examples/java`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/java/) 
+  directory.
+
+### Ruby ###
 
   If you use Ruby, the best is to use
   [DeepTest](http://deep-test.rubyforge.org) which can even distribute the test run 
   accross multiple machines.
 
-  You can find concrete examples on
+  You can find a concrete example (a nice test reports) on
   how this can be achieved in the standard Selenium Grid distribution under
-  the [`examples/java`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/java/)
-  and [`examples/ruby`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/)  directories.
+  the [`examples/ruby`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/) 
+  directory.
+
+### Python ###
+
+  I have no experience in Python so I do not know what the best solution is.
+  Nevertheless, I can give you the theory and some starting points.
+  
+   Basically you need to come up with a way to run your python tests in
+  parallel. How exactly you achieve this usually depends on your testing
+  framework and programming language of choice. I am not personally aware of
+  any parallel test runner for Python but a little Googling found the
+  following starting points that you could investigate:
+  
+ * [`py.test` distributed testing section](https://codespeak.net/py/dist/test.html#automated-distributed-testing)
+ * [Parallel Python](http://www.parallelpython.com/)
+ * [Testoob](http://testoob.sourceforge.net/features.html)
+ * [Mailing list archive on parallel testing in Python](http://lists.idyll.org/pipermail/testing-in-python/2007-December/thread.html#463)
+
+  If none of this is helpful, worst case scenario, you can also write your own
+  parallel test runner by launching multiple processes targeting different
+  test file sets and checking the process exit statuses. Not the most
+  elegant/efficient way, but that can get you started. This is actually the
+  way I originally started with Ruby and you can find an example on how this
+  worked in the Ruby example included in Selenium Grid distribution:
+
+  [`examples/ruby/lib/multi_process_behaviour_runner.rb`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/lib/multi_process_behaviour_runner.rb)
+
+  You launch the whole thing with:
+
+    #
+    # Legacy way to drive tests in parallel before DeepTest RSpec support.
+    # Kept to document a simple way to run the tests in parallel for non-Ruby
+    # platforms.
+    #
+    desc("[DEPRECATED] Run all behaviors in parallel spawing multiple
+    processes. DeepTest offers a better alternative.")
+    task :'tests:run_in_parallel:multiprocess' => :create_report_dir do
+     require File.expand_path(File.dirname(__FILE__) +
+    '/lib/multi_process_behaviour_runner')
+     runner = MultiProcessSpecRunner.new(10)
+     runner.run(Dir['*_spec.rb'])
+    end
+
+  Good luck in your quest for the ultimate Python parallel test runner. Please
+  [contact me](http://ph7spot.com/about/contact_me) if you figure out the best
+  solution for Python, I will put it in the documentation. Even better,
+  send me an example, I will include it in Selenium Grid distribution.
+
+### Other ###
+
+  To take advantage of Selenium Grid power, you need to come up with a way to
+  run your tests in parallel. How exactly you achieve this usually depends on
+  your testing framework and programming language of choice. Try
+  googling around for a parallel or distributed test runner for your language.
+
+  If you cannot find any, your fallback plan is to write your own parallel
+  test runner by launching multiple processes targeting different test file
+  sets and checking the process exit statuses. Not the most elegant/efficient
+  way, but that can get you started. This is actually the way I originally
+  started with Ruby and you can find an example on how this worked in the Ruby
+  example included in Selenium Grid distribution:
+
+  [`examples/ruby/lib/multi_process_behaviour_runner.rb`](http://svn.openqa.org/svn/selenium-grid/trunk/examples/ruby/lib/multi_process_behaviour_runner.rb)
+
+  You launch the whole thing with:
+
+    #
+    # Legacy way to drive tests in parallel before DeepTest RSpec support.
+    # Kept to document a simple way to run the tests in parallel for non-Ruby
+    # platforms.
+    #
+    desc("[DEPRECATED] Run all behaviors in parallel spawing multiple
+    processes. DeepTest offers a better alternative.")
+    task :'tests:run_in_parallel:multiprocess' => :create_report_dir do
+     require File.expand_path(File.dirname(__FILE__) +
+    '/lib/multi_process_behaviour_runner')
+     runner = MultiProcessSpecRunner.new(10)
+     runner.run(Dir['*_spec.rb'])
+    end
+
+  Good luck in your quest for the ultimate parallel test runner for your
+  favorite language. Please [contact me](http://ph7spot.com/about/contact_me) if you
+  figure out the best solution for your language, I will put it in the documentation.
+  Even better, send me an example, I will include it in Selenium Grid
+  distribution.
 
  Is there a way to generate test reports using Selenium?
  -------------------------------------------------------
