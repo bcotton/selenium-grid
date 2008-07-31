@@ -18,8 +18,8 @@ unless JRUBY_VERSION == EXPECTED_JRUBY_VERSION
 end
 
 begin
-  $: << File.expand_path(File.dirname(__FILE__) + '/../../lib/gems/mocha-0.5.5/lib')
-  require File.expand_path(File.dirname(__FILE__) + '/../../lib/gems/mocha-0.5.5/lib/mocha')
+  $: << File.expand_path(File.dirname(__FILE__) + '/../../vendor/gems/mocha-0.5.5/lib')
+  require File.expand_path(File.dirname(__FILE__) + '/../../vendor/gems/mocha-0.5.5/lib/mocha')
   puts "Successfully loaded Mocha library."
 rescue
   puts <<-EOS
