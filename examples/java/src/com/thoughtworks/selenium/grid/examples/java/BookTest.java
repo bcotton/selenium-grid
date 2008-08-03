@@ -1,13 +1,13 @@
 package com.thoughtworks.selenium.grid.examples.java;
 
+import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.session;
 import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.startSeleniumSession;
-import static com.thoughtworks.selenium.grid.tools.ThreadSafeSeleniumSessionStorage.closeSeleniumSession;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.AfterTest;
 
 
 /**
@@ -17,13 +17,13 @@ public class BookTest {
 
     public static final String TIMEOUT = "120000";
 
-    @BeforeTest(groups = {"default", "example"})
+    @BeforeMethod(groups = {"default", "example"}, alwaysRun = true)
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     protected void startSession(String seleniumHost, int seleniumPort, String browser, String webSite) throws Exception {
         startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
     }
 
-    @AfterTest(groups = {"default", "example"})
+    @AfterMethod(groups = {"default", "example"}, alwaysRun = true)
     protected void closeSession() throws Exception {
         closeSeleniumSession();
     }
