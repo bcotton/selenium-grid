@@ -481,7 +481,7 @@
       <file leaf-file-name="testng-slow.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/testng-slow.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="61" selection-start="122" selection-end="122" vertical-scroll-proportion="0.035190616">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -490,7 +490,7 @@
       <file leaf-file-name="testng.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="97" selection-start="158" selection-end="158" vertical-scroll-proportion="0.035190616">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -535,7 +535,7 @@
       <file leaf-file-name="BookTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="672" selection-end="672" vertical-scroll-proportion="0.30746704">
+            <state line="21" column="77" selection-start="930" selection-end="930" vertical-scroll-proportion="0.3008596">
               <folding />
             </state>
           </provider>
@@ -544,7 +544,7 @@
       <file leaf-file-name="ThreadSafeSeleniumSessionStorage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1462" selection-end="1520" vertical-scroll-proportion="0.6325037">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1615,6 +1615,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/DesignBooksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12298682">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/testng-slow.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/MethodologyBooksTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="28" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.73792094">
@@ -1643,37 +1664,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/DesignBooksTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12298682">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1462" selection-end="1520" vertical-scroll-proportion="0.6325037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="97" selection-start="158" selection-end="158" vertical-scroll-proportion="0.035190616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/java/testng-slow.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="61" selection-start="122" selection-end="122" vertical-scroll-proportion="0.035190616">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="672" selection-end="672" vertical-scroll-proportion="0.30746704">
+        <state line="21" column="77" selection-start="930" selection-end="930" vertical-scroll-proportion="0.3008596">
           <folding />
         </state>
       </provider>
