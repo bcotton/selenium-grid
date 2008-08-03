@@ -517,7 +517,7 @@
       <file leaf-file-name="RubyBooksTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/RubyBooksTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="18" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.41290322">
+            <state line="29" column="22" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.43870968">
               <folding />
             </state>
           </provider>
@@ -532,16 +532,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BookTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.5096774">
+            <state line="31" column="13" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.5655914">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadSafeSeleniumSessionStorage.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ThreadSafeSeleniumSessionStorage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -788,15 +788,15 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="TestNG.RubyBooksTest.advancedRailsRecipesTest">
-    <tempConfiguration default="false" name="RubyBooksTest.advancedRailsRecipesTest" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+  <component name="RunManager" selected="TestNG.RubyBooksTest.agileWebDevelomentWithRailsTest">
+    <tempConfiguration default="false" name="RubyBooksTest.agileWebDevelomentWithRailsTest" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="Java Example" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="com.thoughtworks.selenium.grid.examples.java" />
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.selenium.grid.examples.java.RubyBooksTest" />
-      <option name="METHOD_NAME" value="advancedRailsRecipesTest" />
+      <option name="METHOD_NAME" value="agileWebDevelomentWithRailsTest" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" />
@@ -816,8 +816,8 @@
         <property name="firstEnvironment" value="*chrome" />
         <property name="seleniumPort" value="4444" />
         <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
         <property name="secondEnvironmnet" value="*chrome" />
+        <property name="browser" value="*chrome" />
         <property name="thirdEnvironment" value="*chrome" />
         <property name="seleniumHost" value="localhost" />
       </properties>
@@ -956,8 +956,8 @@
         <property name="firstEnvironment" value="*chrome" />
         <property name="seleniumPort" value="4444" />
         <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
         <property name="secondEnvironmnet" value="*chrome" />
+        <property name="browser" value="*chrome" />
         <property name="thirdEnvironment" value="*chrome" />
         <property name="seleniumHost" value="localhost" />
       </properties>
@@ -1211,8 +1211,8 @@
         <property name="firstEnvironment" value="*chrome" />
         <property name="seleniumPort" value="4444" />
         <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
         <property name="secondEnvironmnet" value="*chrome" />
+        <property name="browser" value="*chrome" />
         <property name="thirdEnvironment" value="*chrome" />
         <property name="seleniumHost" value="localhost" />
       </properties>
@@ -1250,8 +1250,8 @@
         <property name="firstEnvironment" value="*chrome" />
         <property name="seleniumPort" value="4444" />
         <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
         <property name="secondEnvironmnet" value="*chrome" />
+        <property name="browser" value="*chrome" />
         <property name="thirdEnvironment" value="*chrome" />
         <property name="seleniumHost" value="localhost" />
       </properties>
@@ -1295,8 +1295,8 @@
         <property name="firstEnvironment" value="*chrome" />
         <property name="seleniumPort" value="4444" />
         <property name="webSite" value="http://amazon.com" />
-        <property name="browser" value="*chrome" />
         <property name="secondEnvironmnet" value="*chrome" />
+        <property name="browser" value="*chrome" />
         <property name="thirdEnvironment" value="*chrome" />
         <property name="seleniumHost" value="localhost" />
       </properties>
@@ -1320,7 +1320,7 @@
       <item index="9" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.amazonOnFirefox" />
       <item index="10" class="java.lang.String" itemvalue="TestNG.WebTestForASingleBrowser.secondTest" />
       <item index="11" class="java.lang.String" itemvalue="TestNG.WebTestInvolvingMultiEnvironments" />
-      <item index="12" class="java.lang.String" itemvalue="TestNG.RubyBooksTest.advancedRailsRecipesTest" />
+      <item index="12" class="java.lang.String" itemvalue="TestNG.RubyBooksTest.agileWebDevelomentWithRailsTest" />
     </list>
     <configuration default="true" type="RUBY_RUN_CONFIGURATION_TYPE" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
@@ -1657,23 +1657,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/RubyBooksTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.41290322">
+        <state line="29" column="22" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.43870968">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/java/src/com/thoughtworks/selenium/grid/examples/java/BookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.5096774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/src/main/com/thoughtworks/selenium/grid/tools/ThreadSafeSeleniumSessionStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="31" column="13" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.5655914">
           <folding />
         </state>
       </provider>

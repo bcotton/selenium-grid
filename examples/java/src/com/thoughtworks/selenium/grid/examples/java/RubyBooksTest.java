@@ -27,14 +27,14 @@ public class RubyBooksTest extends BookTest {
     public void agileWebDevelomentWithRailsTest() throws Throwable {
         checkBook("Agile Web Development with Rails",
                 "Agile Web Development with Rails, 2nd Edition",
-                "Ruby",
+                "Rails",
                 "0977616630");
     }
 
     @Test(groups = {"example", "firefox", "default"}, description = "Test Amazon Comment Quality Using the Firefox Web Browser (1).")
     public void advancedRailsRecipesTest() throws Throwable {
-        checkBook("Advanced Rails Recipes: 84 New Ways to Build Stunning Rails Apps",
-                "Advanced Rails Recipes: 84 New Ways to Build Stunning Rails Apps",
+        checkBook("Advanced Rails Recipes",
+                "Advanced Rails Recipes",
                 "Rails Recipes",
                 "0978739221");
     }
