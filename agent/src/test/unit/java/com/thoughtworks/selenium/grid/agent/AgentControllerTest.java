@@ -7,7 +7,7 @@ public class AgentControllerTest {
 
     @Test
     public void processReturnAHArdCodedString() {
-        Assert.assertEquals("Selenium Grid Agent", new AgentController().process());
+        Assert.assertEquals("Selenium Grid Agent", new AgentResource().process());
     }
     
 }

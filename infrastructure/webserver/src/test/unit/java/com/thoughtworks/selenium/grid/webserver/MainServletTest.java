@@ -21,7 +21,7 @@ public class MainServletTest extends UsingClassMock {
      * Named resolver we can use in the unit tests.
      */
     public static class TestRouteResolver implements RouteResolver {
-        public Controller resolve(HttpServletRequest request) {
+        public Resource resolve(HttpServletRequest request) {
             throw new IllegalStateException("Should not have been called");
         }
     }
@@ -33,7 +33,7 @@ public class MainServletTest extends UsingClassMock {
         private TestPrivateRouteResolver() {
         }
 
-        public Controller resolve(HttpServletRequest request) {
+        public Resource resolve(HttpServletRequest request) {
             throw new IllegalStateException("Should not have been called");
         }
     }
@@ -111,7 +111,7 @@ public class MainServletTest extends UsingClassMock {
 
         theRequest = mock(HttpServletRequest.class);
         theResponse = mock(HttpServletResponse.class);
-        aController = mock(Controller.class);
+        aController = mock(Resource.class);
         routeResolver = mock(com.thoughtworks.selenium.grid.webserver.RouteResolver.class);
 
         routeResolver.expects("resolve").with(theRequest).will(returnValue(aController));

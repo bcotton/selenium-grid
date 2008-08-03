@@ -69,7 +69,7 @@ end
 desc "Stop all  services (Hub a Remote Controls"
 task :'all:stop' do
   Rake::Task[:'rc:stop_all'].invoke
-  Rake::Task[:'hub:stop'].invoke
+  Rake::Task[:'hub:stop'].invoke rescue nil
 end
 
 desc "Launch Hub"
