@@ -59,6 +59,10 @@
           classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher"
           fork="true"
           failonerror="true">
+
+      <sysproperty key="http.proxyHost" value="${http.proxyHost}"/>
+      <sysproperty key="http.proxyPort" value="${http.proxyPort}"/>
+
       <arg value="-port"/>
       <arg value="${port}"/>
       <arg value="-host"/>

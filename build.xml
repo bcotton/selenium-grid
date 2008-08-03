@@ -182,6 +182,9 @@
     </copy>
   </target>
 
+  <target name="acceptance-tests" description="Test a new distribution" depends="automated-demo, automated-java-example, automated-ruby-example">
+  </target>
+
   <target name="automated-demo" description="Fully Automated Demo (for continuous integration)">
     <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
         <arg value="all:restart"/>
