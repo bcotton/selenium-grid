@@ -11,18 +11,19 @@ import org.testng.annotations.AfterTest;
 
 
 /**
+ * Base class for all tests in Selenium Grid Java examples.
  */
 public class BookTest {
 
     public static final String TIMEOUT = "120000";
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeTest(groups = {"default", "example"})
     @Parameters({"seleniumHost", "seleniumPort", "browser", "webSite"})
     protected void startSession(String seleniumHost, int seleniumPort, String browser, String webSite) throws Exception {
         startSeleniumSession(seleniumHost, seleniumPort, browser, webSite);
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterTest(groups = {"default", "example"})
     protected void closeSession() throws Exception {
         closeSeleniumSession();
     }

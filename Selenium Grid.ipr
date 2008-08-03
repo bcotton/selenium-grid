@@ -30,16 +30,6 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/core/build.xml">
-      <additionalClassPath>
-        <entry path="file://$PROJECT_DIR$/lib/emma-2.0.5312.jar" />
-        <entry path="file://$PROJECT_DIR$/lib/emma_ant-2.0.5312.jar" />
-      </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />

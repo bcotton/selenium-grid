@@ -14,7 +14,9 @@ public class ThreadSafeSeleniumSessionStorage {
 
     private final static Log LOGGER = LogFactory.getLog(ThreadSafeSeleniumSessionStorage.class);
 
-    /** Thread local Selenium driver instance so that we can run in multi-threaded mode. */
+    /**
+     * Thread local Selenium driver instance so that we can run in multi-threaded mode.
+     */
     private static ThreadLocal<Selenium> threadLocalSelenium = new ThreadLocal<Selenium>();
 
 
@@ -34,12 +36,12 @@ public class ThreadSafeSeleniumSessionStorage {
     }
 
     public static Selenium session() {
-      return threadLocalSelenium.get();
+        return threadLocalSelenium.get();
     }
 
-    
+
     public static void resetSession() {
-      threadLocalSelenium.set(null);
+        threadLocalSelenium.set(null);
     }
 
 }
