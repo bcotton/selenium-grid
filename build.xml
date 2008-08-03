@@ -189,16 +189,29 @@
     <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
         <arg value="all:restart"/>
     </exec>
-    <ant dir="${dist}/selenium-grid-${version}" target="run-demo-in-sequence" />
+    <waitfor maxwait="10" maxwaitunit="second">
+      <socket server="localhost" port="4444"/>
+    </waitfor>
     <ant dir="${dist}/selenium-grid-${version}" target="run-demo-in-parallel" />
+    <ant dir="${dist}/selenium-grid-${version}" target="run-demo-in-sequence" />
     <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
         <arg value="all:stop"/>
     </exec>
   </target>
 
   <target name="automated-java-example">
-    <ant dir="${dist}/selenium-grid-${version}/examples/java" target="run" />
-    <ant dir="${dist}/selenium-grid-${version}/examples/java" target="run-in-sequence" />
+    <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
+      <arg value="all:restart"/>
+    </exec>
+    <waitfor maxwait="10" maxwaitunit="second">
+      <socket server="localhost" port="4444"/>
+    </waitfor>
+    <exec executable="ant" dir="${dist}/selenium-grid-${version}/examples/java" failonerror="true">
+      <arg value="run"/>
+    </exec>
+    <exec executable="ant" dir="${dist}/selenium-grid-${version}/examples/java" failonerror="true">
+      <arg value="run-in-sequence"/>
+    </exec>
     <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
         <arg value="all:stop"/>
     </exec>
@@ -208,11 +221,14 @@
       <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
           <arg value="all:restart"/>
       </exec>
+      <waitfor maxwait="10" maxwaitunit="second">
+        <socket server="localhost" port="4444"/>
+      </waitfor>
       <exec executable="${rake}" dir="${dist}/selenium-grid-${version}/examples/ruby" failonerror="true">
-        <arg value="run_in_parallel"/>
+        <arg value="tests:run_in_parallel"/>
       </exec>
       <exec executable="${rake}" dir="${dist}/selenium-grid-${version}/examples/ruby" failonerror="true">
-        <arg value="run_in_sequence"/>
+        <arg value="test:run_in_sequence"/>
       </exec>
       <exec executable="${rake}" dir="${dist}/selenium-grid-${version}" failonerror="true">
           <arg value="all:stop"/>

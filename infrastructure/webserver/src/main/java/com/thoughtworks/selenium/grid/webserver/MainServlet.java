@@ -16,11 +16,11 @@ public class MainServlet extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        final Controller controller;
+        final Resource resource;
         final String page;
 
-        controller = routeResolver().resolve(request);
-        page = controller.process();
+        resource = routeResolver().resolve(request);
+        page = resource.process();
         render(page, response);
     }
 

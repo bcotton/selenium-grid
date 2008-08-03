@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.thoughtworks.selenium.grid.webserver.Controller;
+import com.thoughtworks.selenium.grid.webserver.Resource;
 import com.thoughtworks.selenium.grid.webserver.InvalidRouteException;
 
 public class RouteResolverTest extends UsingClassMock {
@@ -30,12 +30,12 @@ public class RouteResolverTest extends UsingClassMock {
     @Test
     public void rootPathResolvesToAnAgentControllerInstance() {
         Mock request;
-        Controller controller;
+        Resource resource;
 
         request = mock(HttpServletRequest.class);
         request.stubs("getPathInfo").will(returnValue("/"));
-        controller = new RouteResolver().resolve((HttpServletRequest) request);
-        Assert.assertTrue(controller instanceof AgentController);
+        resource = new RouteResolver().resolve((HttpServletRequest) request);
+        Assert.assertTrue(resource instanceof AgentResource);
     }
 
 }

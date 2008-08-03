@@ -3,10 +3,10 @@ package com.thoughtworks.selenium.grid.webserver;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Resolve an HTTP request to a specific controller.
+ * Resolve an HTTP request to a specific resource.
  */
 public interface RouteResolver {
 
-    Controller resolve(HttpServletRequest request);
+    Resource resolve(HttpServletRequest request);
     
 }
