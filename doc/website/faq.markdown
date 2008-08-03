@@ -113,6 +113,47 @@ When starting Firefox I get: java java.lang.RuntimeException: Firefox refused sh
   Selenium Grid will take care of this problem transparently, but for now a
   restart is safer.
 
+ Can I configure the Remote Control to use a custom HTTP proxy?
+ --------------------------------------------------------------
+
+> I am having problems with the http proxy settings when I launch the
+> Remote Controls with Selenium Grid ant task: I tried
+>
+> ant -Dport=5556 -Dhttp.proxyHost=my_proxy.my_company.com -Dhttp.proxyPort=3128 launch-remote-control
+>
+> which works with a standard remote control, but not with Selenium Grid launcher.
+
+  The problem is that `ant launch-remote-control` does launch the remote
+  control as a forked Java process (which does not inherit the system
+  properties that you are passing to Ant). You can edit the
+  build.xml file at the root of your Selenium Grid distribution and add the
+  system properties you need. For instance:
+
+    <target name="launch-remote-control" description="Launch A Remote Control">
+      <java classpathref="remote-control.classpath"
+            classname="com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher"
+            fork="true"
+            failonerror="true">
+  
+        <sysproperty key="http.proxyHost" value="${http.proxyHost}"/>
+        <sysproperty key="http.proxyPort" value="${http.proxyPort}"/>
+  
+        <arg value="-port"/>
+        <arg value="${port}"/>
+        <arg value="-host"/>
+        <arg value="${host}"/>
+        <arg value="-hubURL"/>
+        <arg value="${hubURL}"/>
+        <arg value="-env"/>
+        <arg value="${environment}"/>
+        <arg line="${seleniumArgs}"/>      
+      </java>
+    </target>
+
+  Alternatively, you can also just 
+  [build your own Selenium Grid distribution from source](http://selenium-grid.openqa.org/build_it_from_source.html)
+  as the fix in already checked-in in the codebase.
+
 Configuring the Demo
 ====================
 
