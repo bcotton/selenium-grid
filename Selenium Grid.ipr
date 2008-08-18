@@ -629,7 +629,7 @@
       <module fileurl="file://$PROJECT_DIR$/infrastructure/webserver/WebServer.iml" filepath="$PROJECT_DIR$/infrastructure/webserver/WebServer.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/target/classes" />
   </component>
   <component name="RUBY_DOC_SETTINGS">
