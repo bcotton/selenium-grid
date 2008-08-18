@@ -11,9 +11,6 @@ Table Of Content:
 * This will become a table of contents (this text will be scraped).
 {:toc}
 
-Installation
-============
-
 General
 =======
 
@@ -172,19 +169,6 @@ Launching the Hub and the Remote Controls
   [build your own Selenium Grid distribution from source](http://selenium-grid.openqa.org/build_it_from_source.html)
   as the fix in already checked-in in the codebase.
 
-Configuring the Demo
-====================
-
- How to setup the EC2 account for Amazon Web Services
- ----------------------------------------------------
-
- How to deploy the demo to the Amazon Web Services 
- -------------------------------------------------
-
- How to run the demo in the EC2 enviroment
- -----------------------------------------
-
-
 Running the Examples Included in Selenium Grid Distribution
 ===========================================================
 
@@ -211,24 +195,6 @@ Running the Examples Included in Selenium Grid Distribution
 3. Go to the Ruby example directory: `cd ./examples/ruby`
 
 4. Launch the tests with: `rake tests:run_in_parallel`  
-
-
- HTTPS
- -----
-
->  We have a client where application is built on HTTPS. We tried testing using selenium but its not supporting.
->
->  Can you please suggest us the approach to be followed to test HTTPS URL’s.
-
-  http://blog.thirstybear.co.uk/2008/05/selenium-and-https.html
-
-However, in some cases, you may be required to test more than one domain at
-once. The most common case is when you need to test both http://blah.com and
-https://blah.com. "http:" and "https:" are considered different "origins" from
-JavaScript perspective, so tests running on one can't run on the other. In
-that case, for now, you'll have to use one of our experimental browser
-launchers which support running in multiple domains. (Also be sure to read the
-HTTPS section of this documentation for more details about HTTPS support.)
 
 
 Running Your Tests Against Selenium Grid
@@ -360,25 +326,62 @@ I have some test cases and I want to run them against Selenium Grid, what do I n
   which [include HTML capture and OS screenshots when a test
   fail](http://ph7spot.com/examples/rspec_report/index.html).
 
-My test cases are in HTML (Selense), how can I run those against Selenium Grid ?
-------------------------------------------------------------------
+ My test cases are in HTML (Selenese), how can I run those against Selenium Grid ?
+ ------------------------------------------------------------------
 
-You would need a parallel test runner for Selenium Grid.
+ You would need a parallel test runner for Selenium Grid.
 
-I might eventually end up working on such a parallel test runner for HTML 
-test suites, nevertheless my time is limited and this feature is quite low 
-in my priority list: in my experience HTML test suites are a nightmare 
-to maintain you are better off writing and refactoring real code by the time 
-your test suite grows big enough that it takes too long to run.
+ I might eventually end up working on such a parallel test runner for HTML 
+ test suites, nevertheless my time is limited and this feature is quite low 
+ in my priority list: in my experience HTML test suites are a nightmare 
+ to maintain you are better off writing and refactoring real code by the time 
+ your test suite grows big enough that it takes too long to run.
+ 
+ This said, there might be hope as some guys seem to be working on it though: see 
+ [this thread](http://clearspace.openqa.org/thread/11482)
 
-This said, there might be hope as some guys seem to be working on it though: see 
-[this thread](http://clearspace.openqa.org/thread/11482)
+ My test is not working when I use HTTPS!
+ ----------------------------------------
 
+>  We have a client where application is built on HTTPS. We tried testing using selenium but its not supporting.
+>
+>  Can you please suggest us the approach to be followed to test HTTPS URL’s.
+
+  http://blog.thirstybear.co.uk/2008/05/selenium-and-https.html
+
+ However, in some cases, you may be required to test more than one domain at
+ once. The most common case is when you need to test both http://blah.com and
+ https://blah.com. "http:" and "https:" are considered different "origins" from
+ JavaScript perspective, so tests running on one can't run on the other. In
+ that case, for now, you'll have to use one of our experimental browser
+ launchers which support running in multiple domains. (Also be sure to read the
+ HTTPS section of this documentation for more details about HTTPS support.)
+
+ I get some strange errors when I run multiple Internet Explorer instances on the same machine
+ ---------------------------------------------------------------------------------------------
+
+ Selenium Grid does not officially support running multiple Internet
+ Explorer on a _single_ Windows machine. This is mostly because:
+
+* People who know IE better than I do (Dan Fabulich) tell me that if
+you run 2 browsers as the same user in HTA mode they end up sharing a
+singleton instance in memory, which could cause problems.
+
+* The `*iexplore mode` is changing the registry settings at each
+session start/end to have IE use a specific Remote Control as HTTP
+proxy. If you run multiple Remote Controls at the same time you can
+see the problems coming! ;-)
+
+**Currently, the only robust solution for running multiple IE instances
+with Selenium Grid is to use virtualization.**
+
+ This said, I am not satisfied wit the current state of affairs and I
+ am currently working on better support for IE in Selenium Grid 1.2.
 
 Analysing Failures
 ==================
 
- When we test the applicaiton with Selenium Grid, we get nondeterministic results
+ When we test the application with Selenium Grid, we get nondeterministic results
  --------------------------------------------------------------------------------
 
 > Locally, when we test the application with Selenium Grid, we get 
