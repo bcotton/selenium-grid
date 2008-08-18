@@ -11,8 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 public class RouteResolver implements com.thoughtworks.selenium.grid.webserver.RouteResolver {
 
     public Resource resolve(HttpServletRequest request) {
-        if ("/".equals(request.getPathInfo())) {
+        final String path;
+        path = request.getPathInfo();
+
+        if ("/".equals(path)) {
             return new AgentResource();
+        } else if ("/remote-controls".equals(path) && "POST".equals(request.getMethod())) {
+            return new RemoteControlCommand();
         }
         throw new InvalidRouteException(request.getPathInfo());
     }

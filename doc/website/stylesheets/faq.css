@@ -1,3 +1,19 @@
+div.maruku_toc ul li a {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: black;	
+}
+
+div.maruku_toc ul li ul {
+	margin: 0 0 1em 0;
+}
+
+div.maruku_toc ul li ul li a {
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #222;
+}
+
 h1 {
    font: bold 2em "Lucida Grande", Verdana, sans-serif;
    color: #666;

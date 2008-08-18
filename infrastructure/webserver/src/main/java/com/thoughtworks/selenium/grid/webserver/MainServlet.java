@@ -20,7 +20,7 @@ public class MainServlet extends HttpServlet {
         final String page;
 
         resource = routeResolver().resolve(request);
-        page = resource.process();
+        page = resource.process(request.getParameterMap());
         render(page, response);
     }
 

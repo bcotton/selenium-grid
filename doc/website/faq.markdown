@@ -6,6 +6,8 @@ CSS: stylesheets/site.css stylesheets/document.css stylesheets/faq.css
   <p>FAQ</p>
 </div>
 
+Table Of Content:
+
 * This will become a table of contents (this text will be scraped).
 {:toc}
 
@@ -37,6 +39,22 @@ General
 
 Launching the Hub and the Remote Controls
 =========================================
+
+ How can I pass additional parameters to the Remote Controls when starting them as part of Selenium Grid?
+ --------------------------------------------------------------------------------------------------------
+
+  Additional parameters can be passed to Selenium remote controls at startup
+
+  Just set the `seleniumArgs` Java property when launching the remote control. 
+  For instance, to start a remote control in multi window and debug mode you 
+  would use:
+
+    ant -DseleniumArgs="-multiWindow -debug" launch-remote-control
+
+  Of course you can also achieve the same thing with the Rake task:
+
+    rake hub:start SELENIUM_ARGS="-multiWindow -debug"
+
 
  I need to run hub and remoute control in background.... How can I do it?
  ------------------------------------------------------------------------
@@ -70,8 +88,8 @@ Launching the Hub and the Remote Controls
   
       rake all:start
 
-When starting Firefox I get: java java.lang.RuntimeException: Firefox refused shutdown while preparing a profile"
-------------------------------------------------------------------------------------------------------------------
+ When starting Firefox I get: java java.lang.RuntimeException: Firefox refused shutdown while preparing a profile"
+ ------------------------------------------------------------------------------------------------------------------
 
 > Here is my log on this error:
 > ...
@@ -193,6 +211,24 @@ Running the Examples Included in Selenium Grid Distribution
 3. Go to the Ruby example directory: `cd ./examples/ruby`
 
 4. Launch the tests with: `rake tests:run_in_parallel`  
+
+
+ HTTPS
+ -----
+
+>  We have a client where application is built on HTTPS. We tried testing using selenium but its not supporting.
+>
+>  Can you please suggest us the approach to be followed to test HTTPS URL’s.
+
+  http://blog.thirstybear.co.uk/2008/05/selenium-and-https.html
+
+However, in some cases, you may be required to test more than one domain at
+once. The most common case is when you need to test both http://blah.com and
+https://blah.com. "http:" and "https:" are considered different "origins" from
+JavaScript perspective, so tests running on one can't run on the other. In
+that case, for now, you'll have to use one of our experimental browser
+launchers which support running in multiple domains. (Also be sure to read the
+HTTPS section of this documentation for more details about HTTPS support.)
 
 
 Running Your Tests Against Selenium Grid

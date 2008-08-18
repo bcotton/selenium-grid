@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.util.Map;
+import java.util.HashMap;
+
+import com.thoughtworks.selenium.grid.HttpParameters;
 
 public class MainServletTest extends UsingClassMock {
 
@@ -102,20 +106,20 @@ public class MainServletTest extends UsingClassMock {
     }
 
     @Test
-    public void serviceRendersThePageProcessedByTheController() throws IOException, ServletException {
+    public void serviceRendersThePageProcessedByTheResource() throws IOException, ServletException {
         final Mock routeResolver;
         final Mock theResponse;
         final Mock theRequest;
         final MainServlet servlet;
-        final Mock aController;
+        final Mock aResource;
 
         theRequest = mock(HttpServletRequest.class);
         theResponse = mock(HttpServletResponse.class);
-        aController = mock(Resource.class);
+        aResource = mock(Resource.class);
         routeResolver = mock(com.thoughtworks.selenium.grid.webserver.RouteResolver.class);
 
-        routeResolver.expects("resolve").with(theRequest).will(returnValue(aController));
-        aController.expects("process").will(returnValue("aPage"));
+        routeResolver.expects("resolve").with(theRequest).will(returnValue(aResource));
+        aResource.expects("process").will(returnValue("aPage"));
 
         servlet = new MainServlet() {
 
@@ -123,6 +127,46 @@ public class MainServletTest extends UsingClassMock {
                 assertEquals("aPage", page);
                 assertSame(theResponse, response);
             }
+
+            protected RouteResolver routeResolver() {
+                return (RouteResolver) routeResolver;
+            }
+        };
+
+        servlet.service((HttpServletRequest) theRequest, (HttpServletResponse) theResponse);
+    }
+
+    @Test
+    public void serviceDelegatesProcessingToResourcesPassingInHttpParameters() throws IOException, ServletException {
+        final Mock routeResolver;
+        final Mock theResponse;
+        final Mock theRequest;
+        final MainServlet servlet;
+        final Resource aResource;
+        final Map parameterMap;
+
+
+        aResource = new Resource() {
+            public String process(HttpParameters params) {
+                assertEquals(2, params.names().size());
+                assertEquals("firstValue", params.get("firstParameter"));
+                assertEquals("secondValue", params.get("secondParameter"));
+                return null;
+            }
+        };
+        theRequest = mock(HttpServletRequest.class);
+        theResponse = mock(HttpServletResponse.class);
+        parameterMap = new HashMap();
+        parameterMap.put("firstParameter", "firstValue");
+        parameterMap.put("secondParameter", "secondValue");
+
+        theRequest.expects("getParameterMap").will(returnValue(parameterMap));
+        routeResolver = mock(com.thoughtworks.selenium.grid.webserver.RouteResolver.class);
+        routeResolver.expects("resolve").with(theRequest).will(returnValue(aResource));
+
+        servlet = new MainServlet() {
+
+            public void render(String page, HttpServletResponse response) throws IOException {}            
 
             protected RouteResolver routeResolver() {
                 return (RouteResolver) routeResolver;
