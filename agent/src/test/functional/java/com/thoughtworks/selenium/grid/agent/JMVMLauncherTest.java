@@ -11,10 +11,13 @@ public class JMVMLauncherTest {
 
     @Test
     public void canLaunchAnAgentAndStopIt() throws IOException, InterruptedException {
+        final Classpath classpath;
         final JVMLauncher launcher;
         final JVMHandle handle;
 
-        launcher = new JVMLauncher("/Users/ph7/Projects/Selenium Grid/trunk/agent/target/dist/lib/selenium-grid-agent-standalone-1.0.1.jar");
+        classpath = new Classpath();
+        classpath.add("/Users/ph7/Projects/Selenium Grid/agent/target/dist/lib/selenium-grid-agent-standalone-1.0.1.jar");
+        launcher = new JVMLauncher(classpath, "com.thoughtworks.selenium.grid.agent.AgentServer");
         handle = launcher.launchNewJVM();
         assertTrue(handle.alive());
         Thread.sleep(4 * SECOND);
@@ -23,9 +26,21 @@ public class JMVMLauncherTest {
         assertFalse(handle.alive());
     }
 
+    
     @Test
     public void canCaptureProcessOutut() throws IOException, InterruptedException { 
-        new JVMLauncher("remote-control/lib/selenium-server-1.0-SNAPSHOT.jar").launchNewJVM().waitForProg(System.out);
+        final Classpath classpath;
+        final JVMLauncher launcher;
+        final JVMHandle handle;
+
+        classpath = new Classpath();
+        classpath.add("/Users/ph7/Projects/Selenium Grid/remote-control/lib/selenium-server-1.0-SNAPSHOT.jar");
+        classpath.add("/Users/ph7/Projects/Selenium Grid/remote-control/target/dist/lib/selenium-grid-remote-control-standalone-1.0.1.jar");
+        launcher = new JVMLauncher(classpath, "com.thoughtworks.selenium.grid.remotecontrol.SelfRegisteringRemoteControlLauncher");
+        handle = launcher.launchNewJVM();
+        assertTrue(handle.alive());
+        handle.waitForProg(System.out);
     }
 
+    
 }

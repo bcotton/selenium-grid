@@ -10,10 +10,12 @@ import java.util.List;
  */
 public class JVMLauncher {
 
-    private final String jarFile;
+    private final Classpath classpath;
+    private final String mainClass;
     
-    public JVMLauncher(String jarFile) {
-        this.jarFile = jarFile;
+    public JVMLauncher(Classpath classpath, String mainClass) {
+        this.classpath = classpath;
+        this.mainClass = mainClass;
     }
 
     public JVMHandle launchNewJVM() throws IOException, InterruptedException {
@@ -29,8 +31,8 @@ public class JVMLauncher {
         return builder;
     }
 
-    protected String jarFile() {
-        return jarFile;
+    protected Classpath classpath() {
+        return classpath;
     }
 
     protected List<String> command() {
@@ -38,8 +40,9 @@ public class JVMLauncher {
         
         command = new ArrayList<String>(3);
         command.add(javaLauncherPath());
-        command.add("-jar");
-        command.add(jarFile);
+        command.add("-cp");
+        command.add(classpath.toString());
+        command.add(mainClass);
 
         return command;
     }

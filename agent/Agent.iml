@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Unit Testing" level="project" />
     <orderEntry type="module" module-name="WebServer" />
     <orderEntry type="library" name="Commons" level="project" />
+    <orderEntry type="module" module-name="Core" />
     <orderEntryProperties />
   </component>
 </module>
