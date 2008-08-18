@@ -762,16 +762,6 @@
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/core/src/main" recursive="false" />
     </library>
-    <library name="Embedded JRuby">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby/1.8" />
-        <root url="file://$PROJECT_DIR$/vendor/jruby-1.1-RC2/ruby" />
-        <root url="jar://$PROJECT_DIR$/vendor/jruby-1.1-RC2/bsf.jar!/" />
-        <root url="jar://$PROJECT_DIR$/vendor/jruby-1.1-RC2/jruby.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="TestNG">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/vendor/testng-5.7-jdk15.jar!/" />

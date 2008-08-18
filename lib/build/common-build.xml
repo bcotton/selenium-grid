@@ -14,14 +14,6 @@
   <property name="metrics.pmd.reports" location="${metrics.reports}/pmd"/>
   <property name="metrics.coverage.reports" location="${metrics.reports}/coverage"/>
   <property environment="env"/>
-  <property name="jruby.test.dir" value="${basedir}/src/test/unit" />
-
-  <path id="jruby.classpath">
-    <fileset dir="${rootdir}/vendor/jruby-1.1-RC2">
-      <include name="jruby.jar"/>
-    </fileset>
-    <pathelement path="${rootdir}/vendor/jruby-1.1-RC2/ruby/1.8"/>
-  </path>
 
   <path id="mocking.classpath">
     <fileset dir="${rootdir}/vendor">

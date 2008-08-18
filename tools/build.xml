@@ -20,8 +20,6 @@
     <pathelement path="${java.class.path}/"/>
   </path>
 
-  <target name="jruby-test" depends="compile" description="Run JRuby Tests" />
-
   <target name="package-standalone" depends="package" description="Package as a jar including all dependencies">
     <package-standalone-jar main-class="">
       <dependencies>

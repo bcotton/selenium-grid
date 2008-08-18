@@ -1,9 +1,0 @@
---- !ruby/object:RI::MethodDescription
-params: ()
-is_singleton: false
-block_params: 
-name: implementation_backtrace
-comment: 
-full_name: Spec::Example::ExampleMethods#implementation_backtrace
-visibility: public
-aliases: []

@@ -24,19 +24,6 @@
     </condition>
     <fail message="Your must use Java 1.5 or newer. You are currrenltly using '${ant.java.version}'." unless="java-5"/>
 
-    <path id="jruby.classpath">
-      <fileset dir="${basedir}/vendor/jruby-1.1-RC2">
-        <include name="*.jar"/>
-      </fileset>
-      <pathelement path="${basedir}/vendor/jruby-1.1-RC2/ruby/1.8"/>
-    </path>
-
-    <java classname="org.jruby.Main" fork="true" failonerror="true">
-      <classpath refid="jruby.classpath"/>
-
-      <arg value="${basedir}/src/scripts/jruby_sanity_check.rb"/>
-    </java>
-
     <echo/>
     <echo>******************************************************</echo>
     <echo>Congratulations, your setup looks good. Happy hacking!</echo>
