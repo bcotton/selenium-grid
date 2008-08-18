@@ -1,5 +1,7 @@
 package com.thoughtworks.selenium.grid.webserver;
 
+import com.thoughtworks.selenium.grid.HttpParameters;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +22,7 @@ public class MainServlet extends HttpServlet {
         final String page;
 
         resource = routeResolver().resolve(request);
-        page = resource.process(request.getParameterMap());
+        page = resource.process(new HttpParameters(request.getParameterMap()));
         render(page, response);
     }
 

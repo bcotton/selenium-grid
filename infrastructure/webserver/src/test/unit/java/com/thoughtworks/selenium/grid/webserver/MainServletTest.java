@@ -143,12 +143,13 @@ public class MainServletTest extends UsingClassMock {
         final Mock theRequest;
         final MainServlet servlet;
         final Resource aResource;
-        final Map parameterMap;
+        final Map<String,String[]> parameterMap;
 
 
         aResource = new Resource() {
             public String process(HttpParameters params) {
                 assertEquals(2, params.names().size());
+                params.get("firstParameter");
                 assertEquals("firstValue", params.get("firstParameter"));
                 assertEquals("secondValue", params.get("secondParameter"));
                 return null;
@@ -156,11 +157,11 @@ public class MainServletTest extends UsingClassMock {
         };
         theRequest = mock(HttpServletRequest.class);
         theResponse = mock(HttpServletResponse.class);
-        parameterMap = new HashMap();
-        parameterMap.put("firstParameter", "firstValue");
-        parameterMap.put("secondParameter", "secondValue");
+        parameterMap = new HashMap<String, String[]>();
+        parameterMap.put("firstParameter", new String[] { "firstValue" });
+        parameterMap.put("secondParameter", new String[] { "secondValue" });
 
-        theRequest.expects("getParameterMap").will(returnValue(parameterMap));
+        theRequest.stubs("getParameterMap").will(returnValue(parameterMap));
         routeResolver = mock(com.thoughtworks.selenium.grid.webserver.RouteResolver.class);
         routeResolver.expects("resolve").with(theRequest).will(returnValue(aResource));
 
