@@ -20,15 +20,22 @@ public class JVMLauncherTest {
 
     @Test
     public void javaLauncherPathIsAValidFilePath() {
-        assertTrue(new File(new JVMLauncher(new Classpath(), "").javaLauncherPath()).exists());
+        final String javaLauncherPath;
+
+        javaLauncherPath = new JVMLauncher(new Classpath(), "").javaLauncherPath();
+        assertTrue(javaLauncherPath,  new File(javaLauncherPath).exists());
     }
 
     @Test
-    public void javaLauncherPathEndsWithJava() {
-        final JVMLauncher launcher;
+    public void javaLauncherPathEndsWithJavaExecutable() {
+        final String launcherPath;
 
-        launcher = new JVMLauncher(new Classpath(), "");
-        assertTrue(launcher.javaLauncherPath().endsWith(File.separator + "java"));
+        launcherPath = new JVMLauncher(new Classpath(), "").javaLauncherPath();
+        if (-1 != System.getProperty("os.name").indexOf("Windows")) {
+            assertTrue(launcherPath, launcherPath.endsWith(File.separator + "java.exe"));
+        } else {
+            assertTrue(launcherPath, launcherPath.endsWith(File.separator + "java"));
+        }
     }
 
     @Test

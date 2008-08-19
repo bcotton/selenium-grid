@@ -20,7 +20,7 @@ public class JVMLauncher {
 
     public JVMHandle launchNewJVM() throws IOException, InterruptedException {
         return new JVMHandle(newProcessBuilder().start());
-    }
+       }
 
     protected ProcessBuilder newProcessBuilder() {
         final ProcessBuilder builder;
@@ -50,8 +50,16 @@ public class JVMLauncher {
     protected String javaLauncherPath() {
         File javaLauncher;
 
-        javaLauncher = new File(System.getProperty("java.home") + "/bin/java");
+        javaLauncher = new File(System.getProperty("java.home") + "/bin/java" + executableSuffix());
         return javaLauncher.getAbsolutePath();
+    }
+
+    protected String executableSuffix() {
+        return onWindows() ? ".exe" : "";
+    }
+    
+    protected boolean onWindows() {
+        return -1 != System.getProperty("os.name").indexOf("Windows");
     }
     
 }
