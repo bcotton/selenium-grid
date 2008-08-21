@@ -2,6 +2,9 @@
 # Rakefile managing Selenium Grid components
 #
 require File.dirname(__FILE__) + '/lib/ruby/tcp_socket_extensions'
+require File.dirname(__FILE__) + '/lib/ruby/file_extensions'
+require File.dirname(__FILE__) + '/lib/ruby/java/classpath'
+require File.dirname(__FILE__) + '/lib/ruby/java/vm'
 
 desc "Print help"
 task :help do
@@ -85,7 +88,8 @@ end
 
 desc "Stop Hub"
 task :'hub:stop' do
-  sh "kill `lsof -t -i :4444`"
+  http = Net::HTTP.new("localhost", 4444)
+  http.post('/lifecycle-manager', "action=shutdown")
 end
 
 desc "Launch Remote Control"
@@ -95,7 +99,8 @@ end
 
 desc "Stop Remote Control"
 task :'rc:stop' do
-  sh "kill `lsof -t -i :#{ENV['PORT'] || 5555}`"
+  http = Net::HTTP.new("localhost", ENV['PORT'] || 5555)
+  puts http.post('/selenium-server/driver/', "cmd=shutDown")
 end
 
 desc "Launch Remote Control"
@@ -110,8 +115,15 @@ end
 
 desc"Stop Remote Controls. Usage rake rc:stop PORTS=5555-5560"
 task :'rc:stop_all' do
-  port_range = ENV['PORTS'] || "5000-5020"
-  sh "kill `lsof -t -i :#{port_range}`"
+  ports = ENV['PORTS'] || "5000-5020"
+  port_range = Range.new(*ports.split("-"))
+  port_range.each do |port|
+    begin
+      http = Net::HTTP.new("localhost", port)
+      http.post('/selenium-server/driver/', "cmd=shutDown")
+    rescue Exception => e
+      STDERR.puts "Could not properly shutdown remote control #{port} : #{e}"
+  end
 end
 
 desc "Launch a Xvnc server"
@@ -140,74 +152,4 @@ def rc_args(options)
   args << "-env '#{options[:environment] || ENV['ENVIRONMENT'] || "*chrome"}'" 
   args << (options[:selenium_args] || ENV['SELENIUM_ARGS'] || "")
   args
-end
-
-### To be extracted (eventually) ###
-
-
-
-class File
-
-    def self.native_path(path)
-    expanded_path = File.expand_path(path)
-    expanded_path.gsub!('/', '\\') if PLATFORM['win32']
-    expanded_path
-  end
-end
-
-module Java
-
-  class Classpath
-    require 'pathname'
-
-    def initialize(root_dir)
-      @root = root_dir
-      @locations = []
-      self
-    end
-
-    def <<(paths)
-      @locations = (@locations << Dir[@root + '/' + paths]).flatten
-      self
-    end
-
-    def definition
-      @locations.map {|path| File.native_path(path)}.join(self.separator)
-
-    end
-
-    def separator
-     PLATFORM['win32'] ? ";" : ":"
-    end
-
-  end
-
-  class VM
-
-    def run(classname, options)
-      command = [ "java" ]
-      command << "-cp \"#{options[:classpath]}\""
-      command << classname
-      command << jvm_properties(options[:properties])
-      command << options[:args].join(' ') if options[:args]
-      command << ">\"#{options[:log_file]}\" 2>&1" if options[:log_file]
-
-      if options[:background ]
-        if PLATFORM['win32']
-          command.unshift("start")
-        else
-          command << "&"
-        end
-      end
-
-      sh command.join(' ')
-    end
-
-    def jvm_properties(property_hash)
-      return "" unless property_hash
-      property_hash.inject([]) {|memo, (name, value)| memo << "-D#{name}=#{value}" }.join(' ')
-    end
-
-  end
-
 end
