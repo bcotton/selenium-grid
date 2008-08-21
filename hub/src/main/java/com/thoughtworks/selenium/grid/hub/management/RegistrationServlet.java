@@ -16,19 +16,19 @@ import java.io.IOException;
  */
 public class RegistrationServlet extends RegistrationManagementServlet {
 
-    private static final Log logger = LogFactory.getLog(RegistrationServlet.class);
+    private static final Log LOGGER = LogFactory.getLog(RegistrationServlet.class);
 
     protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         final RemoteControlProxy newRemoteControl;
         final DynamicRemoteControlPool pool;
 
-        logger.info("Registering new remote control...");
+        LOGGER.info("Registering new remote control...");
         newRemoteControl = RemoteControlParser.parse(request);
         pool = registry().remoteControlPool();
         pool.register(newRemoteControl);
-        logger.info("Registered " + newRemoteControl);
-        witeSuccessfulResponse(response);
+        LOGGER.info("Registered " + newRemoteControl);
+        writeSuccessfulResponse(response);
     }
 
 

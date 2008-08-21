@@ -6,8 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/ruby" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/integration" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/unit/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/unit/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/integration" />
     </content>
     <orderEntry type="inheritedJdk" />

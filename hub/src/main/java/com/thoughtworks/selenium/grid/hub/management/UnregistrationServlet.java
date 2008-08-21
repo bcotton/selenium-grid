@@ -25,7 +25,7 @@ public class UnregistrationServlet extends RegistrationManagementServlet {
         pool = registry().remoteControlPool();
         pool.unregister(newRemoteControl);
         logger.info("Unregistered " + newRemoteControl);
-        witeSuccessfulResponse(response);
+        writeSuccessfulResponse(response);
     }
 
 }

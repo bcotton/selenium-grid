@@ -5,6 +5,7 @@ import com.thoughtworks.selenium.grid.configuration.GridConfiguration;
 import com.thoughtworks.selenium.grid.configuration.ResourceLocator;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.DynamicRemoteControlPool;
 import com.thoughtworks.selenium.grid.hub.remotecontrol.GlobalRemoteControlPool;
+import com.thoughtworks.selenium.grid.hub.management.LifecycleManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -20,6 +21,7 @@ public class HubRegistry {
     private DynamicRemoteControlPool pool;
     private EnvironmentManager environmentManager;
     private GridConfiguration gridConfiguration;
+    private LifecycleManager lifecycleManager;
 
     public static synchronized HubRegistry registry() {
         if (null == singleton) {
@@ -55,4 +57,12 @@ public class HubRegistry {
         }
         return gridConfiguration;
     }
+
+    public synchronized LifecycleManager lifecycleManager() {
+        if (null == lifecycleManager) {
+            lifecycleManager = new LifecycleManager();
+        }
+        return lifecycleManager;
+    }
+
 }

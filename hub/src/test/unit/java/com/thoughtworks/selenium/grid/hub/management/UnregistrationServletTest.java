@@ -34,7 +34,7 @@ public class UnregistrationServletTest extends UsingClassMock {
                 return (HubRegistry) registry;
             }
 
-            protected void witeSuccessfulResponse(HttpServletResponse response) throws IOException {
+            protected void writeSuccessfulResponse(HttpServletResponse response) throws IOException {
                 assertSame(expectedResponse, response);
             }
         };

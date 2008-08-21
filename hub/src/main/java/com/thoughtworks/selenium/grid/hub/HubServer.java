@@ -3,6 +3,7 @@ package com.thoughtworks.selenium.grid.hub;
 import com.thoughtworks.selenium.grid.configuration.HubConfiguration;
 import com.thoughtworks.selenium.grid.hub.management.RegistrationServlet;
 import com.thoughtworks.selenium.grid.hub.management.UnregistrationServlet;
+import com.thoughtworks.selenium.grid.hub.management.LifecycleManagerServlet;
 import com.thoughtworks.selenium.grid.hub.management.console.ConsoleServlet;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.handler.ContextHandlerCollection;
@@ -33,6 +34,7 @@ public class HubServer {
         root.addServlet(new ServletHolder(new ConsoleServlet()), "/console");
         root.addServlet(new ServletHolder(new RegistrationServlet()), "/registration-manager/register");
         root.addServlet(new ServletHolder(new UnregistrationServlet()), "/registration-manager/unregister");
+        root.addServlet(new ServletHolder(new LifecycleManagerServlet()), "/lifecycle-manager");
 
         server.start();
         server.join();

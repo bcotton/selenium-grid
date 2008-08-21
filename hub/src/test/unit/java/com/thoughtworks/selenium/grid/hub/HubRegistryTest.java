@@ -33,4 +33,15 @@ public class HubRegistryTest {
                    HubRegistry.registry().gridConfiguration());
     }
 
+    @Test
+    public void lifecyleManagerReturnsAValidManager() {
+        assertNotNull(HubRegistry.registry().lifecycleManager());
+    }
+
+    @Test
+    public void lifecyleManagerReturnsAUniqueInstance() {
+        assertSame(HubRegistry.registry().lifecycleManager(),
+                   HubRegistry.registry().lifecycleManager());
+    }
+
 }
