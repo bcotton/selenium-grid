@@ -123,6 +123,7 @@ task :'rc:stop_all' do
       http.post('/selenium-server/driver/', "cmd=shutDown")
     rescue Exception => e
       STDERR.puts "Could not properly shutdown remote control #{port} : #{e}"
+    end
   end
 end
 
