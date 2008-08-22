@@ -6,6 +6,9 @@ require File.dirname(__FILE__) + '/lib/ruby/file_extensions'
 require File.dirname(__FILE__) + '/lib/ruby/java/classpath'
 require File.dirname(__FILE__) + '/lib/ruby/java/vm'
 
+require 'yaml'
+require 'net/http'
+
 desc "Print help"
 task :help do
   puts <<-EOS
@@ -65,7 +68,7 @@ task :'all:start' do
   ENV['BACKGROUND'] = "true"
   Rake::Task[:'hub:start'].invoke
   puts "Waiting for Hub to come up..."
-  TCPSocket.wait_for_service :host => "localhost", :port => 4444
+  TCPSocket.wait_for_service :host => "localhost", :port => hub_port
   Rake::Task[:'rc:start_all'].invoke
 end
 
@@ -88,8 +91,8 @@ end
 
 desc "Stop Hub"
 task :'hub:stop' do
-  http = Net::HTTP.new("localhost", 4444)
-  http.post('/lifecycle-manager', "action=shutdown")
+  http = Net::HTTP.new("localhost", hub_port)
+  http.post('/lifecycle-manager', "action=shutdown") rescue nil
 end
 
 desc "Launch Remote Control"
@@ -149,8 +152,13 @@ def rc_args(options)
   args = []
   args << "-host" << (options[:host] || ENV['HOST'] || "localhost")
   args << "-port" << options[:port]
-  args << "-hubUrl" << (options[:hub_url] || ENV['HUB_URL'] || 'http://localhost:4444')
+  args << "-hubUrl" << (options[:hub_url] || ENV['HUB_URL'] || "http://localhost:#{hub_port}")
   args << "-env '#{options[:environment] || ENV['ENVIRONMENT'] || "*chrome"}'" 
   args << (options[:selenium_args] || ENV['SELENIUM_ARGS'] || "")
   args
+end
+
+def hub_port
+  @config ||= YAML.load(File.read(File.dirname(__FILE__) + "/grid_configuration.yml"))
+  @config["hub"]["port"].to_i
 end
